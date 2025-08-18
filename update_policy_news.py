@@ -1,177 +1,203 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """
 update_policy_news.py
-Fetches visa- and immigration-policy headlines, cleans them,
-and writes data/policyNews.json for your static site.
-
-Run with:  python update_policy_news.py
-Schedule with cron, Lambda, or GitHub Actions as needed.
+Fetches immigration / international-education headlines, filters for
+student / study-abroad / mobility relevance, and writes data/policyNews.json
+for the static site.
 """
-import json
-import datetime
-import pathlib
-import requests
-import feedparser
-from typing import List, Dict, Any
 
-# -------- configuration -------- #
+from datetime import datetime, timezone
+from html import unescape
+from urllib.parse import urlparse
+import json
+import pathlib
+
+import feedparser
+import requests
+
+# ----------------------------
+# Config
+# ----------------------------
 SITE_ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
-MAX_ITEMS = 40  # keep your JSON light for quick client fetches
+MAX_ITEMS = 300  # keep the JSON light
 
-# Add or remove RSS/Atom/JSON endpoints here
+# Feeds (add/remove freely)
 FEEDS = [
-    # UK Home Office news RSS
-    "https://www.gov.uk/government/organisations/home-office.atom",
-    # Australian Home Affairs newsroom RSS  
-    "https://minister.homeaffairs.gov.au/newsroom/Pages/Newsroom.aspx?rss=true",
-    # IRCC news RSS
-    "https://www.canada.ca/content/canadasite/en/immigration-refugees-citizenship/news/2025.atom",
-    # ICA Singapore newsroom RSS
-    "https://www.ica.gov.sg/newsroom.rss",
-    # SCMP China politics RSS (visa policies often appear here)
-    "https://www.scmp.com/rss/91/feed",
+    # Government / immigration
+    "https://www.gov.uk/government/announcements.rss",
+    "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
+    "https://www.homeaffairs.gov.au/news-media/rss",
+    "https://www.canada.ca/en/immigration-refugees-citizenship.atom",
+    "https://www.uscis.gov/news/rss.xml",
+    "https://www.immigration.govt.nz/about-us/media-centre/rss",  # NZ Immigration (if 404, harmless)
+
+    # International education industry
+    "https://monitor.icef.com/feed/",
+    "https://thepienews.com/feed/",
+    "https://www.studyinternational.com/news/feed/",
+    "https://www.timeshighereducation.com/rss/International",
 ]
 
-# Keywords that signal a policy or visa change
-KEYWORDS = (
-    "visa", "immigration", "student pass", "skilled worker", "permanent resident",
-    "visa exemption", "K-visa", "salary threshold", "work permit", "entry", "stay",
-    "border", "travel", "tourist", "visitor", "sponsor", "points", "requirement"
-)
+# ----------------------------
+# Relevance filters
+# ----------------------------
 
-# Mapping from hostname to display "Source: xxx"
-SOURCE_MAP = {
-    "gov.uk": "UK Home Office",
-    "homeaffairs": "Department of Home Affairs AU", 
-    "canada.ca": "IRCC Canada",
-    "ica.gov.sg": "ICA Singapore",
-    "scmp.com": "South China Morning Post",
-    "reuters.com": "Reuters",
-    "bbc.com": "BBC News",
-    "cnn.com": "CNN",
-}
+# Keep if any of these terms appear (international students / mobility focus)
+KEEP_KEYWORDS = [
+    # core student/visa/study abroad
+    "student visa", "study visa", "study permit", "international student",
+    "study abroad", "exchange student", "erasmus", "graduate route",
+    "post-study work", "post study work", "psw", "opt", "stem opt",
+    "f-1 visa", "j-1 visa", "sevis", "ds-160", "ukvi", "home office",
+    "ircc", "uscis", "department of home affairs",
 
-def looks_policy_related(title: str, summary: str) -> bool:
-    """Check if content appears to be about visa/immigration policy."""
-    blob = (title + " " + summary).lower()
-    return any(keyword in blob for keyword in KEYWORDS)
+    # admissions / requirements / costs
+    "university admissions", "offer letter", "cas letter", "atas",
+    "scholarship", "bursary", "tuition fee", "application deadline",
+    "ielts", "toefl", "pte", "ukvi ielts",
 
-def clean_text(text: str, limit: int = 300) -> str:
-    """Clean and truncate text."""
-    if not text:
-        return ""
-    return " ".join(text.replace("\n", " ").split())[:limit].strip()
+    # dependants / rights / work / ihs
+    "dependent visa", "dependants", "spouse visa", "work hours", "work rights",
+    "health surcharge", "ihs", "nhs surcharge",
 
-def human_date(dt) -> str:
-    """Return YYYY-MM-DD from datetime or struct_time."""
-    if isinstance(dt, datetime.date):
-        return dt.strftime("%Y-%m-%d")
-    try:
-        return datetime.date(*dt[:3]).isoformat()
-    except (TypeError, ValueError):
-        return datetime.date.today().isoformat()
+    # international student mobility / tne / recruitment
+    "student mobility", "international student mobility", "inbound mobility",
+    "outbound mobility", "cross-border education", "transnational education",
+    "tne", "branch campus", "satellite campus", "pathway provider",
+    "pre-sessional", "recruitment agent", "education agent", "agent commission",
+    "enrolment", "enrollment", "intake", "cohort", "student flows",
+    "visa approvals", "visa refusals", "acceptance rate", "offer rate",
+    "visa processing time", "backlog",
 
-def category_from_title(title: str) -> str:
-    """Basic heuristic for card badge category."""
-    lowered = title.lower()
-    if "student" in lowered:
-        return "Student Visas"
-    elif "skilled" in lowered or "work" in lowered:
-        return "Work Visas" 
-    elif "tourist" in lowered or "visitor" in lowered:
-        return "Tourist Visas"
-    elif "exempt" in lowered:
-        return "Visa Exemption"
-    elif "permanent" in lowered or "resident" in lowered:
-        return "Immigration Policy"
-    else:
-        return "Policy Update"
+    # frameworks / regulators often present in mobility context
+    "ucas", "qaa", "teqsa", "cricos", "sevp", "sevp portal", "sevp-certified",
+]
 
-def source_from_link(link: str) -> str:
-    """Extract source name from URL."""
-    for key, label in SOURCE_MAP.items():
-        if key in link:
-            return label
-    try:
-        return link.split('/')[2]  # fallback to hostname
-    except (IndexError, AttributeError):
-        return "Unknown Source"
+# Drop if any of these appear (unrelated geopolitics, non-student visa)
+EXCLUDE_TERMS = [
+    "diplomat", "ambassador", "sanction", "ceasefire", "arms deal",
+    "military", "consulate attack", "asylum seeker", "deportation flight",
+    "tourist visa only", "business visa only", "resident diplomat",
+]
 
-def fetch_policy_news() -> List[Dict[str, Any]]:
-    """Fetch and parse policy news from configured feeds."""
-    cards = []
-
-    for feed_url in FEEDS:
+# ----------------------------
+# Helpers
+# ----------------------------
+def norm_date(entry) -> str:
+    """Return YYYY-MM-DD from typical feed date fields; fallback to today (UTC)."""
+    dt = None
+    for k in ("published_parsed", "updated_parsed"):
+        if getattr(entry, k, None):
+            dt = getattr(entry, k)
+            break
+        if isinstance(entry.get(k), tuple):
+            dt = entry.get(k)
+            break
+    if dt:
         try:
-            print(f"Fetching {feed_url}...")
-            feed = feedparser.parse(feed_url, 
-                                  request_headers={"User-Agent": "policy-bot/1.0"})
+            return datetime(*dt[:6], tzinfo=timezone.utc).strftime("%Y-%m-%d")
+        except Exception:
+            pass
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-            for entry in feed.entries:
-                title = entry.get("title", "").strip()
-                summary = entry.get("summary", entry.get("description", "")).strip()
 
-                if not title or not looks_policy_related(title, summary):
-                    continue
+def host_to_source(url_or_title: str) -> str:
+    try:
+        netloc = urlparse(url_or_title).netloc
+        if netloc:
+            return netloc.replace("www.", "")
+    except Exception:
+        pass
+    return (url_or_title or "").strip()[:60]
 
-                link = entry.get("link", "")
-                date_parsed = entry.get("published_parsed") or entry.get("updated_parsed")
-                date_str = human_date(date_parsed)
 
-                cards.append({
-                    "date": date_str,
-                    "category": category_from_title(title),
-                    "headline": clean_text(title, 140),
-                    "description": clean_text(summary, 230),
-                    "source": source_from_link(link),
-                    "url": link
-                })
-
-        except Exception as e:
-            print(f"Error processing {feed_url}: {e}")
+def clean_html(s: str) -> str:
+    if not s:
+        return ""
+    s = unescape(s)
+    # quick tag strip
+    out, inside = [], 0
+    for ch in s:
+        if ch == "<":
+            inside = 1
             continue
+        if ch == ">":
+            inside = 0
+            out.append(" ")
+            continue
+        if not inside:
+            out.append(ch)
+    return " ".join("".join(out).split())
 
-    return cards
 
-def deduplicate_cards(cards: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Remove duplicate entries based on headline and date."""
+def is_relevant(text: str) -> bool:
+    t = (text or "").lower()
+    if any(x in t for x in (e.lower() for e in EXCLUDE_TERMS)):
+        return False
+    return any(kw in t for kw in (k.lower() for k in KEEP_KEYWORDS))
+
+
+def dedupe(items):
     seen = set()
-    deduped = []
+    out = []
+    for it in items:
+        key = (it.get("url") or "").strip().lower() or (it.get("headline") or "").strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(it)
+    return out
 
-    # Sort by date, newest first
-    sorted_cards = sorted(cards, key=lambda x: x["date"], reverse=True)
 
-    for card in sorted_cards:
-        key = (card["headline"], card["date"])
-        if key not in seen:
-            deduped.append(card)
-            seen.add(key)
+# ----------------------------
+# Fetch & build
+# ----------------------------
+def fetch_feed(url: str):
+    try:
+        parsed = feedparser.parse(url)
+        return parsed.entries or []
+    except Exception:
+        return []
 
-    return deduped
+
+def build_item(entry, feed_url: str):
+    link = entry.get("link") or ""
+    headline = clean_html(entry.get("title") or "")
+    desc = clean_html(entry.get("summary") or entry.get("description") or "")
+    date_str = norm_date(entry)
+    source = host_to_source(link or feed_url)
+    return {
+        "date": date_str,
+        "category": "Policy Update",
+        "headline": headline,
+        "description": desc,
+        "source": source,
+        "url": link or feed_url,
+    }
+
 
 def main():
-    """Main function to update policy news."""
-    print("🔄 Fetching policy news updates...")
+    collected = []
+    for feed in FEEDS:
+        for e in fetch_feed(feed):
+            item = build_item(e, feed)
+            text = f"{item['headline']} {item['description']} {item['source']}"
+            if is_relevant(text):
+                collected.append(item)
 
-    # Fetch news from all feeds
-    cards = fetch_policy_news()
+    collected.sort(key=lambda x: x["date"], reverse=True)
+    collected = dedupe(collected)[:MAX_ITEMS]
 
-    # Remove duplicates and limit
-    deduped_cards = deduplicate_cards(cards)[:MAX_ITEMS]
-
-    # Create output payload
-    payload = {"policyNews": deduped_cards}
-
-    # Ensure output directory exists
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as fh:
+        json.dump({"policyNews": collected}, fh, ensure_ascii=False, indent=2)
 
-    # Write JSON file
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
+    print(f"Saved {len(collected)} items to {OUTPUT_FILE}")
 
-    print(f"✅ Wrote {len(deduped_cards)} items → {OUTPUT_FILE}")
-    print(f"📅 Last updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 if __name__ == "__main__":
     main()
+
