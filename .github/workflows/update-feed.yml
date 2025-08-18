@@ -25,7 +25,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: main              # ensure cron uses latest main
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -42,14 +42,17 @@ jobs:
       - name: Ensure data directory exists
         run: mkdir -p data
 
-      # Optional: fail early if non-ASCII creeps into the script again (e.g., em dash)
-      - name: Validate script is ASCII-only
+      # 🔒 Sanity checks: only one script + ASCII-only (no stray Unicode dashes)
+      - name: Sanity check updater script
         run: |
-          if ! LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py >/dev/null; then
-            echo "ASCII check passed."
-          else
-            echo "Non-ASCII characters found in update_policy_news.py"
-            LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py || true
+          COUNT=$(git ls-files | grep -c '^update_policy_news\.py$' || true)
+          if [ "$COUNT" -ne 1 ]; then
+            echo "Error: Expected exactly 1 update_policy_news.py, found $COUNT"
+            git ls-files | grep update_policy_news.py || true
+            exit 1
+          fi
+          if LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py; then
+            echo "Error: Non-ASCII character(s) found in update_policy_news.py"
             exit 1
           fi
 
