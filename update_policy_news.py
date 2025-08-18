@@ -6,14 +6,10 @@
 # -*- coding: utf-8 -*-
 
 """
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-update_policy_news.py  (STRICT)
-Focuses the feed on Immigration & Visa policy updates, while still including
-student mobility items only when there is a clear visa/immigration/policy angle.
-Writes data/policyNews.json for the static site.
+update_policy_news.py  (VISA/POLICY-ONLY)
+Keeps only items with explicit immigration/visa policy signals.
+Drops admissions/enrolment volumes, forecasts/trends/podcasts unless there is a
+clear visa/immigration/policy angle.
 
 Requires: feedparser, requests
 """
@@ -33,7 +29,7 @@ import requests
 # ----------------------------
 SITE_ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
-MAX_ITEMS = 300  # keep output lean for the browser
+MAX_ITEMS = 300
 
 FEEDS = [
     # Government / regulator sources (high signal)
@@ -42,7 +38,7 @@ FEEDS = [
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
     "https://www.uscis.gov/news/rss.xml",
     "https://www.homeaffairs.gov.au/news-media/rss",
-    # Sector press (scored/filtered)
+    # Sector press (still allowed, but strictly filtered)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://www.studyinternational.com/news/feed/",
@@ -50,61 +46,70 @@ FEEDS = [
 ]
 
 # ----------------------------
-# Relevance filters (weighted) — STRICT
+# Relevance filters — STRICT
 # ----------------------------
 
 # Hard excludes (non-policy geopolitics etc.)
 EXCLUDE_TERMS = [
     "diplomat", "ambassador", "ceasefire", "arms deal", "sanction",
     "military", "consulate attack", "asylum seeker", "deportation flight",
-    "tourist visa only", "business visa only"
+    "tourist visa only", "business visa only",
 ]
 
-# Admissions-volume words we want to block unless a visa/policy angle is present
+# Admissions/enrolment volume language (block unless strong policy/immigration)
 ADMISSIONS_VOLUME_TERMS = [
     "accepted", "acceptances", "acceptance rate",
     "application", "applications", "applicants",
-    "enrolment", "enrollment", "offer rate", "offers", "intake", "cohort"
+    "enrolment", "enrollment", "offer rate", "offers", "intake", "cohort",
 ]
 
-# A small list of **core** immigration tokens that MUST appear for inclusion
+# Insight/feature content we want to block unless there is clear policy/visa signal
+INSIGHT_ONLY_TERMS = [
+    "forecast", "forecasts", "projection", "projections",
+    "trend", "trends", "report", "whitepaper", "survey",
+    "search data", "search interest", "mid-year",
+    "podcast", "webinar", "roundtable", "feature",
+]
+
+# Core immigration tokens — at least ONE must be present
 CORE_IMM_TOKENS = [
     "visa", "study permit", "permit", "ukvi", "home office", "ircc", "uscis",
-    "department of home affairs", "home affairs",
+    "department of home affairs", "home affairs", "immigration new zealand",
     # student-immigration pathways that imply immigration context
-    "student visa", "study visa", "graduate route", "post-study work", "psw", "opt", "stem opt",
-    "dependent", "dependant", "work rights", "work hours", "health surcharge", "ihs"
+    "student visa", "study visa", "graduate route", "post-study work", "psw",
+    "opt", "stem opt",
+    # policy-relevant student issues
+    "dependent", "dependant", "work rights", "work hours", "health surcharge", "ihs",
 ]
 
-# Strong immigration/visa signals and authorities (weighted)
+# Weighted dictionaries
 IMMIGRATION_TERMS = {
     "visa": 3, "immigration": 3, "permit": 2, "e-visa": 3, "evisa": 3,
     "border control": 2, "biometric": 2, "entry ban": 2, "travel ban": 2,
     "residency": 2, "residence permit": 2, "citizenship": 1,
     "ukvi": 3, "home office": 3, "ircc": 3, "uscis": 3,
     "department of home affairs": 3, "home affairs": 2, "immigration new zealand": 2,
-    # student-immigration signals (count as immigration)
+    # treat student-immigration tokens as immigration
     "student visa": 3, "study visa": 3, "study permit": 3,
     "graduate route": 3, "post-study work": 3, "psw": 3, "opt": 3, "stem opt": 3,
     "dependent": 2, "dependant": 2, "work rights": 2, "work hours": 2, "health surcharge": 2, "ihs": 2,
 }
 
-# Policy/operational change language (weighted)
 POLICY_ACTION_TERMS = {
     "policy update": 2, "policy change": 2, "regulation": 2, "rule change": 2,
     "guidance": 1, "threshold": 2, "thresholds": 2, "minimum salary": 2,
     "cap": 2, "quota": 2, "processing time": 2, "backlog": 2, "priority service": 1,
     "application fee": 2, "fees": 2, "increase": 1, "decrease": 1,
     "dependant": 2, "dependent": 2, "work hours": 2, "work rights": 2,
-    "extension": 1, "ban": 1, "suspension": 1, "introduction": 1
+    "extension": 1, "ban": 1, "suspension": 1, "introduction": 1,
 }
 
-# Student mobility (for badges/context, NOT sufficient alone)
 STUDENT_MOBILITY_TERMS = {
+    # kept for badge/category; NOT sufficient alone
     "international student": 2, "study abroad": 2, "exchange": 1, "erasmus": 1,
     "cas letter": 2, "atas": 1, "ielts": 1, "toefl": 1, "pte": 1, "ukvi ielts": 1,
     "student mobility": 2, "tne": 1, "transnational education": 1,
-    "branch campus": 1, "pathway provider": 1
+    "branch campus": 1, "pathway provider": 1,
 }
 
 def _score(text: str, weights: dict) -> int:
@@ -113,37 +118,41 @@ def _score(text: str, weights: dict) -> int:
 
 def is_relevant(text: str) -> bool:
     """
-    STRICT mode:
-    - Always require at least one **core immigration token**.
-    - Drop admissions-volume stories unless there's a policy/immigration signal.
-    - Prefer items with policy-action language.
+    Visa/Policy-only logic:
+    - Must contain at least one CORE_IMM_TOKENS item.
+    - Block admissions/enrolment/acceptance stories unless immigration/policy score is strong.
+    - Block forecasts/trends/podcasts unless immigration/policy score is strong.
+    - Require a minimum combined immigration + policy-action score.
     """
     t = (text or "").lower()
 
-    # quick drops
+    # hard drops
     if any(x in t for x in (e.lower() for e in EXCLUDE_TERMS)):
         return False
 
-    # must have core immigration token
+    # must have a core immigration token
     if not any(core in t for core in (c.lower() for c in CORE_IMM_TOKENS)):
         return False
 
-    # block admissions-only pieces unless immigration/policy is clearly present
-    if any(word in t for word in (w.lower() for w in ADMISSIONS_VOLUME_TERMS)):
-        imm_tmp = _score(t, IMMIGRATION_TERMS)
-        act_tmp = _score(t, POLICY_ACTION_TERMS)
-        if imm_tmp == 0 and act_tmp < 2:
-            return False
-
-    # final scoring gate (loose because we already required a core token)
     imm = _score(t, IMMIGRATION_TERMS)
     act = _score(t, POLICY_ACTION_TERMS)
+
+    # admissions volume items: only keep if strong immigration/policy context
+    if any(w in t for w in (x.lower() for x in ADMISSIONS_VOLUME_TERMS)):
+        if (imm + act) < 4:
+            return False
+
+    # insight/forecast/podcast pieces: only keep if strong immigration/policy context
+    if any(w in t for w in (x.lower() for x in INSIGHT_ONLY_TERMS)):
+        if (imm + act) < 5:
+            return False
+
+    # final gate: require a solid immigration/policy signal
     return (imm + act) >= 3
 
 # ----------------------------
 # Utilities
 # ----------------------------
-
 def norm_date(d) -> str:
     """Convert feed date to ISO (YYYY-MM-DD). If missing, use now UTC."""
     if hasattr(d, "tm_year"):
@@ -184,21 +193,17 @@ def smart_excerpt(text: str, limit: int = 480) -> str:
     return (trimmed[:last_space] if last_space > 0 else trimmed) + " …"
 
 # ----------------------------
-# Fetching & building
+# Fetch & build
 # ----------------------------
-
 def fetch_feed(url: str):
-    """Fetch a feed and return entries (feedparser entries)."""
     fp = feedparser.parse(url)
     if fp.bozo and not fp.entries:
-        # try via requests then parse
         r = requests.get(url, timeout=20)
         r.raise_for_status()
         fp = feedparser.parse(r.text)
     return fp.entries or []
 
 def category_for(text: str) -> str:
-    """Assign a simple category badge."""
     t = (text or "").lower()
     if _score(t, POLICY_ACTION_TERMS) >= 3 or "policy" in t or "rule" in t or "regulation" in t:
         return "Policy Update"
@@ -252,7 +257,6 @@ def dedupe(items):
 # ----------------------------
 # Main
 # ----------------------------
-
 def main():
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
@@ -282,6 +286,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
