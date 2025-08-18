@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immigration & Visa Policy News Feed</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 32px;
+            max-width: 780px;
+            margin: auto;
+            background: #fafafa;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0a1f44;
+            margin: 0 0 8px 0;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        .loading-text {
+            font-size: 16px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .btn--primary {
+            background: #224cc9;
+            color: #fff;
+        }
+
+        .btn--primary:hover {
+            background: #1c3ca3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Immigration & Visa Policy News</h1>
+        <p>Latest updates on global immigration policies and visa changes</p>
+    </div>
+
+    <!-- Search Input -->
+    <input type="text" id="searchInput" placeholder="Search policy changes..." 
+           style="width:100%;padding:12px 16px;margin-bottom:24px;font-size:16px;border:1px solid #ccc;border-radius:8px;font-family:'Inter',Arial,sans-serif;">
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading-indicator">
+        <div class="loading-text">Loading latest policy updates...</div>
+    </div>
+
+    <!-- NEWS CARDS -->
+    <div id="news-wrapper">
+        <!-- News cards will be populated by JavaScript -->
+    </div>
+
+    <!-- No results message -->
+    <div id="no-results" class="no-results hidden">
+        <p>No policy changes found matching your search.</p>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn btn--primary hidden">Load More Policy Changes</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

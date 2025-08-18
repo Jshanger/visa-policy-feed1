@@ -1,0 +1,44 @@
+{
+  "policyNews": [
+    {
+      "date": "2025-08-14",
+      "category": "Immigration Policy",
+      "headline": "China launches new K-visa for young STEM professionals",
+      "description": "From October 1, 2025 foreign STEM graduates from renowned universities can apply for streamlined 'young-talent' K-visas without employer sponsorship.",
+      "source": "South China Morning Post",
+      "url": "https://www.scmp.com/news/china/politics/article/3321901/china-creates-new-visa-young-science-and-technology-talent"
+    },
+    {
+      "date": "2025-07-22",
+      "category": "Work Visas",
+      "headline": "UK raises Skilled Worker and Global Mobility salary thresholds",
+      "description": "Certificates of Sponsorship issued from 22 July 2025 must meet new salary floors – £41,700 for Skilled Worker and £52,500 for Global Business Mobility.",
+      "source": "Smith Stone Walters",
+      "url": "https://smithstonewalters.com/news/skilled-worker-2"
+    },
+    {
+      "date": "2025-07-14",
+      "category": "Student Visas",
+      "headline": "Australia to increase student visa fee to AUD 2,000 from July 2025",
+      "description": "The 25% hike, confirmed by the Department of Home Affairs, is part of broader reforms to control international education volumes and ensure integrity.",
+      "source": "Indian Express / Reuters",
+      "url": "https://indianexpress.com/article/education/study-abroad/australia-student-visa-amount-increase-cost-for-uk-usa-canada-germany-france-new-immigration-rules-10116123/"
+    },
+    {
+      "date": "2025-07-18",
+      "category": "Visa Exemption",
+      "headline": "China–Malaysia 30-day mutual visa exemption takes effect",
+      "description": "From 17 July 2025, nationals of China and Malaysia can travel visa-free for up to 30 days, renewable to 90 days in any 180-day period.",
+      "source": "China Briefing",
+      "url": "https://www.china-briefing.com/news/china-malaysia-visa-exemption-effective-july-2025/"
+    },
+    {
+      "date": "2025-07-08",
+      "category": "Immigration Policy",
+      "headline": "Indonesia trims visa categories from 133 to 110 to streamline entry",
+      "description": "Effective 1 June 2025, new regulations merge similar visa types and introduce investor visas for the new capital IKN.",
+      "source": "EY Global Tax Alert",
+      "url": "https://www.ey.com/en_gl/technical/tax-alerts/indonesia-implements-new-immigration-classifications"
+    }
+  ]
+}
