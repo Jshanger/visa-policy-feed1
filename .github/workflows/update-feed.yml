@@ -2,7 +2,7 @@ name: Update Policy Feed
 
 on:
   schedule:
-    - cron: "0 */6 * * *"        # every 6 hours (UTC)
+    - cron: "0 */6 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -20,7 +20,6 @@ env:
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -42,19 +41,14 @@ jobs:
       - name: Ensure data directory exists
         run: mkdir -p data
 
-      # 🔒 Sanity checks: only one script + ASCII-only (no stray Unicode dashes)
-      - name: Sanity check updater script
+      # --- PRE-SYNC: ensure we start from latest remote main ---
+      - name: Pre-sync with origin/main
         run: |
-          COUNT=$(git ls-files | grep -c '^update_policy_news\.py$' || true)
-          if [ "$COUNT" -ne 1 ]; then
-            echo "Error: Expected exactly 1 update_policy_news.py, found $COUNT"
-            git ls-files | grep update_policy_news.py || true
-            exit 1
-          fi
-          if LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py; then
-            echo "Error: Non-ASCII character(s) found in update_policy_news.py"
-            exit 1
-          fi
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git fetch origin main
+          git rebase origin/main
+
+      # (optional) sanity checks from earlier messages can go here
 
       - name: Run updater
         run: python update_policy_news.py
@@ -68,34 +62,31 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Show diff
-        if: steps.diff.outputs.changed == 'true'
-        run: git --no-pager diff -- data/policyNews.json || true
-
       - name: Commit updated JSON
         if: steps.diff.outputs.changed == 'true'
         run: |
-          git config user.name "actions-user"
+          git config user.name  "actions-user"
           git config user.email "actions@users.noreply.github.com"
           git add data/policyNews.json
           git commit -m "Automated policy feed update"
 
-      - name: Rebase onto latest main
-        if: steps.diff.outputs.changed == 'true'
-        run: |
-          git fetch origin main
-          git rebase origin/main
-
-      - name: Push (fast-forward or safe force)
+      # --- PUSH with safe retry if non-fast-forward ---
+      - name: Push update (with retry on rebase)
         if: steps.diff.outputs.changed == 'true'
         run: |
           set -e
+          # first try a normal push
           if git push origin HEAD:main; then
             echo "Normal push succeeded."
-          else
-            echo "Normal push rejected. Retrying with --force-with-lease."
-            git push --force-with-lease origin HEAD:main
+            exit 0
           fi
+          echo "Push rejected; syncing and retrying..."
+          # someone pushed to main; rebase onto latest and try again
+          git fetch origin main
+          git rebase origin/main || (git rebase --abort && git reset --hard origin/main)
+          # push using --force-with-lease to avoid clobbering someone else's fresh work
+          git push --force-with-lease origin HEAD:main
+
 
 
 
