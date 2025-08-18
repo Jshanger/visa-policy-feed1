@@ -8,9 +8,9 @@
 """
 update_policy_news.py
 
-Fetches immigration / international-education headlines, filters for
-student / study-abroad / mobility relevance, and writes data/policyNews.json
-for the static site.
+Focuses the feed on Immigration & Visa policy updates, while still including
+student mobility items that have a real visa/immigration/policy angle.
+Writes data/policyNews.json for the static site.
 
 Requires: feedparser, requests
 """
@@ -30,11 +30,8 @@ import requests
 # ----------------------------
 SITE_ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
+MAX_ITEMS = 300  # keep output lean
 
-# keep the JSON light for quick client fetches
-MAX_ITEMS = 300
-
-# Add or remove RSS/Atom endpoints here
 FEEDS = [
     # Government / regulator sources (high signal)
     "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
@@ -47,18 +44,24 @@ FEEDS = [
     "https://thepienews.com/feed/",
     "https://www.studyinternational.com/news/feed/",
     "https://www.timeshighereducation.com/rss/International",
-    # Add more if useful
 ]
 
 # ----------------------------
 # Relevance filters (weighted)
 # ----------------------------
 
-# Hard excludes (noise not about visa policy)
+# Hard excludes (non-policy geopolitics etc.)
 EXCLUDE_TERMS = [
     "diplomat", "ambassador", "ceasefire", "arms deal", "sanction",
     "military", "consulate attack", "asylum seeker", "deportation flight",
     "tourist visa only", "business visa only"
+]
+
+# Admissions-volume words we want to block unless a visa/policy angle is present
+ADMISSIONS_VOLUME_TERMS = [
+    "accepted", "acceptances", "acceptance rate",
+    "application", "applications", "applicants",
+    "enrolment", "enrollment", "offer rate", "offers"
 ]
 
 # Strong immigration/visa signals and authorities
@@ -103,9 +106,11 @@ def _score(text: str, weights: dict) -> int:
 def is_relevant(text: str) -> bool:
     """
     Keep if clearly immigration/visa policy, OR student mobility with visa/policy impact.
+    Also drop admissions-volume stories unless there's an immigration/policy angle.
     """
     t = (text or "").lower()
 
+    # quick drops
     if any(x in t for x in (e.lower() for e in EXCLUDE_TERMS)):
         return False
 
@@ -113,12 +118,16 @@ def is_relevant(text: str) -> bool:
     act = _score(t, POLICY_ACTION_TERMS)
     stu = _score(t, STUDENT_MOBILITY_TERMS)
 
+    # Block "admissions volume only" pieces unless immigration/policy is present
+    if any(word in t for word in (w.lower() for w in ADMISSIONS_VOLUME_TERMS)) and imm == 0 and act < 2:
+        return False
+
     # Strong immigration/policy item
     if imm >= 3 and (imm + act) >= 5:
         return True
 
-    # Student mobility item with visa/policy angle
-    if stu >= 3 and (imm + act) >= 2:
+    # Student mobility item with visa/policy angle (now requires some immigration signal)
+    if stu >= 3 and (imm + act) >= 2 and imm >= 1:
         return True
 
     # Very strong doc even without student angle
@@ -132,9 +141,7 @@ def is_relevant(text: str) -> bool:
 # ----------------------------
 
 def norm_date(d) -> str:
-    """
-    Convert feed date to ISO (YYYY-MM-DD). If missing, use now UTC.
-    """
+    """Convert feed date to ISO (YYYY-MM-DD). If missing, use now UTC."""
     if hasattr(d, "tm_year"):
         dt = datetime(d.tm_year, d.tm_mon, d.tm_mday, tzinfo=timezone.utc)
     else:
@@ -158,10 +165,9 @@ TAG_RE = re.compile(r"<[^>]+>")
 def clean_html(text: str) -> str:
     if not text:
         return ""
-    # strip tags & unescape entities
     return unescape(TAG_RE.sub("", text)).strip()
 
-def smart_excerpt(text: str, limit: int = 300) -> str:
+def smart_excerpt(text: str, limit: int = 480) -> str:
     if not text:
         return ""
     if len(text) <= limit:
@@ -178,10 +184,7 @@ def smart_excerpt(text: str, limit: int = 300) -> str:
 # ----------------------------
 
 def fetch_feed(url: str):
-    """
-    Fetch a feed and yield entries (feedparser entries).
-    """
-    # Prefer feedparser directly; if the URL is HTML, feedparser still tries.
+    """Fetch a feed and return entries (feedparser entries)."""
     fp = feedparser.parse(url)
     if fp.bozo and not fp.entries:
         # try via requests then parse
@@ -191,9 +194,7 @@ def fetch_feed(url: str):
     return fp.entries or []
 
 def category_for(text: str) -> str:
-    """
-    Tag a simple category badge for the card.
-    """
+    """Assign a simple category badge."""
     t = (text or "").lower()
     if _score(t, POLICY_ACTION_TERMS) >= 3 or "policy" in t or "rule" in t or "regulation" in t:
         return "Policy Update"
@@ -208,17 +209,14 @@ def build_item(entry) -> dict:
     url = getattr(entry, "link", "") or ""
     summary = clean_html(getattr(entry, "summary", "") or "")
     content_txt = summary
-    # Some feeds put text in content[0].value
     try:
         if not content_txt and getattr(entry, "content", None):
             content_txt = clean_html(entry.content[0].value)
     except Exception:
         pass
 
-    # Use combined text (title + summary) for relevance scoring
     score_src = f"{title} {content_txt}"
 
-    dt = None
     if getattr(entry, "published_parsed", None):
         dt = norm_date(entry.published_parsed)
     elif getattr(entry, "updated_parsed", None):
@@ -233,7 +231,7 @@ def build_item(entry) -> dict:
         "description": smart_excerpt(content_txt, 480),
         "source": host_to_source(url),
         "url": url,
-        "_scoretext": score_src,  # internal (removed before writing)
+        "_scoretext": score_src,  # stripped before write
     }
 
 def dedupe(items):
@@ -254,32 +252,27 @@ def dedupe(items):
 def main():
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    all_items = []
-    for url in FEEDS:
+    collected = []
+    for feed in FEEDS:
         try:
-            for e in fetch_feed(url):
+            for e in fetch_feed(feed):
                 it = build_item(e)
                 if is_relevant(it["_scoretext"]):
-                    all_items.append(it)
+                    collected.append(it)
         except Exception as ex:
-            # swallow per-feed errors to keep job green
-            print(f"[warn] feed failed: {url} -> {ex}")
+            print(f"[warn] feed failed: {feed} -> {ex}")
 
-    # remove debug key
-    for it in all_items:
+    # strip scoring text
+    for it in collected:
         it.pop("_scoretext", None)
 
-    # dedupe & sort by date (newest first)
-    items = dedupe(all_items)
+    # dedupe & sort
+    items = dedupe(collected)
     items.sort(key=lambda x: x["date"], reverse=True)
-
-    # cap
     items = items[:MAX_ITEMS]
 
-    payload = {"policyNews": items}
-
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+        json.dump({"policyNews": items}, f, ensure_ascii=False, indent=2)
 
     print(f"wrote {len(items)} items -> {OUTPUT_FILE}")
 
