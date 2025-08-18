@@ -1,0 +1,35 @@
+name: Update Policy Feed
+on:
+  schedule:
+    - cron: '0 3 * * *'   # Daily at 03:00 UTC
+  workflow_dispatch: {}    # Allow manual run
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run updater
+        run: python update_policy_news.py
+
+      - name: Commit changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add data/policyNews.json
+          git commit -m "Automated policy feed update" || echo "No changes to commit"
+          git push
+
