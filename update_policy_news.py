@@ -69,7 +69,7 @@ PHRASE_RES = [re.compile(p, re.IGNORECASE) for p in PHRASE_PATTERNS]
 EXCLUDE_TERMS = [
     "diplomat", "ambassador", "ceasefire", "arms deal", "sanction",
     "military", "consulate attack", "asylum seeker", "deportation flight",
-    "tourist visa only", "business visa only", "turkey", "turkish", "türkiye",
+    "tourist visa only", "business visa only", "turkey", "turkish",
 ]
 
 TAG_RE = re.compile(r"<[^>]+>")
