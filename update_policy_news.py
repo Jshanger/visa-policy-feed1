@@ -53,7 +53,7 @@ FEEDS = [
 # Must match at least ONE of these regexes (case-insensitive).
 # These cover "visa change(s)/update(s)/rule(s)" and "immigration policy/rules changes/updates".
 PHRASE_PATTERNS = [
-    r"\bvisa (change|changes|update|updates|rule|rules|policy|policies)\b",
+    r"\bvisa (change|changes|update|updates|rule|rules|visa policy|visa policies)\b",
     r"\b(change|changes|update|updates) to (?:the )?visa (?:rules|policy|policies)\b",
     r"\bvisa (?:rule|policy) (?:change|changes|update|updates)\b",
     r"\bvisa (?:requirements?|conditions?) (?:change|changes|updated|update)\b",
@@ -76,7 +76,7 @@ PHRASE_RES = [re.compile(p, re.IGNORECASE) for p in PHRASE_PATTERNS]
 EXCLUDE_TERMS = [
     "diplomat", "ambassador", "ceasefire", "arms deal", "sanction",
     "military", "consulate attack", "asylum seeker", "deportation flight",
-    "tourist visa only", "business visa only"
+    "tourist visa only", "business visa only", "Turkey".
 ]
 
 def mentions_required_phrase(text: str) -> bool:
