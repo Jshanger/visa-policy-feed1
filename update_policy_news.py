@@ -288,7 +288,7 @@ def main():
             print("no matches; kept existing policyNews.json (not overwritten)")
             return
         else:
-            # Nothing existing—still write an empty scaffold once
+            # Nothing existing - still write an empty scaffold once
             with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
                 json.dump({"policyNews": []}, f, ensure_ascii=False, indent=2)
             print("no matches; wrote empty scaffold (first run)")
