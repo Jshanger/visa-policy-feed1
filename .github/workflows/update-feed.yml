@@ -2,15 +2,15 @@ name: Update Policy Feed
 
 on:
   schedule:
-    - cron: "0 */6 * * *"        # every 6 hours (UTC)
-  workflow_dispatch: {}           # allow manual runs
+    - cron: "0 */6 * * *"      # every 6 hours (UTC)
+  workflow_dispatch: {}
 
 permissions:
-  contents: write                 # needed to push back to the repo
+  contents: write
 
 concurrency:
   group: update-policy-feed
-  cancel-in-progress: false       # avoid overlapping pushes
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0          # so we can rebase & push
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,30 +38,44 @@ jobs:
       - name: Run updater
         run: python update_policy_news.py
 
-      - name: Show diff (if any)
+      - name: Did JSON change?
+        id: diff
         run: |
-          git status
-          git diff --color -- data/policyNews.json || true
-
-      - name: Commit changes (only if JSON changed)
-        run: |
-          if git diff --quiet --exit-code data/policyNews.json; then
-            echo "No changes in data/policyNews.json. Skipping commit."
-            exit 0
+          if git diff --quiet --exit-code -- data/policyNews.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Show diff
+        if: steps.diff.outputs.changed == 'true'
+        run: git --no-pager diff -- data/policyNews.json || true
+
+      - name: Commit updated JSON
+        if: steps.diff.outputs.changed == 'true'
+        run: |
           git config user.name "actions-user"
           git config user.email "actions@users.noreply.github.com"
           git add data/policyNews.json
           git commit -m "Automated policy feed update"
 
-      - name: Rebase on latest main (avoid non-fast-forward)
-        if: success()           # only attempt if we committed
+      - name: Rebase onto latest main
+        if: steps.diff.outputs.changed == 'true'
         run: |
-          git pull --rebase origin main
+          git fetch origin main
+          git rebase origin/main
 
-      - name: Push
-        if: success()
+      - name: Push (fast-forward or safe force)
+        if: steps.diff.outputs.changed == 'true'
         run: |
-          git push origin HEAD:main
+          # Try a normal push first; if rejected, use --force-with-lease
+          set -e
+          if git push origin HEAD:main; then
+            echo "Normal push succeeded."
+          else
+            echo "Normal push rejected. Retrying with --force-with-lease."
+            git push --force-with-lease origin HEAD:main
+          fi
+
 
 
