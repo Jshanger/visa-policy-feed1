@@ -2,10 +2,17 @@
 # -*- coding: utf-8 -*-
 
 """
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
 update_policy_news.py
+
 Fetches immigration / international-education headlines, filters for
 student / study-abroad / mobility relevance, and writes data/policyNews.json
 for the static site.
+
+Requires: feedparser, requests
 """
 
 from datetime import datetime, timezone
@@ -13,6 +20,7 @@ from html import unescape
 from urllib.parse import urlparse
 import json
 import pathlib
+import re
 
 import feedparser
 import requests
@@ -22,182 +30,260 @@ import requests
 # ----------------------------
 SITE_ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
-MAX_ITEMS = 300  # keep the JSON light
 
-# Feeds (add/remove freely)
+# keep the JSON light for quick client fetches
+MAX_ITEMS = 300
+
+# Add or remove RSS/Atom endpoints here
 FEEDS = [
-    # Government / immigration
-    "https://www.gov.uk/government/announcements.rss",
+    # Government / regulator sources (high signal)
     "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
-    "https://www.homeaffairs.gov.au/news-media/rss",
-    "https://www.canada.ca/en/immigration-refugees-citizenship.atom",
+    "https://www.gov.uk/government/announcements.rss",
+    "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
     "https://www.uscis.gov/news/rss.xml",
-    "https://www.immigration.govt.nz/about-us/media-centre/rss",  # NZ Immigration (if 404, harmless)
-
-    # International education industry
+    "https://www.homeaffairs.gov.au/news-media/rss",
+    # Sector press (scored/filtered)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://www.studyinternational.com/news/feed/",
     "https://www.timeshighereducation.com/rss/International",
+    # Add more if useful
 ]
 
 # ----------------------------
-# Relevance filters
+# Relevance filters (weighted)
 # ----------------------------
 
-# Keep if any of these terms appear (international students / mobility focus)
-KEEP_KEYWORDS = [
-    # core student/visa/study abroad
-    "student visa", "study visa", "study permit", "international student",
-    "study abroad", "exchange student", "erasmus", "graduate route",
-    "post-study work", "post study work", "psw", "opt", "stem opt",
-    "f-1 visa", "j-1 visa", "sevis", "ds-160", "ukvi", "home office",
-    "ircc", "uscis", "department of home affairs",
-
-    # admissions / requirements / costs
-    "university admissions", "offer letter", "cas letter", "atas",
-    "scholarship", "bursary", "tuition fee", "application deadline",
-    "ielts", "toefl", "pte", "ukvi ielts",
-
-    # dependants / rights / work / ihs
-    "dependent visa", "dependants", "spouse visa", "work hours", "work rights",
-    "health surcharge", "ihs", "nhs surcharge",
-
-    # international student mobility / tne / recruitment
-    "student mobility", "international student mobility", "inbound mobility",
-    "outbound mobility", "cross-border education", "transnational education",
-    "tne", "branch campus", "satellite campus", "pathway provider",
-    "pre-sessional", "recruitment agent", "education agent", "agent commission",
-    "enrolment", "enrollment", "intake", "cohort", "student flows",
-    "visa approvals", "visa refusals", "acceptance rate", "offer rate",
-    "visa processing time", "backlog",
-
-    # frameworks / regulators often present in mobility context
-    "ucas", "qaa", "teqsa", "cricos", "sevp", "sevp portal", "sevp-certified",
-]
-
-# Drop if any of these appear (unrelated geopolitics, non-student visa)
+# Hard excludes (noise not about visa policy)
 EXCLUDE_TERMS = [
-    "diplomat", "ambassador", "sanction", "ceasefire", "arms deal",
+    "diplomat", "ambassador", "ceasefire", "arms deal", "sanction",
     "military", "consulate attack", "asylum seeker", "deportation flight",
-    "tourist visa only", "business visa only", "resident diplomat",
+    "tourist visa only", "business visa only"
 ]
 
-# ----------------------------
-# Helpers
-# ----------------------------
-def norm_date(entry) -> str:
-    """Return YYYY-MM-DD from typical feed date fields; fallback to today (UTC)."""
-    dt = None
-    for k in ("published_parsed", "updated_parsed"):
-        if getattr(entry, k, None):
-            dt = getattr(entry, k)
-            break
-        if isinstance(entry.get(k), tuple):
-            dt = entry.get(k)
-            break
-    if dt:
-        try:
-            return datetime(*dt[:6], tzinfo=timezone.utc).strftime("%Y-%m-%d")
-        except Exception:
-            pass
-    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+# Strong immigration/visa signals and authorities
+IMMIGRATION_TERMS = {
+    "visa": 3, "immigration": 3, "permit": 2, "e-visa": 3, "evisa": 3,
+    "border control": 2, "biometric": 2, "entry ban": 2, "travel ban": 2,
+    "residency": 2, "residence permit": 2, "citizenship": 1,
+    "ukvi": 3, "home office": 3, "ircc": 3, "uscis": 3,
+    "department of home affairs": 3, "home affairs": 2, "immigration new zealand": 2,
+}
 
+# Words that indicate a policy/operational change
+POLICY_ACTION_TERMS = {
+    "policy update": 2, "policy change": 2, "regulation": 2, "rule change": 2,
+    "guidance": 1, "threshold": 2, "cap": 2, "quota": 2,
+    "processing time": 2, "backlog": 2, "priority service": 1,
+    "application fee": 2, "fees": 2, "health surcharge": 2, "ihs": 2,
+    "dependant": 2, "dependent": 2, "work hours": 2, "work rights": 2,
+    "extension": 1, "ban": 1, "suspension": 1, "introduction": 1,
+    "increase": 1, "decrease": 1, "thresholds": 2, "minimum salary": 2
+}
 
-def host_to_source(url_or_title: str) -> str:
-    try:
-        netloc = urlparse(url_or_title).netloc
-        if netloc:
-            return netloc.replace("www.", "")
-    except Exception:
-        pass
-    return (url_or_title or "").strip()[:60]
+# International student & mobility
+STUDENT_MOBILITY_TERMS = {
+    "student visa": 3, "study visa": 3, "study permit": 3,
+    "international student": 2, "study abroad": 2, "exchange": 1, "erasmus": 1,
+    "graduate route": 3, "post-study work": 3, "psw": 3, "opt": 3, "stem opt": 3,
+    "cas letter": 2, "atas": 1, "ielts": 1, "toefl": 1, "pte": 1, "ukvi ielts": 1,
+    "enrolment": 1, "enrollment": 1, "intake": 1, "cohort": 1,
+    "student mobility": 2, "tne": 1, "transnational education": 1,
+    "branch campus": 1, "pathway provider": 1
+}
 
-
-def clean_html(s: str) -> str:
-    if not s:
-        return ""
-    s = unescape(s)
-    # quick tag strip
-    out, inside = [], 0
-    for ch in s:
-        if ch == "<":
-            inside = 1
-            continue
-        if ch == ">":
-            inside = 0
-            out.append(" ")
-            continue
-        if not inside:
-            out.append(ch)
-    return " ".join("".join(out).split())
-
+def _score(text: str, weights: dict) -> int:
+    t = text.lower()
+    s = 0
+    for k, w in weights.items():
+        if k in t:
+            s += w
+    return s
 
 def is_relevant(text: str) -> bool:
+    """
+    Keep if clearly immigration/visa policy, OR student mobility with visa/policy impact.
+    """
     t = (text or "").lower()
+
     if any(x in t for x in (e.lower() for e in EXCLUDE_TERMS)):
         return False
-    return any(kw in t for kw in (k.lower() for k in KEEP_KEYWORDS))
 
+    imm = _score(t, IMMIGRATION_TERMS)
+    act = _score(t, POLICY_ACTION_TERMS)
+    stu = _score(t, STUDENT_MOBILITY_TERMS)
+
+    # Strong immigration/policy item
+    if imm >= 3 and (imm + act) >= 5:
+        return True
+
+    # Student mobility item with visa/policy angle
+    if stu >= 3 and (imm + act) >= 2:
+        return True
+
+    # Very strong doc even without student angle
+    if (imm + act) >= 6:
+        return True
+
+    return False
+
+# ----------------------------
+# Utilities
+# ----------------------------
+
+def norm_date(d) -> str:
+    """
+    Convert feed date to ISO (YYYY-MM-DD). If missing, use now UTC.
+    """
+    if hasattr(d, "tm_year"):
+        dt = datetime(d.tm_year, d.tm_mon, d.tm_mday, tzinfo=timezone.utc)
+    else:
+        try:
+            dt = datetime.fromisoformat(str(d))
+        except Exception:
+            dt = datetime.now(timezone.utc)
+    return dt.date().isoformat()
+
+def host_to_source(url: str) -> str:
+    try:
+        host = urlparse(url).netloc
+        if host.startswith("www."):
+            host = host[4:]
+        return host
+    except Exception:
+        return "Source"
+
+TAG_RE = re.compile(r"<[^>]+>")
+
+def clean_html(text: str) -> str:
+    if not text:
+        return ""
+    # strip tags & unescape entities
+    return unescape(TAG_RE.sub("", text)).strip()
+
+def smart_excerpt(text: str, limit: int = 300) -> str:
+    if not text:
+        return ""
+    if len(text) <= limit:
+        return text
+    trimmed = text[:limit]
+    last_sentence = max(trimmed.rfind(". "), trimmed.rfind("! "), trimmed.rfind("? "))
+    if last_sentence > 50:
+        return trimmed[: last_sentence + 1] + " …"
+    last_space = trimmed.rfind(" ")
+    return (trimmed[:last_space] if last_space > 0 else trimmed) + " …"
+
+# ----------------------------
+# Fetching & building
+# ----------------------------
+
+def fetch_feed(url: str):
+    """
+    Fetch a feed and yield entries (feedparser entries).
+    """
+    # Prefer feedparser directly; if the URL is HTML, feedparser still tries.
+    fp = feedparser.parse(url)
+    if fp.bozo and not fp.entries:
+        # try via requests then parse
+        r = requests.get(url, timeout=20)
+        r.raise_for_status()
+        fp = feedparser.parse(r.text)
+    return fp.entries or []
+
+def category_for(text: str) -> str:
+    """
+    Tag a simple category badge for the card.
+    """
+    t = (text or "").lower()
+    if _score(t, POLICY_ACTION_TERMS) >= 3 or "policy" in t or "rule" in t or "regulation" in t:
+        return "Policy Update"
+    if _score(t, IMMIGRATION_TERMS) >= 3:
+        return "Visa & Immigration"
+    if _score(t, STUDENT_MOBILITY_TERMS) >= 3:
+        return "Student Mobility"
+    return "Update"
+
+def build_item(entry) -> dict:
+    title = clean_html(getattr(entry, "title", "") or "")
+    url = getattr(entry, "link", "") or ""
+    summary = clean_html(getattr(entry, "summary", "") or "")
+    content_txt = summary
+    # Some feeds put text in content[0].value
+    try:
+        if not content_txt and getattr(entry, "content", None):
+            content_txt = clean_html(entry.content[0].value)
+    except Exception:
+        pass
+
+    # Use combined text (title + summary) for relevance scoring
+    score_src = f"{title} {content_txt}"
+
+    dt = None
+    if getattr(entry, "published_parsed", None):
+        dt = norm_date(entry.published_parsed)
+    elif getattr(entry, "updated_parsed", None):
+        dt = norm_date(entry.updated_parsed)
+    else:
+        dt = datetime.now(timezone.utc).date().isoformat()
+
+    return {
+        "date": dt,
+        "category": category_for(score_src),
+        "headline": title[:300],
+        "description": smart_excerpt(content_txt, 480),
+        "source": host_to_source(url),
+        "url": url,
+        "_scoretext": score_src,  # internal (removed before writing)
+    }
 
 def dedupe(items):
     seen = set()
     out = []
     for it in items:
-        key = (it.get("url") or "").strip().lower() or (it.get("headline") or "").strip().lower()
-        if not key or key in seen:
+        key = (it["headline"].strip().lower(), it["url"])
+        if key in seen:
             continue
         seen.add(key)
         out.append(it)
     return out
 
-
 # ----------------------------
-# Fetch & build
+# Main
 # ----------------------------
-def fetch_feed(url: str):
-    try:
-        parsed = feedparser.parse(url)
-        return parsed.entries or []
-    except Exception:
-        return []
-
-
-def build_item(entry, feed_url: str):
-    link = entry.get("link") or ""
-    headline = clean_html(entry.get("title") or "")
-    desc = clean_html(entry.get("summary") or entry.get("description") or "")
-    date_str = norm_date(entry)
-    source = host_to_source(link or feed_url)
-    return {
-        "date": date_str,
-        "category": "Policy Update",
-        "headline": headline,
-        "description": desc,
-        "source": source,
-        "url": link or feed_url,
-    }
-
 
 def main():
-    collected = []
-    for feed in FEEDS:
-        for e in fetch_feed(feed):
-            item = build_item(e, feed)
-            text = f"{item['headline']} {item['description']} {item['source']}"
-            if is_relevant(text):
-                collected.append(item)
-
-    collected.sort(key=lambda x: x["date"], reverse=True)
-    collected = dedupe(collected)[:MAX_ITEMS]
-
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as fh:
-        json.dump({"policyNews": collected}, fh, ensure_ascii=False, indent=2)
 
-    print(f"Saved {len(collected)} items to {OUTPUT_FILE}")
+    all_items = []
+    for url in FEEDS:
+        try:
+            for e in fetch_feed(url):
+                it = build_item(e)
+                if is_relevant(it["_scoretext"]):
+                    all_items.append(it)
+        except Exception as ex:
+            # swallow per-feed errors to keep job green
+            print(f"[warn] feed failed: {url} -> {ex}")
 
+    # remove debug key
+    for it in all_items:
+        it.pop("_scoretext", None)
+
+    # dedupe & sort by date (newest first)
+    items = dedupe(all_items)
+    items.sort(key=lambda x: x["date"], reverse=True)
+
+    # cap
+    items = items[:MAX_ITEMS]
+
+    payload = {"policyNews": items}
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    print(f"wrote {len(items)} items -> {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
+
 
