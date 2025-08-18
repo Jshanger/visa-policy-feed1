@@ -1,35 +1,67 @@
 name: Update Policy Feed
+
 on:
   schedule:
-    - cron: '0 3 * * *'   # Daily at 03:00 UTC
-  workflow_dispatch: {}    # Allow manual run
+    - cron: "0 */6 * * *"        # every 6 hours (UTC)
+  workflow_dispatch: {}           # allow manual runs
 
 permissions:
-  contents: write
+  contents: write                 # needed to push back to the repo
+
+concurrency:
+  group: update-policy-feed
+  cancel-in-progress: false       # avoid overlapping pushes
 
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # so we can rebase & push
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ensure data directory exists
+        run: mkdir -p data
 
       - name: Run updater
         run: python update_policy_news.py
 
-      - name: Commit changes
+      - name: Show diff (if any)
         run: |
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
+          git status
+          git diff --color -- data/policyNews.json || true
+
+      - name: Commit changes (only if JSON changed)
+        run: |
+          if git diff --quiet --exit-code data/policyNews.json; then
+            echo "No changes in data/policyNews.json. Skipping commit."
+            exit 0
+          fi
+          git config user.name "actions-user"
+          git config user.email "actions@users.noreply.github.com"
           git add data/policyNews.json
-          git commit -m "Automated policy feed update" || echo "No changes to commit"
-          git push
+          git commit -m "Automated policy feed update"
+
+      - name: Rebase on latest main (avoid non-fast-forward)
+        if: success()           # only attempt if we committed
+        run: |
+          git pull --rebase origin main
+
+      - name: Push
+        if: success()
+        run: |
+          git push origin HEAD:main
+
 
