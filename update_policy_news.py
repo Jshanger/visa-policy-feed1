@@ -42,7 +42,6 @@ FEEDS = [
     "https://www.homeaffairs.gov.au/news-media/rss",
     # Sector press (strictly filtered by phrases below)
     "https://monitor.icef.com/feed/",
-    "https://thepienews.com/feed/",
     "https://www.studyinternational.com/news/feed/",
     "https://www.timeshighereducation.com/rss/International",
 ]
