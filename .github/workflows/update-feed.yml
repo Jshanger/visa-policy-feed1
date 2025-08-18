@@ -2,7 +2,7 @@ name: Update Policy Feed
 
 on:
   schedule:
-    - cron: "0 */6 * * *"      # every 6 hours (UTC)
+    - cron: "0 */6 * * *"        # every 6 hours (UTC)
   workflow_dispatch: {}
 
 permissions:
@@ -12,20 +12,27 @@ concurrency:
   group: update-policy-feed
   cancel-in-progress: false
 
+env:
+  TZ: UTC
+  PYTHONHASHSEED: "0"
+  PYTHONIOENCODING: "UTF-8"
+
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
+          ref: main              # ensure cron uses latest main
           fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Install requirements
         run: |
@@ -34,6 +41,17 @@ jobs:
 
       - name: Ensure data directory exists
         run: mkdir -p data
+
+      # Optional: fail early if non-ASCII creeps into the script again (e.g., em dash)
+      - name: Validate script is ASCII-only
+        run: |
+          if ! LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py >/dev/null; then
+            echo "ASCII check passed."
+          else
+            echo "Non-ASCII characters found in update_policy_news.py"
+            LC_ALL=C grep -nP "[^\x00-\x7F]" update_policy_news.py || true
+            exit 1
+          fi
 
       - name: Run updater
         run: python update_policy_news.py
@@ -68,7 +86,6 @@ jobs:
       - name: Push (fast-forward or safe force)
         if: steps.diff.outputs.changed == 'true'
         run: |
-          # Try a normal push first; if rejected, use --force-with-lease
           set -e
           if git push origin HEAD:main; then
             echo "Normal push succeeded."
