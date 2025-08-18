@@ -6,10 +6,13 @@
 # -*- coding: utf-8 -*-
 
 """
-update_policy_news.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
+"""
+update_policy_news.py  (STRICT)
 Focuses the feed on Immigration & Visa policy updates, while still including
-student mobility items that have a real visa/immigration/policy angle.
+student mobility items only when there is a clear visa/immigration/policy angle.
 Writes data/policyNews.json for the static site.
 
 Requires: feedparser, requests
@@ -30,7 +33,7 @@ import requests
 # ----------------------------
 SITE_ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
-MAX_ITEMS = 300  # keep output lean
+MAX_ITEMS = 300  # keep output lean for the browser
 
 FEEDS = [
     # Government / regulator sources (high signal)
@@ -47,7 +50,7 @@ FEEDS = [
 ]
 
 # ----------------------------
-# Relevance filters (weighted)
+# Relevance filters (weighted) — STRICT
 # ----------------------------
 
 # Hard excludes (non-policy geopolitics etc.)
@@ -61,52 +64,59 @@ EXCLUDE_TERMS = [
 ADMISSIONS_VOLUME_TERMS = [
     "accepted", "acceptances", "acceptance rate",
     "application", "applications", "applicants",
-    "enrolment", "enrollment", "offer rate", "offers"
+    "enrolment", "enrollment", "offer rate", "offers", "intake", "cohort"
 ]
 
-# Strong immigration/visa signals and authorities
+# A small list of **core** immigration tokens that MUST appear for inclusion
+CORE_IMM_TOKENS = [
+    "visa", "study permit", "permit", "ukvi", "home office", "ircc", "uscis",
+    "department of home affairs", "home affairs",
+    # student-immigration pathways that imply immigration context
+    "student visa", "study visa", "graduate route", "post-study work", "psw", "opt", "stem opt",
+    "dependent", "dependant", "work rights", "work hours", "health surcharge", "ihs"
+]
+
+# Strong immigration/visa signals and authorities (weighted)
 IMMIGRATION_TERMS = {
     "visa": 3, "immigration": 3, "permit": 2, "e-visa": 3, "evisa": 3,
     "border control": 2, "biometric": 2, "entry ban": 2, "travel ban": 2,
     "residency": 2, "residence permit": 2, "citizenship": 1,
     "ukvi": 3, "home office": 3, "ircc": 3, "uscis": 3,
     "department of home affairs": 3, "home affairs": 2, "immigration new zealand": 2,
+    # student-immigration signals (count as immigration)
+    "student visa": 3, "study visa": 3, "study permit": 3,
+    "graduate route": 3, "post-study work": 3, "psw": 3, "opt": 3, "stem opt": 3,
+    "dependent": 2, "dependant": 2, "work rights": 2, "work hours": 2, "health surcharge": 2, "ihs": 2,
 }
 
-# Words that indicate a policy/operational change
+# Policy/operational change language (weighted)
 POLICY_ACTION_TERMS = {
     "policy update": 2, "policy change": 2, "regulation": 2, "rule change": 2,
-    "guidance": 1, "threshold": 2, "cap": 2, "quota": 2,
-    "processing time": 2, "backlog": 2, "priority service": 1,
-    "application fee": 2, "fees": 2, "health surcharge": 2, "ihs": 2,
+    "guidance": 1, "threshold": 2, "thresholds": 2, "minimum salary": 2,
+    "cap": 2, "quota": 2, "processing time": 2, "backlog": 2, "priority service": 1,
+    "application fee": 2, "fees": 2, "increase": 1, "decrease": 1,
     "dependant": 2, "dependent": 2, "work hours": 2, "work rights": 2,
-    "extension": 1, "ban": 1, "suspension": 1, "introduction": 1,
-    "increase": 1, "decrease": 1, "thresholds": 2, "minimum salary": 2
+    "extension": 1, "ban": 1, "suspension": 1, "introduction": 1
 }
 
-# International student & mobility
+# Student mobility (for badges/context, NOT sufficient alone)
 STUDENT_MOBILITY_TERMS = {
-    "student visa": 3, "study visa": 3, "study permit": 3,
     "international student": 2, "study abroad": 2, "exchange": 1, "erasmus": 1,
-    "graduate route": 3, "post-study work": 3, "psw": 3, "opt": 3, "stem opt": 3,
     "cas letter": 2, "atas": 1, "ielts": 1, "toefl": 1, "pte": 1, "ukvi ielts": 1,
-    "enrolment": 1, "enrollment": 1, "intake": 1, "cohort": 1,
     "student mobility": 2, "tne": 1, "transnational education": 1,
     "branch campus": 1, "pathway provider": 1
 }
 
 def _score(text: str, weights: dict) -> int:
     t = text.lower()
-    s = 0
-    for k, w in weights.items():
-        if k in t:
-            s += w
-    return s
+    return sum(w for k, w in weights.items() if k in t)
 
 def is_relevant(text: str) -> bool:
     """
-    Keep if clearly immigration/visa policy, OR student mobility with visa/policy impact.
-    Also drop admissions-volume stories unless there's an immigration/policy angle.
+    STRICT mode:
+    - Always require at least one **core immigration token**.
+    - Drop admissions-volume stories unless there's a policy/immigration signal.
+    - Prefer items with policy-action language.
     """
     t = (text or "").lower()
 
@@ -114,27 +124,21 @@ def is_relevant(text: str) -> bool:
     if any(x in t for x in (e.lower() for e in EXCLUDE_TERMS)):
         return False
 
-    imm = _score(t, IMMIGRATION_TERMS)
-    act = _score(t, POLICY_ACTION_TERMS)
-    stu = _score(t, STUDENT_MOBILITY_TERMS)
-
-    # Block "admissions volume only" pieces unless immigration/policy is present
-    if any(word in t for word in (w.lower() for w in ADMISSIONS_VOLUME_TERMS)) and imm == 0 and act < 2:
+    # must have core immigration token
+    if not any(core in t for core in (c.lower() for c in CORE_IMM_TOKENS)):
         return False
 
-    # Strong immigration/policy item
-    if imm >= 3 and (imm + act) >= 5:
-        return True
+    # block admissions-only pieces unless immigration/policy is clearly present
+    if any(word in t for word in (w.lower() for w in ADMISSIONS_VOLUME_TERMS)):
+        imm_tmp = _score(t, IMMIGRATION_TERMS)
+        act_tmp = _score(t, POLICY_ACTION_TERMS)
+        if imm_tmp == 0 and act_tmp < 2:
+            return False
 
-    # Student mobility item with visa/policy angle (now requires some immigration signal)
-    if stu >= 3 and (imm + act) >= 2 and imm >= 1:
-        return True
-
-    # Very strong doc even without student angle
-    if (imm + act) >= 6:
-        return True
-
-    return False
+    # final scoring gate (loose because we already required a core token)
+    imm = _score(t, IMMIGRATION_TERMS)
+    act = _score(t, POLICY_ACTION_TERMS)
+    return (imm + act) >= 3
 
 # ----------------------------
 # Utilities
@@ -156,7 +160,7 @@ def host_to_source(url: str) -> str:
         host = urlparse(url).netloc
         if host.startswith("www."):
             host = host[4:]
-        return host
+        return host or "Source"
     except Exception:
         return "Source"
 
@@ -278,5 +282,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
