@@ -5,7 +5,7 @@
 # -*- coding: utf-8 -*-
 
 """
-update_policy_news.py — VISA/POLICY-PHRASE ONLY (deterministic)
+update_policy_news.py VISA/POLICY-PHRASE ONLY (deterministic)
 - Keeps ONLY items that explicitly mention visa/immigration rule changes/updates.
 - Deterministic output: skips undated items, stable tie-breaking, write-only-on-change.
 """
