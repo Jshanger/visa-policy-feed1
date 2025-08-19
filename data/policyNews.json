@@ -1,3 +1,20 @@
 {
-  "policyNews": []
+  "policyNews": [
+    {
+      "date": "2025-08-05",
+      "category": "International Students Policy",
+      "headline": "Australia raises enrolment limits for 2025/26 but are they reachable?",
+      "description": "A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia’s National Planning Level (NPL) for the 2025/26 fiscal year. The new NPL will be 295,000 new international student places, an increase of 25,000 over the…\nThe post Australia raises enrolment limits for 2025/26 but are they reachable? ...",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/08/australia-raises-enrolment-limits-for-2025-26-but-are-they-reachable/"
+    },
+    {
+      "date": "2025-07-30",
+      "category": "International Students Policy",
+      "headline": "ICEF Podcast: Why cultural intelligence is essential now",
+      "description": "Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest news and developments in our sector, including the Dutch government’s reversal on plans to limit English-taught degree programmes in the country and New Zealand’s strategy for long-term growth. ...",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/07/icef-podcast-why-cultural-intelligence-is-essential-now/"
+    }
+  ]
 }
