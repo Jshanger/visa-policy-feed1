@@ -1,19 +1,187 @@
 {
   "policyNews": [
     {
+      "date": "2025-08-19",
+      "category": "Policy Update",
+      "headline": "Transparency data: Country returns guide",
+      "description": "Guidance on returning immigration offenders to their country of origin.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/country-returns-guide"
+    },
+    {
+      "date": "2025-08-19",
+      "category": "Policy Update",
+      "headline": "Russia’s educational isolation is an opportunity for Kazakhstan",
+      "description": "<p>More than three years into the Russia-Ukraine conflict and nearby Kazakhstan is emerging as a premier study destination in Central Asia. Aray Saniyazova delves into why it's become such an appealing destination for international students",
+      "source": "The PIE News",
+      "url": "https://thepienews.com/russias-educational-isolation-is-an-opportunity-for-kazakhstan/"
+    },
+    {
+      "date": "2025-08-19",
+      "category": "Policy Update",
+      "headline": "Indian calls to shun US study mount as tariff tensions rise",
+      "description": "<p>While the US has traditionally been the most desired destination for Indian students, calls to boycott the country as a place to study are gaining momentum.</p> <p>The post <a href=\"https://thepienews.com/indian-calls-to-shun-us-study-mo",
+      "source": "The PIE News",
+      "url": "https://thepienews.com/indian-calls-to-shun-us-study-mount-as-tariff-tensions-rise/"
+    },
+    {
+      "date": "2025-08-18",
+      "category": "Policy Update",
+      "headline": "Exclusive: Julian Hill responds to sector concerns on visa costs and onshore transfers",
+      "description": "<p>From visa fee hikes to integrity measures around student transfers, The PIE sat down with Australia's assistant minister for international education, Julian Hill, to hear how the government is approaching some of the most pressing challe",
+      "source": "The PIE News",
+      "url": "https://thepienews.com/exclusive-julian-hill-responds-to-sector-concerns-on-visa-costs-and-onshore-transfers/"
+    },
+    {
+      "date": "2025-08-15",
+      "category": "Policy Update",
+      "headline": "Correspondence: Circular 005/2025: The Firearms (Amendment) Rules 2025",
+      "description": "This circular sets out changes to the applications forms for a firearm or shotgun certificate, and registering as a firearms dealer.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/circular-0052025-the-firearms-amendment-rules-2025"
+    },
+    {
+      "date": "2025-08-15",
+      "category": "Student / Education",
+      "headline": "How Pakistani students are reshaping global mobility",
+      "description": "<p>Pakistan's large youth population is fuelling a surge in student mobility, with the UK, US and Germany seeing the largest growth, a new report has revealed. </p> <p>The post <a href=\"https://thepienews.com/how-pakistani-students-are-resh",
+      "source": "The PIE News",
+      "url": "https://thepienews.com/how-pakistani-students-are-reshaping-global-mobility/"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Policy Update",
+      "headline": "Apply for a Ukraine Family Scheme visa",
+      "description": "The Ukraine Family Scheme closed at 3pm on 19 February 2024. You can no longer apply under this scheme.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/guidance/apply-for-a-ukraine-family-scheme-visa"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Policy Update",
+      "headline": "UK visa support for Ukrainian nationals",
+      "description": "Guidance on support available to Ukrainian nationals and their family members.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/guidance/support-for-family-members-of-british-nationals-in-ukraine-and-ukrainian-nationals-in-ukraine-and-the-uk"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Policy Update",
+      "headline": "Apply for a visa under the Homes for Ukraine Sponsorship Scheme",
+      "description": "Guidance for Ukrainian nationals and their immediate family members who wish to come to the UK under the Homes for Ukraine Sponsorship Scheme.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/guidance/apply-for-a-visa-under-the-ukraine-sponsorship-scheme"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Policy Update",
+      "headline": "Official Statistics: Monthly entry clearance visa applications: July 2025",
+      "description": "Statistics on visa applications for people coming to the UK for work, study and family reasons.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/statistics/monthly-entry-clearance-visa-applications-july-2025"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Student / Education",
+      "headline": "Many foreign students want to stay in Germany but need more help with the transition to life after study",
+      "description": "<p>Early findings from an extensive survey of international students in Germany finds that two-thirds would like to stay and work in Germany after their studies. And that interest is especially concentrated among those studying economics, e",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/many-foreign-students-want-to-stay-in-germany-but-need-more-help-with-the-transition-to-life-after-study/"
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Work / Skilled Migration",
+      "headline": "How post-study work rights can make or break the return on investment for study abroad",
+      "description": "<p>The following is a guest post contributed by Tim O&#8217;Brien and Claire Clifford from INTO University Partnerships, where Tim is the Senior Vice President, New Partner Development, and Claire the Vice President, Pricing, Insights and R",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/how-post-study-work-rights-can-make-or-break-the-return-on-investment-for-study-abroad/"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Policy Update",
+      "headline": "Guidance: Immigration Rules archive: 6 August 2025 to 12 August 2025",
+      "description": "Immigration Rules archive for 6 August 2025 to 12 August 2025.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/immigration-rules-archive-6-august-2025-to-12-august-2025"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Policy Update",
+      "headline": "Policy paper: Safer Streets summer town centre initiative",
+      "description": "The Safer Streets summer town centre initiative will run from 30 June until 30 September, in over 500 town centres and high streets across England and Wales.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/safer-streets-summer-town-centre-initiative"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Work / Skilled Migration",
+      "headline": "Impact assessment: Digital status, right to work: data protection impact assessment",
+      "description": "This DPIA concerns right to work, one of the 3 online services which enable people with an immigration status to check and share their status online.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/digital-status-right-to-work-data-protection-impact-assessment"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Policy Update",
+      "headline": "Impact assessment: Digital status, view and prove: data protection impact assessment",
+      "description": "This DPIA concerns view and prove, one of the 3 online services which enables people with an immigration status to check and share their status online.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/government/publications/digital-status-view-and-prove-data-protection-impact-assessment"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Policy Update",
+      "headline": "Immigration bail: digital reporting",
+      "description": "Guidance on what immigration bail digital reporting (IBDR) is and what to do if you have been given an IBDR condition.",
+      "source": "UK Government",
+      "url": "https://www.gov.uk/guidance/immigration-bail-digital-reporting"
+    },
+    {
+      "date": "2025-08-13",
+      "category": "Policy Update",
+      "headline": "Australia prioritises amendments to ESOS Act in legislative agenda",
+      "description": "<p>The Australian government has signalled that amendments to the Education Services for Overseas Students (ESOS) Act 2000 are back on the table for 2025/26. The move comes in the wake of the failed attempt to pass The Education Services fo",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/australia-prioritises-amendments-to-esos-act-in-legislative-agenda/"
+    },
+    {
+      "date": "2025-08-06",
+      "category": "Student / Education",
+      "headline": "UK’s stiffening compliance regime already having an impact on international student recruitment",
+      "description": "<p>It would be fair to say that compliance is top of mind for international educators in the United Kingdom these days. The May 2025 immigration white paper from the UK government sets out a number of new requirements for UK institutions, i",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/uks-stiffening-compliance-regime-already-having-an-impact-on-international-student-recruitment/"
+    },
+    {
+      "date": "2025-08-06",
+      "category": "Student / Education",
+      "headline": "Search data highlights surge in student interest in Asian and Middle Eastern destinations at mid-year",
+      "description": "<p>Aggregated search data from Keystone Education Group reveals a distinct spike in student interest in destinations across the Middle East and in Asia over the first half of 2025. Hong Kong, Singapore, Taiwan, and South Korea continue to a",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year/"
+    },
+    {
       "date": "2025-08-05",
-      "category": "International Students Policy",
+      "category": "Policy Update",
       "headline": "Australia raises enrolment limits for 2025/26 but are they reachable?",
-      "description": "A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia’s National Planning Level (NPL) for the 2025/26 fiscal year. The new NPL will be 295,000 new international student places, an increase of 25,000 over the…\nThe post Australia raises enrolment limits for 2025/26 but are they reachable? ...",
-      "source": "monitor.icef.com",
+      "description": "<p>A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia&#8217;s National Planning Lev",
+      "source": "ICEF Monitor",
       "url": "https://monitor.icef.com/2025/08/australia-raises-enrolment-limits-for-2025-26-but-are-they-reachable/"
     },
     {
       "date": "2025-07-30",
-      "category": "International Students Policy",
+      "category": "Student / Education",
+      "headline": "New analysis forecasts international student mobility through 2030",
+      "description": "<p>A new analysis from QS maps the major trends and push and pull factors that will shape international student mobility for the rest of this decade. Based on findings from the Global Student Flows Initiative, Three Scenarios for Internatio",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/07/new-analysis-forecasts-international-student-mobility-through-2030/"
+    },
+    {
+      "date": "2025-07-30",
+      "category": "Policy Update",
       "headline": "ICEF Podcast: Why cultural intelligence is essential now",
-      "description": "Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest news and developments in our sector, including the Dutch government’s reversal on plans to limit English-taught degree programmes in the country and New Zealand’s strategy for long-term growth. ...",
-      "source": "monitor.icef.com",
+      "description": "<p>Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest news and developments in our sector, including the Dutch government&#8217;s reversal on plans to limit English-taught degree programmes in the country and N",
+      "source": "ICEF Monitor",
       "url": "https://monitor.icef.com/2025/07/icef-podcast-why-cultural-intelligence-is-essential-now/"
     }
   ]
