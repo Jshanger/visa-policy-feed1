@@ -36,15 +36,28 @@ function isStudentRelevant(item) {
   return STUDENT_TERMS.some(rx => rx.test(bag));
 }
 
+// Compute a tiny signature so we only re-render when data changes
+function computeSignature(items) {
+  try {
+    // Use stable fields most likely to change when the feed updates
+    const keys = items.map(i => `${i.date || ""}|${i.url || ""}|${i.headline || ""}`);
+    return JSON.stringify(keys);
+  } catch {
+    return String(Date.now());
+  }
+}
+
 // ---------- App state ----------
 let policyNewsData = [];
-let visibleCount = 8;
 let filteredData = [];
+let visibleCount = 8;
+let lastSignature = "";
 
 // ---------- Init ----------
 document.addEventListener("DOMContentLoaded", () => {
   loadPolicyData();
   setupEventListeners();
+  startAutoRefresh(); // re-fetch in the background every 10 minutes
 });
 
 // ---------- Events ----------
@@ -57,17 +70,19 @@ function setupEventListeners() {
 
 // ---------- Data load ----------
 async function fetchPolicyJSON() {
-  // Try relative path first (works on Netlify root or subpaths), then absolute as a fallback.
-  const bust = "?v=" + Date.now();
-  const candidates = ["./data/policyNews.json" + bust, "/data/policyNews.json" + bust];
+  // Cache-bust + bypass any intermediary caches
+  const bust = "?ts=" + Date.now();
+  const candidates = [
+    "./data/policyNews.json" + bust,
+    "/data/policyNews.json" + bust
+  ];
 
   for (const url of candidates) {
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (res.ok) return await res.json();
-      // If 404 on first candidate, try next one
     } catch (_) {
-      // ignore and try next candidate
+      // ignore and try the next candidate
     }
   }
   throw new Error("Unable to load policyNews.json from ./data/ or /data/");
@@ -84,7 +99,7 @@ async function loadPolicyData() {
   } catch (error) {
     console.warn("Could not load data/policyNews.json, using fallback data:", error.message);
     if (statusEl) statusEl.textContent = "Using fallback sample data (feed not found)";
-    // Fallback demo items (optional)
+    // Fallback demo items
     policyNewsData = [
       {
         date: "2025-08-14",
@@ -124,8 +139,46 @@ async function loadPolicyData() {
 
   // Default view = student-focused items
   filteredData = policyNewsData.filter(isStudentRelevant);
-  if (filteredData.length === 0) filteredData = [...policyNewsData]; // fallback if none match
+  if (filteredData.length === 0) filteredData = [...policyNewsData];
+
+  // Update signature & render
+  lastSignature = computeSignature(policyNewsData);
   renderCards();
+}
+
+// Background refresher (every 10 minutes) that re-renders only if changed
+function startAutoRefresh(intervalMs = 10 * 60 * 1000) {
+  setInterval(async () => {
+    try {
+      const data = await fetchPolicyJSON();
+      const items = Array.isArray(data.policyNews) ? data.policyNews : [];
+      items.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const sig = computeSignature(items);
+      if (sig !== lastSignature) {
+        policyNewsData = items;
+        // Respect current search state: if there is a query, keep it; otherwise student default
+        const searchInput = document.getElementById("searchInput");
+        const query = (searchInput?.value || "").toLowerCase().trim();
+        if (!query) {
+          filteredData = policyNewsData.filter(isStudentRelevant);
+          if (filteredData.length === 0) filteredData = [...policyNewsData];
+        } else {
+          filteredData = policyNewsData.filter(item => {
+            const bag = `${item.headline || ""} ${item.description || ""} ${item.category || ""} ${item.source || ""}`.toLowerCase();
+            return bag.includes(query);
+          });
+        }
+        visibleCount = 8;
+        lastSignature = sig;
+        renderCards();
+        const statusEl = document.getElementById("status");
+        if (statusEl) statusEl.textContent = `Updated ${policyNewsData.length} items (auto-refresh)`;
+      }
+    } catch (err) {
+      // Silent fail; don’t disrupt the page
+      console.debug("Auto-refresh skipped:", err?.message || err);
+    }
+  }, intervalMs);
 }
 
 // ---------- Card render ----------
