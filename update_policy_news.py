@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Policy & international student mobility tracker (strict + robust)
-- Only keeps stories clearly tied to immigration/visas and student mobility / higher education.
+Policy & international student mobility tracker (strict + caps + robust)
+- Only keeps stories clearly tied to immigration/visas + (action OR intl students / higher-ed).
 - Strong excludes (business/IPO, economy/restaurants, welfare/health, entertainment, K-12 domestic).
 - PIE Gov / SCMP / Korea Herald soft boosts WITH visa/immigration or mobility terms.
 - Explicit allow for SCMP “new K-visa / young talent visa” phrasing.
-- Per-feed error isolation; write only on change; cap 30 cards.
+- Per-feed error isolation; per-domain caps; write only on change; cap 30 cards.
 """
 
 from __future__ import annotations
 from typing import List, Dict, Any
-import json, datetime, pathlib, hashlib, sys
+import json, datetime, pathlib, hashlib, sys, collections
 from urllib.parse import urlparse
 import feedparser
 import requests
@@ -21,13 +21,13 @@ OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
 MAX_ITEMS   = 30
 HTTP_TIMEOUT = 20
 
-# ---------------- Curated, stable feeds ----------------
+# ---------------- Curated feeds ----------------
 FEEDS = [
     # Government & Regulators (stable)
     "https://www.gov.uk/government/organisations/home-office.atom",
     "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
-    "https://www.uscis.gov/newsroom/all-news/rss.xml",  # fixed USCIS URL
+    "https://www.uscis.gov/newsroom/all-news/rss.xml",
 
     # International orgs / think tanks
     "https://oecdedutoday.com/feed/",
@@ -44,16 +44,12 @@ FEEDS = [
     "https://www.qs.com/feed/",
 
     # Regional / Asia
-    "https://www.scmp.com/rss/91/feed",           # SCMP Education
-    "https://www.scmp.com/rss/318824/feed",      # SCMP China Policy
+    "https://www.scmp.com/rss/91/feed",            # SCMP Education
+    "https://www.scmp.com/rss/318824/feed",       # SCMP China Policy
     "https://www.koreaherald.com/rss/013018000000.html",
     "https://timesofindia.indiatimes.com/rssfeeds/913168846.cms",
     "https://www.thehindu.com/education/feeder/default.rss",
 ]
-
-# Optional feeds (commented out due to instability on some runners)
-# "https://www.homeaffairs.gov.au/news-media/rss",
-# "https://www.education.gov.au/news/rss",
 
 # ---------------- Vocabulary ----------------
 CORE_TOPICS = (
@@ -89,7 +85,7 @@ POLICY_TERMS = (
     "directive", "guidance", "statement", "statutory", "gazette", "circular",
 )
 
-# Off-topic noise (also blocks business/IPO, welfare/entertainment, restaurants, etc.)
+# Off-topic noise
 EXCLUDES = (
     "firearm", "shotgun", "weapons", "asylum", "deportation", "prison",
     "terrorism", "extradition", "passport office", "civil service", "tax credit",
@@ -117,6 +113,8 @@ SOURCE_MAP = {
     "scmp.com": "South China Morning Post",
     "koreaherald.com": "Korea Herald",
     "europa.eu": "EU Commission",
+    "indiatimes.com": "Times of India",
+    "thehindu.com": "The Hindu",
 }
 
 # Section guards
@@ -125,13 +123,32 @@ SCMP_EXCLUDE_SECTIONS = (
     "/tech/",
     "/magazines/style/entertainment/",
 )
-HINDU_EXCLUDE_SECTIONS = ("/education/schools/",)
+HINDU_EXCLUDE_SECTIONS = ("/education/schools/",)  # K-12
 
 # Explicit SCMP visa phrases (e.g., K-visa for young talent)
 SCMP_VISA_BONUS_PHRASES = (
     "k-visa", "creates new visa", "new visa for young", "young talent visa",
     "young science and technology", "young s&t", "talent visa",
 )
+
+# ---------------- Per-domain caps ----------------
+DEFAULT_CAP = 3
+DOMAIN_CAPS = {
+    # Prioritise official & sector policy sources
+    "gov.uk": 12,
+    "canada.ca": 8,
+    "uscis.gov": 8,
+    "thepienews.com": 8,
+    "monitor.icef.com": 6,
+    "universityworldnews.com": 5,
+
+    # Regional general media (avoid flooding)
+    "scmp.com": 3,
+    "indiatimes.com": 2,
+    "timesofindia.indiatimes.com": 2,  # alternate host
+    "thehindu.com": 1,                 # <-- strict cap per your request
+    "koreaherald.com": 2,
+}
 
 # ---------------- Helpers ----------------
 def _clean(text: str, limit: int) -> str:
@@ -154,6 +171,12 @@ def _source_name(link: str) -> str:
         return host or "Source"
     except Exception:
         return "Source"
+
+def _host(link: str) -> str:
+    try:
+        return urlparse(link).netloc.lower()
+    except Exception:
+        return ""
 
 def _category(title: str, summary: str) -> str:
     b = (title + " " + summary).lower()
@@ -179,16 +202,16 @@ def _domain_path(link: str) -> tuple[str, str]:
 
 # ---------------- Robust fetching ----------------
 def _fetch_feed(url: str):
-    """Try feedparser (URL), then requests+feedparser(text). Never raise."""
+    """Try feedparser; if bozo & empty, requests→feedparser. Never raise."""
     try:
-        fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.8"})
+        fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.9"})
         if (getattr(fp, "bozo", False) and not getattr(fp, "entries", None)):
             try:
-                r = requests.get(url, headers={"User-Agent": "policy-mobility/1.8"}, timeout=HTTP_TIMEOUT)
+                r = requests.get(url, headers={"User-Agent": "policy-mobility/1.9"}, timeout=HTTP_TIMEOUT)
                 r.raise_for_status()
                 fp = feedparser.parse(r.text)
             except Exception as ex:
-                print(f"  [warn] requests fallback failed: {url} -> {ex}")
+                print(f"  [warn] fallback failed: {url} -> {ex}")
         return fp
     except Exception as ex:
         print(f"  [warn] feed fetch failed: {url} -> {ex}")
@@ -198,14 +221,13 @@ def _fetch_feed(url: str):
 # ---------------- Inclusion logic (STRICT) ----------------
 def _is_relevant(title: str, summary: str, link: str) -> bool:
     """
-    STRICT: we only keep if there are VISA/IMMIGRATION cues.
-    Allowed if EITHER:
+    STRICT: require VISA/IMMIGRATION cues.
+    Keep if:
       - strong_path: CORE_TOPICS + ACTION_CUES
       - edu_mobility_path: CORE_TOPICS + (MOBILITY_CUES or EDU_TERMS)
       - PIE Gov page WITH (CORE_TOPICS or MOBILITY_CUES)
       - SCMP/KoreaHerald WITH (visa/CORE_TOPICS) AND (ACTION_CUES or POLICY_TERMS)
-      - SCMP K-visa allow phrases (whitelist)
-    Everything else (e.g., economy/restaurants/IPO/K-12) is rejected.
+      - SCMP K-visa allow phrases
     """
     blob = (title + " " + summary).lower()
     host, path = _domain_path(link)
@@ -220,40 +242,34 @@ def _is_relevant(title: str, summary: str, link: str) -> bool:
     if "thehindu.com" in host and any(path.startswith(sec) for sec in HINDU_EXCLUDE_SECTIONS):
         return False
 
-    # gov.uk guard — only immigration sections (others rejected unless explicit edu+mobility with core topics)
+    # gov.uk: only immigration sections (others require core+mobility/edu)
     if "gov.uk" in host:
         if not any(k in path for k in ("/visas-immigration", "/uk-visas-and-immigration", "/immigration")):
-            # Still require core topics + mobility/edu terms to pass:
             if not (any(k in blob for k in CORE_TOPICS) and (any(s in blob for s in MOBILITY_CUES) or any(e in blob for e in EDU_TERMS))):
                 return False
 
-    # Primary keep paths (BOTH require CORE_TOPICS)
     strong_path = (any(k in blob for k in CORE_TOPICS) and any(a in blob for a in ACTION_CUES))
     edu_mobility_path = (any(k in blob for k in CORE_TOPICS) and (any(s in blob for s in MOBILITY_CUES) or any(e in blob for e in EDU_TERMS)))
 
     if strong_path or edu_mobility_path:
         return True
 
-    # PIE Government category: keep only if it mentions visas/immigration or mobility
     if "thepienews.com" in host and "/category/news/government" in path:
         if any(k in blob for k in CORE_TOPICS) or any(s in blob for s in MOBILITY_CUES):
             return True
 
-    # SCMP / Korea Herald: require visa/CORE_TOPICS + (action or policy)
     if ("scmp.com" in host or "koreaherald.com" in host):
         if (("visa" in blob) or any(k in blob for k in CORE_TOPICS)) and \
            (any(a in blob for a in ACTION_CUES) or any(p in blob for p in POLICY_TERMS)):
             return True
-        # explicit K-visa whitelist phrases
         if "scmp.com" in host and any(phrase in blob for phrase in SCMP_VISA_BONUS_PHRASES):
             return True
 
     return False
 
-# ---------------- Build ----------------
+# ---------------- Build list ----------------
 def fetch_items() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
-    kept_total = 0
     for url in FEEDS:
         print(f"→ Fetching: {url}")
         fp = _fetch_feed(url)
@@ -282,23 +298,24 @@ def fetch_items() -> List[Dict[str, Any]]:
             })
             kept += 1
         print(f"   kept {kept:3d} / {seen:3d}")
-        kept_total += kept
-    print(f"✔ total kept before dedupe: {kept_total}")
     return items
 
 def _xhash(s: str) -> str:
     return hashlib.sha1((s or "").encode("utf-8")).hexdigest()[:12]
 
-def dedupe_sort(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    seen = set(); out: List[Dict[str, Any]] = []
-    for it in sorted(items, key=lambda x: (x["date"], x["headline"].lower(), x["url"]), reverse=True):
-        key = (it["headline"].lower(), _xhash(it["url"]))
-        if key in seen:
-            continue
-        seen.add(key); out.append(it)
-    if len(out) > MAX_ITEMS:
-        out = out[:MAX_ITEMS]
-    print(f"✔ after dedupe/sort: {len(out)} (max {MAX_ITEMS})")
+def apply_domain_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Apply per-domain caps, preferring newest first."""
+    items_sorted = sorted(items, key=lambda x: (x["date"], x["headline"].lower(), x["url"]), reverse=True)
+    counts = collections.Counter()
+    out: List[Dict[str, Any]] = []
+    for it in items_sorted:
+        host = _host(it["url"])
+        cap = DOMAIN_CAPS.get(host, DOMAIN_CAPS.get(host.replace("www.", ""), DEFAULT_CAP))
+        if counts[host] < cap:
+            out.append(it)
+            counts[host] += 1
+        if len(out) >= MAX_ITEMS:
+            break
     return out
 
 # ---------------- Main ----------------
@@ -306,8 +323,13 @@ def main():
     print("🔄 Fetching policy & student-mobility updates …")
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    items = dedupe_sort(fetch_items())
-    if not items:
+    raw_items = fetch_items()
+    capped_items = apply_domain_caps(raw_items)
+    # Final trim (safety)
+    if len(capped_items) > MAX_ITEMS:
+        capped_items = capped_items[:MAX_ITEMS]
+
+    if not capped_items:
         if OUTPUT_FILE.exists():
             print("⚠️ No relevant items; kept existing policyNews.json.")
             return
@@ -316,7 +338,7 @@ def main():
         print("⚠️ No items; wrote empty scaffold.")
         return
 
-    payload  = {"policyNews": items}
+    payload  = {"policyNews": capped_items}
     new_hash = _signature(payload)
 
     old_hash = None
@@ -330,7 +352,7 @@ def main():
     if new_hash != old_hash:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
-        print(f"✅ Wrote {len(items)} items → {OUTPUT_FILE}")
+        print(f"✅ Wrote {len(capped_items)} items (domain-capped, max {MAX_ITEMS}) → {OUTPUT_FILE}")
     else:
         print("ℹ️ No changes; left existing file untouched (hash match).")
 
