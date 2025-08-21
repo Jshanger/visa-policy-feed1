@@ -1,31 +1,12 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-update_policy_news.py — Policy & international student mobility tracker (hardened)
-Output: data/policyNews.json → {"policyNews":[...]}
-
-Inclusion (must match at least one):
- A) Student-mobility immigration change:
-    - CORE_TOPICS (visa/immigration)
-    - + ACTION_CUES
-    - + MOBILITY_CUES (international/overseas students, PSW/OPT/PGWP, etc.)
- B) Policy + Immigration:
-    - POLICY_TERMS
-    - + CORE_TOPICS
- C) Policy + Higher-Ed + Mobility (requires mobility cues):
-    - POLICY_TERMS
-    - + EDU_TERMS (HE context)
-    - + MOBILITY_CUES
-
-Safeguards:
-- Strong EXCLUDES (incl. business/IPO/tech-investment, welfare/health, entertainment, K-12 domestic)
-- Domain path guards (gov.uk immigration sections; SCMP off-topic sections)
-- Soft boosts for PIE Government / SCMP / Korea Herald when visa/policy + mobility cues present
-- Explicit allowance for SCMP “K-visa / new visa for young talent” phrasing
-- Skip undated; dedupe; stable sort; write only on change; cap 30 items.
-
-Verbose logging is enabled to help diagnose filtering.
+Policy & international student mobility tracker (robust)
+- Strict relevance to immigration/student-mobility policy
+- Strong excludes (business/IPO, welfare/entertainment, K-12 domestic, etc.)
+- SCMP/KoreaHerald/PIE Gov soft boosts; explicit SCMP K-visa allow
+- Per-feed error isolation (no single feed can fail the job)
+- Dedupe + stable sort; write-only-on-change; cap 30 cards
 """
 
 from __future__ import annotations
@@ -35,22 +16,18 @@ from urllib.parse import urlparse
 import feedparser
 import requests
 
-# ---------- Paths ----------
 SITE_ROOT   = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
 MAX_ITEMS   = 30
+HTTP_TIMEOUT = 20
 
-# ---------- Feeds ----------
+# ---------------- Curated, stable feeds ----------------
 FEEDS = [
-    # Government & Regulators
+    # Government & Regulators (stable)
     "https://www.gov.uk/government/organisations/home-office.atom",
     "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
-    "https://www.uscis.gov/news/rss.xml",
-    "https://www.homeaffairs.gov.au/news-media/rss",
-    "https://www.education.gov.au/news/rss",
-    "https://enz.govt.nz/news/feed/",
-    "https://ec.europa.eu/home-affairs/news/feed_en",
+    "https://www.uscis.gov/newsroom/all-news/rss.xml",  # fixed USCIS URL
 
     # International orgs / think tanks
     "https://oecdedutoday.com/feed/",
@@ -74,7 +51,11 @@ FEEDS = [
     "https://www.thehindu.com/education/feeder/default.rss",
 ]
 
-# ---------- Vocabulary ----------
+# Optional feeds (commented out due to instability on some runners)
+# "https://www.homeaffairs.gov.au/news-media/rss",
+# "https://www.education.gov.au/news/rss",
+
+# ---------------- Vocabulary ----------------
 CORE_TOPICS = (
     "visa", "visas", "immigration", "student visa", "graduate route",
     "post-study", "psw", "opt", "pgwp", "work permit", "skilled worker",
@@ -108,20 +89,15 @@ POLICY_TERMS = (
     "directive", "guidance", "statement", "statutory", "gazette", "circular",
 )
 
-# Noise / off-topic
+# Off-topic noise (also blocks business/IPO, welfare/entertainment, etc.)
 EXCLUDES = (
-    # crime/defence/welfare/health/celebrity/entertainment
     "firearm", "shotgun", "weapons", "asylum", "deportation", "prison",
     "terrorism", "extradition", "passport office", "civil service", "tax credit",
     "entertainment", "documentary", "celebrity", "magazine",
-    # K-12 domestic schooling (unless mobility present; guarded elsewhere)
     "primary school", "secondary school", "govt schools", "government schools",
     "k-12", "k12", "schoolchildren",
-    # healthcare/welfare
     "dental", "dentist", "healthcare", "medical", "hospital", "social welfare",
-    # tourism only
     "tourist visa only", "visitor visa only",
-    # business/markets/IPO/investment
     "ipo", "initial public offering", "listing", "stock exchange", "shares",
     "spin off", "spinoff", "merger", "acquisition", "earnings", "profit", "revenue",
     "venture capital", "startup", "semiconductor", "robotics",
@@ -131,7 +107,6 @@ SOURCE_MAP = {
     "gov.uk": "UK Government",
     "canada.ca": "IRCC Canada",
     "uscis.gov": "USCIS",
-    "homeaffairs": "Dept of Home Affairs (AU)",
     "monitor.icef": "ICEF Monitor",
     "thepienews": "The PIE News",
     "universityworldnews": "University World News",
@@ -139,26 +114,22 @@ SOURCE_MAP = {
     "timeshighereducation": "Times Higher Education",
     "scmp.com": "South China Morning Post",
     "koreaherald.com": "Korea Herald",
-    "education.gov.au": "Dept of Education (AU)",
-    "enz.govt.nz": "Education New Zealand",
     "europa.eu": "EU Commission",
 }
 
-# Section guards
 SCMP_EXCLUDE_SECTIONS = (
     "/news/hong-kong/hong-kong-economy/",
     "/tech/",
     "/magazines/style/entertainment/",
 )
-HINDU_EXCLUDE_SECTIONS = ("/education/schools/",)  # K-12
+HINDU_EXCLUDE_SECTIONS = ("/education/schools/",)
 
-# Explicit SCMP visa phrases (e.g., K-visa for young talent)
 SCMP_VISA_BONUS_PHRASES = (
     "k-visa", "creates new visa", "new visa for young", "young talent visa",
     "young science and technology", "young s&t", "talent visa",
 )
 
-# ---------- Helpers ----------
+# ---------------- Helpers ----------------
 def _clean(text: str, limit: int) -> str:
     if not text: return ""
     t = " ".join(text.replace("\n", " ").split())
@@ -202,43 +173,41 @@ def _domain_path(link: str) -> tuple[str, str]:
     u = urlparse(link)
     return u.netloc.lower(), u.path.lower()
 
-# ---------- Fetching ----------
-def _fetch_feed(url: str) -> feedparser.FeedParserDict:
-    """Robust fetch: try feedparser with UA; if bozo & empty, do requests→feedparser."""
-    print(f"→ Fetching: {url}")
-    fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.6"})
-    if fp.bozo and not fp.entries:
-        try:
-            r = requests.get(url, headers={"User-Agent": "policy-mobility/1.6"}, timeout=20)
-            r.raise_for_status()
-            fp = feedparser.parse(r.text)
-            if fp.bozo:
-                print(f"  [warn] feed bozo after fallback: {url} ({getattr(fp, 'bozo_exception', '')})")
-        except Exception as ex:
-            print(f"  [warn] requests fallback failed: {url} -> {ex}")
-    return fp
+# ---------------- Robust fetching ----------------
+def _fetch_feed(url: str):
+    """Try feedparser (URL), then requests+feedparser(text). Never raise."""
+    try:
+        fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.7"})
+        if (getattr(fp, "bozo", False) and not getattr(fp, "entries", None)):
+            try:
+                r = requests.get(url, headers={"User-Agent": "policy-mobility/1.7"}, timeout=HTTP_TIMEOUT)
+                r.raise_for_status()
+                fp = feedparser.parse(r.text)
+            except Exception as ex:
+                print(f"  [warn] requests fallback failed: {url} -> {ex}")
+        return fp
+    except Exception as ex:
+        print(f"  [warn] feed fetch failed: {url} -> {ex}")
+        class _Empty: entries = []
+        return _Empty()
 
-# ---------- Inclusion logic ----------
+# ---------------- Inclusion logic ----------------
 def _is_relevant(title: str, summary: str, link: str) -> bool:
     blob = (title + " " + summary).lower()
     host, path = _domain_path(link)
 
-    # hard excludes first
     if any(x in blob for x in EXCLUDES):
         return False
 
-    # SCMP path guard
     if "scmp.com" in host and any(path.startswith(sec) for sec in SCMP_EXCLUDE_SECTIONS):
         if not (("visa" in blob or any(k in blob for k in CORE_TOPICS))
                 and (any(a in blob for a in ACTION_CUES) or any(p in blob for p in POLICY_TERMS))):
             return False
 
-    # The Hindu K-12 guard
     if "thehindu.com" in host and any(path.startswith(sec) for sec in HINDU_EXCLUDE_SECTIONS):
         if not (any(k in blob for k in CORE_TOPICS) and any(s in blob for s in MOBILITY_CUES)):
             return False
 
-    # gov.uk guard — keep immigration sections unless education-policy + mobility
     if "gov.uk" in host:
         gov_guard = any(k in path for k in ("/visas-immigration", "/uk-visas-and-immigration", "/immigration"))
         if not gov_guard:
@@ -248,7 +217,6 @@ def _is_relevant(title: str, summary: str, link: str) -> bool:
             if not allow_edu_policy:
                 return False
 
-    # Core paths
     path_a = (any(k in blob for k in CORE_TOPICS)
               and any(a in blob for a in ACTION_CUES)
               and any(s in blob for s in MOBILITY_CUES))
@@ -263,7 +231,6 @@ def _is_relevant(title: str, summary: str, link: str) -> bool:
     if path_a or path_b or path_c:
         return True
 
-    # Soft boosts
     if "thepienews.com" in host and "/category/news/government" in path:
         if any(p in blob for p in POLICY_TERMS) and (any(k in blob for k in CORE_TOPICS) or any(s in blob for s in MOBILITY_CUES)):
             return True
@@ -272,17 +239,17 @@ def _is_relevant(title: str, summary: str, link: str) -> bool:
         if (("visa" in blob) or any(s in blob for s in MOBILITY_CUES)) and \
            (any(a in blob for a in ACTION_CUES) or any(p in blob for p in POLICY_TERMS)):
             return True
-        # Explicit SCMP K-visa (young talent visa) allowance
         if "scmp.com" in host and any(phrase in blob for phrase in SCMP_VISA_BONUS_PHRASES):
             return True
 
     return False
 
-# ---------- Build ----------
+# ---------------- Build ----------------
 def fetch_items() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     kept_total = 0
     for url in FEEDS:
+        print(f"→ Fetching: {url}")
         fp = _fetch_feed(url)
         entries = getattr(fp, "entries", []) or []
         kept = 0; seen = 0
@@ -308,7 +275,7 @@ def fetch_items() -> List[Dict[str, Any]]:
                 "url": link
             })
             kept += 1
-        print(f"  kept {kept:3d} / {seen:3d} from {url}")
+        print(f"   kept {kept:3d} / {seen:3d}")
         kept_total += kept
     print(f"✔ total kept before dedupe: {kept_total}")
     return items
@@ -328,7 +295,7 @@ def dedupe_sort(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     print(f"✔ after dedupe/sort: {len(out)} (max {MAX_ITEMS})")
     return out
 
-# ---------- Main ----------
+# ---------------- Main ----------------
 def main():
     print("🔄 Fetching policy & student-mobility updates …")
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -338,11 +305,10 @@ def main():
         if OUTPUT_FILE.exists():
             print("⚠️ No relevant items; kept existing policyNews.json.")
             return
-        else:
-            with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-                json.dump({"policyNews": []}, f, ensure_ascii=False, indent=2)
-            print("⚠️ No items; wrote empty scaffold.")
-            return
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            json.dump({"policyNews": []}, f, ensure_ascii=False, indent=2)
+        print("⚠️ No items; wrote empty scaffold.")
+        return
 
     payload  = {"policyNews": items}
     new_hash = _signature(payload)
