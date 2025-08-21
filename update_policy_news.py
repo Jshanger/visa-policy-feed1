@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-update_policy_news.py — International student mobility policy feed
+update_policy_news.py — International student mobility & education policy feed
 Outputs: data/policyNews.json → {"policyNews":[...]}
-Keeps items about visa/immigration rule changes that materially affect
-international students (routes, fees, caps, dependants, work rights, etc.).
-- Skips undated items
-- Dedupe + stable sort
-- Write only on change
+
+Loosened logic:
+- Keep classic student-mobility policy changes (visa routes, fees, dependants, work hours).
+- ALSO keep posts that have a clear "policy" angle *and* connect to immigration or to
+  higher-education + student mobility context (e.g., caps on int'l students, admissions policy).
+- Skip undated items; dedupe; stable sort; write only on change.
 """
 
 import json, datetime, pathlib, hashlib
@@ -18,7 +19,7 @@ SITE_ROOT   = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
 MAX_ITEMS   = 80
 
-# Feeds (edit to taste)
+# ---------------- Feeds (edit to taste) ----------------
 FEEDS = [
     # Government & regulators
     "https://www.gov.uk/government/organisations/home-office.atom",
@@ -26,14 +27,17 @@ FEEDS = [
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
     "https://www.uscis.gov/news/rss.xml",
     "https://www.homeaffairs.gov.au/news-media/rss",
+
     # Sector press
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/news/feed/",
     "https://www.universityworldnews.com/rss/",
     "https://www.studyinternational.com/news/feed/",
+    "https://www.timeshighereducation.com/rss/International",
 ]
 
-# Core topics (visa/immigration)
+# ---------------- Keyword sets ----------------
+# Immigration/visa core
 CORE_TOPICS = (
     "visa", "visas", "immigration", "student visa", "graduate route",
     "post-study", "psw", "opt", "pgwp", "work permit", "skilled worker",
@@ -53,9 +57,21 @@ ACTION_CUES = (
 
 # Student-mobility framing
 STUDENT_CUES = (
-    "student", "international student", "graduate route", "post-study",
-    "psw", "opt", "pgwp", "cas", "enrolment", "enrollment", "dependant", "dependent",
+    "student", "international student", "student mobility", "graduate route",
+    "post-study", "psw", "opt", "pgwp", "cas", "enrolment", "enrollment",
+    "dependant", "dependent", "overseas student", "study abroad", "exchange",
 )
+
+# Higher education context
+EDU_TERMS = (
+    "higher education", "university", "universities", "college",
+    "campus", "degree", "postgraduate", "undergraduate", "admissions",
+    "enrolment", "enrollment", "scholarship", "tuition", "ranking",
+    "research", "partnership", "collaboration", "faculty",
+)
+
+# Policy term(s) that trigger the new relaxed pathway
+POLICY_TERMS = ("policy", "policies", "policy update", "policy changes")
 
 # Strong excludes (noise)
 EXCLUDES = (
@@ -73,8 +89,10 @@ SOURCE_MAP = {
     "thepienews": "The PIE News",
     "universityworldnews": "University World News",
     "studyinternational": "Study International",
+    "timeshighereducation": "Times Higher Education",
 }
 
+# ---------------- Helpers ----------------
 def _clean(text: str, limit: int) -> str:
     if not text: return ""
     t = " ".join(text.replace("\n", " ").split())
@@ -106,39 +124,72 @@ def _category(title: str, summary: str) -> str:
         return "Visa Exemption"
     if any(x in b for x in ("permanent", "resident", "pr")):
         return "Residency"
-    return "Policy Update"  # never emit "Student / Education"
+    # education-policy angle
+    if any(p in b for p in POLICY_TERMS) and any(e in b for e in EDU_TERMS):
+        return "Education Policy"
+    return "Policy Update"
 
 def _signature(payload: Dict[str, Any]) -> str:
     s = json.dumps(payload, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
-def _looks_student_mobility(title: str, summary: str, link: str) -> bool:
+# ---------------- Inclusion logic ----------------
+def _is_relevant(title: str, summary: str, link: str) -> bool:
+    """
+    Relevance if ANY of these pathways is true:
+
+    A) Classic student-mobility policy change:
+       - mentions immigration/visa CORE_TOPICS
+       - and has ACTION_CUES (change/update/cap/fees/work-hours/etc.)
+       - and has STUDENT_CUES (student/graduate route/PSW/etc.)
+       - *plus* excludes & gov.uk guard
+
+    B) Policy+immigration pathway (loosened):
+       - mentions POLICY_TERMS
+       - AND mentions immigration/visa CORE_TOPICS
+
+    C) Education-policy mobility pathway (loosened):
+       - mentions POLICY_TERMS
+       - AND mentions EDU_TERMS
+       - AND mentions STUDENT_CUES (mobility framing)
+    """
     blob = (title + " " + summary).lower()
 
+    # strong excludes first
     if any(x in blob for x in EXCLUDES):
         return False
 
-    # gov.uk guard — keep Home Office / UKVI immigration content only
+    # gov.uk guard — keep Home Office/UKVI immigration content
     if "gov.uk" in link:
         path = link.split("gov.uk")[-1].lower()
         if not any(k in path for k in ("visas-immigration", "uk-visas-and-immigration", "immigration")):
-            return False
+            # allow education-policy items when explicitly policy + education + student
+            if not (any(p in blob for p in POLICY_TERMS) and any(e in blob for e in EDU_TERMS) and any(s in blob for s in STUDENT_CUES)):
+                return False
 
-    if not any(k in blob for k in CORE_TOPICS):
-        return False
-    if not any(a in blob for a in ACTION_CUES):
-        return False
-    if not any(s in blob for s in STUDENT_CUES):
-        return False
+    # Path A: classic policy change for students
+    path_a = (any(k in blob for k in CORE_TOPICS)
+              and any(a in blob for a in ACTION_CUES)
+              and any(s in blob for s in STUDENT_CUES))
 
-    return True
+    # Path B: policy + immigration
+    path_b = (any(p in blob for p in POLICY_TERMS)
+              and any(k in blob for k in CORE_TOPICS))
 
+    # Path C: policy + education + student/mobility framing
+    path_c = (any(p in blob for p in POLICY_TERMS)
+              and any(e in blob for e in EDU_TERMS)
+              and any(s in blob for s in STUDENT_CUES))
+
+    return bool(path_a or path_b or path_c)
+
+# ---------------- Fetch & build ----------------
 def fetch_items() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url in FEEDS:
         try:
             print(f"Fetching {url} …")
-            feed = feedparser.parse(url, request_headers={"User-Agent": "policy-student-mobility/1.0"})
+            feed = feedparser.parse(url, request_headers={"User-Agent": "policy-student-mobility/1.1"})
             for e in feed.entries:
                 title   = (e.get("title") or "").strip()
                 summary = (e.get("summary") or e.get("description") or "").strip()
@@ -146,13 +197,13 @@ def fetch_items() -> List[Dict[str, Any]]:
                     continue
 
                 link = e.get("link") or ""
-                if not _looks_student_mobility(title, summary, link):
+                if not _is_relevant(title, summary, link):
                     continue
 
                 st = e.get("published_parsed") or e.get("updated_parsed")
                 date_str = _human_date(st)
                 if not date_str:
-                    continue
+                    continue  # skip undated
 
                 items.append({
                     "date": date_str,
@@ -174,13 +225,15 @@ def dedupe_sort(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         seen.add(key); out.append(it)
     return out[:MAX_ITEMS]
 
+# ---------------- Main ----------------
 def main():
-    print("🔄 Fetching student-mobility policy updates …")
+    print("🔄 Fetching policy & student-mobility updates (loosened policy inclusion) …")
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     items = dedupe_sort(fetch_items())
 
     if not items:
+        # keep existing file if present
         if OUTPUT_FILE.exists():
             print("⚠️ No relevant items; kept existing policyNews.json.")
             return
@@ -210,4 +263,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
