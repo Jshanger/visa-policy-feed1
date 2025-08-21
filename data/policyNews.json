@@ -1,6 +1,22 @@
 {
   "policyNews": [
     {
+      "date": "2025-08-21",
+      "category": "Student / Education",
+      "headline": "Students are switching to AI for search. Are you ready?",
+      "description": "<p>The early research is in and recent studies are pointing to a broad trend in that AI tools are having a significant impact on search volumes this year. More specifically of interest to international student recruiters, prospective studen",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/students-are-switching-to-ai-for-search-are-you-ready/"
+    },
+    {
+      "date": "2025-08-20",
+      "category": "Student / Education",
+      "headline": "How does this current generation of students view the impact of AI?",
+      "description": "<p>The following is a guest post contributed by Nannette Ripmeester, the Regional Director for Europe and North America at Etio. Among many other industry initiatives, Etio produces the International Student Barometer, the world’s largest i",
+      "source": "ICEF Monitor",
+      "url": "https://monitor.icef.com/2025/08/how-does-this-current-generation-of-students-view-the-impact-of-ai/"
+    },
+    {
       "date": "2025-08-20",
       "category": "Student / Education",
       "headline": "ICEF Podcast: Redrawing the map of global student flows from the ‘Big Four’ to the ‘Big Fourteen’",
@@ -47,14 +63,6 @@
       "description": "<p>While the US has traditionally been the most desired destination for Indian students, calls to boycott the country as a place to study are gaining momentum.</p> <p>The post <a href=\"https://thepienews.com/indian-calls-to-shun-us-study-mo",
       "source": "The PIE News",
       "url": "https://thepienews.com/indian-calls-to-shun-us-study-mount-as-tariff-tensions-rise/"
-    },
-    {
-      "date": "2025-08-18",
-      "category": "Policy Update",
-      "headline": "Exclusive: Julian Hill responds to sector concerns on visa costs and onshore transfers",
-      "description": "<p>From visa fee hikes to integrity measures around student transfers, The PIE sat down with Australia's assistant minister for international education, Julian Hill, to hear how the government is approaching some of the most pressing challe",
-      "source": "The PIE News",
-      "url": "https://thepienews.com/exclusive-julian-hill-responds-to-sector-concerns-on-visa-costs-and-onshore-transfers/"
     },
     {
       "date": "2025-08-15",
@@ -175,22 +183,6 @@
       "description": "<p>Aggregated search data from Keystone Education Group reveals a distinct spike in student interest in destinations across the Middle East and in Asia over the first half of 2025. Hong Kong, Singapore, Taiwan, and South Korea continue to a",
       "source": "ICEF Monitor",
       "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year/"
-    },
-    {
-      "date": "2025-08-05",
-      "category": "Policy Update",
-      "headline": "Australia raises enrolment limits for 2025/26 but are they reachable?",
-      "description": "<p>A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia&#8217;s National Planning Lev",
-      "source": "ICEF Monitor",
-      "url": "https://monitor.icef.com/2025/08/australia-raises-enrolment-limits-for-2025-26-but-are-they-reachable/"
-    },
-    {
-      "date": "2025-07-30",
-      "category": "Student / Education",
-      "headline": "New analysis forecasts international student mobility through 2030",
-      "description": "<p>A new analysis from QS maps the major trends and push and pull factors that will shape international student mobility for the rest of this decade. Based on findings from the Global Student Flows Initiative, Three Scenarios for Internatio",
-      "source": "ICEF Monitor",
-      "url": "https://monitor.icef.com/2025/07/new-analysis-forecasts-international-student-mobility-through-2030/"
     }
   ]
 }
