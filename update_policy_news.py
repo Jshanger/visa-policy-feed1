@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Policy & international student mobility tracker (robust)
-- Strict relevance to immigration/student-mobility policy
-- Strong excludes (business/IPO, welfare/entertainment, K-12 domestic, etc.)
-- SCMP/KoreaHerald/PIE Gov soft boosts; explicit SCMP K-visa allow
-- Per-feed error isolation (no single feed can fail the job)
-- Dedupe + stable sort; write-only-on-change; cap 30 cards
+Policy & international student mobility tracker (strict + robust)
+- Only keeps stories clearly tied to immigration/visas and student mobility / higher education.
+- Strong excludes (business/IPO, economy/restaurants, welfare/health, entertainment, K-12 domestic).
+- PIE Gov / SCMP / Korea Herald soft boosts WITH visa/immigration or mobility terms.
+- Explicit allow for SCMP “new K-visa / young talent visa” phrasing.
+- Per-feed error isolation; write only on change; cap 30 cards.
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ POLICY_TERMS = (
     "directive", "guidance", "statement", "statutory", "gazette", "circular",
 )
 
-# Off-topic noise (also blocks business/IPO, welfare/entertainment, etc.)
+# Off-topic noise (also blocks business/IPO, welfare/entertainment, restaurants, etc.)
 EXCLUDES = (
     "firearm", "shotgun", "weapons", "asylum", "deportation", "prison",
     "terrorism", "extradition", "passport office", "civil service", "tax credit",
@@ -97,10 +97,12 @@ EXCLUDES = (
     "primary school", "secondary school", "govt schools", "government schools",
     "k-12", "k12", "schoolchildren",
     "dental", "dentist", "healthcare", "medical", "hospital", "social welfare",
-    "tourist visa only", "visitor visa only",
+    "restaurant", "dining", "cuisine", "chef",
+    "economy", "retail sales", "inflation", "property market",
     "ipo", "initial public offering", "listing", "stock exchange", "shares",
     "spin off", "spinoff", "merger", "acquisition", "earnings", "profit", "revenue",
     "venture capital", "startup", "semiconductor", "robotics",
+    "tourist visa only", "visitor visa only",
 )
 
 SOURCE_MAP = {
@@ -117,6 +119,7 @@ SOURCE_MAP = {
     "europa.eu": "EU Commission",
 }
 
+# Section guards
 SCMP_EXCLUDE_SECTIONS = (
     "/news/hong-kong/hong-kong-economy/",
     "/tech/",
@@ -124,6 +127,7 @@ SCMP_EXCLUDE_SECTIONS = (
 )
 HINDU_EXCLUDE_SECTIONS = ("/education/schools/",)
 
+# Explicit SCMP visa phrases (e.g., K-visa for young talent)
 SCMP_VISA_BONUS_PHRASES = (
     "k-visa", "creates new visa", "new visa for young", "young talent visa",
     "young science and technology", "young s&t", "talent visa",
@@ -177,10 +181,10 @@ def _domain_path(link: str) -> tuple[str, str]:
 def _fetch_feed(url: str):
     """Try feedparser (URL), then requests+feedparser(text). Never raise."""
     try:
-        fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.7"})
+        fp = feedparser.parse(url, request_headers={"User-Agent": "policy-mobility/1.8"})
         if (getattr(fp, "bozo", False) and not getattr(fp, "entries", None)):
             try:
-                r = requests.get(url, headers={"User-Agent": "policy-mobility/1.7"}, timeout=HTTP_TIMEOUT)
+                r = requests.get(url, headers={"User-Agent": "policy-mobility/1.8"}, timeout=HTTP_TIMEOUT)
                 r.raise_for_status()
                 fp = feedparser.parse(r.text)
             except Exception as ex:
@@ -191,54 +195,56 @@ def _fetch_feed(url: str):
         class _Empty: entries = []
         return _Empty()
 
-# ---------------- Inclusion logic ----------------
+# ---------------- Inclusion logic (STRICT) ----------------
 def _is_relevant(title: str, summary: str, link: str) -> bool:
+    """
+    STRICT: we only keep if there are VISA/IMMIGRATION cues.
+    Allowed if EITHER:
+      - strong_path: CORE_TOPICS + ACTION_CUES
+      - edu_mobility_path: CORE_TOPICS + (MOBILITY_CUES or EDU_TERMS)
+      - PIE Gov page WITH (CORE_TOPICS or MOBILITY_CUES)
+      - SCMP/KoreaHerald WITH (visa/CORE_TOPICS) AND (ACTION_CUES or POLICY_TERMS)
+      - SCMP K-visa allow phrases (whitelist)
+    Everything else (e.g., economy/restaurants/IPO/K-12) is rejected.
+    """
     blob = (title + " " + summary).lower()
     host, path = _domain_path(link)
 
+    # hard excludes first
     if any(x in blob for x in EXCLUDES):
         return False
 
+    # section guards (drop outright)
     if "scmp.com" in host and any(path.startswith(sec) for sec in SCMP_EXCLUDE_SECTIONS):
-        if not (("visa" in blob or any(k in blob for k in CORE_TOPICS))
-                and (any(a in blob for a in ACTION_CUES) or any(p in blob for p in POLICY_TERMS))):
-            return False
-
+        return False
     if "thehindu.com" in host and any(path.startswith(sec) for sec in HINDU_EXCLUDE_SECTIONS):
-        if not (any(k in blob for k in CORE_TOPICS) and any(s in blob for s in MOBILITY_CUES)):
-            return False
+        return False
 
+    # gov.uk guard — only immigration sections (others rejected unless explicit edu+mobility with core topics)
     if "gov.uk" in host:
-        gov_guard = any(k in path for k in ("/visas-immigration", "/uk-visas-and-immigration", "/immigration"))
-        if not gov_guard:
-            allow_edu_policy = (any(p in blob for p in POLICY_TERMS)
-                                and any(e in blob for e in EDU_TERMS)
-                                and any(s in blob for s in MOBILITY_CUES))
-            if not allow_edu_policy:
+        if not any(k in path for k in ("/visas-immigration", "/uk-visas-and-immigration", "/immigration")):
+            # Still require core topics + mobility/edu terms to pass:
+            if not (any(k in blob for k in CORE_TOPICS) and (any(s in blob for s in MOBILITY_CUES) or any(e in blob for e in EDU_TERMS))):
                 return False
 
-    path_a = (any(k in blob for k in CORE_TOPICS)
-              and any(a in blob for a in ACTION_CUES)
-              and any(s in blob for s in MOBILITY_CUES))
+    # Primary keep paths (BOTH require CORE_TOPICS)
+    strong_path = (any(k in blob for k in CORE_TOPICS) and any(a in blob for a in ACTION_CUES))
+    edu_mobility_path = (any(k in blob for k in CORE_TOPICS) and (any(s in blob for s in MOBILITY_CUES) or any(e in blob for e in EDU_TERMS)))
 
-    path_b = (any(p in blob for p in POLICY_TERMS)
-              and any(k in blob for k in CORE_TOPICS))
-
-    path_c = (any(p in blob for p in POLICY_TERMS)
-              and any(e in blob for e in EDU_TERMS)
-              and any(s in blob for s in MOBILITY_CUES))
-
-    if path_a or path_b or path_c:
+    if strong_path or edu_mobility_path:
         return True
 
+    # PIE Government category: keep only if it mentions visas/immigration or mobility
     if "thepienews.com" in host and "/category/news/government" in path:
-        if any(p in blob for p in POLICY_TERMS) and (any(k in blob for k in CORE_TOPICS) or any(s in blob for s in MOBILITY_CUES)):
+        if any(k in blob for k in CORE_TOPICS) or any(s in blob for s in MOBILITY_CUES):
             return True
 
+    # SCMP / Korea Herald: require visa/CORE_TOPICS + (action or policy)
     if ("scmp.com" in host or "koreaherald.com" in host):
-        if (("visa" in blob) or any(s in blob for s in MOBILITY_CUES)) and \
+        if (("visa" in blob) or any(k in blob for k in CORE_TOPICS)) and \
            (any(a in blob for a in ACTION_CUES) or any(p in blob for p in POLICY_TERMS)):
             return True
+        # explicit K-visa whitelist phrases
         if "scmp.com" in host and any(phrase in blob for phrase in SCMP_VISA_BONUS_PHRASES):
             return True
 
@@ -334,6 +340,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
