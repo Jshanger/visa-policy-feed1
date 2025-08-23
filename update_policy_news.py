@@ -5,14 +5,14 @@ Policy / international-student-visa tracker
 - Sources: ONLY your approved domains (+ ICEF Monitor)
 - Strict relevance: visa/immigration required + (action/policy OR intl-students/HE context)
 - Time window: last 6 months (183 days) from "now"
-- Robust date parsing & logging
+- Robust date parsing + WordPress feed pagination to reach older items
 - Output: data/policyNews.json  -> {"policyNews":[ ... ]}
 """
 
 from __future__ import annotations
 from typing import List, Dict, Any, Tuple, Optional
 import json, pathlib, hashlib, sys, re
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
@@ -28,7 +28,10 @@ WINDOW_DAYS = 183  # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.2 (+github actions bot)"
+UA = "policy-student-mobility/3.3 (+github actions bot)"
+
+# How deep to paginate WordPress feeds (increase if needed)
+MAX_WP_PAGES = 8  # ~8 pages x 10 items/page ≈ last 6 months for active sites
 
 # ---------------- Domains (whitelist) ----------------
 ALLOWED_HOSTS = {
@@ -68,35 +71,42 @@ def _allowed(url: str) -> bool:
     h = _host(url)
     ok = any(h == d or h.endswith("." + d) for d in ALLOWED_HOSTS)
     if not ok: return False
-    # if we have path-gates for this host, one must match
     gates = PATH_ALLOW.get(h, [])
     if not gates: return True
     p = _path(url)
     return any(rx.search(p) for rx in gates)
 
 # ---------------- Feeds ----------------
+# NOTE: many are WordPress → support pagination (?paged=N or /feed/?paged=N)
 FEEDS: List[str] = [
-    # ICEF + PIE (core sector policy)
+    # Sector policy (WP)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
-
-    # Research/briefings
-    "https://migrationobservatory.ox.ac.uk/feed/",
-    "https://commonslibrary.parliament.uk/feed/",
-
-    # Student/visa advisory outlets
+    # Advisory / analysis (WP)
     "https://www.idp.com/blog/feed/",
     "https://www.applyboard.com/feed",
     "https://www.visasupdate.com/feed/",
+    # Research/briefings
+    "https://migrationobservatory.ox.ac.uk/feed/",
+    "https://commonslibrary.parliament.uk/feed/",
+    # Student info (some WP)
     "https://www.internationalstudent.com/rss.xml",
-
-    # General but filtered by domain/path rules & relevance
+    # General but filtered (RSS often short; we’ll take what we can)
     "https://www.timeshighereducation.com/rss",
     "https://www.ndtv.com/education/rss",
-    # ET feed is general; we still filter by path + relevance
     "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
 ]
+
+# Which feeds should be treated as WordPress and paginated
+WP_FEEDS = {
+    "https://monitor.icef.com/feed/",
+    "https://thepienews.com/feed/",
+    "https://thepienews.com/category/news/government/feed/",
+    "https://www.idp.com/blog/feed/",
+    "https://www.applyboard.com/feed",
+    "https://www.visasupdate.com/feed/",
+}
 
 # Static official pages to check for timestamped updates
 STATIC_PAGES = [
@@ -118,14 +128,11 @@ STATIC_PAGES = [
 ]
 
 # ---------------- Relevance ----------------
-# Require *visa/immigration* term (title or summary)
 CORE_RX = re.compile(
     r"\b(visa|visas|student visa|study permit|immigration|graduate route|post[- ]?study|psw|opt|pgwp|"
     r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis)\b",
     re.I,
 )
-
-# And one of: action/policy verbs OR explicit intl-student/HE context
 ACTIONS_RX = re.compile(
     r"\b(update|updated|change|changes|amend|amended|introduce|introduced|launch|launched|create|created|"
     r"cap|caps|limit|limits|ban|bans|restrict|restriction|suspend|revok\w*|end|close\w*|"
@@ -133,13 +140,10 @@ ACTIONS_RX = re.compile(
     r"statement|white paper|consultation|legislation|bill|act)\b",
     re.I,
 )
-
 INTL_STUDENTS_RX = re.compile(
     r"\b(international student|international students|student mobility|higher education|university|universities|college|campus)\b",
     re.I,
 )
-
-# Remove obvious non-policy noise (even if words overlap)
 EXCLUDES_RX = re.compile(
     r"\b(restaurant|dining|celebrity|entertainment|ipo|stock market|football|cricket|movie|tv show|"
     r"tourist (?:only)?|property prices)\b",
@@ -172,14 +176,11 @@ def entry_datetime(e) -> Optional[datetime]:
     for key in ("published", "updated", "created", "issued", "dc_date", "date", "pubDate"):
         s = getattr(e, key, None)
         if s:
-            try:
-                return parsedate_to_datetime(s).astimezone(timezone.utc)
+            # RFC 2822/7231 or ISO
+            try: return parsedate_to_datetime(s).astimezone(timezone.utc)
             except Exception:
-                # try ISO-ish
-                try:
-                    return datetime.fromisoformat(s.replace("Z","+00:00")).astimezone(timezone.utc)
-                except Exception:
-                    pass
+                try: return datetime.fromisoformat(s.replace("Z","+00:00")).astimezone(timezone.utc)
+                except Exception: pass
     return None
 
 def within_window(dt: Optional[datetime]) -> bool:
@@ -209,37 +210,113 @@ def category_for(title: str, summary: str) -> str:
 def sig(obj: Any) -> str:
     return hashlib.sha256(json.dumps(obj, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
 
-# ---------------- Feed pipeline ----------------
-def fetch_feed(url: str):
-    print(f"→ feed: {url}")
+# ---------------- HTTP helpers ----------------
+META_PUBLISHED_RE = re.compile(
+    r'<meta[^>]+property=["\']article:published_time["\'][^>]+content=["\']([^"\']+)["\']', re.I
+)
+TIME_TAG_RE = re.compile(r"<time[^>]*datetime=[\"']([^\"']+)[\"'][^>]*>", re.I)
+
+def http_get(url: str) -> Tuple[str, Optional[requests.Response]]:
+    try:
+        r = requests.get(url, headers={"User-Agent": UA}, timeout=HTTP_TIMEOUT)
+        if 200 <= r.status_code < 300:
+            return r.text, r
+    except Exception as ex:
+        print(f"  [warn] GET failed: {url} -> {ex}")
+    return "", None
+
+def parse_http_date(h: str) -> Optional[datetime]:
+    try: return parsedate_to_datetime(h).astimezone(timezone.utc)
+    except Exception: return None
+
+def best_article_datetime(url: str) -> Optional[datetime]:
+    """Fetch the article to try to recover a reliable date if feed lacks it."""
+    html, resp = http_get(url)
+    if html:
+        m = META_PUBLISHED_RE.search(html)
+        if m:
+            try:
+                return datetime.fromisoformat(m.group(1).replace("Z","+00:00")).astimezone(timezone.utc)
+            except Exception:
+                pass
+        m = TIME_TAG_RE.search(html)
+        if m:
+            try:
+                return datetime.fromisoformat(m.group(1).replace("Z","+00:00")).astimezone(timezone.utc)
+            except Exception:
+                pass
+    if resp is not None:
+        lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
+        if lm:
+            return parse_http_date(lm)
+    return None
+
+# ---------------- Feed fetching (+ WP pagination) ----------------
+def fetch_feed_once(url: str):
     try:
         fp = feedparser.parse(url, request_headers={"User-Agent": UA})
         if getattr(fp, "bozo", False) and not getattr(fp, "entries", None):
-            # Fallback: requests text
             r = requests.get(url, headers={"User-Agent": UA}, timeout=HTTP_TIMEOUT)
             r.raise_for_status()
             fp = feedparser.parse(r.text)
         return getattr(fp, "entries", []) or []
     except Exception as ex:
-        print(f"  [warn] feed failed: {ex}")
+        print(f"  [warn] feed failed: {url} -> {ex}")
         return []
 
+def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
+    """Fetch base + ?paged=2..N and aggregate entries (stop if page empty)."""
+    all_entries: List[Any] = []
+    # normalize URL: WordPress accepts both ?paged= and /?paged=
+    def page_url(i: int) -> str:
+        if i == 1:
+            return base_url
+        sep = "&" if "?" in base_url else "?"
+        return f"{base_url}{sep}paged={i}"
+    for i in range(1, max_pages + 1):
+        url = page_url(i)
+        entries = fetch_feed_once(url)
+        if not entries:
+            break
+        all_entries.extend(entries)
+        # small optimization: if oldest on this page is older than 6 months, we can stop
+        try:
+            dates = [entry_datetime(e) for e in entries]
+            if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
+                break
+        except Exception:
+            pass
+    return all_entries
+
 def items_from_feed(url: str) -> List[Dict[str, Any]]:
+    if url in WP_FEEDS:
+        print(f"→ wp-feed (paged): {url}")
+        entries = paginate_wp_feed(url, MAX_WP_PAGES)
+    else:
+        print(f"→ feed: {url}")
+        entries = fetch_feed_once(url)
+
     kept: List[Dict[str, Any]] = []
-    entries = fetch_feed(url)
     seen = 0
     for e in entries:
         seen += 1
         title = clean_text(getattr(e, "title", "") or "")
         link  = (getattr(e, "link", "") or "").strip()
-        if not title or not link: continue
-        if not _allowed(link):     continue
+        if not title or not link:
+            continue
+        if not _allowed(link):
+            continue
 
         dt = entry_datetime(e)
-        if not within_window(dt):  continue
+        if not within_window(dt):
+            # try to recover from article page if missing or too old/None
+            dt = best_article_datetime(link)
+        if not within_window(dt):
+            continue
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
-        if not is_relevant(title, summary): continue
+        if not is_relevant(title, summary):
+            continue
 
         kept.append({
             "date": dt.date().isoformat(),
@@ -253,22 +330,6 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
     return kept
 
 # ---------------- Static pages (official AU) ----------------
-TIME_TAG_RE = re.compile(r"<time[^>]*datetime=[\"']([^\"']+)[\"'][^>]*>", re.I)
-
-def http_get(url: str) -> Tuple[str, Optional[requests.Response]]:
-    try:
-        r = requests.get(url, headers={"User-Agent": UA}, timeout=HTTP_TIMEOUT)
-        if 200 <= r.status_code < 300:
-            return r.text, r
-    except Exception as ex:
-        print(f"  [warn] GET failed: {url} -> {ex}")
-    return "", None
-
-def parse_http_date(h: str) -> Optional[datetime]:
-    # RFC 2822 / 7231 formats
-    try: return parsedate_to_datetime(h).astimezone(timezone.utc)
-    except Exception: return None
-
 def items_from_static_pages() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url, headline, category in STATIC_PAGES:
@@ -323,7 +384,7 @@ def collect_items() -> List[Dict[str, Any]]:
         seen.add(k)
         out.append(it)
 
-    # sanity filter: ensure all are within window and domain-allowed (again)
+    # final window/domain sanity
     out = [it for it in out if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
     print(f"✔ total after dedupe/filter: {len(out)} (window since {WINDOW_FROM.isoformat()})")
     return out
@@ -357,6 +418,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
