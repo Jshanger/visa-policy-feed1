@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Policy / international-student-visa tracker
+Policy / international-student-visa tracker (6 months, diversified sources)
+
 - Sources: ONLY your approved domains (+ ICEF Monitor)
-- Strict relevance: visa/immigration required + (action/policy OR intl-students/HE context)
-- Time window: last 6 months (183 days) from "now"
-- Robust date parsing + WordPress feed pagination to reach older items
+- Strict relevance: must include visa/immigration terms + (policy/action OR intl-students/HE)
+- True 6-month coverage:
+    * WordPress feed pagination (?paged=2..N)
+    * Fallback to article page <meta article:published_time> / <time datetime> / Last-Modified
+- Diversity guard: dynamic per-domain caps so PIE/ICEF don't swamp others
 - Output: data/policyNews.json  -> {"policyNews":[ ... ]}
 """
 
 from __future__ import annotations
 from typing import List, Dict, Any, Tuple, Optional
-import json, pathlib, hashlib, sys, re
-from urllib.parse import urlparse, urljoin
+import json, pathlib, hashlib, sys, re, math
+from urllib.parse import urlparse
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
@@ -28,10 +31,10 @@ WINDOW_DAYS = 183  # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.3 (+github actions bot)"
+UA = "policy-student-mobility/3.4 (+github actions bot)"
 
-# How deep to paginate WordPress feeds (increase if needed)
-MAX_WP_PAGES = 8  # ~8 pages x 10 items/page ≈ last 6 months for active sites
+# How deep to paginate WordPress feeds (increase if still short)
+MAX_WP_PAGES = 10
 
 # ---------------- Domains (whitelist) ----------------
 ALLOWED_HOSTS = {
@@ -53,10 +56,10 @@ ALLOWED_HOSTS = {
 
 # Optional per-domain path gates to cut noise from general feeds
 PATH_ALLOW: Dict[str, List[re.Pattern]] = {
-    "economictimes.indiatimes.com": [re.compile(r"/nri/study/", re.I)],
+    "economictimes.indiatimes.com": [re.compile(r"/nri/", re.I)],  # keep NRI desks incl. study
     "timeshighereducation.com":     [re.compile(r"/student/", re.I), re.compile(r"/news/", re.I)],
     "ndtv.com":                     [re.compile(r"/education/", re.I), re.compile(r"/world-news/", re.I)],
-    "internationalstudent.com":     [re.compile(r"/study", re.I), re.compile(r"/student-visa", re.I)],
+    "internationalstudent.com":     [re.compile(r"/", re.I)],  # site is focused; allow
 }
 
 def _host(url: str) -> str:
@@ -77,24 +80,36 @@ def _allowed(url: str) -> bool:
     return any(rx.search(p) for rx in gates)
 
 # ---------------- Feeds ----------------
-# NOTE: many are WordPress → support pagination (?paged=N or /feed/?paged=N)
+# Add more feeds for your permitted domains (many are WordPress)
 FEEDS: List[str] = [
-    # Sector policy (WP)
+    # Sector policy (WordPress)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
-    # Advisory / analysis (WP)
+
+    # Advisory / analysis (WordPress)
     "https://www.idp.com/blog/feed/",
     "https://www.applyboard.com/feed",
+    "https://www.applyboard.com/blog/category/applyinsights/feed",  # ApplyInsights category
     "https://www.visasupdate.com/feed/",
+    "https://www.espiconsultants.com/feed/",                        # ESP Consultants blog
+
     # Research/briefings
     "https://migrationobservatory.ox.ac.uk/feed/",
     "https://commonslibrary.parliament.uk/feed/",
-    # Student info (some WP)
+
+    # Student info / destination rules
     "https://www.internationalstudent.com/rss.xml",
-    # General but filtered (RSS often short; we’ll take what we can)
+
+    # THE (student + news)
+    "https://www.timeshighereducation.com/student/rss",
     "https://www.timeshighereducation.com/rss",
+
+    # NDTV (education + world-news)
     "https://www.ndtv.com/education/rss",
+    "https://www.ndtv.com/world-news/rss",
+
+    # Economic Times (includes NRI desks; path filter applies)
     "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
 ]
 
@@ -105,7 +120,9 @@ WP_FEEDS = {
     "https://thepienews.com/category/news/government/feed/",
     "https://www.idp.com/blog/feed/",
     "https://www.applyboard.com/feed",
+    "https://www.applyboard.com/blog/category/applyinsights/feed",
     "https://www.visasupdate.com/feed/",
+    "https://www.espiconsultants.com/feed/",
 }
 
 # Static official pages to check for timestamped updates
@@ -130,13 +147,14 @@ STATIC_PAGES = [
 # ---------------- Relevance ----------------
 CORE_RX = re.compile(
     r"\b(visa|visas|student visa|study permit|immigration|graduate route|post[- ]?study|psw|opt|pgwp|"
-    r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis)\b",
+    r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis|"
+    r"dependents?|dependants?|work rights|work hours)\b",
     re.I,
 )
 ACTIONS_RX = re.compile(
     r"\b(update|updated|change|changes|amend|amended|introduce|introduced|launch|launched|create|created|"
     r"cap|caps|limit|limits|ban|bans|restrict|restriction|suspend|revok\w*|end|close\w*|"
-    r"increase|decrease|raise|fee|fees|threshold|work hours|work rights|policy|policies|guidance|"
+    r"increase|decrease|raise|fee|fees|threshold|policy|policies|guidance|"
     r"statement|white paper|consultation|legislation|bill|act)\b",
     re.I,
 )
@@ -176,7 +194,6 @@ def entry_datetime(e) -> Optional[datetime]:
     for key in ("published", "updated", "created", "issued", "dc_date", "date", "pubDate"):
         s = getattr(e, key, None)
         if s:
-            # RFC 2822/7231 or ISO
             try: return parsedate_to_datetime(s).astimezone(timezone.utc)
             except Exception:
                 try: return datetime.fromisoformat(s.replace("Z","+00:00")).astimezone(timezone.utc)
@@ -230,7 +247,6 @@ def parse_http_date(h: str) -> Optional[datetime]:
     except Exception: return None
 
 def best_article_datetime(url: str) -> Optional[datetime]:
-    """Fetch the article to try to recover a reliable date if feed lacks it."""
     html, resp = http_get(url)
     if html:
         m = META_PUBLISHED_RE.search(html)
@@ -265,9 +281,7 @@ def fetch_feed_once(url: str):
         return []
 
 def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
-    """Fetch base + ?paged=2..N and aggregate entries (stop if page empty)."""
     all_entries: List[Any] = []
-    # normalize URL: WordPress accepts both ?paged= and /?paged=
     def page_url(i: int) -> str:
         if i == 1:
             return base_url
@@ -279,7 +293,6 @@ def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
         if not entries:
             break
         all_entries.extend(entries)
-        # small optimization: if oldest on this page is older than 6 months, we can stop
         try:
             dates = [entry_datetime(e) for e in entries]
             if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
@@ -309,7 +322,6 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
 
         dt = entry_datetime(e)
         if not within_window(dt):
-            # try to recover from article page if missing or too old/None
             dt = best_article_datetime(link)
         if not within_window(dt):
             continue
@@ -349,7 +361,7 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
             if lm:
                 dt = parse_http_date(lm)
 
-        if not within_window(dt):  # skip if no recent page timestamp
+        if not within_window(dt):
             print("  (no recent timestamp; skipped)")
             continue
 
@@ -364,6 +376,50 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
     print(f"  kept {len(items)} static updates")
     return items
 
+# ---------------- Diversity guard ----------------
+PRIORITY_CAPS = {
+    # Cap prolific domains so others surface too (applied *after* sort by date desc)
+    "monitor.icef.com": 0.25,   # ≤ 25% of final list
+    "thepienews.com":   0.25,   # ≤ 25% of final list
+}
+MIN_ABS_CAP = 8  # each of the above may take at least this many if available
+
+def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Keep everything within 6 months, but if PIE/ICEF exceed a share,
+    trim their OLDER items so newer posts from other approved domains can appear.
+    """
+    if not items:
+        return items
+
+    # Already sorted newest→oldest
+    total = len(items)
+    # Build counters
+    per_host: Dict[str, int] = {}
+    # Compute absolute caps for priority hosts
+    abs_caps: Dict[str, int] = {}
+    for host, share in PRIORITY_CAPS.items():
+        abs_caps[host] = max(MIN_ABS_CAP, int(math.floor(total * share)))
+
+    kept: List[Dict[str, Any]] = []
+    for it in items:
+        h = it["source"]
+        # normalize host from 'source' (already host)
+        cap = abs_caps.get(h, None)
+        if cap is None:
+            kept.append(it)
+            continue
+        # enforce cap on those hosts (drop older overflow)
+        c = per_host.get(h, 0)
+        if c < cap:
+            kept.append(it)
+            per_host[h] = c + 1
+        else:
+            # skip (older overflow from that prolific host)
+            continue
+
+    return kept
+
 # ---------------- Build & write ----------------
 def collect_items() -> List[Dict[str, Any]]:
     all_items: List[Dict[str, Any]] = []
@@ -371,23 +427,28 @@ def collect_items() -> List[Dict[str, Any]]:
         all_items.extend(items_from_feed(f))
     all_items.extend(items_from_static_pages())
 
-    # sort + dedupe
+    # sort newest → oldest
     def key(it): return (it["date"], it["headline"].strip().lower(), it["url"])
     all_items.sort(key=lambda it: key(it), reverse=True)
 
+    # dedupe
     seen = set()
-    out: List[Dict[str, Any]] = []
+    deduped: List[Dict[str, Any]] = []
     for it in all_items:
         k = (it["headline"].strip().lower(), it["url"])
         if k in seen:
             continue
         seen.add(k)
-        out.append(it)
+        deduped.append(it)
 
-    # final window/domain sanity
-    out = [it for it in out if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
-    print(f"✔ total after dedupe/filter: {len(out)} (window since {WINDOW_FROM.isoformat()})")
-    return out
+    # safety window/domain filter
+    deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
+
+    # apply diversity caps so PIE/ICEF don't dominate
+    diversified = apply_diversity_caps(deduped)
+
+    print(f"✔ total: {len(deduped)}; after diversity caps: {len(diversified)} (since {WINDOW_FROM.isoformat()})")
+    return diversified
 
 def write_json(items: List[Dict[str, Any]]):
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -418,6 +479,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
