@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Policy / international-student-visa tracker (6 months, diversified sources)
+Policy / international-student-visa tracker (6 months, gov + IDP; PIE/ICEF capped)
 
-- Sources: ONLY your approved domains (+ ICEF Monitor)
-- Strict relevance: must include visa/immigration terms + (policy/action OR intl-students/HE)
+- Sources: ONLY approved domains (whitelist below) — now with official gov feeds.
+- Removed: espiconsultants.com
+- Strict relevance: visa/immigration required + (policy/action OR intl-students/HE)
 - True 6-month coverage:
     * WordPress feed pagination (?paged=2..N)
     * Fallback to article page <meta article:published_time> / <time datetime> / Last-Modified
-- Diversity guard: dynamic per-domain caps so PIE/ICEF don't swamp others
+- Diversity guard: per-domain share caps so PIE/ICEF don't swamp others
 - Output: data/policyNews.json  -> {"policyNews":[ ... ]}
 """
 
@@ -31,27 +32,34 @@ WINDOW_DAYS = 183  # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.4 (+github actions bot)"
+UA = "policy-student-mobility/3.5 (+github actions bot)"
 
-# How deep to paginate WordPress feeds (increase if still short)
+# How deep to paginate WordPress feeds (increase if needed)
 MAX_WP_PAGES = 10
 
 # ---------------- Domains (whitelist) ----------------
 ALLOWED_HOSTS = {
-    "espiconsultants.com",
-    "idp.com",
-    "immi.homeaffairs.gov.au",
-    "visasupdate.com",
-    "migrationobservatory.ox.ac.uk",
-    "education.gov.au",
-    "ndtv.com",
-    "applyboard.com",
-    "economictimes.indiatimes.com",
-    "commonslibrary.parliament.uk",
-    "timeshighereducation.com",
-    "internationalstudent.com",
+    # Official gov / regulators
+    "gov.uk",
+    "canada.ca",                # IRCC
+    "uscis.gov",
+    "immi.homeaffairs.gov.au",  # AU Home Affairs
+    "education.gov.au",         # AU Dept of Education (page updates)
+
+    # Sector & research
     "thepienews.com",
     "monitor.icef.com",
+    "migrationobservatory.ox.ac.uk",
+    "commonslibrary.parliament.uk",
+
+    # Student-facing / data / news allowed previously
+    "idp.com",
+    "applyboard.com",
+    "visasupdate.com",
+    "timeshighereducation.com",
+    "ndtv.com",
+    "economictimes.indiatimes.com",
+    "internationalstudent.com",
 }
 
 # Optional per-domain path gates to cut noise from general feeds
@@ -60,6 +68,7 @@ PATH_ALLOW: Dict[str, List[re.Pattern]] = {
     "timeshighereducation.com":     [re.compile(r"/student/", re.I), re.compile(r"/news/", re.I)],
     "ndtv.com":                     [re.compile(r"/education/", re.I), re.compile(r"/world-news/", re.I)],
     "internationalstudent.com":     [re.compile(r"/", re.I)],  # site is focused; allow
+    # gov.uk is broad — use relevance filter (CORE/ACTIONS) to keep only immigration/HE items
 }
 
 def _host(url: str) -> str:
@@ -80,25 +89,28 @@ def _allowed(url: str) -> bool:
     return any(rx.search(p) for rx in gates)
 
 # ---------------- Feeds ----------------
-# Add more feeds for your permitted domains (many are WordPress)
+# WordPress & RSS feeds across approved domains (no espiconsultants)
 FEEDS: List[str] = [
+    # Official / government
+    "https://www.gov.uk/government/announcements.rss",
+    "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
+    "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
+    "https://www.uscis.gov/news/rss.xml",
+
     # Sector policy (WordPress)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
 
-    # Advisory / analysis (WordPress)
-    "https://www.idp.com/blog/feed/",
-    "https://www.applyboard.com/feed",
-    "https://www.applyboard.com/blog/category/applyinsights/feed",  # ApplyInsights category
-    "https://www.visasupdate.com/feed/",
-    "https://www.espiconsultants.com/feed/",                        # ESP Consultants blog
-
     # Research/briefings
     "https://migrationobservatory.ox.ac.uk/feed/",
     "https://commonslibrary.parliament.uk/feed/",
 
-    # Student info / destination rules
+    # Student-facing / analysis (WordPress)
+    "https://www.idp.com/blog/feed/",
+    "https://www.applyboard.com/feed",
+    "https://www.applyboard.com/blog/category/applyinsights/feed",
+    "https://www.visasupdate.com/feed/",
     "https://www.internationalstudent.com/rss.xml",
 
     # THE (student + news)
@@ -122,7 +134,6 @@ WP_FEEDS = {
     "https://www.applyboard.com/feed",
     "https://www.applyboard.com/blog/category/applyinsights/feed",
     "https://www.visasupdate.com/feed/",
-    "https://www.espiconsultants.com/feed/",
 }
 
 # Static official pages to check for timestamped updates
@@ -247,6 +258,7 @@ def parse_http_date(h: str) -> Optional[datetime]:
     except Exception: return None
 
 def best_article_datetime(url: str) -> Optional[datetime]:
+    """Fetch the article to try to recover a reliable date if feed lacks it."""
     html, resp = http_get(url)
     if html:
         m = META_PUBLISHED_RE.search(html)
@@ -385,18 +397,10 @@ PRIORITY_CAPS = {
 MIN_ABS_CAP = 8  # each of the above may take at least this many if available
 
 def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """
-    Keep everything within 6 months, but if PIE/ICEF exceed a share,
-    trim their OLDER items so newer posts from other approved domains can appear.
-    """
     if not items:
         return items
-
-    # Already sorted newest→oldest
     total = len(items)
-    # Build counters
     per_host: Dict[str, int] = {}
-    # Compute absolute caps for priority hosts
     abs_caps: Dict[str, int] = {}
     for host, share in PRIORITY_CAPS.items():
         abs_caps[host] = max(MIN_ABS_CAP, int(math.floor(total * share)))
@@ -404,20 +408,16 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     kept: List[Dict[str, Any]] = []
     for it in items:
         h = it["source"]
-        # normalize host from 'source' (already host)
         cap = abs_caps.get(h, None)
         if cap is None:
             kept.append(it)
             continue
-        # enforce cap on those hosts (drop older overflow)
         c = per_host.get(h, 0)
         if c < cap:
             kept.append(it)
             per_host[h] = c + 1
         else:
-            # skip (older overflow from that prolific host)
             continue
-
     return kept
 
 # ---------------- Build & write ----------------
@@ -479,6 +479,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
