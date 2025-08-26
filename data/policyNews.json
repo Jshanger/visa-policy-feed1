@@ -1,12 +1,28 @@
 {
   "policyNews": [
     {
-      "date": "2025-08-22",
+      "date": "2025-08-26",
+      "category": "Policy Update",
+      "headline": "Transparency data: Country returns guide",
+      "description": "Guidance on returning immigration offenders to their country of origin.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/country-returns-guide"
+    },
+    {
+      "date": "2025-08-26",
       "category": "Policy Update",
       "headline": "Guidance: Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
+    },
+    {
+      "date": "2025-08-26",
+      "category": "Update",
+      "headline": "Australia’s new student place limit: a step forward, but social licence remains fragile",
+      "description": "<p>\"Australia’s social licence to host international students is under strain,\" writes Varsha Devi Balakrishna for The PIE News, ahead of nationwide anti-immigration protests. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australias-new-student-place-limit-a-step-forward-but-social-licence-remains-fragile/"
     },
     {
       "date": "2025-08-21",
@@ -23,14 +39,6 @@
       "description": "Immigration staff guidance on Home Office policies for releasing foreign national offenders on temporary licence and transferring them to an open prison.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/release-on-temporary-licence-and-transfer-to-open-conditions"
-    },
-    {
-      "date": "2025-08-19",
-      "category": "Policy Update",
-      "headline": "Transparency data: Country returns guide",
-      "description": "Guidance on returning immigration offenders to their country of origin.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/country-returns-guide"
     },
     {
       "date": "2025-08-18",
@@ -359,14 +367,6 @@
       "description": "<p>The UK government has outlined plans to expand the HPI visa route and create a global talent task force as part of the new modern industrial strategy.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-industrial-strategy-aims-to-expand-top-talent-visas/"
-    },
-    {
-      "date": "2025-06-23",
-      "category": "Update",
-      "headline": "US study visa applicants told to make social media accounts ‘public’ amid vetting crackdown",
-      "description": "<p>Prospective international students to the US are being asked to adjust the privacy settings on their social media accounts to 'public' in the latest vetting hoop the Trump administration is expecting visa applicants to jump through.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-study-visa-applicants-told-to-make-social-media-accounts-public-amid-vetting-crackdown/"
     },
     {
       "date": "2025-06-19",
