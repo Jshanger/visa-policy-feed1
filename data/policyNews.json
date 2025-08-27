@@ -2,6 +2,14 @@
   "policyNews": [
     {
       "date": "2025-08-26",
+      "category": "Student Visas",
+      "headline": "UK study visa grants strengthening in first half of 2025",
+      "description": "<p>A 21 August 2025 data release from the UK Home Office shows that student visa grants were up by 18% for the first six months of 2025 compared to the same period in 2024. However, year-over-year comparisons blunt that progress a little. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/08/uk-visa-grants-strengthening-in-first-half-of-2025/"
+    },
+    {
+      "date": "2025-08-26",
       "category": "Policy Update",
       "headline": "Transparency data: Country returns guide",
       "description": "Guidance on returning immigration offenders to their country of origin.",
@@ -463,14 +471,6 @@
       "description": "<p>Canada held a federal election on 28 April 2025, through which the Liberal Party was returned to a minority government under Prime Minister Mark Carney. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/05/canadas-new-government-strikes-a-more-conservative-note-on-immigration/"
-    },
-    {
-      "date": "2025-04-29",
-      "category": "Update",
-      "headline": "US administration reverses course; moves to restore cancelled student visas",
-      "description": "<p>Earlier this month, widespread reports emerged that US Immigration and Customs Enforcement (ICE) has been terminating the visa status of international students in SEVIS (the Student and Exchange Visitor Information System). …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/04/us-administration-reverses-course-moves-to-restore-cancelled-student-visas/"
     }
   ]
 }
