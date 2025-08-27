@@ -1,6 +1,14 @@
 {
   "policyNews": [
     {
+      "date": "2025-08-27",
+      "category": "Policy Update",
+      "headline": "Guidance: Offender management: caseworker guidance",
+      "description": "Immigration staff guidance on dealing with immigration enforcement matters within the UK.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/offender-management"
+    },
+    {
       "date": "2025-08-26",
       "category": "Student Visas",
       "headline": "UK study visa grants strengthening in first half of 2025",
@@ -159,14 +167,6 @@
       "description": "Immigration staff guidance on arranging removals for officers dealing with immigration enforcement matters within the UK.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/returns-preparation"
-    },
-    {
-      "date": "2025-08-08",
-      "category": "Policy Update",
-      "headline": "Guidance: Health and Care visa: guidance for applicants",
-      "description": "Information for applicants to the Health and Care visa.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/health-and-care-visa-guidance-for-applicants"
     },
     {
       "date": "2025-08-06",
