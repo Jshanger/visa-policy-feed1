@@ -3,10 +3,42 @@
     {
       "date": "2025-08-27",
       "category": "Policy Update",
+      "headline": "Guidance: Restricted leave: caseworker guidance",
+      "description": "Immigration staff guidance on granting restricted leave.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/restricted-leave-asylum-casework-instruction"
+    },
+    {
+      "date": "2025-08-27",
+      "category": "Policy Update",
+      "headline": "Guidance: Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
+    },
+    {
+      "date": "2025-08-27",
+      "category": "Policy Update",
       "headline": "Guidance: Offender management: caseworker guidance",
       "description": "Immigration staff guidance on dealing with immigration enforcement matters within the UK.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/offender-management"
+    },
+    {
+      "date": "2025-08-27",
+      "category": "Policy Update",
+      "headline": "Guidance: Giving evidence in court: caseworker guidance",
+      "description": "Immigration staff guidance on preparing and giving evidence in court.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/giving-evidence-in-court"
+    },
+    {
+      "date": "2025-08-27",
+      "category": "Student Visas",
+      "headline": "Canada: How is study permit processing taking shape this year?",
+      "description": "<p>There are two important and recurring themes in our conversations with education agents over the last few months when it comes to study permit processing for Canada. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/08/canada-how-is-study-permit-processing-taking-shape-this-year/"
     },
     {
       "date": "2025-08-26",
@@ -23,14 +55,6 @@
       "description": "Guidance on returning immigration offenders to their country of origin.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/country-returns-guide"
-    },
-    {
-      "date": "2025-08-26",
-      "category": "Policy Update",
-      "headline": "Guidance: Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
     },
     {
       "date": "2025-08-26",
@@ -151,22 +175,6 @@
       "description": "Immigration staff guidance on applications for registration as a British citizen from children of British parents.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/children-of-british-parents-nationality-policy-guidance"
-    },
-    {
-      "date": "2025-08-08",
-      "category": "Policy Update",
-      "headline": "Guidance: Turkey: country policy and information notes",
-      "description": "Guidance used by UK Visas and Immigration to make decisions in asylum and human rights applications.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/turkey-country-policy-and-information-notes"
-    },
-    {
-      "date": "2025-08-08",
-      "category": "Policy Update",
-      "headline": "Guidance: Returns preparation: caseworker guidance",
-      "description": "Immigration staff guidance on arranging removals for officers dealing with immigration enforcement matters within the UK.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/returns-preparation"
     },
     {
       "date": "2025-08-06",
@@ -463,14 +471,6 @@
       "description": "<p>As we reported recently, widespread reports emerged in April that US Immigration and Customs Enforcement (ICE) officials had been terminating the visa status of international students in SEVIS (the Student and Exchange Visitor Information System). …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/05/us-immigration-authorities-set-out-the-legal-basis-for-revoking-student-visa-status/"
-    },
-    {
-      "date": "2025-05-07",
-      "category": "Policy Update",
-      "headline": "Canada’s new government strikes a more conservative note on immigration",
-      "description": "<p>Canada held a federal election on 28 April 2025, through which the Liberal Party was returned to a minority government under Prime Minister Mark Carney. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/05/canadas-new-government-strikes-a-more-conservative-note-on-immigration/"
     }
   ]
 }
