@@ -1,20 +1,60 @@
 {
   "policyNews": [
     {
+      "date": "2025-08-28",
+      "category": "Policy Update",
+      "headline": "UK visa support for Ukrainian nationals",
+      "description": "Guidance on support available to Ukrainian nationals and their family members.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/guidance/support-for-family-members-of-british-nationals-in-ukraine-and-ukrainian-nationals-in-ukraine-and-the-uk"
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Student Visas",
+      "headline": "July sees drastic fall in US student visa arrivals",
+      "description": "<p>The number of international student visa holders arriving in the US declined by nearly 30% in July 2025 as compared with the previous year, including a near-50% drop in Indian students. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/july-sees-drastic-fall-in-us-student-visa-arrivals/"
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Policy Update",
+      "headline": "Guidance: Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Policy Update",
+      "headline": "Guidance: India: country policy and information notes",
+      "description": "Guidance used by UK Visas and Immigration to make decisions in asylum and human rights applications.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/india-country-policy-and-information-notes"
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Policy Update",
+      "headline": "Apply for a visa under the Homes for Ukraine Sponsorship Scheme",
+      "description": "Guidance for Ukrainian nationals and their immediate family members who wish to come to the UK under the Homes for Ukraine Sponsorship Scheme.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/guidance/apply-for-a-visa-under-the-ukraine-sponsorship-scheme"
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Update",
+      "headline": "Apply for a Ukraine Family Scheme visa",
+      "description": "The Ukraine Family Scheme closed at 3pm on 19 February 2024. You can no longer apply under this scheme.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/guidance/apply-for-a-ukraine-family-scheme-visa"
+    },
+    {
       "date": "2025-08-27",
       "category": "Policy Update",
       "headline": "Guidance: Restricted leave: caseworker guidance",
       "description": "Immigration staff guidance on granting restricted leave.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/restricted-leave-asylum-casework-instruction"
-    },
-    {
-      "date": "2025-08-27",
-      "category": "Policy Update",
-      "headline": "Guidance: Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
     },
     {
       "date": "2025-08-27",
@@ -98,35 +138,11 @@
     },
     {
       "date": "2025-08-14",
-      "category": "Policy Update",
-      "headline": "UK visa support for Ukrainian nationals",
-      "description": "Guidance on support available to Ukrainian nationals and their family members.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/guidance/support-for-family-members-of-british-nationals-in-ukraine-and-ukrainian-nationals-in-ukraine-and-the-uk"
-    },
-    {
-      "date": "2025-08-14",
       "category": "Post-Study Work",
       "headline": "How post-study work rights can make or break the return on investment for study abroad",
       "description": "<p>The following is a guest post contributed by Tim O&#8217;Brien and Claire Clifford from INTO University Partnerships, where Tim is the Senior Vice President, New Partner Development, and Claire the Vice President, Pricing, Insights and Research. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/08/how-post-study-work-rights-can-make-or-break-the-return-on-investment-for-study-abroad/"
-    },
-    {
-      "date": "2025-08-14",
-      "category": "Policy Update",
-      "headline": "Apply for a visa under the Homes for Ukraine Sponsorship Scheme",
-      "description": "Guidance for Ukrainian nationals and their immediate family members who wish to come to the UK under the Homes for Ukraine Sponsorship Scheme.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/guidance/apply-for-a-visa-under-the-ukraine-sponsorship-scheme"
-    },
-    {
-      "date": "2025-08-14",
-      "category": "Update",
-      "headline": "Apply for a Ukraine Family Scheme visa",
-      "description": "The Ukraine Family Scheme closed at 3pm on 19 February 2024. You can no longer apply under this scheme.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/guidance/apply-for-a-ukraine-family-scheme-visa"
     },
     {
       "date": "2025-08-13",
@@ -159,14 +175,6 @@
       "description": "Immigration staff guidance on the registration of a minor as a British citizen by entitlement and discretion.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/children-nationality-policy-guidance"
-    },
-    {
-      "date": "2025-08-11",
-      "category": "Policy Update",
-      "headline": "Guidance: Nigeria: tuberculosis test clinics for a UK visa",
-      "description": "Where to get tested for tuberculosis (TB) in Nigeria for your UK visa application.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/tuberculosis-test-for-a-uk-visa-clinics-in-nigeria"
     },
     {
       "date": "2025-08-11",
@@ -375,14 +383,6 @@
       "description": "<p>The Canadian government has updated the list of programs eligible for a post-graduation work permit; an approach stakeholders say is still “incongruent” with labour market needs. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/canada-updates-pgwp-eligibility/"
-    },
-    {
-      "date": "2025-06-25",
-      "category": "Update",
-      "headline": "UK industrial strategy aims to expand ‘top talent’ visas",
-      "description": "<p>The UK government has outlined plans to expand the HPI visa route and create a global talent task force as part of the new modern industrial strategy.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-industrial-strategy-aims-to-expand-top-talent-visas/"
     },
     {
       "date": "2025-06-19",
