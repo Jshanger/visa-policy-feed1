@@ -2,6 +2,14 @@
   "policyNews": [
     {
       "date": "2025-08-28",
+      "category": "Update",
+      "headline": "US proposes visa time limit rule to end “abuse” of system",
+      "description": "<p>The US government has put out a proposed rule to set time limits on student visas, ending the current system where students can stay in the country for the duration of their studies. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-proposes-visa-time-limit-rule-to-end-abuse-of-system/"
+    },
+    {
+      "date": "2025-08-28",
       "category": "Policy Update",
       "headline": "UK visa support for Ukrainian nationals",
       "description": "Guidance on support available to Ukrainian nationals and their family members.",
@@ -471,6 +479,14 @@
       "description": "<p>As we reported recently, widespread reports emerged in April that US Immigration and Customs Enforcement (ICE) officials had been terminating the visa status of international students in SEVIS (the Student and Exchange Visitor Information System). …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/05/us-immigration-authorities-set-out-the-legal-basis-for-revoking-student-visa-status/"
+    },
+    {
+      "date": "2025-05-07",
+      "category": "Policy Update",
+      "headline": "Canada’s new government strikes a more conservative note on immigration",
+      "description": "<p>Canada held a federal election on 28 April 2025, through which the Liberal Party was returned to a minority government under Prime Minister Mark Carney. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/05/canadas-new-government-strikes-a-more-conservative-note-on-immigration/"
     }
   ]
 }
