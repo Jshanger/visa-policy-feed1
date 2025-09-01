@@ -64,12 +64,16 @@ GOV_HOSTS = {
 ALLOWED_HOSTS = MEDIA_HOSTS | GOV_HOSTS
 
 def _host(url: str) -> str:
-    try: return urlparse(url).netloc.lower()
-    except Exception: return ""
+    try:
+        return urlparse(url).netloc.lower()
+    except Exception:
+        return ""
 
 def _path(url: str) -> str:
-    try: return urlparse(url).path or "/"
-    except Exception: return "/"
+    try:
+        return urlparse(url).path or "/"
+    except Exception:
+        return "/"
 
 def _allowed(url: str) -> bool:
     h = _host(url)
@@ -80,14 +84,12 @@ PATH_ALLOW: Dict[str, List[re.Pattern]] = {
     "thepienews.com":     [re.compile(r"/(news|category/news/government)/", re.I)],
     "monitor.icef.com":   [re.compile(r"/\d{4}/\d{2}/", re.I)],  # dated posts
     "idp.com":            [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
-    "timeshighereducation.com": [],  # removed from whitelist in this mode
 }
 
 def _path_allowed(url: str) -> bool:
     h = _host(url)
     gates = PATH_ALLOW.get(h, [])
-    if not gates: 
-        # for gov sites we keep relevance filters to do the heavy lifting
+    if not gates:
         return True
     p = _path(url)
     return any(rx.search(p) for rx in gates)
@@ -147,7 +149,7 @@ CORE_RX = re.compile(
 
 # Action/policy verbs & nouns (tight to your examples)
 ACTIONS_RX = re.compile(
-    r"\b(propose[sd]?|introduce[sd]?|cap[ped|s]?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
+    r"\b(propose[sd]?|introduce[sd]?|cap(?:ped|s)?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
     r"grant(?:s|ed)?|issuances?|processing|backlog|fast-?track|updated?|update|change[sd]?|"
     r"fall(?:s|ing)?|rise[sn]?|increase[sd]?|decrease[sd]?|strengthen(?:ing|ed)?|tighten(?:ed|ing)?)\b",
     re.I,
@@ -160,26 +162,19 @@ COUNTRY_RX = re.compile(
     re.I,
 )
 
-# Higher education / international students context (looser for gov pages)
+# Higher education / international students context
 INTL_HE_RX = re.compile(
     r"\b(international student[s]?|higher education|university|universities|campus|"
     r"student (?:arrivals|grants|applications|visas))\b", re.I
 )
 
-# Hard excludes to avoid noise
+# Hard excludes
 EXCLUDES_RX = re.compile(
     r"\b(celebrity|restaurant|football|cricket|movie|tv show|tourism only|property prices|IPO)\b",
     re.I,
 )
 
 def like_examples(title: str, summary: str, link: str) -> bool:
-    """
-    Keep only items that look like your examples:
-    - visa/permit term present
-    - strong action/policy verb or issuance/process metric
-    - country/system cue (for media); gov pages may pass without explicit country
-    - avoid unrelated content
-    """
     blob = f"{title} {summary}"
     if EXCLUDES_RX.search(blob):
         return False
@@ -192,10 +187,10 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     has_country = bool(COUNTRY_RX.search(blob) or "sponsor" in blob.lower())
 
     if is_gov:
-        # Gov pages often omit country terms; require core + (action OR HE context)
+        # Gov pages: core + (action OR HE context)
         return has_action or bool(INTL_HE_RX.search(blob))
     else:
-        # Media must look like a “system-level” visa policy article
+        # Media: must look like a system-level visa policy article
         return has_action and has_country
 
 # ---------------- Utilities ----------------
@@ -228,12 +223,14 @@ def within_window(dt: Optional[datetime]) -> bool:
 
 def smart_excerpt(text: str, limit: int = 260) -> str:
     t = clean_text(text)
-    if len(t) <= limit: return t
+    if len(t) <= limit:
+        return t
     cut = t[:limit]
     last = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
-    if last > 40: return cut[: last + 1] + " …"
+    if last > 40:
+        return cut[: last + 1] + " …"
     sp = cut.rfind(" ")
-    return (cut[:sp] if sp > 0 else cut) + " …
+    return (cut[:sp] if sp > 0 else cut) + " …"
 
 def category_for(title: str, summary: str) -> str:
     b = f"{title} {summary}".lower()
@@ -284,30 +281,36 @@ def best_article_datetime(url: str) -> Optional[datetime]:
             m = rx.search(html)
             if m:
                 dt = parse_any_dt(m.group(1))
-                if dt: return dt
+                if dt:
+                    return dt
         m = TIME_TAG_RE.search(html)
         if m:
             dt = parse_any_dt(m.group(1))
-            if dt: return dt
+            if dt:
+                return dt
     if resp is not None:
         lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
         if lm:
             dt = parse_any_dt(lm)
-            if dt: return dt
+            if dt:
+                return dt
     return None
 
 def extract_gov_links(html: str) -> List[str]:
-    if not html: return []
+    if not html:
+        return []
     links = []
     for href in A_HREF_RE.findall(html):
         h = _host(href)
         if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
             links.append(href)
     # de-dup while preserving order
-    seen = set(); out = []
+    seen: set[str] = set()
+    out: List[str] = []
     for u in links:
         if u not in seen:
-            seen.add(u); out.append(u)
+            seen.add(u)
+            out.append(u)
     return out
 
 # ---------------- Feed fetching (+ WP pagination) ----------------
@@ -324,18 +327,25 @@ def fetch_feed_once(url: str):
         return []
 
 def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
-    all_entries, seen_links = [], set()
+    all_entries: List[Any] = []
+    seen_links: set[str] = set()
+
     def page_url(i: int) -> str:
-        if i == 1: return base_url
+        if i == 1:
+            return base_url
         sep = "&" if "?" in base_url else "?"
         return f"{base_url}{sep}paged={i}"
+
     for i in range(1, max_pages + 1):
         entries = fetch_feed_once(page_url(i))
-        if not entries: break
+        if not entries:
+            break
         new_entries = [e for e in entries if getattr(e, "link", None) not in seen_links]
         for e in new_entries:
-            if getattr(e, "link", None): seen_links.add(e.link)
-        if not new_entries: break
+            if getattr(e, "link", None):
+                seen_links.add(e.link)
+        if not new_entries:
+            break
         all_entries.extend(new_entries)
         dates = [entry_datetime(e) for e in new_entries]
         if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
@@ -387,7 +397,7 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url, headline, category in STATIC_PAGES:
         html, resp = http_get(url)
-        if not html and not resp: 
+        if not html and not resp:
             continue
         dt: Optional[datetime] = None
         m = TIME_TAG_RE.search(html or "")
@@ -395,7 +405,8 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
             dt = parse_any_dt(m.group(1))
         if not dt and resp is not None:
             lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
-            if lm: dt = parse_any_dt(lm)
+            if lm:
+                dt = parse_any_dt(lm)
         if not within_window(dt):
             print(f"→ page: {url} (no recent timestamp; skipped)")
             continue
@@ -413,14 +424,15 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
 
 # ---------------- Diversity guard ----------------
 PRIORITY_CAPS = {
-    "monitor.icef.com": 0.25,   # ≤ 25% of final list
-    "thepienews.com":   0.25,   # ≤ 25% of final list
+    "monitor.icef.com": 0.25,
+    "thepienews.com":   0.25,
 }
 def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not items:
         return items
     total = len(items)
     per_host: Dict[str, int] = {}
+    # True cap by share; allow at least 1 item for each capped domain
     caps: Dict[str, int] = {h: max(1, int(math.floor(total * share))) for h, share in PRIORITY_CAPS.items()}
 
     kept: List[Dict[str, Any]] = []
@@ -428,10 +440,15 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         h = it["source"]
         cap = caps.get(h)
         if cap is None:
-            kept.append(it); continue
+            kept.append(it)
+            continue
         c = per_host.get(h, 0)
         if c < cap:
-            kept.append(it); per_host[h] = c + 1
+            kept.append(it)
+            per_host[h] = c + 1
+        else:
+            # drop if domain reached its cap
+            continue
     return kept
 
 # ---------------- Build & write ----------------
@@ -446,19 +463,21 @@ def collect_items() -> List[Dict[str, Any]]:
     all_items.sort(key=lambda it: key(it), reverse=True)
 
     # dedupe
-    seen = set()
+    seen_pairs: set[tuple[str, str]] = set()
     deduped: List[Dict[str, Any]] = []
     for it in all_items:
         k = (it["headline"].strip().lower(), it["url"])
-        if k in seen: 
+        if k in seen_pairs:
             continue
-        seen.add(k)
+        seen_pairs.add(k)
         deduped.append(it)
 
     # safety window/domain filter
     deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
 
+    # apply diversity caps so PIE/ICEF don't dominate
     diversified = apply_diversity_caps(deduped)
+
     print(f"✔ total: {len(deduped)}; after diversity caps: {len(diversified)} (since {WINDOW_FROM.isoformat()})")
     return diversified
 
@@ -491,6 +510,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
