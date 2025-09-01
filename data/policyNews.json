@@ -1,6 +1,26 @@
 {
   "policyNews": [
     {
+      "date": "2025-08-29",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-08-29.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers"
+      ]
+    },
+    {
+      "date": "2025-08-29",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
       "date": "2025-08-27",
       "category": "Student Visas",
       "headline": "Canada: How is study permit processing taking shape this year?",
@@ -93,6 +113,63 @@
       "description": "<p>The Trump administration has given notice of a proposed rule change that seeks to limit the term for which a student visa can be issued. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/07/us-administration-revives-proposal-to-limit-terms-of-student-visas/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-03",
+      "category": "Post-Study Work",
+      "headline": "Canada: List of non-degree college programmes linked to post-study work rights has changed",
+      "description": "<p>The Canadian government is continuing its policy of linking eligibility for a post-study work permit (PGWP) – at the non-degree level – to certain fields of study. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/07/canada-list-of-non-degree-college-programmes-linked-to-post-study-work-rights-has-changed/",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/update-requirement-post-graduation-work-permits.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility/field-of-study.html#check_cip_list"
+      ]
+    },
+    {
+      "date": "2025-06-26",
+      "category": "Policy Update",
+      "headline": "New analysis sounds a note of caution for UK immigration reforms",
+      "description": "<p>Within the UK&#8217;s higher education system, there are a group of institutions known as &#8220;Post-1992 universities&#8221;. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/06/new-analysis-sounds-a-note-of-caution-for-uk-immigration-reforms/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-05-23",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Child Student visa",
+      "description": "Child Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-child-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-05-23",
+      "category": "Student Visas",
+      "headline": "Apply for a Parent of a Child Student visa: step by step",
+      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/apply-parent-child-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-05-12",
+      "category": "Policy Update",
+      "headline": "Student route evaluation (wave 2)",
+      "description": "This report explores the experiences and activities of international students and university sponsors accessing the Sponsored Study visa route.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/student-route-evaluation-wave-2",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-04-29",
+      "category": "Student Visas",
+      "headline": "Complexity application routing solution (study): caseworker guidance",
+      "description": "Immigration staff guidance on routing and processing applications from customers applying for a Student visa under Appendix Student.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/complexity-application-routing-solution-study-caseworker-guidance",
       "gov_sources": []
     }
   ]
