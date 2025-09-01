@@ -5,18 +5,24 @@ Policy / international-student-visa tracker — 'example-style' only
 (PIE/ICEF/IDP visa-policy pieces + original government sources)
 
 - Sources: Gov (UK/CA/US/AU) + PIE/ICEF + IDP only.
-- Strict relevance: visa/permit required + action/policy verbs (+ country cue).
-- 6-month window with robust date extraction.
-- WordPress pagination.
+- Strict relevance:
+    * MUST mention visa/immigration core terms, AND
+    * MUST clearly impact international students / HE (IMPACT_RX), AND
+    * MEDIA: also needs action/policy cue + country/system cue
+    * GOV: action optional (gov guidance often terse)
+- True 6-month window with robust date extraction (<meta>, <time>, Last-Modified).
+- Deep pagination:
+    * WordPress: MAX_WP_PAGES (default 20)
+    * GOV.UK Search Atom with keyword queries + page=N
 - Diversity caps so PIE/ICEF don't swamp others.
-- Enrichment: scrape article body for outbound links to official gov sources.
+- Enrichment: scrape media articles for outbound links to official gov sources.
 - Output: data/policyNews.json -> {"policyNews":[ {..., "gov_sources":[...]} ]}
 """
 
 from __future__ import annotations
 from typing import List, Dict, Any, Tuple, Optional
 import json, pathlib, hashlib, sys, re, math, os
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlencode
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
@@ -32,48 +38,41 @@ WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.6 (+github actions bot)"
+UA = "policy-student-mobility/3.8 (+github actions bot)"
 
-# How deep to paginate WordPress feeds
-MAX_WP_PAGES = 10
+# Pagination depths
+MAX_WP_PAGES   = int(os.getenv("MAX_WP_PAGES", "20"))
+MAX_GOV_PAGES  = int(os.getenv("MAX_GOV_PAGES", "8"))   # GOV.UK search paging depth
 
 # ---------------- Domains (strict whitelist) ----------------
-# Media allowed: ICEF Monitor, The PIE News, IDP (insights)
 MEDIA_HOSTS = {
     "monitor.icef.com",
     "thepienews.com",
     "www.idp.com",
     "idp.com",
 }
-
-# Government hosts to capture originals
 GOV_HOSTS = {
-    "gov.uk",                              # UK gov (includes UKVI content)
+    "gov.uk",
     "homeoffice.gov.uk",
     "ukvi.homeoffice.gov.uk",
-    "canada.ca",                           # IRCC on canada.ca
-    "cic.gc.ca",                           # legacy IRCC
-    "uscis.gov",                           # United States
+    "canada.ca",
+    "cic.gc.ca",
+    "uscis.gov",
     "state.gov",
     "travel.state.gov",
-    "immi.homeaffairs.gov.au",             # Australia
+    "immi.homeaffairs.gov.au",
     "homeaffairs.gov.au",
-    "education.gov.au",                    # AU education page updates
+    "education.gov.au",
 }
-
 ALLOWED_HOSTS = MEDIA_HOSTS | GOV_HOSTS
 
 def _host(url: str) -> str:
-    try:
-        return urlparse(url).netloc.lower()
-    except Exception:
-        return ""
+    try: return urlparse(url).netloc.lower()
+    except Exception: return ""
 
 def _path(url: str) -> str:
-    try:
-        return urlparse(url).path or "/"
-    except Exception:
-        return "/"
+    try: return urlparse(url).path or "/"
+    except Exception: return "/"
 
 def _allowed(url: str) -> bool:
     h = _host(url)
@@ -81,41 +80,37 @@ def _allowed(url: str) -> bool:
 
 # Optional path gates (weed out non-policy sections)
 PATH_ALLOW: Dict[str, List[re.Pattern]] = {
-    "thepienews.com":     [re.compile(r"/(news|category/news/government)/", re.I)],
-    "monitor.icef.com":   [re.compile(r"/\d{4}/\d{2}/", re.I)],  # dated posts
-    "idp.com":            [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
+    "thepienews.com":   [re.compile(r"/(news|category/news/government)/", re.I)],
+    "monitor.icef.com": [re.compile(r"/\d{4}/\d{2}/", re.I)],
+    "idp.com":          [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
 }
-
 def _path_allowed(url: str) -> bool:
     h = _host(url)
     gates = PATH_ALLOW.get(h, [])
-    if not gates:
-        return True
+    if not gates: return True
     p = _path(url)
     return any(rx.search(p) for rx in gates)
 
 # ---------------- Feeds ----------------
-# Targeted feeds only (gov + PIE/ICEF + IDP)
 FEEDS: List[str] = [
-    # UK government
-    "https://www.gov.uk/government/announcements.rss",
-    "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
-    "https://www.gov.uk/government/publications.atom",  # captures publications like licensed sponsors
-
     # Canada (IRCC)
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
-
-    # United States
+    # United States (USCIS)
     "https://www.uscis.gov/news/rss.xml",
-
-    # Australia
+    # Australia (Dept of Education newsroom)
     "https://www.education.gov.au/newsroom/all.atom",
-
     # Sector media (WordPress)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
     "https://www.idp.com/blog/feed/",
+]
+
+# GOV.UK — Search Atom with keywords + pagination (deeper & broader than a single org feed)
+GOVUK_SEARCH_BASE = "https://www.gov.uk/search/all.atom"
+GOVUK_QUERIES = [
+    "student visa", "study visa", "study permit", "immigration", "UKVI",
+    "graduate route", "post study", "licensed sponsor", "sponsorship",
 ]
 
 WP_FEEDS = {
@@ -139,7 +134,7 @@ STATIC_PAGES = [
     ),
 ]
 
-# ---------------- Relevance (example-style) ----------------
+# ---------------- Relevance (example-style + impact) ----------------
 # Core visa/permit terms
 CORE_RX = re.compile(
     r"\b(visa|visas|student visa|study permit|immigration|graduate route|post[- ]?study|psw|opt|pgwp|"
@@ -147,7 +142,7 @@ CORE_RX = re.compile(
     re.I,
 )
 
-# Action/policy verbs & nouns (tight to your examples)
+# Action/policy verbs & nouns (for media; gov can be quieter)
 ACTIONS_RX = re.compile(
     r"\b(propose[sd]?|introduce[sd]?|cap(?:ped|s)?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
     r"grant(?:s|ed)?|issuances?|processing|backlog|fast-?track|updated?|update|change[sd]?|"
@@ -155,17 +150,24 @@ ACTIONS_RX = re.compile(
     re.I,
 )
 
-# Country/location cues (helps keep to system-level stories)
+# Country/system cue for media
 COUNTRY_RX = re.compile(
     r"\b(US|U\.S\.|United States|UK|U\.K\.|United Kingdom|Britain|British|Canada|Canadian|Australia|Australian|"
     r"Home Office|IRCC|USCIS|UKVI)\b",
     re.I,
 )
 
-# Higher education / international students context
-INTL_HE_RX = re.compile(
-    r"\b(international student[s]?|higher education|university|universities|campus|"
-    r"student (?:arrivals|grants|applications|visas))\b", re.I
+# Impact on international students / HE (MUST-HAVE for ALL items)
+IMPACT_RX = re.compile(
+    r"\b("
+    r"international student[s]?|overseas student[s]?|foreign student[s]?|"
+    r"graduate(?:s)?(?:\s+(?:mobility|employment|outcomes|returnees?))?|"
+    r"post[-\s]?study(?:\s+work)?|PSW|OPT|PGWP|Temporary Graduate|485|Graduate Route|"
+    r"student\s+(?:visa|visas|arrivals|grants|applications|permits?)|study\s+permit[s]?|"
+    r"higher education|HE sector|university|universities|campus|"
+    r"international education|transnational education|agent[s]?|recruitment agent[s]?"
+    r")\b",
+    re.I,
 )
 
 # Hard excludes
@@ -175,10 +177,19 @@ EXCLUDES_RX = re.compile(
 )
 
 def like_examples(title: str, summary: str, link: str) -> bool:
+    """
+    Keep only items that:
+      - mention visa/immigration core terms (CORE_RX), AND
+      - clearly impact international students / HE (IMPACT_RX), AND
+      - (for media) include policy/action cue + country/system cue,
+      - (for gov) action cue optional (gov pages often state guidance quietly).
+    """
     blob = f"{title} {summary}"
     if EXCLUDES_RX.search(blob):
         return False
     if not CORE_RX.search(blob):
+        return False
+    if not IMPACT_RX.search(blob):
         return False
 
     host = _host(link)
@@ -187,10 +198,8 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     has_country = bool(COUNTRY_RX.search(blob) or "sponsor" in blob.lower())
 
     if is_gov:
-        # Gov pages: core + (action OR HE context)
-        return has_action or bool(INTL_HE_RX.search(blob))
+        return True  # core + impact already satisfied
     else:
-        # Media: must look like a system-level visa policy article
         return has_action and has_country
 
 # ---------------- Utilities ----------------
@@ -238,8 +247,10 @@ def category_for(title: str, summary: str) -> str:
         return "Post-Study Work"
     if re.search(r"\b(student visa|study permit|subclass(?:\s|-)?500|f-1|j-1)\b", b):
         return "Student Visas"
-    if "licensed sponsor" in b or "sponsor" in b:
+    if re.search(r"\b(licensed sponsor|sponsor|sponsorship)\b", b):
         return "Sponsorship"
+    if re.search(r"\b(arrivals|grants|processing|issuances?|backlog)\b", b):
+        return "Processing & Grants"
     return "Policy Update"
 
 def sig(obj: Any) -> str:
@@ -281,30 +292,25 @@ def best_article_datetime(url: str) -> Optional[datetime]:
             m = rx.search(html)
             if m:
                 dt = parse_any_dt(m.group(1))
-                if dt:
-                    return dt
+                if dt: return dt
         m = TIME_TAG_RE.search(html)
         if m:
             dt = parse_any_dt(m.group(1))
-            if dt:
-                return dt
+            if dt: return dt
     if resp is not None:
         lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
         if lm:
             dt = parse_any_dt(lm)
-            if dt:
-                return dt
+            if dt: return dt
     return None
 
 def extract_gov_links(html: str) -> List[str]:
-    if not html:
-        return []
+    if not html: return []
     links = []
     for href in A_HREF_RE.findall(html):
         h = _host(href)
         if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
             links.append(href)
-    # de-dup while preserving order
     seen: set[str] = set()
     out: List[str] = []
     for u in links:
@@ -331,8 +337,7 @@ def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
     seen_links: set[str] = set()
 
     def page_url(i: int) -> str:
-        if i == 1:
-            return base_url
+        if i == 1: return base_url
         sep = "&" if "?" in base_url else "?"
         return f"{base_url}{sep}paged={i}"
 
@@ -352,6 +357,56 @@ def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
             break
     return all_entries
 
+# ---------------- GOV.UK Search (keywords + pagination) ----------------
+def govuk_search_feed(query: str, page: int) -> str:
+    params = {"q": query, "order": "updated-newest", "page": page}
+    return f"{GOVUK_SEARCH_BASE}?{urlencode(params)}"
+
+def items_from_govuk_search() -> List[Dict[str, Any]]:
+    kept: List[Dict[str, Any]] = []
+    for q in GOVUK_QUERIES:
+        for page in range(1, MAX_GOV_PAGES + 1):
+            url = govuk_search_feed(q, page)
+            entries = fetch_feed_once(url)
+            if not entries:
+                break
+            page_kept = 0
+            for e in entries:
+                title = clean_text(getattr(e, "title", "") or "")
+                link  = (getattr(e, "link", "") or "").strip()
+                if not title or not link:
+                    continue
+                if not _allowed(link):
+                    continue
+
+                dt = entry_datetime(e)
+                if not within_window(dt):
+                    dt = best_article_datetime(link)
+                if not within_window(dt):
+                    continue
+
+                summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
+                if not like_examples(title, summary, link):
+                    continue
+
+                kept.append({
+                    "date": dt.date().isoformat(),
+                    "category": category_for(title, summary),
+                    "headline": title[:200],
+                    "description": smart_excerpt(summary, 260),
+                    "source": _host(link),
+                    "url": link,
+                    "gov_sources": [link] if _host(link) in GOV_HOSTS else [],
+                })
+                page_kept += 1
+
+            # Early stop if this page was entirely older than window or yielded nothing
+            if page_kept == 0:
+                # Heuristic: if most entries are old, the next pages will be too
+                break
+    return kept
+
+# ---------------- Items from standard feeds ----------------
 def items_from_feed(url: str) -> List[Dict[str, Any]]:
     entries = paginate_wp_feed(url, MAX_WP_PAGES) if url in WP_FEEDS else fetch_feed_once(url)
     kept: List[Dict[str, Any]] = []
@@ -432,7 +487,6 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         return items
     total = len(items)
     per_host: Dict[str, int] = {}
-    # True cap by share; allow at least 1 item for each capped domain
     caps: Dict[str, int] = {h: max(1, int(math.floor(total * share))) for h, share in PRIORITY_CAPS.items()}
 
     kept: List[Dict[str, Any]] = []
@@ -447,15 +501,21 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             kept.append(it)
             per_host[h] = c + 1
         else:
-            # drop if domain reached its cap
             continue
     return kept
 
 # ---------------- Build & write ----------------
 def collect_items() -> List[Dict[str, Any]]:
     all_items: List[Dict[str, Any]] = []
+
+    # GOV.UK search (keyworded + pagination)
+    all_items.extend(items_from_govuk_search())
+
+    # Standard feeds (IRCC, USCIS, AU Edu, PIE/ICEF/IDP)
     for f in FEEDS:
         all_items.extend(items_from_feed(f))
+
+    # AU static pages
     all_items.extend(items_from_static_pages())
 
     # sort newest → oldest
@@ -510,6 +570,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
