@@ -8,7 +8,7 @@ Policy / international-student-visa tracker — 'example-style' only
 - Strict relevance:
     * MUST mention visa/immigration core terms, AND
     * MUST clearly impact international students / HE (IMPACT_RX), AND
-    * MEDIA: also needs action/policy cue + country/system cue
+    * MEDIA (PIE/ICEF/IDP): require IMPACT + (ACTION OR country/system cue)
     * GOV: action optional (gov guidance often terse)
 - True 6-month window with robust date extraction (<meta>, <time>, Last-Modified).
 - Deep pagination:
@@ -38,7 +38,7 @@ WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.8 (+github actions bot)"
+UA = "policy-student-mobility/3.9 (+github actions bot)"
 
 # Pagination depths
 MAX_WP_PAGES   = int(os.getenv("MAX_WP_PAGES", "20"))
@@ -142,7 +142,7 @@ CORE_RX = re.compile(
     re.I,
 )
 
-# Action/policy verbs & nouns (for media; gov can be quieter)
+# Action/policy verbs & nouns (useful but not mandatory for media now)
 ACTIONS_RX = re.compile(
     r"\b(propose[sd]?|introduce[sd]?|cap(?:ped|s)?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
     r"grant(?:s|ed)?|issuances?|processing|backlog|fast-?track|updated?|update|change[sd]?|"
@@ -150,7 +150,7 @@ ACTIONS_RX = re.compile(
     re.I,
 )
 
-# Country/system cue for media
+# Country/system cue for media (incl. UK)
 COUNTRY_RX = re.compile(
     r"\b(US|U\.S\.|United States|UK|U\.K\.|United Kingdom|Britain|British|Canada|Canadian|Australia|Australian|"
     r"Home Office|IRCC|USCIS|UKVI)\b",
@@ -181,8 +181,8 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     Keep only items that:
       - mention visa/immigration core terms (CORE_RX), AND
       - clearly impact international students / HE (IMPACT_RX), AND
-      - (for media) include policy/action cue + country/system cue,
-      - (for gov) action cue optional (gov pages often state guidance quietly).
+      - GOV: action cue optional (gov guidance often terse)
+      - MEDIA: IMPACT + (ACTION OR country/system cue) — works for UK, US, CA, AU
     """
     blob = f"{title} {summary}"
     if EXCLUDES_RX.search(blob):
@@ -198,9 +198,10 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     has_country = bool(COUNTRY_RX.search(blob) or "sponsor" in blob.lower())
 
     if is_gov:
-        return True  # core + impact already satisfied
+        return True
     else:
-        return has_action and has_country
+        # Media: require clear student/HE impact plus either policy/action cue OR country/system cue
+        return has_action or has_country
 
 # ---------------- Utilities ----------------
 def clean_text(s: str) -> str:
@@ -400,9 +401,7 @@ def items_from_govuk_search() -> List[Dict[str, Any]]:
                 })
                 page_kept += 1
 
-            # Early stop if this page was entirely older than window or yielded nothing
             if page_kept == 0:
-                # Heuristic: if most entries are old, the next pages will be too
                 break
     return kept
 
@@ -570,6 +569,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
