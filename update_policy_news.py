@@ -13,10 +13,14 @@ Policy / international-student-visa tracker — 'example-style' only
 - True 6-month window with robust date extraction (<meta>, <time>, Last-Modified).
 - Deep pagination:
     * WordPress: MAX_WP_PAGES (default 20)
-    * GOV.UK Search Atom with keyword queries + page=N
-- Diversity caps so PIE/ICEF don't swamp others.
-- Enrichment: scrape media articles for outbound links to official gov sources.
-- Output: data/policyNews.json -> {"policyNews":[ {..., "gov_sources":[...]} ]}
+    * GOV.UK Search Atom with keyword queries + page=N, stop only when page is fully outside window
+- Output:
+    * data/policyNews.json           -> page 1 (keeps legacy shape: {"policyNews":[...]} )
+    * data/policyNews.p2.json, ...   -> subsequent pages
+    * data/policyNews.index.json     -> {"pages": N, "page_size": K, "generated_at": "..."}
+- Diversity:
+    * Page 1 uses domain caps so PIE/ICEF don’t swamp
+    * Subsequent pages have NO caps so full back-catalog appears (incl. UK)
 """
 
 from __future__ import annotations
@@ -31,18 +35,20 @@ import requests
 
 # ---------------- Settings ----------------
 SITE_ROOT   = pathlib.Path(__file__).resolve().parent
-OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
+OUTPUT_DIR  = SITE_ROOT / "data"
+OUTPUT_FILE = OUTPUT_DIR / "policyNews.json"
 
 NOW_UTC     = datetime.now(timezone.utc)
 WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.9 (+github actions bot)"
+UA = "policy-student-mobility/4.0 (+github actions bot)"
 
 # Pagination depths
 MAX_WP_PAGES   = int(os.getenv("MAX_WP_PAGES", "20"))
-MAX_GOV_PAGES  = int(os.getenv("MAX_GOV_PAGES", "8"))   # GOV.UK search paging depth
+MAX_GOV_PAGES  = int(os.getenv("MAX_GOV_PAGES", "15"))   # GOV.UK search paging depth
+PAGE_SIZE      = int(os.getenv("PAGE_SIZE", "30"))       # items per JSON page
 
 # ---------------- Domains (strict whitelist) ----------------
 MEDIA_HOSTS = {
@@ -106,7 +112,7 @@ FEEDS: List[str] = [
     "https://www.idp.com/blog/feed/",
 ]
 
-# GOV.UK — Search Atom with keywords + pagination (deeper & broader than a single org feed)
+# GOV.UK — Search Atom with keywords + pagination (broader than single org feed)
 GOVUK_SEARCH_BASE = "https://www.gov.uk/search/all.atom"
 GOVUK_QUERIES = [
     "student visa", "study visa", "study permit", "immigration", "UKVI",
@@ -135,29 +141,22 @@ STATIC_PAGES = [
 ]
 
 # ---------------- Relevance (example-style + impact) ----------------
-# Core visa/permit terms
 CORE_RX = re.compile(
     r"\b(visa|visas|student visa|study permit|immigration|graduate route|post[- ]?study|psw|opt|pgwp|"
     r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis|sponsor[s]?|sponsorship)\b",
     re.I,
 )
-
-# Action/policy verbs & nouns (useful but not mandatory for media now)
 ACTIONS_RX = re.compile(
     r"\b(propose[sd]?|introduce[sd]?|cap(?:ped|s)?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
     r"grant(?:s|ed)?|issuances?|processing|backlog|fast-?track|updated?|update|change[sd]?|"
     r"fall(?:s|ing)?|rise[sn]?|increase[sd]?|decrease[sd]?|strengthen(?:ing|ed)?|tighten(?:ed|ing)?)\b",
     re.I,
 )
-
-# Country/system cue for media (incl. UK)
 COUNTRY_RX = re.compile(
     r"\b(US|U\.S\.|United States|UK|U\.K\.|United Kingdom|Britain|British|Canada|Canadian|Australia|Australian|"
     r"Home Office|IRCC|USCIS|UKVI)\b",
     re.I,
 )
-
-# Impact on international students / HE (MUST-HAVE for ALL items)
 IMPACT_RX = re.compile(
     r"\b("
     r"international student[s]?|overseas student[s]?|foreign student[s]?|"
@@ -169,8 +168,6 @@ IMPACT_RX = re.compile(
     r")\b",
     re.I,
 )
-
-# Hard excludes
 EXCLUDES_RX = re.compile(
     r"\b(celebrity|restaurant|football|cricket|movie|tv show|tourism only|property prices|IPO)\b",
     re.I,
@@ -185,12 +182,9 @@ def like_examples(title: str, summary: str, link: str) -> bool:
       - MEDIA: IMPACT + (ACTION OR country/system cue) — works for UK, US, CA, AU
     """
     blob = f"{title} {summary}"
-    if EXCLUDES_RX.search(blob):
-        return False
-    if not CORE_RX.search(blob):
-        return False
-    if not IMPACT_RX.search(blob):
-        return False
+    if EXCLUDES_RX.search(blob): return False
+    if not CORE_RX.search(blob): return False
+    if not IMPACT_RX.search(blob): return False
 
     host = _host(link)
     is_gov = any(host == d or host.endswith("." + d) for d in GOV_HOSTS)
@@ -200,7 +194,6 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     if is_gov:
         return True
     else:
-        # Media: require clear student/HE impact plus either policy/action cue OR country/system cue
         return has_action or has_country
 
 # ---------------- Utilities ----------------
@@ -336,22 +329,17 @@ def fetch_feed_once(url: str):
 def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
     all_entries: List[Any] = []
     seen_links: set[str] = set()
-
     def page_url(i: int) -> str:
         if i == 1: return base_url
         sep = "&" if "?" in base_url else "?"
         return f"{base_url}{sep}paged={i}"
-
     for i in range(1, max_pages + 1):
         entries = fetch_feed_once(page_url(i))
-        if not entries:
-            break
+        if not entries: break
         new_entries = [e for e in entries if getattr(e, "link", None) not in seen_links]
         for e in new_entries:
-            if getattr(e, "link", None):
-                seen_links.add(e.link)
-        if not new_entries:
-            break
+            if getattr(e, "link", None): seen_links.add(e.link)
+        if not new_entries: break
         all_entries.extend(new_entries)
         dates = [entry_datetime(e) for e in new_entries]
         if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
@@ -371,13 +359,21 @@ def items_from_govuk_search() -> List[Dict[str, Any]]:
             entries = fetch_feed_once(url)
             if not entries:
                 break
-            page_kept = 0
+
+            # Determine if this page is entirely outside the window
+            page_dates: List[Optional[datetime]] = []
+            for e in entries:
+                dt = entry_datetime(e)
+                if not within_window(dt):
+                    dt = best_article_datetime(getattr(e, "link", "") or "")
+                page_dates.append(dt)
+            if page_dates and all(d and d.date() < WINDOW_FROM for d in page_dates if d):
+                break  # all entries older than window -> stop paging
+
             for e in entries:
                 title = clean_text(getattr(e, "title", "") or "")
                 link  = (getattr(e, "link", "") or "").strip()
-                if not title or not link:
-                    continue
-                if not _allowed(link):
+                if not title or not link or not _allowed(link):
                     continue
 
                 dt = entry_datetime(e)
@@ -399,10 +395,6 @@ def items_from_govuk_search() -> List[Dict[str, Any]]:
                     "url": link,
                     "gov_sources": [link] if _host(link) in GOV_HOSTS else [],
                 })
-                page_kept += 1
-
-            if page_kept == 0:
-                break
     return kept
 
 # ---------------- Items from standard feeds ----------------
@@ -476,7 +468,7 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
     print(f"→ static pages kept {len(items)}")
     return items
 
-# ---------------- Diversity guard ----------------
+# ---------------- Diversity guard (for page 1 only) ----------------
 PRIORITY_CAPS = {
     "monitor.icef.com": 0.25,
     "thepienews.com":   0.25,
@@ -493,14 +485,10 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         h = it["source"]
         cap = caps.get(h)
         if cap is None:
-            kept.append(it)
-            continue
+            kept.append(it); continue
         c = per_host.get(h, 0)
         if c < cap:
-            kept.append(it)
-            per_host[h] = c + 1
-        else:
-            continue
+            kept.append(it); per_host[h] = c + 1
     return kept
 
 # ---------------- Build & write ----------------
@@ -534,34 +522,55 @@ def collect_items() -> List[Dict[str, Any]]:
     # safety window/domain filter
     deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
 
-    # apply diversity caps so PIE/ICEF don't dominate
-    diversified = apply_diversity_caps(deduped)
+    print(f"✔ total items in window: {len(deduped)} (since {WINDOW_FROM.isoformat()})")
+    return deduped
 
-    print(f"✔ total: {len(deduped)}; after diversity caps: {len(diversified)} (since {WINDOW_FROM.isoformat()})")
-    return diversified
+def chunk(lst: List[Dict[str, Any]], size: int) -> List[List[Dict[str, Any]]]:
+    return [lst[i:i+size] for i in range(0, len(lst), size)]
 
-def write_json(items: List[Dict[str, Any]]):
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"policyNews": items}
-    new = sig(payload)
-    old = None
-    if OUTPUT_FILE.exists():
-        try:
-            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-                old = sig(json.load(f))
-        except Exception:
-            pass
-    if new != old:
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-        print(f"✅ wrote {len(items)} items → {OUTPUT_FILE}")
-    else:
-        print("ℹ️ no changes; left existing file untouched")
+def write_paginated(items: List[Dict[str, Any]]):
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Page 1: apply diversity caps, then take PAGE_SIZE
+    page1_candidates = apply_diversity_caps(items)
+    page1 = page1_candidates[:PAGE_SIZE]
+
+    # Remaining pages: no caps, just continue in chronological order
+    remaining_urls = {it["url"] for it in page1}
+    rest = [it for it in items if it["url"] not in remaining_urls]
+    other_pages = chunk(rest, PAGE_SIZE)
+
+    # Write page 1 (legacy filename/shape)
+    payload1 = {"policyNews": page1}
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(payload1, f, ensure_ascii=False, indent=2)
+    print(f"✅ wrote page 1: {OUTPUT_FILE} ({len(page1)} items)")
+
+    # Write subsequent pages
+    pages_total = 1
+    for i, page in enumerate(other_pages, start=2):
+        pfile = OUTPUT_DIR / f"policyNews.p{i}.json"
+        with open(pfile, "w", encoding="utf-8") as f:
+            json.dump({"policyNews": page}, f, ensure_ascii=False, indent=2)
+        print(f"✅ wrote page {i}: {pfile} ({len(page)} items)")
+        pages_total += 1
+
+    # Write index/metadata for easy "load more"
+    index_payload = {
+        "pages": pages_total,
+        "page_size": PAGE_SIZE,
+        "generated_at": NOW_UTC.isoformat(),
+        "window_from": WINDOW_FROM.isoformat(),
+        "files": ["policyNews.json"] + [f"policyNews.p{i}.json" for i in range(2, pages_total+1)],
+    }
+    with open(OUTPUT_DIR / "policyNews.index.json", "w", encoding="utf-8") as f:
+        json.dump(index_payload, f, ensure_ascii=False, indent=2)
+    print(f"🧭 wrote index: {OUTPUT_DIR / 'policyNews.index.json'}")
 
 def main():
     print(f"🔄 Building 'example-style' feed (last {WINDOW_DAYS} days from {WINDOW_FROM.isoformat()})")
     items = collect_items()
-    write_json(items)
+    write_paginated(items)
 
 if __name__ == "__main__":
     try:
@@ -569,6 +578,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
