@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Policy / international-student-visa tracker (6 months, gov + IDP; PIE/ICEF capped)
+Policy / international-student-visa tracker — 'example-style' only
+(PIE/ICEF/IDP visa-policy pieces + original government sources)
 
-- Sources: ONLY approved domains (whitelist below) — now with official gov feeds.
-- Removed: espiconsultants.com
-- Strict relevance: visa/immigration required + (policy/action OR intl-students/HE)
-- True 6-month coverage:
-    * WordPress feed pagination (?paged=2..N)
-    * Fallback to article page <meta article:published_time> / <time datetime> / Last-Modified
-- Diversity guard: per-domain share caps so PIE/ICEF don't swamp others
-- Output: data/policyNews.json  -> {"policyNews":[ ... ]}
+- Sources: Gov (UK/CA/US/AU) + PIE/ICEF + IDP only.
+- Strict relevance: visa/permit required + action/policy verbs (+ country cue).
+- 6-month window with robust date extraction.
+- WordPress pagination.
+- Diversity caps so PIE/ICEF don't swamp others.
+- Enrichment: scrape article body for outbound links to official gov sources.
+- Output: data/policyNews.json -> {"policyNews":[ {..., "gov_sources":[...]} ]}
 """
 
 from __future__ import annotations
 from typing import List, Dict, Any, Tuple, Optional
-import json, pathlib, hashlib, sys, re, math
+import json, pathlib, hashlib, sys, re, math, os
 from urllib.parse import urlparse
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -28,48 +28,40 @@ SITE_ROOT   = pathlib.Path(__file__).resolve().parent
 OUTPUT_FILE = SITE_ROOT / "data" / "policyNews.json"
 
 NOW_UTC     = datetime.now(timezone.utc)
-WINDOW_DAYS = 183  # ~6 months
+WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/3.5 (+github actions bot)"
+UA = "policy-student-mobility/3.6 (+github actions bot)"
 
-# How deep to paginate WordPress feeds (increase if needed)
+# How deep to paginate WordPress feeds
 MAX_WP_PAGES = 10
 
-# ---------------- Domains (whitelist) ----------------
-ALLOWED_HOSTS = {
-    # Official gov / regulators
-    "gov.uk",
-    "canada.ca",                # IRCC
-    "uscis.gov",
-    "immi.homeaffairs.gov.au",  # AU Home Affairs
-    "education.gov.au",         # AU Dept of Education (page updates)
-
-    # Sector & research
-    "thepienews.com",
+# ---------------- Domains (strict whitelist) ----------------
+# Media allowed: ICEF Monitor, The PIE News, IDP (insights)
+MEDIA_HOSTS = {
     "monitor.icef.com",
-    "migrationobservatory.ox.ac.uk",
-    "commonslibrary.parliament.uk",
-
-    # Student-facing / data / news allowed previously
+    "thepienews.com",
+    "www.idp.com",
     "idp.com",
-    "applyboard.com",
-    "visasupdate.com",
-    "timeshighereducation.com",
-    "ndtv.com",
-    "economictimes.indiatimes.com",
-    "internationalstudent.com",
 }
 
-# Optional per-domain path gates to cut noise from general feeds
-PATH_ALLOW: Dict[str, List[re.Pattern]] = {
-    "economictimes.indiatimes.com": [re.compile(r"/nri/", re.I)],  # keep NRI desks incl. study
-    "timeshighereducation.com":     [re.compile(r"/student/", re.I), re.compile(r"/news/", re.I)],
-    "ndtv.com":                     [re.compile(r"/education/", re.I), re.compile(r"/world-news/", re.I)],
-    "internationalstudent.com":     [re.compile(r"/", re.I)],  # site is focused; allow
-    # gov.uk is broad — use relevance filter (CORE/ACTIONS) to keep only immigration/HE items
+# Government hosts to capture originals
+GOV_HOSTS = {
+    "gov.uk",                              # UK gov (includes UKVI content)
+    "homeoffice.gov.uk",
+    "ukvi.homeoffice.gov.uk",
+    "canada.ca",                           # IRCC on canada.ca
+    "cic.gc.ca",                           # legacy IRCC
+    "uscis.gov",                           # United States
+    "state.gov",
+    "travel.state.gov",
+    "immi.homeaffairs.gov.au",             # Australia
+    "homeaffairs.gov.au",
+    "education.gov.au",                    # AU education page updates
 }
+
+ALLOWED_HOSTS = MEDIA_HOSTS | GOV_HOSTS
 
 def _host(url: str) -> str:
     try: return urlparse(url).netloc.lower()
@@ -81,62 +73,57 @@ def _path(url: str) -> str:
 
 def _allowed(url: str) -> bool:
     h = _host(url)
-    ok = any(h == d or h.endswith("." + d) for d in ALLOWED_HOSTS)
-    if not ok: return False
+    return any(h == d or h.endswith("." + d) for d in ALLOWED_HOSTS)
+
+# Optional path gates (weed out non-policy sections)
+PATH_ALLOW: Dict[str, List[re.Pattern]] = {
+    "thepienews.com":     [re.compile(r"/(news|category/news/government)/", re.I)],
+    "monitor.icef.com":   [re.compile(r"/\d{4}/\d{2}/", re.I)],  # dated posts
+    "idp.com":            [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
+    "timeshighereducation.com": [],  # removed from whitelist in this mode
+}
+
+def _path_allowed(url: str) -> bool:
+    h = _host(url)
     gates = PATH_ALLOW.get(h, [])
-    if not gates: return True
+    if not gates: 
+        # for gov sites we keep relevance filters to do the heavy lifting
+        return True
     p = _path(url)
     return any(rx.search(p) for rx in gates)
 
 # ---------------- Feeds ----------------
-# WordPress & RSS feeds across approved domains (no espiconsultants)
+# Targeted feeds only (gov + PIE/ICEF + IDP)
 FEEDS: List[str] = [
-    # Official / government
+    # UK government
     "https://www.gov.uk/government/announcements.rss",
     "https://www.gov.uk/government/organisations/uk-visas-and-immigration.atom",
+    "https://www.gov.uk/government/publications.atom",  # captures publications like licensed sponsors
+
+    # Canada (IRCC)
     "https://www.canada.ca/en/immigration-refugees-citizenship/atom.xml",
+
+    # United States
     "https://www.uscis.gov/news/rss.xml",
 
-    # Sector policy (WordPress)
+    # Australia
+    "https://www.education.gov.au/newsroom/all.atom",
+
+    # Sector media (WordPress)
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
-
-    # Research/briefings
-    "https://migrationobservatory.ox.ac.uk/feed/",
-    "https://commonslibrary.parliament.uk/feed/",
-
-    # Student-facing / analysis (WordPress)
     "https://www.idp.com/blog/feed/",
-    "https://www.applyboard.com/feed",
-    "https://www.applyboard.com/blog/category/applyinsights/feed",
-    "https://www.visasupdate.com/feed/",
-    "https://www.internationalstudent.com/rss.xml",
-
-    # THE (student + news)
-    "https://www.timeshighereducation.com/student/rss",
-    "https://www.timeshighereducation.com/rss",
-
-    # NDTV (education + world-news)
-    "https://www.ndtv.com/education/rss",
-    "https://www.ndtv.com/world-news/rss",
-
-    # Economic Times (includes NRI desks; path filter applies)
-    "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
 ]
 
-# Which feeds should be treated as WordPress and paginated
 WP_FEEDS = {
     "https://monitor.icef.com/feed/",
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
     "https://www.idp.com/blog/feed/",
-    "https://www.applyboard.com/feed",
-    "https://www.applyboard.com/blog/category/applyinsights/feed",
-    "https://www.visasupdate.com/feed/",
 }
 
-# Static official pages to check for timestamped updates
+# Static official AU visa pages (timestamped updates)
 STATIC_PAGES = [
     (
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
@@ -148,44 +135,68 @@ STATIC_PAGES = [
         "Australia: Temporary Graduate (485) Post-Higher Education Work page update",
         "Post-Study Work",
     ),
-    (
-        "https://www.education.gov.au/international-education-data-and-research/other-international-education-data-and-research",
-        "Australia: International education data & research — page update",
-        "Education Policy",
-    ),
 ]
 
-# ---------------- Relevance ----------------
+# ---------------- Relevance (example-style) ----------------
+# Core visa/permit terms
 CORE_RX = re.compile(
     r"\b(visa|visas|student visa|study permit|immigration|graduate route|post[- ]?study|psw|opt|pgwp|"
-    r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis|"
-    r"dependents?|dependants?|work rights|work hours)\b",
-    re.I,
-)
-ACTIONS_RX = re.compile(
-    r"\b(update|updated|change|changes|amend|amended|introduce|introduced|launch|launched|create|created|"
-    r"cap|caps|limit|limits|ban|bans|restrict|restriction|suspend|revok\w*|end|close\w*|"
-    r"increase|decrease|raise|fee|fees|threshold|policy|policies|guidance|"
-    r"statement|white paper|consultation|legislation|bill|act)\b",
-    re.I,
-)
-INTL_STUDENTS_RX = re.compile(
-    r"\b(international student|international students|student mobility|higher education|university|universities|college|campus)\b",
-    re.I,
-)
-EXCLUDES_RX = re.compile(
-    r"\b(restaurant|dining|celebrity|entertainment|ipo|stock market|football|cricket|movie|tv show|"
-    r"tourist (?:only)?|property prices)\b",
+    r"subclass(?:\s|-)?500|subclass(?:\s|-)?485|temporary graduate|f-1|j-1|ukvi|ircc|uscis|sponsor[s]?|sponsorship)\b",
     re.I,
 )
 
-def is_relevant(title: str, summary: str) -> bool:
+# Action/policy verbs & nouns (tight to your examples)
+ACTIONS_RX = re.compile(
+    r"\b(propose[sd]?|introduce[sd]?|cap[ped|s]?|limit(?:ed|s|ing)?|ban(?:ned|s)?|restrict(?:ed|ion|s)?|"
+    r"grant(?:s|ed)?|issuances?|processing|backlog|fast-?track|updated?|update|change[sd]?|"
+    r"fall(?:s|ing)?|rise[sn]?|increase[sd]?|decrease[sd]?|strengthen(?:ing|ed)?|tighten(?:ed|ing)?)\b",
+    re.I,
+)
+
+# Country/location cues (helps keep to system-level stories)
+COUNTRY_RX = re.compile(
+    r"\b(US|U\.S\.|United States|UK|U\.K\.|United Kingdom|Britain|British|Canada|Canadian|Australia|Australian|"
+    r"Home Office|IRCC|USCIS|UKVI)\b",
+    re.I,
+)
+
+# Higher education / international students context (looser for gov pages)
+INTL_HE_RX = re.compile(
+    r"\b(international student[s]?|higher education|university|universities|campus|"
+    r"student (?:arrivals|grants|applications|visas))\b", re.I
+)
+
+# Hard excludes to avoid noise
+EXCLUDES_RX = re.compile(
+    r"\b(celebrity|restaurant|football|cricket|movie|tv show|tourism only|property prices|IPO)\b",
+    re.I,
+)
+
+def like_examples(title: str, summary: str, link: str) -> bool:
+    """
+    Keep only items that look like your examples:
+    - visa/permit term present
+    - strong action/policy verb or issuance/process metric
+    - country/system cue (for media); gov pages may pass without explicit country
+    - avoid unrelated content
+    """
     blob = f"{title} {summary}"
-    if EXCLUDES_RX.search(blob): return False
-    if not CORE_RX.search(blob): return False
-    if ACTIONS_RX.search(blob) or INTL_STUDENTS_RX.search(blob):
-        return True
-    return False
+    if EXCLUDES_RX.search(blob):
+        return False
+    if not CORE_RX.search(blob):
+        return False
+
+    host = _host(link)
+    is_gov = any(host == d or host.endswith("." + d) for d in GOV_HOSTS)
+    has_action = bool(ACTIONS_RX.search(blob))
+    has_country = bool(COUNTRY_RX.search(blob) or "sponsor" in blob.lower())
+
+    if is_gov:
+        # Gov pages often omit country terms; require core + (action OR HE context)
+        return has_action or bool(INTL_HE_RX.search(blob))
+    else:
+        # Media must look like a “system-level” visa policy article
+        return has_action and has_country
 
 # ---------------- Utilities ----------------
 def clean_text(s: str) -> str:
@@ -193,7 +204,6 @@ def clean_text(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 def entry_datetime(e) -> Optional[datetime]:
-    # Try struct_time fields first
     for key in ("published_parsed", "updated_parsed", "created_parsed", "issued_parsed"):
         st = getattr(e, key, None)
         if st:
@@ -201,14 +211,16 @@ def entry_datetime(e) -> Optional[datetime]:
                 return datetime(st.tm_year, st.tm_mon, st.tm_mday, tzinfo=timezone.utc)
             except Exception:
                 pass
-    # Then common string fields
     for key in ("published", "updated", "created", "issued", "dc_date", "date", "pubDate"):
         s = getattr(e, key, None)
         if s:
-            try: return parsedate_to_datetime(s).astimezone(timezone.utc)
+            try:
+                return parsedate_to_datetime(s).astimezone(timezone.utc)
             except Exception:
-                try: return datetime.fromisoformat(s.replace("Z","+00:00")).astimezone(timezone.utc)
-                except Exception: pass
+                try:
+                    return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(timezone.utc)
+                except Exception:
+                    pass
     return None
 
 def within_window(dt: Optional[datetime]) -> bool:
@@ -221,7 +233,7 @@ def smart_excerpt(text: str, limit: int = 260) -> str:
     last = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
     if last > 40: return cut[: last + 1] + " …"
     sp = cut.rfind(" ")
-    return (cut[:sp] if sp > 0 else cut) + " …"
+    return (cut[:sp] if sp > 0 else cut) + " …
 
 def category_for(title: str, summary: str) -> str:
     b = f"{title} {summary}".lower()
@@ -229,20 +241,22 @@ def category_for(title: str, summary: str) -> str:
         return "Post-Study Work"
     if re.search(r"\b(student visa|study permit|subclass(?:\s|-)?500|f-1|j-1)\b", b):
         return "Student Visas"
-    if "visa-free" in b or "visa exemption" in b:
-        return "Visa Exemption"
-    if "policy" in b or "white paper" in b or "guidance" in b or "act" in b or "bill" in b:
-        return "Policy Update"
-    return "Update"
+    if "licensed sponsor" in b or "sponsor" in b:
+        return "Sponsorship"
+    return "Policy Update"
 
 def sig(obj: Any) -> str:
     return hashlib.sha256(json.dumps(obj, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
 
-# ---------------- HTTP helpers ----------------
-META_PUBLISHED_RE = re.compile(
-    r'<meta[^>]+property=["\']article:published_time["\'][^>]+content=["\']([^"\']+)["\']', re.I
-)
+# ---------------- HTTP & date helpers ----------------
+META_DT_RES = [
+    re.compile(r'<meta[^>]+property=["\']article:(?:published|modified)_time["\'][^>]+content=["\']([^"\']+)["\']', re.I),
+    re.compile(r'<meta[^>]+property=["\']og:updated_time["\'][^>]+content=["\']([^"\']+)["\']', re.I),
+    re.compile(r'<meta[^>]+itemprop=["\'](?:datePublished|dateModified)["\'][^>]+content=["\']([^"\']+)["\']', re.I),
+    re.compile(r'<meta[^>]+name=["\']last-modified["\'][^>]+content=["\']([^"\']+)["\']', re.I),
+]
 TIME_TAG_RE = re.compile(r"<time[^>]*datetime=[\"']([^\"']+)[\"'][^>]*>", re.I)
+A_HREF_RE   = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>', re.I)
 
 def http_get(url: str) -> Tuple[str, Optional[requests.Response]]:
     try:
@@ -253,31 +267,48 @@ def http_get(url: str) -> Tuple[str, Optional[requests.Response]]:
         print(f"  [warn] GET failed: {url} -> {ex}")
     return "", None
 
-def parse_http_date(h: str) -> Optional[datetime]:
-    try: return parsedate_to_datetime(h).astimezone(timezone.utc)
-    except Exception: return None
+def parse_any_dt(s: str) -> Optional[datetime]:
+    try:
+        dt = parsedate_to_datetime(s)
+    except Exception:
+        try:
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        except Exception:
+            return None
+    return dt.astimezone(timezone.utc) if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
 
 def best_article_datetime(url: str) -> Optional[datetime]:
-    """Fetch the article to try to recover a reliable date if feed lacks it."""
     html, resp = http_get(url)
     if html:
-        m = META_PUBLISHED_RE.search(html)
-        if m:
-            try:
-                return datetime.fromisoformat(m.group(1).replace("Z","+00:00")).astimezone(timezone.utc)
-            except Exception:
-                pass
+        for rx in META_DT_RES:
+            m = rx.search(html)
+            if m:
+                dt = parse_any_dt(m.group(1))
+                if dt: return dt
         m = TIME_TAG_RE.search(html)
         if m:
-            try:
-                return datetime.fromisoformat(m.group(1).replace("Z","+00:00")).astimezone(timezone.utc)
-            except Exception:
-                pass
+            dt = parse_any_dt(m.group(1))
+            if dt: return dt
     if resp is not None:
         lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
         if lm:
-            return parse_http_date(lm)
+            dt = parse_any_dt(lm)
+            if dt: return dt
     return None
+
+def extract_gov_links(html: str) -> List[str]:
+    if not html: return []
+    links = []
+    for href in A_HREF_RE.findall(html):
+        h = _host(href)
+        if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
+            links.append(href)
+    # de-dup while preserving order
+    seen = set(); out = []
+    for u in links:
+        if u not in seen:
+            seen.add(u); out.append(u)
+    return out
 
 # ---------------- Feed fetching (+ WP pagination) ----------------
 def fetch_feed_once(url: str):
@@ -293,34 +324,26 @@ def fetch_feed_once(url: str):
         return []
 
 def paginate_wp_feed(base_url: str, max_pages: int) -> List[Any]:
-    all_entries: List[Any] = []
+    all_entries, seen_links = [], set()
     def page_url(i: int) -> str:
-        if i == 1:
-            return base_url
+        if i == 1: return base_url
         sep = "&" if "?" in base_url else "?"
         return f"{base_url}{sep}paged={i}"
     for i in range(1, max_pages + 1):
-        url = page_url(i)
-        entries = fetch_feed_once(url)
-        if not entries:
+        entries = fetch_feed_once(page_url(i))
+        if not entries: break
+        new_entries = [e for e in entries if getattr(e, "link", None) not in seen_links]
+        for e in new_entries:
+            if getattr(e, "link", None): seen_links.add(e.link)
+        if not new_entries: break
+        all_entries.extend(new_entries)
+        dates = [entry_datetime(e) for e in new_entries]
+        if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
             break
-        all_entries.extend(entries)
-        try:
-            dates = [entry_datetime(e) for e in entries]
-            if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
-                break
-        except Exception:
-            pass
     return all_entries
 
 def items_from_feed(url: str) -> List[Dict[str, Any]]:
-    if url in WP_FEEDS:
-        print(f"→ wp-feed (paged): {url}")
-        entries = paginate_wp_feed(url, MAX_WP_PAGES)
-    else:
-        print(f"→ feed: {url}")
-        entries = fetch_feed_once(url)
-
+    entries = paginate_wp_feed(url, MAX_WP_PAGES) if url in WP_FEEDS else fetch_feed_once(url)
     kept: List[Dict[str, Any]] = []
     seen = 0
     for e in entries:
@@ -329,7 +352,7 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
         link  = (getattr(e, "link", "") or "").strip()
         if not title or not link:
             continue
-        if not _allowed(link):
+        if not _allowed(link) or not _path_allowed(link):
             continue
 
         dt = entry_datetime(e)
@@ -339,8 +362,13 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
             continue
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
-        if not is_relevant(title, summary):
+        if not like_examples(title, summary, link):
             continue
+
+        gov_sources: List[str] = []
+        if _host(link) in MEDIA_HOSTS:
+            html, _ = http_get(link)
+            gov_sources = extract_gov_links(html)
 
         kept.append({
             "date": dt.date().isoformat(),
@@ -349,34 +377,28 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
             "description": smart_excerpt(summary, 260),
             "source": _host(link),
             "url": link,
+            "gov_sources": gov_sources,
         })
-    print(f"  kept {len(kept)} / {seen}")
+    print(f"→ feed: {url}  kept {len(kept)} / {seen}")
     return kept
 
 # ---------------- Static pages (official AU) ----------------
 def items_from_static_pages() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url, headline, category in STATIC_PAGES:
-        print(f"→ page: {url}")
         html, resp = http_get(url)
-        if not html and not resp: continue
-
+        if not html and not resp: 
+            continue
         dt: Optional[datetime] = None
         m = TIME_TAG_RE.search(html or "")
         if m:
-            try:
-                dt = datetime.fromisoformat(m.group(1).replace("Z","+00:00")).astimezone(timezone.utc)
-            except Exception:
-                dt = None
+            dt = parse_any_dt(m.group(1))
         if not dt and resp is not None:
             lm = resp.headers.get("Last-Modified") or resp.headers.get("last-modified")
-            if lm:
-                dt = parse_http_date(lm)
-
+            if lm: dt = parse_any_dt(lm)
         if not within_window(dt):
-            print("  (no recent timestamp; skipped)")
+            print(f"→ page: {url} (no recent timestamp; skipped)")
             continue
-
         items.append({
             "date": dt.date().isoformat(),
             "category": category,
@@ -384,40 +406,32 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
             "description": f"Official page updated on {dt.date().isoformat()}.",
             "source": _host(url),
             "url": url,
+            "gov_sources": [url],
         })
-    print(f"  kept {len(items)} static updates")
+    print(f"→ static pages kept {len(items)}")
     return items
 
 # ---------------- Diversity guard ----------------
 PRIORITY_CAPS = {
-    # Cap prolific domains so others surface too (applied *after* sort by date desc)
     "monitor.icef.com": 0.25,   # ≤ 25% of final list
     "thepienews.com":   0.25,   # ≤ 25% of final list
 }
-MIN_ABS_CAP = 8  # each of the above may take at least this many if available
-
 def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     if not items:
         return items
     total = len(items)
     per_host: Dict[str, int] = {}
-    abs_caps: Dict[str, int] = {}
-    for host, share in PRIORITY_CAPS.items():
-        abs_caps[host] = max(MIN_ABS_CAP, int(math.floor(total * share)))
+    caps: Dict[str, int] = {h: max(1, int(math.floor(total * share))) for h, share in PRIORITY_CAPS.items()}
 
     kept: List[Dict[str, Any]] = []
     for it in items:
         h = it["source"]
-        cap = abs_caps.get(h, None)
+        cap = caps.get(h)
         if cap is None:
-            kept.append(it)
-            continue
+            kept.append(it); continue
         c = per_host.get(h, 0)
         if c < cap:
-            kept.append(it)
-            per_host[h] = c + 1
-        else:
-            continue
+            kept.append(it); per_host[h] = c + 1
     return kept
 
 # ---------------- Build & write ----------------
@@ -436,7 +450,7 @@ def collect_items() -> List[Dict[str, Any]]:
     deduped: List[Dict[str, Any]] = []
     for it in all_items:
         k = (it["headline"].strip().lower(), it["url"])
-        if k in seen:
+        if k in seen: 
             continue
         seen.add(k)
         deduped.append(it)
@@ -444,9 +458,7 @@ def collect_items() -> List[Dict[str, Any]]:
     # safety window/domain filter
     deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
 
-    # apply diversity caps so PIE/ICEF don't dominate
     diversified = apply_diversity_caps(deduped)
-
     print(f"✔ total: {len(deduped)}; after diversity caps: {len(diversified)} (since {WINDOW_FROM.isoformat()})")
     return diversified
 
@@ -469,7 +481,7 @@ def write_json(items: List[Dict[str, Any]]):
         print("ℹ️ no changes; left existing file untouched")
 
 def main():
-    print(f"🔄 Building feed (last 6 months from {WINDOW_FROM.isoformat()})")
+    print(f"🔄 Building 'example-style' feed (last {WINDOW_DAYS} days from {WINDOW_FROM.isoformat()})")
     items = collect_items()
     write_json(items)
 
