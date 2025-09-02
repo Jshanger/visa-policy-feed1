@@ -523,12 +523,8 @@ def items_from_govuk_publications() -> List[Dict[str, Any]]:
         if (link in URL_WHITELIST) and (dt is None):
             dt = NOW_UTC
         if not within_window(dt):
-            # still include if whitelisted & we could not date it within window
-            if link in URL_WHITELIST:
-                # already tried best_article_datetime; if still older/outside, skip
-                continue
-            else:
-                continue
+            # already tried best_article_datetime; if outside window, skip
+            continue
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
 
@@ -681,15 +677,17 @@ def apply_diversity_caps(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     total = len(items)
     per_host: Dict[str, int] = {}
     caps: Dict[str, int] = {h: max(1, int(math.floor(total * share))) for h, share in PRIORITY_CAPS.items()}
-    kept: List[Dict[str, Any]]] = []
+    kept: List[Dict[str, Any]] = []
     for it in items:
         h = it["source"]
         cap = caps.get(h)
         if cap is None:
-            kept.append(it); continue
+            kept.append(it)
+            continue
         c = per_host.get(h, 0)
         if c < cap:
-            kept.append(it); per_host[h] = c + 1
+            kept.append(it)
+            per_host[h] = c + 1
     return kept
 
 # ---------------- Build & write ----------------
@@ -785,6 +783,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
