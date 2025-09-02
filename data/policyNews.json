@@ -1,6 +1,26 @@
 {
   "policyNews": [
     {
+      "date": "2025-09-02",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2025-09-02.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": [
+        "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse"
+      ]
+    },
+    {
+      "date": "2025-09-02",
+      "category": "Policy Update",
+      "headline": "Nadia Hashmi",
+      "description": "…After studying at the London School of Economics Nadia gained her PhD from the European University Institute in Florence on post-colonial immigration and identity in France and Britain. …",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/people/nadia-hashmi",
+      "gov_sources": []
+    },
+    {
       "date": "2025-09-01",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
@@ -19,6 +39,48 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2025-08-29",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2025-08-29.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": [
+        "https://www.trade.gov/i-94-arrivals-program"
+      ]
+    },
+    {
+      "date": "2025-08-29",
+      "category": "Student Visas",
+      "headline": "Canada rejects nearly two in three study permit applicants",
+      "description": "<p>Canada’s study permit refusal rate has risen to its highest level in over a decade, with nearly two-thirds of applicants refused by the IRCC so far this year.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-rejects-nearly-two-in-three-study-permit-applicants/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Policy Update",
+      "headline": "US proposes visa time limit rule to end “abuse” of system",
+      "description": "<p>The US government has put out a proposed rule to set a four-year time limit on student visas, ending the current system where students can stay in the country for the duration of their studies. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-proposes-visa-time-limit-rule-to-end-abuse-of-system/",
+      "gov_sources": [
+        "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse"
+      ]
+    },
+    {
+      "date": "2025-08-28",
+      "category": "Student Visas",
+      "headline": "July sees drastic fall in US student visa arrivals",
+      "description": "<p>The number of international student visa holders arriving in the US declined by nearly 30% in July 2025 as compared with the previous year, including a near-50% drop in Indian students. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/july-sees-drastic-fall-in-us-student-visa-arrivals/",
+      "gov_sources": [
+        "https://www.trade.gov/i-94-arrivals-program"
+      ]
     },
     {
       "date": "2025-08-27",
@@ -43,12 +105,59 @@
       ]
     },
     {
+      "date": "2025-08-26",
+      "category": "Policy Update",
+      "headline": "Australia’s new student place limit: a step forward, but social licence remains fragile",
+      "description": "<p>\"Australia’s social licence to host international students is under strain,\" writes Varsha Devi Balakrishna for The PIE News, ahead of nationwide anti-immigration protests. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australias-new-student-place-limit-a-step-forward-but-social-licence-remains-fragile/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-21",
+      "category": "Student Visas",
+      "headline": "Has Canada reached a “turning point” in study permit approvals?",
+      "description": "<p>Q2 2025 saw a much-needed rise in Canada's study permit approval rating, though major declines for Indian students and Canadian colleges indicate a \"fundamental shift\" in IRCC decision making, new data reveals.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/has-canada-reached-a-turning-point-in-study-permit-approvals/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-18",
+      "category": "Policy Update",
+      "headline": "Exclusive: Julian Hill responds to sector concerns on visa costs and onshore transfers",
+      "description": "<p>From visa fee hikes to integrity measures around student transfers, The PIE sat down with Australia's assistant minister for international education, Julian Hill, to hear how the government is approaching some of the most pressing challenges facing …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/exclusive-julian-hill-responds-to-sector-concerns-on-visa-costs-and-onshore-transfers/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-14",
+      "category": "Student Visas",
+      "headline": "MD 111 brings stability for some but VET sector left behind",
+      "description": "<p>Some say Ministerial Direction 111 has improved predictability in student visa processing, but gaps remain for Australia’s vocational sector, audiences at The PIE Live Asia Pacific heard.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/md-111-brings-stability-for-some-but-vet-sector-left-behind/",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-111.pdf"
+      ]
+    },
+    {
       "date": "2025-08-14",
       "category": "Post-Study Work",
       "headline": "How post-study work rights can make or break the return on investment for study abroad",
       "description": "<p>The following is a guest post contributed by Tim O&#8217;Brien and Claire Clifford from INTO University Partnerships, where Tim is the Senior Vice President, New Partner Development, and Claire the Vice President, Pricing, Insights and Research. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/08/how-post-study-work-rights-can-make-or-break-the-return-on-investment-for-study-abroad/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-11",
+      "category": "Student Visas",
+      "headline": "US student visa time limits approach final approval",
+      "description": "<p>A proposal to restrict the amount of time international students can spend in the US has passed a White House review, moving it one step closer to approval.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-student-visa-time-limits-approach-final-approval/",
       "gov_sources": []
     },
     {
@@ -75,6 +184,17 @@
     {
       "date": "2025-08-05",
       "category": "Policy Update",
+      "headline": "UK: Stricter BCA rules to take effect in September",
+      "description": "<p>Higher compliance thresholds set out in the UK government’s immigration white paper will be rolled out to universities this September, amid heightened media scrutiny of asylum claims made by study visa holders. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-stricter-bca-rules-to-take-effect-in-september/",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper/restoring-control-over-the-immigration-system-accessible?utm_source=chatgpt.com#fn:44"
+      ]
+    },
+    {
+      "date": "2025-08-05",
+      "category": "Policy Update",
       "headline": "Australia raises enrolment limits for 2025/26 but are they reachable?",
       "description": "<p>A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia&#8217;s National Planning Level (NPL) for the …",
       "source": "monitor.icef.com",
@@ -82,6 +202,71 @@
       "gov_sources": [
         "https://ministers.education.gov.au/clare/managing-sustainable-international-education-sector",
         "https://www.education.gov.au/managed-system-international-education-2026/resources/factsheet-indicative-allocations-higher-education-new-overseas-student-commencements-2026"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "category": "Student Visas",
+      "headline": "The punk rock of English education: how BHLC is flipping the script on international student recruitment",
+      "description": "<p>As Australia’s education sector battles student visa rejections, ELICOS downturns, and an increasingly commodified market, Burleigh Heads Language College (BHLC) is cutting through the noise with a bold, lifestyle first approach that rewrites what it means …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-punk-rock-of-english-education-how-bhlc-is-flipping-the-script-on-international-student-recruitment/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-01",
+      "category": "Policy Update",
+      "headline": "Northeastern University to host its annual US higher education expos across India in Hyderabad, Mumbai and Bengaluru this August",
+      "description": "<p>Northeastern University is hosting its largest Global Study Expo yet this August in Hyderabad, Mumbai, and Bengaluru. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/northeastern-university-to-host-its-annual-us-higher-education-expos-across-india-in-hyderabad-mumbai-and-bengaluru-this-august/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-29",
+      "category": "Policy Update",
+      "headline": "US could face $7bn loss from international student decline",
+      "description": "<p>The US economy could lose $7 billion this year if visa appointment delays and travel restrictions continue to drive declining international student numbers, projections have revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/international-student-decline-to-cost-the-us-7bn/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-29",
+      "category": "Student Visas",
+      "headline": "Canada faces further international student drops",
+      "description": "<p>The Canadian Bureau for International Education has warned of further downturns in Canada’s international student population after study permit issuance fell far short of government targets for last year.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-faces-further-international-student-drops/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-25",
+      "category": "Policy Update",
+      "headline": "Rubio urged: “Fix issue with Indian student visas”",
+      "description": "<p>A bipartisan group of congresspeople have urged US secretary of state Marco Rubio to address visa delays for Indian students before the start of the academic year.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/rubio-urged-fix-issue-with-indian-student-visas/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-25",
+      "category": "Policy Update",
+      "headline": "From immigration to learning: consultancies embrace broader vision",
+      "description": "<p>Change is not just inevitable but essential in the ever-evolving landscape of international education, explains Jasmeet Singh Bhatia of Landmark.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/from-immigration-to-learning-consultancies-embrace-broader-vision/",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-23",
+      "category": "Processing & Grants",
+      "headline": "More declines loom in “seriously concerning” US visa trends",
+      "description": "<p>The US state department issued 22% fewer international student visas in May 2025, with further declines expected as the full impact of the interview freeze takes hold on visa issuance.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/more-declines-loom-in-seriously-concerning-us-visa-trends/",
+      "gov_sources": [
+        "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html"
       ]
     },
     {
@@ -96,80 +281,23 @@
       ]
     },
     {
-      "date": "2025-07-10",
+      "date": "2025-07-23",
       "category": "Student Visas",
-      "headline": "US issues corrected student visa data showing growth for 2024 while current trends point to an enrolment decline for 2025/26",
-      "description": "<p>In April 2025, we reported that foreign enrolments in the US had declined by -11% between March 2024 and March 2025. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/07/us-issues-corrected-student-visa-data-showing-growth-for-2024-while-current-trends-point-to-an-enrolment-decline-for-2025-26/",
+      "headline": "Australia’s education leaders push for lower student visa fees for short-term students",
+      "description": "<p>Australia’s high student visa fee is hurting short-term study sectors like ELICOS, but sector leaders say lobbying efforts may soon bring relief.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australias-education-leaders-push-for-lower-student-visa-fees-for-short-term-students/",
       "gov_sources": [
-        "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-issuances.html"
+        "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd"
       ]
     },
     {
-      "date": "2025-07-03",
+      "date": "2025-07-15",
       "category": "Student Visas",
-      "headline": "US administration revives proposal to limit terms of student visas",
-      "description": "<p>The Trump administration has given notice of a proposed rule change that seeks to limit the term for which a student visa can be issued. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/07/us-administration-revives-proposal-to-limit-terms-of-student-visas/",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-07-03",
-      "category": "Post-Study Work",
-      "headline": "Canada: List of non-degree college programmes linked to post-study work rights has changed",
-      "description": "<p>The Canadian government is continuing its policy of linking eligibility for a post-study work permit (PGWP) – at the non-degree level – to certain fields of study. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/07/canada-list-of-non-degree-college-programmes-linked-to-post-study-work-rights-has-changed/",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/update-requirement-post-graduation-work-permits.html",
-        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility/field-of-study.html#check_cip_list"
-      ]
-    },
-    {
-      "date": "2025-06-26",
-      "category": "Policy Update",
-      "headline": "New analysis sounds a note of caution for UK immigration reforms",
-      "description": "<p>Within the UK&#8217;s higher education system, there are a group of institutions known as &#8220;Post-1992 universities&#8221;. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/06/new-analysis-sounds-a-note-of-caution-for-uk-immigration-reforms/",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-05-23",
-      "category": "Student Visas",
-      "headline": "Study in the UK on a Child Student visa",
-      "description": "Child Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/study-uk-child-student-visa",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-05-23",
-      "category": "Student Visas",
-      "headline": "Apply for a Parent of a Child Student visa: step by step",
-      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/apply-parent-child-student-visa",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-05-12",
-      "category": "Policy Update",
-      "headline": "Student route evaluation (wave 2)",
-      "description": "This report explores the experiences and activities of international students and university sponsors accessing the Sponsored Study visa route.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/student-route-evaluation-wave-2",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-04-29",
-      "category": "Student Visas",
-      "headline": "Complexity application routing solution (study): caseworker guidance",
-      "description": "Immigration staff guidance on routing and processing applications from customers applying for a Student visa under Appendix Student.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/complexity-application-routing-solution-study-caseworker-guidance",
+      "headline": "Canada’s language sector takes hit as visa policies hinder growth",
+      "description": "<p>The Canadian language sector experienced a 15% decline in student numbers last year, as the impact of Canada’s study permit caps and visa processing delays take hold.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/visa-policies-hit-canadas-language-sector-by-15/",
       "gov_sources": []
     }
   ]
