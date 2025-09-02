@@ -21,6 +21,15 @@
     {
       "date": "2025-09-02",
       "category": "Policy Update",
+      "headline": "UK: international students issued text warning to avoid overstaying visa",
+      "description": "<p>The Home Office has contacted thousands of students whose visas are due to expire to deter them from making asylum claims that \"lack merit\" as a way to stay in the country. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-international-students-issued-text-warning-to-avoid-overstaying-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-09-02",
+      "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-09-02.",
       "source": "www.taiwannews.com.tw",
@@ -278,17 +287,6 @@
       "url": "https://thepienews.com/more-declines-loom-in-seriously-concerning-us-visa-trends",
       "gov_sources": [
         "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html"
-      ]
-    },
-    {
-      "date": "2025-07-23",
-      "category": "Policy Update",
-      "headline": "Measuring the impacts of the first full year of Canada’s foreign student enrolment cap",
-      "description": "<p>In January 2024, Canada&#8217;s immigration ministry (Immigration, Refugees and Citizenship Canada, or IRCC) announced a two-year cap on the number of new study permits issued to international students. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/07/measuring-the-impacts-of-the-first-full-year-of-canadas-foreign-student-enrolment-cap",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/strategic-plans/strategic-plan-2025-2027.html"
       ]
     }
   ]
