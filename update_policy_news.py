@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 """
 Policy / international-student-visa tracker — 'example-style'
-(GOV: UK/CA/US/AU + PIE/ICEF/IDP; gov sources enriched)
+(GOV: UK/CA/US/AU + PIE/ICEF/IDP + Taiwan News; gov sources enriched)
 
 - STRICT: Every item must impact international students / graduate mobility / HE,
-          except explicit URL whitelist (e.g., UK 'Register of Licensed Sponsors – Workers',
-          + specific PIE and DHS links requested).
+          except explicit URL whitelist (e.g., UK sponsor register, specific PIE/DHS/Taiwan News links you ask for).
 - TRUE 6-month window with robust date extraction (<meta>, <time>, Last-Modified).
 - Deep pagination:
     * WordPress (PIE/ICEF/IDP): up to MAX_WP_PAGES
     * GOV.UK Search Atom: keyworded, page 1..N
     * GOV.UK Publications Atom: page 1..N
+- Curated URLs:
+    * data/extra_urls.txt — one URL per line; we’ll fetch + include when relevant.
 - Output with "load more":
     * data/policyNews.json            -> page 1
     * data/policyNews.p2.json, ...    -> more pages
@@ -21,7 +22,7 @@ Policy / international-student-visa tracker — 'example-style'
 from __future__ import annotations
 from typing import List, Dict, Any, Tuple, Optional
 import json, pathlib, hashlib, sys, re, math, os
-from urllib.parse import urlparse, urlencode
+from urllib.parse import urlparse, urlencode, urlsplit, urlunsplit, parse_qsl
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
@@ -32,13 +33,14 @@ import requests
 SITE_ROOT   = pathlib.Path(__file__).resolve().parent
 OUTPUT_DIR  = SITE_ROOT / "data"
 OUTPUT_FILE = OUTPUT_DIR / "policyNews.json"
+EXTRA_URLS_FILE = OUTPUT_DIR / "extra_urls.txt"
 
 NOW_UTC     = datetime.now(timezone.utc)
 WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/4.2 (+github actions bot)"
+UA = "policy-student-mobility/4.3 (+github actions bot)"
 
 # Crawl depths (high for fuller coverage)
 MAX_WP_PAGES   = int(os.getenv("MAX_WP_PAGES", "40"))
@@ -51,6 +53,8 @@ MEDIA_HOSTS = {
     "thepienews.com",
     "www.idp.com",
     "idp.com",
+    "www.taiwannews.com.tw",   # NEW
+    "taiwannews.com.tw",       # NEW
 }
 GOV_HOSTS = {
     "gov.uk",
@@ -64,21 +68,23 @@ GOV_HOSTS = {
     "immi.homeaffairs.gov.au",
     "homeaffairs.gov.au",
     "education.gov.au",
-    "trade.gov",   # NEW (I-94 program page)
-    "dhs.gov",     # NEW (DHS news release)
-    "cbp.gov",     # (I-94 data sometimes references CBP)
+    "trade.gov",   # I-94 page
+    "dhs.gov",     # DHS releases
+    "cbp.gov",
 }
 ALLOWED_HOSTS = MEDIA_HOSTS | GOV_HOSTS
 
-# Explicit include (your requested pages)
+# Explicit include (requested pages; will be normalized at runtime)
 URL_WHITELIST = {
     # UK GOV register of sponsors (Workers)
     "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-    # PIE articles you asked to include
+    # PIE articles
     "https://thepienews.com/us-trump-pauses-new-student-visa-interviews/",
     "https://thepienews.com/july-sees-drastic-fall-in-us-student-visa-arrivals/",
-    # DHS news post (requested)
+    # DHS news
     "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+    # Taiwan News (user-provided)
+    "https://www.taiwannews.com.tw/news/6190827",
 }
 
 def _host(url: str) -> str:
@@ -89,12 +95,27 @@ def _path(url: str) -> str:
     try: return urlparse(url).path or "/"
     except Exception: return "/"
 
+def normalize_url(u: str) -> str:
+    """Strip marketing params (utm_*, _hsenc, fbclid, etc.) and normalize path."""
+    try:
+        s = urlsplit(u.strip())
+        params = []
+        for k, v in parse_qsl(s.query, keep_blank_values=True):
+            kl = k.lower()
+            if kl.startswith("utm_") or kl in {"_hsenc","_hsmi","fbclid","gclid","mc_cid","mc_eid"}:
+                continue
+            params.append((k, v))
+        path = s.path.rstrip("/") if s.path not in ("", "/") else s.path
+        return urlunsplit((s.scheme, s.netloc.lower(), path, urlencode(params), ""))
+    except Exception:
+        return u.strip()
+
 def _allowed(url: str) -> bool:
     h = _host(url)
     return any(h == d or h.endswith("." + d) for d in ALLOWED_HOSTS)
 
 # Optional path gates (weed out non-policy sections)
-# NOTE: Removed gating for 'thepienews.com' so root-article slugs are allowed
+# NOTE: no gating for thepienews.com so root-article slugs are allowed
 PATH_ALLOW: Dict[str, List[re.Pattern]] = {
     "monitor.icef.com": [re.compile(r"/\d{4}/\d{2}/", re.I)],
     "idp.com":          [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
@@ -119,6 +140,7 @@ FEEDS: List[str] = [
     "https://thepienews.com/feed/",
     "https://thepienews.com/category/news/government/feed/",
     "https://www.idp.com/blog/feed/",
+    # (If Taiwan News exposes a feed later, add it here)
 ]
 
 # GOV.UK — Search Atom with keywords + pagination
@@ -169,6 +191,12 @@ STATIC_PAGES = [
         "US DHS: Proposed rule regarding foreign student visas — update",
         "Policy Update",
     ),
+    # Taiwan News (explicit curated page you gave)
+    (
+        "https://www.taiwannews.com.tw/news/6190827",
+        "Taiwan News: policy/update relevant to international students",
+        "Policy Update",
+    ),
 ]
 
 # ---------------- Relevance (example-style + impact) ----------------
@@ -185,7 +213,7 @@ ACTIONS_RX = re.compile(
 )
 COUNTRY_RX = re.compile(
     r"\b(US|U\.S\.|United States|UK|U\.K\.|United Kingdom|Britain|British|Canada|Canadian|Australia|Australian|"
-    r"Home Office|IRCC|USCIS|UKVI)\b",
+    r"Home Office|IRCC|USCIS|UKVI|Taiwan|Taipei)\b",   # NEW: Taiwan cues
     re.I,
 )
 IMPACT_RX = re.compile(
@@ -213,7 +241,8 @@ def like_examples(title: str, summary: str, link: str) -> bool:
       - GOV: action cue optional
       - MEDIA: IMPACT + (ACTION OR country/system cue)
     """
-    if link in URL_WHITELIST:
+    nlink = normalize_url(link)
+    if nlink in {normalize_url(u) for u in URL_WHITELIST}:
         return True
 
     blob = f"{title} {summary}"
@@ -221,7 +250,7 @@ def like_examples(title: str, summary: str, link: str) -> bool:
     if not CORE_RX.search(blob): return False
     if not IMPACT_RX.search(blob): return False
 
-    host = _host(link)
+    host = _host(nlink)
     is_gov = any(host == d or host.endswith("." + d) for d in GOV_HOSTS)
     has_action = bool(ACTIONS_RX.search(blob))
     has_country = bool(COUNTRY_RX.search(blob) or "sponsor" in blob.lower())
@@ -290,9 +319,12 @@ META_DT_RES = [
     re.compile(r'<meta[^>]+property=["\']article:(?:published|modified)_time["\'][^>]+content=["\']([^"\']+)["\']', re.I),
     re.compile(r'<meta[^>]+property=["\']og:updated_time["\'][^>]+content=["\']([^"\']+)["\']', re.I),
     re.compile(r'<meta[^>]+itemprop=["\'](?:datePublished|dateModified)["\'][^>]+content=["\']([^"\']+)["\']', re.I),
+    re.compile(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)["\']', re.I),
     re.compile(r'<meta[^>]+name=["\']last-modified["\'][^>]+content=["\']([^"\']+)["\']', re.I),
 ]
 TIME_TAG_RE = re.compile(r"<time[^>]*datetime=[\"']([^\"']+)[\"'][^>]*>", re.I)
+TITLE_RE    = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
+A_HREF_RE   = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>', re.I)
 
 def http_get(url: str) -> Tuple[str, Optional[requests.Response]]:
     try:
@@ -331,6 +363,32 @@ def best_article_datetime(url: str) -> Optional[datetime]:
             dt = parse_any_dt(lm)
             if dt: return dt
     return None
+
+def extract_title_desc(html: str) -> Tuple[str, str]:
+    title = ""
+    desc = ""
+    if html:
+        mt = TITLE_RE.search(html)
+        if mt:
+            title = clean_text(re.sub(r"\s+", " ", mt.group(1)))
+        for rx in META_DT_RES[:1]:  # first element is article:published/modified — skip; use description regex below
+            pass
+        md = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+        if md:
+            desc = clean_text(md.group(1))
+    return title, desc
+
+def extract_gov_links(html: str) -> List[str]:
+    if not html: return []
+    out, seen = [], set()
+    for href in A_HREF_RE.findall(html):
+        h = _host(href)
+        if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
+            nh = normalize_url(href)
+            if nh not in seen:
+                seen.add(nh)
+                out.append(nh)
+    return out
 
 # ---------------- Feed fetching (+ pagination) ----------------
 def fetch_feed_once(url: str):
@@ -376,7 +434,6 @@ def paginate_atom(base_url: str, max_pages: int) -> List[Any]:
         if not entries:
             break
         all_entries.extend(entries)
-        # stop when the whole page is older than the window
         dates = [entry_datetime(e) for e in entries]
         if dates and all(d and d.date() < WINDOW_FROM for d in dates if d):
             break
@@ -405,7 +462,7 @@ def items_from_govuk_search() -> List[Dict[str, Any]]:
 
             for e in entries:
                 title = clean_text(getattr(e, "title", "") or "")
-                link  = (getattr(e, "link", "") or "").strip()
+                link  = normalize_url((getattr(e, "link", "") or "").strip())
                 if not title or not link or not _allowed(link):
                     continue
 
@@ -434,18 +491,16 @@ def items_from_govuk_search() -> List[Dict[str, Any]]:
 def items_from_govuk_publications() -> List[Dict[str, Any]]:
     entries = paginate_atom(GOVUK_PUBLICATIONS_ATOM, MAX_GOV_PAGES)
     kept: List[Dict[str, Any]] = []
+    wl_norm = {normalize_url(u) for u in URL_WHITELIST}
     for e in entries:
         title = clean_text(getattr(e, "title", "") or "")
-        link  = (getattr(e, "link", "") or "").strip()
+        link  = normalize_url((getattr(e, "link", "") or "").strip())
         if not title or not link or not _allowed(link):
             continue
 
-        dt = entry_datetime(e)
+        dt = entry_datetime(e) or best_article_datetime(link)
         if not within_window(dt):
-            dt = best_article_datetime(link)
-        if not within_window(dt):
-            # still include if whitelisted and recently modified
-            if link in URL_WHITELIST:
+            if link in wl_norm:
                 dt = best_article_datetime(link)
                 if not within_window(dt):
                     continue
@@ -454,7 +509,7 @@ def items_from_govuk_publications() -> List[Dict[str, Any]]:
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
 
-        if (link not in URL_WHITELIST) and (not like_examples(title, summary, link)):
+        if (link not in wl_norm) and (not like_examples(title, summary, link)):
             continue
 
         kept.append({
@@ -473,39 +528,30 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
     entries = paginate_wp_feed(url, MAX_WP_PAGES) if url in WP_FEEDS else fetch_feed_once(url)
     kept: List[Dict[str, Any]] = []
     seen = 0
+    wl_norm = {normalize_url(u) for u in URL_WHITELIST}
     for e in entries:
         seen += 1
         title = clean_text(getattr(e, "title", "") or "")
-        link  = (getattr(e, "link", "") or "").strip()
+        raw   = (getattr(e, "link", "") or "").strip()
+        link  = normalize_url(raw)
         if not title or not link:
             continue
         if not _allowed(link) or not _path_allowed(link):
             continue
 
-        dt = entry_datetime(e)
-        if not within_window(dt):
-            dt = best_article_datetime(link)
+        dt = entry_datetime(e) or best_article_datetime(link)
         if not within_window(dt):
             continue
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
-        if not like_examples(title, summary, link):
+        # allow whitelist regardless of regex gates (still within window)
+        if (link not in wl_norm) and (not like_examples(title, summary, link)):
             continue
 
         gov_sources: List[str] = []
         if _host(link) in MEDIA_HOSTS:
             html, _ = http_get(link)
-            if html:
-                A_HREF_RE = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>', re.I)
-                links = []
-                for href in A_HREF_RE.findall(html):
-                    h = _host(href)
-                    if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
-                        links.append(href)
-                seen_urls = set()
-                for u in links:
-                    if u not in seen_urls:
-                        gov_sources.append(u); seen_urls.add(u)
+            gov_sources = extract_gov_links(html)
 
         kept.append({
             "date": dt.date().isoformat(),
@@ -519,11 +565,52 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
     print(f"→ feed: {url}  kept {len(kept)} / {seen}")
     return kept
 
+# ---------------- Curated URLs (data/extra_urls.txt) ----------------
+def items_from_extra_urls() -> List[Dict[str, Any]]:
+    items: List[Dict[str, Any]] = []
+    wl_norm = {normalize_url(u) for u in URL_WHITELIST}
+    if not EXTRA_URLS_FILE.exists():
+        return items
+    try:
+        lines = EXTRA_URLS_FILE.read_text(encoding="utf-8").splitlines()
+    except Exception:
+        return items
+    for line in lines:
+        u = line.strip()
+        if not u or u.startswith("#"):  # comments/blank lines
+            continue
+        link = normalize_url(u)
+        if not _allowed(link) and link not in wl_norm:
+            continue
+        html, resp = http_get(link)
+        dt = best_article_datetime(link)
+        if not within_window(dt):
+            continue
+        title, desc = extract_title_desc(html)
+        if not title:
+            title = link
+        summary = desc or ""
+        if (link not in wl_norm) and (not like_examples(title, summary, link)):
+            continue
+        gov_sources = extract_gov_links(html)
+        items.append({
+            "date": dt.date().isoformat(),
+            "category": category_for(title, summary),
+            "headline": title[:200],
+            "description": smart_excerpt(summary or "Direct source.", 260),
+            "source": _host(link),
+            "url": link,
+            "gov_sources": gov_sources,
+        })
+    print(f"→ curated URLs kept {len(items)}")
+    return items
+
 # ---------------- Static pages (official updates) ----------------
 def items_from_static_pages() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url, headline, category in STATIC_PAGES:
-        html, resp = http_get(url)
+        link = normalize_url(url)
+        html, resp = http_get(link)
         if not html and not resp:
             continue
         dt: Optional[datetime] = None
@@ -535,16 +622,16 @@ def items_from_static_pages() -> List[Dict[str, Any]]:
             if lm:
                 dt = parse_any_dt(lm)
         if not within_window(dt):
-            print(f"→ page: {url} (no recent timestamp; skipped)")
+            print(f"→ page: {link} (no recent timestamp; skipped)")
             continue
         items.append({
             "date": dt.date().isoformat(),
             "category": category,
             "headline": headline,
             "description": f"Official page updated on {dt.date().isoformat()}.",
-            "source": _host(url),
-            "url": url,
-            "gov_sources": [url],
+            "source": _host(link),
+            "url": link,
+            "gov_sources": [link] if _host(link) in GOV_HOSTS else [],
         })
     print(f"→ static pages kept {len(items)}")
     return items
@@ -588,25 +675,28 @@ def collect_items() -> List[Dict[str, Any]]:
     for f in FEEDS:
         all_items.extend(items_from_feed(f))
 
-    # Static pages (AU + UK register + I-94 + DHS)
+    # Static pages (AU + UK register + I-94 + DHS + explicit Taiwan News)
     all_items.extend(items_from_static_pages())
+
+    # Curated URLs (data/extra_urls.txt)
+    all_items.extend(items_from_extra_urls())
 
     # sort newest → oldest (by date string)
     def key(it): return (it["date"], it["headline"].strip().lower(), it["url"])
     all_items.sort(key=lambda it: key(it), reverse=True)
 
-    # dedupe
+    # dedupe (by normalized url + headline)
     seen_pairs: set[tuple[str, str]] = set()
     deduped: List[Dict[str, Any]] = []
     for it in all_items:
-        k = (it["headline"].strip().lower(), it["url"])
+        k = (it["headline"].strip().lower(), normalize_url(it["url"]))
         if k in seen_pairs:
             continue
         seen_pairs.add(k)
         deduped.append(it)
 
     # window/domain safety
-    deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and _allowed(it["url"])]
+    deduped = [it for it in deduped if it["date"] >= WINDOW_FROM.isoformat() and (_allowed(it["url"]) or normalize_url(it["url"]) in {normalize_url(u) for u in URL_WHITELIST})]
 
     print(f"✔ total items in window: {len(deduped)} (since {WINDOW_FROM.isoformat()})")
     return deduped
@@ -619,8 +709,8 @@ def write_paginated(items: List[Dict[str, Any]]):
     page1 = page1_candidates[:PAGE_SIZE]
 
     # Remaining pages: no caps
-    remaining_urls = {it["url"] for it in page1}
-    rest = [it for it in items if it["url"] not in remaining_urls]
+    remaining_urls = {normalize_url(it["url"]) for it in page1}
+    rest = [it for it in items if normalize_url(it["url"]) not in remaining_urls]
     other_pages = chunk(rest, PAGE_SIZE)
 
     # Write page 1 (legacy shape)
@@ -661,6 +751,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
