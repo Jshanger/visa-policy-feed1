@@ -12,6 +12,15 @@
     {
       "date": "2025-09-02",
       "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-09-02.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-09-02",
+      "category": "Policy Update",
       "headline": "Nadia Hashmi",
       "description": "…After studying at the London School of Economics Nadia gained her PhD from the European University Institute in Florence on post-colonial immigration and identity in France and Britain. …",
       "source": "www.gov.uk",
@@ -280,17 +289,6 @@
       "url": "https://monitor.icef.com/2025/07/measuring-the-impacts-of-the-first-full-year-of-canadas-foreign-student-enrolment-cap",
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/strategic-plans/strategic-plan-2025-2027.html"
-      ]
-    },
-    {
-      "date": "2025-07-23",
-      "category": "Student Visas",
-      "headline": "Australia’s education leaders push for lower student visa fees for short-term students",
-      "description": "<p>Australia’s high student visa fee is hurting short-term study sectors like ELICOS, but sector leaders say lobbying efforts may soon bring relief.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australias-education-leaders-push-for-lower-student-visa-fees-for-short-term-students",
-      "gov_sources": [
-        "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd"
       ]
     }
   ]
