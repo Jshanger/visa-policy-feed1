@@ -4,9 +4,9 @@
 Policy / international-student-visa tracker — 'example-style'
 (GOV: UK/CA/US/AU + PIE/ICEF/IDP; gov sources enriched)
 
-Goals:
 - STRICT: Every item must impact international students / graduate mobility / HE,
-          except for explicit URL whitelist (e.g., UK 'Register of Licensed Sponsors – Workers').
+          except explicit URL whitelist (e.g., UK 'Register of Licensed Sponsors – Workers',
+          + specific PIE and DHS links requested).
 - TRUE 6-month window with robust date extraction (<meta>, <time>, Last-Modified).
 - Deep pagination:
     * WordPress (PIE/ICEF/IDP): up to MAX_WP_PAGES
@@ -38,9 +38,9 @@ WINDOW_DAYS = int(os.getenv("WINDOW_DAYS", "183"))   # ~6 months
 WINDOW_FROM = (NOW_UTC - timedelta(days=WINDOW_DAYS)).date()
 
 HTTP_TIMEOUT = 25
-UA = "policy-student-mobility/4.1 (+github actions bot)"
+UA = "policy-student-mobility/4.2 (+github actions bot)"
 
-# Crawl depths (bumped for fuller coverage)
+# Crawl depths (high for fuller coverage)
 MAX_WP_PAGES   = int(os.getenv("MAX_WP_PAGES", "40"))
 MAX_GOV_PAGES  = int(os.getenv("MAX_GOV_PAGES", "20"))
 PAGE_SIZE      = int(os.getenv("PAGE_SIZE", "30"))
@@ -64,12 +64,21 @@ GOV_HOSTS = {
     "immi.homeaffairs.gov.au",
     "homeaffairs.gov.au",
     "education.gov.au",
+    "trade.gov",   # NEW (I-94 program page)
+    "dhs.gov",     # NEW (DHS news release)
+    "cbp.gov",     # (I-94 data sometimes references CBP)
 }
 ALLOWED_HOSTS = MEDIA_HOSTS | GOV_HOSTS
 
-# Explicit include (your requested page)
+# Explicit include (your requested pages)
 URL_WHITELIST = {
+    # UK GOV register of sponsors (Workers)
     "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+    # PIE articles you asked to include
+    "https://thepienews.com/us-trump-pauses-new-student-visa-interviews/",
+    "https://thepienews.com/july-sees-drastic-fall-in-us-student-visa-arrivals/",
+    # DHS news post (requested)
+    "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
 }
 
 def _host(url: str) -> str:
@@ -85,8 +94,8 @@ def _allowed(url: str) -> bool:
     return any(h == d or h.endswith("." + d) for d in ALLOWED_HOSTS)
 
 # Optional path gates (weed out non-policy sections)
+# NOTE: Removed gating for 'thepienews.com' so root-article slugs are allowed
 PATH_ALLOW: Dict[str, List[re.Pattern]] = {
-    "thepienews.com":   [re.compile(r"/(news|category/news/government)/", re.I)],
     "monitor.icef.com": [re.compile(r"/\d{4}/\d{2}/", re.I)],
     "idp.com":          [re.compile(r"/blog/", re.I), re.compile(r"/[a-z]{2}/blog/", re.I)],
 }
@@ -129,8 +138,9 @@ WP_FEEDS = {
     "https://www.idp.com/blog/feed/",
 }
 
-# Static official AU visa pages (timestamped updates)
+# Static official pages (timestamped updates incl. your requests)
 STATIC_PAGES = [
+    # Australia
     (
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
         "Australia: Student visa (subclass 500) page update",
@@ -141,11 +151,23 @@ STATIC_PAGES = [
         "Australia: Temporary Graduate (485) Post-Higher Education Work page update",
         "Post-Study Work",
     ),
-    # Explicit UK static include (whitelist)
+    # UK register (explicit)
     (
         "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
         "UK: Register of Licensed Sponsors (Workers) — page update",
         "Sponsorship",
+    ),
+    # US I-94 arrivals (explicit)
+    (
+        "https://www.trade.gov/i-94-arrivals-program",
+        "US: I-94 Arrivals Program — data update",
+        "Arrivals Data",
+    ),
+    # US DHS news (explicit)
+    (
+        "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+        "US DHS: Proposed rule regarding foreign student visas — update",
+        "Policy Update",
     ),
 ]
 
@@ -424,7 +446,6 @@ def items_from_govuk_publications() -> List[Dict[str, Any]]:
         if not within_window(dt):
             # still include if whitelisted and recently modified
             if link in URL_WHITELIST:
-                # try one more time — allow 6 months via HTTP last-modified
                 dt = best_article_datetime(link)
                 if not within_window(dt):
                     continue
@@ -433,7 +454,6 @@ def items_from_govuk_publications() -> List[Dict[str, Any]]:
 
         summary = clean_text(getattr(e, "summary", "") or getattr(e, "description", "") or "")
 
-        # Whitelist OR relevance gate
         if (link not in URL_WHITELIST) and (not like_examples(title, summary, link)):
             continue
 
@@ -475,20 +495,17 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
         gov_sources: List[str] = []
         if _host(link) in MEDIA_HOSTS:
             html, _ = http_get(link)
-            # extract gov links (simple pattern match)
-            A_HREF_RE = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>', re.I)
             if html:
+                A_HREF_RE = re.compile(r'<a\s[^>]*href=["\']([^"\']+)["\'][^>]*>', re.I)
                 links = []
                 for href in A_HREF_RE.findall(html):
                     h = _host(href)
                     if any(h == d or h.endswith("." + d) for d in GOV_HOSTS):
                         links.append(href)
-                # de-dup
                 seen_urls = set()
                 for u in links:
                     if u not in seen_urls:
-                        gov_sources.append(u)
-                        seen_urls.add(u)
+                        gov_sources.append(u); seen_urls.add(u)
 
         kept.append({
             "date": dt.date().isoformat(),
@@ -503,7 +520,6 @@ def items_from_feed(url: str) -> List[Dict[str, Any]]:
     return kept
 
 # ---------------- Static pages (official updates) ----------------
-TIME_TAG_RE = re.compile(r"<time[^>]*datetime=[\"']([^\"']+)[\"'][^>]*>", re.I)
 def items_from_static_pages() -> List[Dict[str, Any]]:
     items: List[Dict[str, Any]] = []
     for url, headline, category in STATIC_PAGES:
@@ -572,7 +588,7 @@ def collect_items() -> List[Dict[str, Any]]:
     for f in FEEDS:
         all_items.extend(items_from_feed(f))
 
-    # Static pages (AU + explicit UK register)
+    # Static pages (AU + UK register + I-94 + DHS)
     all_items.extend(items_from_static_pages())
 
     # sort newest → oldest (by date string)
@@ -645,6 +661,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"[fatal] {e}")
         sys.exit(1)
+
 
 
 
