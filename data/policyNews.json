@@ -3,6 +3,15 @@
     {
       "date": "2025-09-04",
       "category": "Policy Update",
+      "headline": "US proposes new rules for student visas including term limits and other restrictions",
+      "description": "<p>On 28 August 2025, the US Department of Homeland Security published a proposed rule: Establishing a Fixed Time Period of Admission and an Extension of Stay Procedure for Nonimmigrant Academic Students, Exchange Visitors, and Representatives of Foreign …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/09/us-proposes-new-rules-for-student-visas-including-term-limits-and-other-restrictions",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-09-04",
+      "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2025-09-04.",
       "source": "www.dhs.gov",
@@ -277,17 +286,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/from-immigration-to-learning-consultancies-embrace-broader-vision",
       "gov_sources": []
-    },
-    {
-      "date": "2025-07-23",
-      "category": "Processing & Grants",
-      "headline": "More declines loom in “seriously concerning” US visa trends",
-      "description": "<p>The US state department issued 22% fewer international student visas in May 2025, with further declines expected as the full impact of the interview freeze takes hold on visa issuance.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/more-declines-loom-in-seriously-concerning-us-visa-trends",
-      "gov_sources": [
-        "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html"
-      ]
     }
   ]
 }
