@@ -89,15 +89,6 @@
     {
       "date": "2025-09-04",
       "category": "Policy Update",
-      "headline": "Nadia Hashmi",
-      "description": "…After studying at the London School of Economics Nadia gained her PhD from the European University Institute in Florence on post-colonial immigration and identity in France and Britain. …",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/people/nadia-hashmi",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-04",
-      "category": "Policy Update",
       "headline": "China opens up to global STEM talent with new visa class",
       "description": "<p>The contrast offered by the global news headlines over the past couple of weeks could not have been much sharper. First, there was the story of deteriorating diplomatic relations between the United States and India. …",
       "source": "monitor.icef.com",
@@ -290,6 +281,15 @@
       "description": "<p>Northeastern University is hosting its largest Global Study Expo yet this August in Hyderabad, Mumbai, and Bengaluru. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/northeastern-university-to-host-its-annual-us-higher-education-expos-across-india-in-hyderabad-mumbai-and-bengaluru-this-august",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-07-29",
+      "category": "Policy Update",
+      "headline": "US could face $7bn loss from international student decline",
+      "description": "<p>The US economy could lose $7 billion this year if visa appointment delays and travel restrictions continue to drive declining international student numbers, projections have revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/international-student-decline-to-cost-the-us-7bn",
       "gov_sources": []
     }
   ]
