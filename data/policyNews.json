@@ -20,6 +20,17 @@
     },
     {
       "date": "2025-09-25",
+      "category": "Policy Update",
+      "headline": "UKVI stops UK-bound students for further checks, reports suggest",
+      "description": "<p>International students bound for the UK are reportedly being stopped and questioned by immigration officials before boarding their flights, The PIE has heard. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/ukvi-stops-uk-bound-students-for-further-checks-reports-suggest",
+      "gov_sources": [
+        "https://www.gov.uk/government/organisations/uk-visas-and-immigration"
+      ]
+    },
+    {
+      "date": "2025-09-25",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2025-09-25.",
@@ -44,6 +55,26 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2025-09-25",
+      "category": "Policy Update",
+      "headline": "New analysis argues that UK government is “drastically underestimating” the impact of a proposed 6% levy on international student fees",
+      "description": "<p>A new analysis from policy think tank Public First attests that a policy proposal from the UK Home Office would depress international student demand far more than government strategists have factored into their math. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/09/new-analysis-argues-that-uk-government-is-drastically-underestimating-the-impact-of-a-proposed-6-levy-on-international-student-fees",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-09-25",
+      "category": "Student Visas",
+      "headline": "Australia’s peak bodies urge visa fee reduction in letter to Prime Minister",
+      "description": "<p>Australia’s peak international education bodies have urged the government to urgently reduce student visa fees by 50% for certain short-term student cohorts.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australias-peak-bodies-urge-visa-fee-reduction-in-letter-to-prime-minister",
+      "gov_sources": [
+        "https://www.education.gov.au/international-education-data-and-research/international-student-monthly-summary-and-data-tables"
+      ]
     },
     {
       "date": "2025-09-24",
@@ -264,36 +295,6 @@
       "gov_sources": [
         "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper/restoring-control-over-the-immigration-system-accessible"
       ]
-    },
-    {
-      "date": "2025-08-05",
-      "category": "Policy Update",
-      "headline": "Australia raises enrolment limits for 2025/26 but are they reachable?",
-      "description": "<p>A joint 4 August 2025 media release from the Ministers for Education, Home Affairs, Immigration and Citizenship, and Skills and Training, and Assistant Minister for International Education sets out Australia&#8217;s National Planning Level (NPL) for the …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/08/australia-raises-enrolment-limits-for-2025-26-but-are-they-reachable",
-      "gov_sources": [
-        "https://ministers.education.gov.au/clare/managing-sustainable-international-education-sector",
-        "https://www.education.gov.au/managed-system-international-education-2026/resources/factsheet-indicative-allocations-higher-education-new-overseas-student-commencements-2026"
-      ]
-    },
-    {
-      "date": "2025-08-04",
-      "category": "Student Visas",
-      "headline": "The punk rock of English education: how BHLC is flipping the script on international student recruitment",
-      "description": "<p>As Australia’s education sector battles student visa rejections, ELICOS downturns, and an increasingly commodified market, Burleigh Heads Language College (BHLC) is cutting through the noise with a bold, lifestyle first approach that rewrites what it means …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/the-punk-rock-of-english-education-how-bhlc-is-flipping-the-script-on-international-student-recruitment",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-08-01",
-      "category": "Policy Update",
-      "headline": "Northeastern University to host its annual US higher education expos across India in Hyderabad, Mumbai and Bengaluru this August",
-      "description": "<p>Northeastern University is hosting its largest Global Study Expo yet this August in Hyderabad, Mumbai, and Bengaluru. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/northeastern-university-to-host-its-annual-us-higher-education-expos-across-india-in-hyderabad-mumbai-and-bengaluru-this-august",
-      "gov_sources": []
     }
   ]
 }
