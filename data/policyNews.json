@@ -1,21 +1,30 @@
 {
   "policyNews": [
     {
+      "date": "2025-09-26",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2025-09-26.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-09-26",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-09-26.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2025-09-25",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
       "description": "Official page updated on 2025-09-25.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-25",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-09-25.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
@@ -40,15 +49,6 @@
     },
     {
       "date": "2025-09-25",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-09-25.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-25",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -64,6 +64,17 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/09/new-analysis-argues-that-uk-government-is-drastically-underestimating-the-impact-of-a-proposed-6-levy-on-international-student-fees",
       "gov_sources": []
+    },
+    {
+      "date": "2025-09-25",
+      "category": "Student Visas",
+      "headline": "Canada: Study permit numbers are in steep decline in 2025",
+      "description": "<p>In 2024, the first year under Canada&#8217;s current cap on new international student enrolments, the total number of new study permits issued was 267,890 – a roughly -48% reduction from 2023 levels and nearly 100,000 study permits below the official IRCC …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/09/canada-study-permit-numbers-are-in-steep-decline-in-2025",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html"
+      ]
     },
     {
       "date": "2025-09-25",
@@ -284,17 +295,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year",
       "gov_sources": []
-    },
-    {
-      "date": "2025-08-05",
-      "category": "Policy Update",
-      "headline": "UK: Stricter BCA rules to take effect in September",
-      "description": "<p>Higher compliance thresholds set out in the UK government’s immigration white paper will be rolled out to universities this September, amid heightened media scrutiny of asylum claims made by study visa holders. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-stricter-bca-rules-to-take-effect-in-september",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper/restoring-control-over-the-immigration-system-accessible"
-      ]
     }
   ]
 }
