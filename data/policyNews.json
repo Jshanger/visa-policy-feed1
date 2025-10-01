@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2025-10-01",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2025-10-01.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-01",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-10-01.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2025-09-30",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,29 +29,11 @@
     },
     {
       "date": "2025-09-30",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-09-30.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-30",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2025-09-30.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-30",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-09-30.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -55,15 +55,6 @@
       "gov_sources": [
         "https://www.gov.uk/government/organisations/uk-visas-and-immigration"
       ]
-    },
-    {
-      "date": "2025-09-25",
-      "category": "Policy Update",
-      "headline": "New analysis argues that UK government is “drastically underestimating” the impact of a proposed 6% levy on international student fees",
-      "description": "<p>A new analysis from policy think tank Public First attests that a policy proposal from the UK Home Office would depress international student demand far more than government strategists have factored into their math. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/09/new-analysis-argues-that-uk-government-is-drastically-underestimating-the-impact-of-a-proposed-6-levy-on-international-student-fees",
-      "gov_sources": []
     },
     {
       "date": "2025-09-25",
@@ -295,6 +286,17 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year",
       "gov_sources": []
+    },
+    {
+      "date": "2025-08-05",
+      "category": "Policy Update",
+      "headline": "UK: Stricter BCA rules to take effect in September",
+      "description": "<p>Higher compliance thresholds set out in the UK government’s immigration white paper will be rolled out to universities this September, amid heightened media scrutiny of asylum claims made by study visa holders. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-stricter-bca-rules-to-take-effect-in-september",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper/restoring-control-over-the-immigration-system-accessible"
+      ]
     }
   ]
 }
