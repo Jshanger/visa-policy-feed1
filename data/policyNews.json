@@ -46,6 +46,21 @@
       "gov_sources": []
     },
     {
+      "date": "2025-10-02",
+      "category": "Policy Update",
+      "headline": "Australia: With ELICOS under pressure, peak bodies push for reduction in “extortionate” visa fees",
+      "description": "<p>The latest data from the Department of Education reveals that enrolments in Australia&#8217;s ELICOS sector (English Language Intensive Courses for Overseas Students) have declined by -38% year-to-date July 2025. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/10/australia-with-elicos-under-pressure-peak-bodies-push-for-reduction-in-extortionate-visa-fees",
+      "gov_sources": [
+        "https://www.education.gov.au/tps/notices/ih-sydney-training-services-pty-ltd",
+        "https://www.education.gov.au/tps/closures/perth-international-college-english",
+        "https://www.education.gov.au/tps/closures/language-academy-pty-ltd",
+        "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd",
+        "https://www.education.gov.au/tps/closures/astley-english-college"
+      ]
+    },
+    {
       "date": "2025-09-25",
       "category": "Policy Update",
       "headline": "UKVI stops UK-bound students at airports for further checks, reports suggest",
@@ -286,17 +301,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year",
       "gov_sources": []
-    },
-    {
-      "date": "2025-08-05",
-      "category": "Policy Update",
-      "headline": "UK: Stricter BCA rules to take effect in September",
-      "description": "<p>Higher compliance thresholds set out in the UK government’s immigration white paper will be rolled out to universities this September, amid heightened media scrutiny of asylum claims made by study visa holders. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-stricter-bca-rules-to-take-effect-in-september",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper/restoring-control-over-the-immigration-system-accessible"
-      ]
     }
   ]
 }
