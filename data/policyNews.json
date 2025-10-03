@@ -19,6 +19,29 @@
       "gov_sources": []
     },
     {
+      "date": "2025-10-03",
+      "category": "Policy Update",
+      "headline": "Australia eases risk ratings amid calls to scrap system",
+      "description": "<p>While the revised evidence levels suggest improved immigration risk ratings for both countries and universities, stakeholders warn the system lacks transparency and may no longer be necessary.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-eases-risk-ratings-amid-calls-to-scrap-system",
+      "gov_sources": [
+        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=799",
+        "https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool"
+      ]
+    },
+    {
+      "date": "2025-10-03",
+      "category": "Student Visas",
+      "headline": "After the cap: the reality check for Canada’s international education sector",
+      "description": "<p>The aftermath of Canada's study permit cap is only intensifying following months of policy whiplash. But swift action can help get the country's international education sector back on track, says Philipp Reichert. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/after-the-cap-the-reality-check-for-canadas-international-education-sector",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html"
+      ]
+    },
+    {
       "date": "2025-10-02",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -280,26 +303,6 @@
       "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/study-uk-student-visa",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-08-06",
-      "category": "Policy Update",
-      "headline": "UK’s stiffening compliance regime already having an impact on international student recruitment",
-      "description": "<p>It would be fair to say that compliance is top of mind for international educators in the United Kingdom these days. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/08/uks-stiffening-compliance-regime-already-having-an-impact-on-international-student-recruitment",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/student-sponsor-guidance/student-sponsor-compliance-accessible"
-      ]
-    },
-    {
-      "date": "2025-08-06",
-      "category": "Policy Update",
-      "headline": "Search data highlights surge in student interest in Asian and Middle Eastern destinations at mid-year",
-      "description": "<p>Aggregated search data from Keystone Education Group reveals a distinct spike in student interest in destinations across the Middle East and in Asia over the first half of 2025. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/08/search-data-highlights-surge-in-student-interest-in-asian-and-middle-eastern-destinations-at-mid-year",
       "gov_sources": []
     }
   ]
