@@ -3,10 +3,28 @@
     {
       "date": "2025-10-03",
       "category": "Policy Update",
+      "headline": "“Phased implementation” of new UK BCA thresholds confirmed",
+      "description": "<p>UK universities have been told to expect a “phased implementation” of new compliance thresholds, part of the government’s wider immigration crackdown that has stirred debate across the sector.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/phased-implementation-of-new-uk-bca-thresholds-confirmed",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-03",
+      "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2025-10-03.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-03",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-10-03.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -16,6 +34,15 @@
       "description": "Official page updated on 2025-10-03.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-03",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -48,24 +75,6 @@
       "description": "Official page updated on 2025-10-02.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-02",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-10-02.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-02",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -294,15 +303,6 @@
       "description": "<p>A proposal to restrict the amount of time international students can spend in the US has passed a White House review, moving it one step closer to approval.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-student-visa-time-limits-approach-final-approval",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-08-11",
-      "category": "Student Visas",
-      "headline": "Study in the UK on a Student visa",
-      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/study-uk-student-visa",
       "gov_sources": []
     }
   ]
