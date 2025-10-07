@@ -2,11 +2,31 @@
   "policyNews": [
     {
       "date": "2025-10-07",
+      "category": "Post-Study Work",
+      "headline": "US Senator calls for end of OPT",
+      "description": "<p>A senior US senator has called on the government to stop issuing work authorisations to student visa holders, claiming they threaten American jobs and put the country at risk of espionage.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-senator-calls-for-end-of-opt",
+      "gov_sources": [
+        "https://www.dhs.gov/sites/default/files/publications/20_0630_cisomb-2020-annual-report-to-congress.pdf"
+      ]
+    },
+    {
+      "date": "2025-10-07",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2025-10-07.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-07",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-10-07.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -19,16 +39,7 @@
       "gov_sources": []
     },
     {
-      "date": "2025-10-06",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-10-06.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-06",
+      "date": "2025-10-07",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -65,7 +76,8 @@
       "url": "https://thepienews.com/australia-eases-risk-ratings-amid-calls-to-scrap-system",
       "gov_sources": [
         "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=799",
-        "https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool"
+        "https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool",
+        "https://immi.homeaffairs.gov.au/what-we-do/education-program/what-we-do/evidence-levels"
       ]
     },
     {
@@ -297,15 +309,6 @@
       "gov_sources": [
         "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-111.pdf"
       ]
-    },
-    {
-      "date": "2025-08-14",
-      "category": "Post-Study Work",
-      "headline": "How post-study work rights can make or break the return on investment for study abroad",
-      "description": "<p>The following is a guest post contributed by Tim O&#8217;Brien and Claire Clifford from INTO University Partnerships, where Tim is the Senior Vice President, New Partner Development, and Claire the Vice President, Pricing, Insights and Research. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/08/how-post-study-work-rights-can-make-or-break-the-return-on-investment-for-study-abroad",
-      "gov_sources": []
     }
   ]
 }
