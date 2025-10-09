@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2025-10-08",
+      "date": "2025-10-09",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-10-08.",
+      "description": "Official page updated on 2025-10-09.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-09",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-10-09.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -21,10 +30,10 @@
     {
       "date": "2025-10-08",
       "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-10-08.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "headline": "Starmer rules out visa changes, promotes UK unis during India visit",
+      "description": "<p>On a two-day visit to India, UK Prime Minister Keir Starmer ruled out new visa routes for Indian workers or students, while saying the trip will open opportunities for UK universities.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/starmer-rules-out-visa-changes-promotes-uk-unis-during-india-visit",
       "gov_sources": []
     },
     {
@@ -298,17 +307,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/exclusive-julian-hill-responds-to-sector-concerns-on-visa-costs-and-onshore-transfers",
       "gov_sources": []
-    },
-    {
-      "date": "2025-08-14",
-      "category": "Student Visas",
-      "headline": "MD 111 brings stability for some but VET sector left behind",
-      "description": "<p>Some say Ministerial Direction 111 has improved predictability in student visa processing, but gaps remain for Australia’s vocational sector, audiences at The PIE Live Asia Pacific heard.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/md-111-brings-stability-for-some-but-vet-sector-left-behind",
-      "gov_sources": [
-        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-111.pdf"
-      ]
     }
   ]
 }
