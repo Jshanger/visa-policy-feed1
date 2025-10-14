@@ -3,10 +3,28 @@
     {
       "date": "2025-10-14",
       "category": "Policy Update",
+      "headline": "US states blast “illogical” plans to set time limits on study visas",
+      "description": "<p>Sixteen US state attorneys general have urged the federal government to withdraw an \"illogical\" proposed rule that would set fixed time limits on student visas.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-states-blast-illogical-plans-to-set-time-limits-on-study-visas",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-14",
+      "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2025-10-14.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-14",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-10-14.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -19,16 +37,7 @@
       "gov_sources": []
     },
     {
-      "date": "2025-10-13",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-10-13.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-13",
+      "date": "2025-10-14",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -300,15 +309,6 @@
       "gov_sources": [
         "https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/why-do-people-come-to-the-uk-study"
       ]
-    },
-    {
-      "date": "2025-08-26",
-      "category": "Policy Update",
-      "headline": "Australia’s new student place limit: a step forward, but social licence remains fragile",
-      "description": "<p>\"Australia’s social licence to host international students is under strain,\" writes Varsha Devi Balakrishna for The PIE News, ahead of nationwide anti-immigration protests. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australias-new-student-place-limit-a-step-forward-but-social-licence-remains-fragile",
-      "gov_sources": []
     }
   ]
 }
