@@ -11,11 +11,41 @@
     },
     {
       "date": "2025-10-15",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-10-15.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-15",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-10-15.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-15",
+      "category": "Post-Study Work",
+      "headline": "Shorter Graduate Route from January 2027, UK govt confirms",
+      "description": "<p>While the Graduate Route visa will be cut from two years to 18 months from January 2027, financial requirements are also set to increase from November 2025.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/shorter-graduate-route-from-january-2027-uk-govt-confirms",
+      "gov_sources": [
+        "https://assets.publishing.service.gov.uk/media/68ee3f1582670806f9d5e043/E03453738_-_HC_1333_-_Immigration_Rules_Changes__Web_Accessible_.pdf",
+        "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025/explanatory-memorandum-to-the-statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025-accessible"
+      ]
+    },
+    {
+      "date": "2025-10-15",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -25,24 +55,6 @@
       "description": "<p>Sixteen US state attorneys general have urged the federal government to withdraw an \"illogical\" proposed rule that would set fixed time limits on student visas.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-states-blast-illogical-plans-to-set-time-limits-on-study-visas",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-14",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-10-14.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-14",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -297,17 +309,6 @@
       "url": "https://monitor.icef.com/2025/08/canada-how-is-study-permit-processing-taking-shape-this-year",
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
-      ]
-    },
-    {
-      "date": "2025-08-26",
-      "category": "Student Visas",
-      "headline": "UK study visa grants strengthening in first half of 2025",
-      "description": "<p>A 21 August 2025 data release from the UK Home Office shows that student visa grants were up by 18% for the first six months of 2025 compared to the same period in 2024. However, year-over-year comparisons blunt that progress a little. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/08/uk-visa-grants-strengthening-in-first-half-of-2025",
-      "gov_sources": [
-        "https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-june-2025/why-do-people-come-to-the-uk-study"
       ]
     }
   ]
