@@ -29,6 +29,15 @@
     },
     {
       "date": "2025-10-22",
+      "category": "Policy Update",
+      "headline": "Student newsrooms join lawsuit against Trump’s visa revocations",
+      "description": "<p>Forty-four US student newspapers have supported Stanford Daily’s lawsuit against the Trump administration, alleging the arrests of international students suppressed protected speech. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/student-newsrooms-join-lawsuit-against-trumps-visa-revocations",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-22",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -301,15 +310,6 @@
       "description": "<p>The Home Office has contacted thousands of students whose visas are due to expire to deter them from making asylum claims that \"lack merit\" as a way to stay in the country. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-international-students-issued-text-warning-to-avoid-overstaying-visa",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-08-29",
-      "category": "Student Visas",
-      "headline": "Canada rejects nearly two in three study permit applicants",
-      "description": "<p>Canada’s study permit refusal rate has risen to its highest level in over a decade, with nearly two-thirds of applicants refused by the IRCC so far this year.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-rejects-nearly-two-in-three-study-permit-applicants",
       "gov_sources": []
     }
   ]
