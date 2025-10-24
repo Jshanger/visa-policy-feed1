@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2025-10-23",
+      "date": "2025-10-24",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-10-23.",
+      "description": "Official page updated on 2025-10-24.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-24",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-10-24.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -21,10 +30,10 @@
     {
       "date": "2025-10-23",
       "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-10-23.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "headline": "Türkiye: After a decade of dramatic growth, a goal to host 500,000 international students by 2028",
+      "description": "<p>In the past couple of years, we have frequently referred to “alternative” destinations that are becoming more popular among students who are looking for additional options – especially in light of rising concerns around affordability or access to student …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/10/turkiye-after-a-decade-of-dramatic-growth-a-goal-to-host-500000-international-students-by-2028",
       "gov_sources": []
     },
     {
@@ -301,15 +310,6 @@
       "description": "<p>The contrast offered by the global news headlines over the past couple of weeks could not have been much sharper. First, there was the story of deteriorating diplomatic relations between the United States and India. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/09/china-opens-up-to-global-stem-talent-with-new-visa-class",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-09-02",
-      "category": "Policy Update",
-      "headline": "UK: international students issued text warning to avoid overstaying visa",
-      "description": "<p>The Home Office has contacted thousands of students whose visas are due to expire to deter them from making asylum claims that \"lack merit\" as a way to stay in the country. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-international-students-issued-text-warning-to-avoid-overstaying-visa",
       "gov_sources": []
     }
   ]
