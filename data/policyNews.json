@@ -48,6 +48,17 @@
     {
       "date": "2025-10-24",
       "category": "Student Visas",
+      "headline": "Canada’s study permits down 60% amid immigration overhaul",
+      "description": "<p>Sixty percent fewer international students arrived in Canada during the first half of 2025 as compared to 2024, with study permit issuance on track to fall drastically short of this year’s federal caps, new government data has shown.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canadas-study-permits-down-60-amid-immigration-overhaul",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html"
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "category": "Student Visas",
       "headline": "Apply for a Parent of a Child Student visa: step by step",
       "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
       "source": "www.gov.uk",
@@ -300,17 +311,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/visa-lodgements-fall-as-australia-tightens-integrity-measures",
       "gov_sources": []
-    },
-    {
-      "date": "2025-09-05",
-      "category": "Policy Update",
-      "headline": "UK still top choice for pathway students despite policy changes",
-      "description": "<p>The UK remains a coveted study destination despite immigration policies affecting international students, a new survey of NCUK pathway students has found.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-still-top-choice-for-pathway-students-despite-policy-changes",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-217-10-september-2024"
-      ]
     }
   ]
 }
