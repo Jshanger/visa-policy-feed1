@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2025-10-24",
+      "date": "2025-10-25",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-10-24.",
+      "description": "Official page updated on 2025-10-25.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-25",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-10-25.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -25,15 +34,6 @@
       "description": "<p>As universities in the Big Four (Australia, Canada, the UK, and the US) face more immigration-related challenges in recruiting international students, UK universities are moving quickly to build on their already impressive transnational footprint in Asia, …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/10/the-uk-is-quickly-expanding-its-tne-footprint-in-india",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-24",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-10-24.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
