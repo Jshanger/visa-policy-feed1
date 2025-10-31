@@ -1,10 +1,28 @@
 {
   "policyNews": [
     {
+      "date": "2025-10-31",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2025-10-31.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-31",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-10-31.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2025-10-30",
       "category": "Post-Study Work",
       "headline": "US: Study estimates that changes to international student policies could reduce GDP by up to US$481 billion per year",
-      "description": "<p>The US administration continues to signal its willingness to quickly alter long-established immigration policies affecting international students. …",
+      "description": "<p>The US administration continues to signal its willingness to alter long-established immigration policies affecting international students. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/10/us-study-estimates-that-changes-to-international-student-policies-could-reduce-gdp-by-up-to-us481-billion-per-year",
       "gov_sources": []
@@ -29,29 +47,11 @@
     },
     {
       "date": "2025-10-30",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-10-30.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-30",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2025-10-30.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-30",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-10-30.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
