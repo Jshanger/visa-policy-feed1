@@ -38,6 +38,15 @@
     },
     {
       "date": "2025-11-04",
+      "category": "Student Visas",
+      "headline": "Impact of Canada’s study permit caps “worse than Covid”",
+      "description": "<p>Canada’s study permit caps have caused international enrolments to fall more sharply this year than at any time in the past decade, including during the pandemic, new data has revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/impact-of-canadas-study-permit-caps-worse-than-covid",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-04",
       "category": "Policy Update",
       "headline": "High Potential Individual visa: global universities list",
       "description": "…Find out if your university qualification means you&#x27;re eligible for a High Potential Individual visa.…",
@@ -291,17 +300,6 @@
       "url": "https://thepienews.com/ukvi-stops-uk-bound-students-for-further-checks-reports-suggest",
       "gov_sources": [
         "https://www.gov.uk/government/organisations/uk-visas-and-immigration"
-      ]
-    },
-    {
-      "date": "2025-09-25",
-      "category": "Student Visas",
-      "headline": "Canada: Study permit numbers are in steep decline in 2025",
-      "description": "<p>In 2024, the first year under Canada&#8217;s current cap on new international student enrolments, the total number of new study permits issued was 267,890 – a roughly -48% reduction from 2023 levels and nearly 100,000 study permits below the official IRCC …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/09/canada-study-permit-numbers-are-in-steep-decline-in-2025",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html"
       ]
     }
   ]
