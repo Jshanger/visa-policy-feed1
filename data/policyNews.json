@@ -11,6 +11,15 @@
     },
     {
       "date": "2025-11-04",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-11-04.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-04",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-11-04.",
@@ -19,21 +28,21 @@
       "gov_sources": []
     },
     {
-      "date": "2025-11-03",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-11-03.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-03",
+      "date": "2025-11-04",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-04",
+      "category": "Policy Update",
+      "headline": "High Potential Individual visa: global universities list",
+      "description": "…Find out if your university qualification means you&#x27;re eligible for a High Potential Individual visa.…",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/high-potential-individual-visa-global-universities-list",
       "gov_sources": []
     },
     {
@@ -293,17 +302,6 @@
       "url": "https://monitor.icef.com/2025/09/canada-study-permit-numbers-are-in-steep-decline-in-2025",
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html"
-      ]
-    },
-    {
-      "date": "2025-09-25",
-      "category": "Student Visas",
-      "headline": "Australia’s peak bodies urge visa fee reduction in letter to Prime Minister",
-      "description": "<p>Australia’s peak international education bodies have urged the government to urgently reduce student visa fees by 50% for certain short-term student cohorts.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australias-peak-bodies-urge-visa-fee-reduction-in-letter-to-prime-minister",
-      "gov_sources": [
-        "https://www.education.gov.au/international-education-data-and-research/international-student-monthly-summary-and-data-tables"
       ]
     }
   ]
