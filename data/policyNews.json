@@ -19,6 +19,17 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-05",
+      "category": "Policy Update",
+      "headline": "Canada cuts foreign enrolment cap by nearly 50% as current year trends below COVID levels",
+      "description": "<p>The Government of Canada introduced a new budget on 4 November 2025. It includes an Immigration Levels Plan which sets out detailed targets for the numbers of new permanent residents and temporary residents that will be admitted for each year through 2028. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/11/canada-cuts-foreign-enrolment-cap-by-nearly-50-as-current-year-trends-below-covid-levels",
+      "gov_sources": [
+        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
+      ]
+    },
+    {
       "date": "2025-11-04",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
@@ -289,17 +300,6 @@
         "https://www.education.gov.au/tps/closures/language-academy-pty-ltd",
         "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd",
         "https://www.education.gov.au/tps/closures/astley-english-college"
-      ]
-    },
-    {
-      "date": "2025-09-25",
-      "category": "Policy Update",
-      "headline": "UKVI stops UK-bound students at airports for further checks, reports suggest",
-      "description": "<p>International students bound for the UK are reportedly being stopped and questioned by immigration officials before boarding their flights, The PIE has heard. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/ukvi-stops-uk-bound-students-for-further-checks-reports-suggest",
-      "gov_sources": [
-        "https://www.gov.uk/government/organisations/uk-visas-and-immigration"
       ]
     }
   ]
