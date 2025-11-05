@@ -11,12 +11,41 @@
     },
     {
       "date": "2025-11-05",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-11-05.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-05",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-11-05.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
+    },
+    {
+      "date": "2025-11-05",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-05",
+      "category": "Student Visas",
+      "headline": "Canada proposes further 65% study permit cap",
+      "description": "<p>The Canadian government has set out plans to slash international study permits by a further 65% in 2026, in liberal Prime Minister Marc Carney’s first federal budget announced yesterday.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-proposes-further-65-study-permit-cap",
+      "gov_sources": [
+        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
+      ]
     },
     {
       "date": "2025-11-05",
@@ -28,24 +57,6 @@
       "gov_sources": [
         "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
       ]
-    },
-    {
-      "date": "2025-11-04",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-11-04.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-04",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
     },
     {
       "date": "2025-11-04",
@@ -90,15 +101,6 @@
       "description": "<p>A senior US senator has proposed legislation to remove tax exemptions for international students on Optional Practical Training (OPT).</p> <p>The post <a href=\"https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students/\">US eyes ending …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-29",
-      "category": "Post-Study Work",
-      "headline": "Bloodborne viruses (BBVs): opt-out testing in emergency departments (EDs)",
-      "description": "Interim public evaluation of the opt-out BBV testing in EDs programme in England.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/bloodborne-viruses-opt-out-testing-in-emergency-departments",
       "gov_sources": []
     },
     {
