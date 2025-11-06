@@ -37,10 +37,23 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-06",
+      "category": "Student Visas",
+      "headline": "Canada exempts certain grad students from 2026 study caps",
+      "description": "<p>International graduate students applying to public Canadian institutions will once again be exempt from federal study permit caps as of January 2026, the government has announced.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-exempts-certain-grad-students-from-2026-study-caps",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/annual-report-parliament-immigration-2025.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html",
+        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
+      ]
+    },
+    {
       "date": "2025-11-05",
       "category": "Student Visas",
       "headline": "Canada to slash study permit cap by more than half",
-      "description": "<p>The Canadian government has set out plans to slash new international study permits by more than 50% in 2026-28, in liberal Prime Minister Marc Carney’s first federal budget.</p> <p>The post <a …",
+      "description": "<p>The Canadian government has set out plans to slash new international study permits by more than 50% in 2026-28, in liberal Prime Minister Mark Carney’s first federal budget.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/canada-proposes-further-65-study-permit-cap",
       "gov_sources": [
@@ -287,21 +300,6 @@
       "url": "https://thepienews.com/after-the-cap-the-reality-check-for-canadas-international-education-sector",
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html"
-      ]
-    },
-    {
-      "date": "2025-10-02",
-      "category": "Policy Update",
-      "headline": "Australia: With ELICOS under pressure, peak bodies push for reduction in “extortionate” visa fees",
-      "description": "<p>The latest data from the Department of Education reveals that enrolments in Australia&#8217;s ELICOS sector (English Language Intensive Courses for Overseas Students) have declined by -38% year-to-date July 2025. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/australia-with-elicos-under-pressure-peak-bodies-push-for-reduction-in-extortionate-visa-fees",
-      "gov_sources": [
-        "https://www.education.gov.au/tps/notices/ih-sydney-training-services-pty-ltd",
-        "https://www.education.gov.au/tps/closures/perth-international-college-english",
-        "https://www.education.gov.au/tps/closures/language-academy-pty-ltd",
-        "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd",
-        "https://www.education.gov.au/tps/closures/astley-english-college"
       ]
     }
   ]
