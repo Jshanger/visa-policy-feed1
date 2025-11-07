@@ -37,6 +37,15 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-07",
+      "category": "Policy Update",
+      "headline": "More international students find home on US community college campuses",
+      "description": "<p>Monroe Community College’s international enrolments have risen by more than a third this semester, despite visa restrictions and hostile Trump-era policies. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/more-international-students-find-home-on-community-college-campuses",
+      "gov_sources": []
+    },
+    {
       "date": "2025-11-06",
       "category": "Student Visas",
       "headline": "Canada exempts certain grad students from 2026 study caps",
@@ -289,19 +298,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/phased-implementation-of-new-uk-bca-thresholds-confirmed",
       "gov_sources": []
-    },
-    {
-      "date": "2025-10-03",
-      "category": "Policy Update",
-      "headline": "Australia eases risk ratings amid calls to scrap system",
-      "description": "<p>While the revised evidence levels suggest improved immigration risk ratings for both countries and universities, stakeholders warn the system lacks transparency and may no longer be necessary.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-eases-risk-ratings-amid-calls-to-scrap-system",
-      "gov_sources": [
-        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=799",
-        "https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool",
-        "https://immi.homeaffairs.gov.au/what-we-do/education-program/what-we-do/evidence-levels"
-      ]
     }
   ]
 }
