@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2025-11-06",
+      "date": "2025-11-07",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-11-06.",
+      "description": "Official page updated on 2025-11-07.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-07",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-11-07.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -16,15 +25,6 @@
       "description": "Official page updated on 2025-11-06.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-06",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-11-06.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -47,6 +47,18 @@
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/annual-report-parliament-immigration-2025.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html",
         "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "category": "Student Visas",
+      "headline": "Canada announces new incentives for international recruitment of master’s and PhD students",
+      "description": "<p>On the heels of this week&#8217;s announcement of a significant reduction in Canada&#8217;s foreign enrolment cap, Immigration, Refugees and Citizenship Canada (IRCC) has issued additional guidance for students pursuing advanced degrees. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/11/canada-announces-new-incentives-for-international-recruitment-of-masters-and-phd-students",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html"
       ]
     },
     {
@@ -289,17 +301,6 @@
         "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=799",
         "https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool",
         "https://immi.homeaffairs.gov.au/what-we-do/education-program/what-we-do/evidence-levels"
-      ]
-    },
-    {
-      "date": "2025-10-03",
-      "category": "Student Visas",
-      "headline": "After the cap: the reality check for Canada’s international education sector",
-      "description": "<p>The aftermath of Canada's study permit cap is only intensifying following months of policy whiplash. But swift action can help get the country's international education sector back on track, says Philipp Reichert. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/after-the-cap-the-reality-check-for-canadas-international-education-sector",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html"
       ]
     }
   ]
