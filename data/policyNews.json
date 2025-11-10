@@ -21,6 +21,15 @@
     {
       "date": "2025-11-10",
       "category": "Policy Update",
+      "headline": "Trump administration has revoked 8,000 student visas",
+      "description": "<p>More than 8,000 US student visas have been revoked by the Trump administration since January 20, the government has confirmed.</p> <p>The post <a href=\"https://thepienews.com/trump-administration-revokes-8000-student-visas/\">Trump administration has …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-10",
+      "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-11-10.",
       "source": "www.taiwannews.com.tw",
@@ -35,6 +44,19 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2025-11-10",
+      "category": "Student Visas",
+      "headline": "Australia: new student visa processing directive to replace Ministerial Direction 111",
+      "description": "<p>Australia is set to introduce a new student visa processing directive, in line with the government’s ongoing commitment to managed growth.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-new-student-visa-processing-directive-to-replace-ministerial-direction-111",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
+        "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
+      ]
     },
     {
       "date": "2025-11-07",
@@ -99,15 +121,6 @@
       "description": "<p>Canada’s study permit caps have caused international enrolments to fall more sharply this year than at any time in the past decade, including during the pandemic, new data has revealed.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/impact-of-canadas-study-permit-caps-worse-than-covid",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-04",
-      "category": "Policy Update",
-      "headline": "High Potential Individual visa: global universities list",
-      "description": "…Find out if your university qualification means you&#x27;re eligible for a High Potential Individual visa.…",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/high-potential-individual-visa-global-universities-list",
       "gov_sources": []
     },
     {
@@ -289,15 +302,6 @@
       "gov_sources": [
         "https://www.gov.uk/government/news/new-youth-guarantee-for-eligible-young-people-and-funding-for-libraries-in-all-primary-schools"
       ]
-    },
-    {
-      "date": "2025-10-03",
-      "category": "Policy Update",
-      "headline": "“Phased implementation” of new UK BCA thresholds confirmed",
-      "description": "<p>UK universities have been told to expect a “phased implementation” of new compliance thresholds, part of the government’s wider immigration crackdown that has stirred debate across the sector.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/phased-implementation-of-new-uk-bca-thresholds-confirmed",
-      "gov_sources": []
     }
   ]
 }
