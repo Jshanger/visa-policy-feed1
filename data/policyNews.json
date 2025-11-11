@@ -1,12 +1,48 @@
 {
   "policyNews": [
     {
-      "date": "2025-11-10",
+      "date": "2025-11-11",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-11-10.",
+      "description": "Official page updated on 2025-11-11.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-11-11.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "Short-term students: caseworker guidance",
+      "description": "Immigration staff guidance on how short-term student applications for entry clearance or leave to enter are considered.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/short-term-students",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "Parent of a child student: caseworker guidance",
+      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Post-Study Work",
+      "headline": "Graduate caseworker guidance",
+      "description": "Immigration staff guidance on considering applications under the Graduate route.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/graduate-caseworker-guidance",
       "gov_sources": []
     },
     {
@@ -25,15 +61,6 @@
       "description": "<p>More than 8,000 US student visas have been revoked by the Trump administration since January 20, the government has confirmed.</p> <p>The post <a href=\"https://thepienews.com/trump-administration-revokes-8000-student-visas/\">Trump administration has …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-10",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-11-10.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -270,37 +297,6 @@
       "url": "https://thepienews.com/canada-47k-intl-students-flagged-for-potential-visa-non-compliance",
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2025-provincial-territorial-allocations-under-international-student-cap.html"
-      ]
-    },
-    {
-      "date": "2025-10-08",
-      "category": "Policy Update",
-      "headline": "Starmer rules out visa changes, promotes UK unis during India visit",
-      "description": "<p>On a two-day visit to India, UK Prime Minister Keir Starmer ruled out new visa routes for Indian workers or students, while saying the trip will open opportunities for UK universities.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/starmer-rules-out-visa-changes-promotes-uk-unis-during-india-visit",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-07",
-      "category": "Post-Study Work",
-      "headline": "US Senator calls for end of OPT",
-      "description": "<p>A senior US senator has called on the government to stop issuing work authorisations to student visa holders, claiming they threaten American jobs and put the country at risk of espionage.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-senator-calls-for-end-of-opt",
-      "gov_sources": [
-        "https://www.dhs.gov/sites/default/files/publications/20_0630_cisomb-2020-annual-report-to-congress.pdf"
-      ]
-    },
-    {
-      "date": "2025-10-06",
-      "category": "Post-Study Work",
-      "headline": "Canada’s PGWP decline set to intensify “chronic” labour gaps",
-      "description": "<p>As 30% fewer international graduates are set to enter Canada’s workforce this year, stakeholders warn the country is failing to attract global talent amid US policy volatility under Donald Trump.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canadas-pgwp-decline-set-to-intensify-chronic-labour-gaps",
-      "gov_sources": [
-        "https://www.gov.uk/government/news/new-youth-guarantee-for-eligible-young-people-and-funding-for-libraries-in-all-primary-schools"
       ]
     }
   ]
