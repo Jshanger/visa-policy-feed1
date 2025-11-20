@@ -11,11 +11,29 @@
     },
     {
       "date": "2025-11-20",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-11-20.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-20",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-11-20.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-20",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -25,24 +43,6 @@
       "description": "Official page updated on 2025-11-19.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-19",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-11-19.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-19",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
