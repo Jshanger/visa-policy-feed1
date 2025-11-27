@@ -37,6 +37,18 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-27",
+      "category": "Policy Update",
+      "headline": "Canada announces international student cap numbers for 2026 and updated programme guidance",
+      "description": "<p>Immigration, Refugees and Citizenship Canada (IRCC) announced this week that it expects to issue up to 408,000 study permits in 2026. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/11/canada-announces-international-student-cap-numbers-for-2026-and-updated-programme-guidance",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2025-students-dli.html"
+      ]
+    },
+    {
       "date": "2025-11-26",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -284,20 +296,6 @@
       "url": "https://thepienews.com/f-1-to-h-1b-transitions-to-be-exempt-from-100k-fee",
       "gov_sources": [
         "https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations"
-      ]
-    },
-    {
-      "date": "2025-10-16",
-      "category": "Post-Study Work",
-      "headline": "UK to implement reduced Graduate Route from January 2027",
-      "description": "<p>The UK Home Office has confirmed the implementation of one of the key items in its May 2025 immigration white paper. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/uk-to-implement-reduced-graduate-route-from-january-2027",
-      "gov_sources": [
-        "https://www.gov.uk/government/news/migrants-will-be-required-to-pass-a-level-standard-of-english",
-        "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025/explanatory-memorandum-to-the-statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025-accessible",
-        "https://www.gov.uk/high-potential-individual-visa",
-        "https://www.gov.uk/innovator-founder-visa"
       ]
     }
   ]
