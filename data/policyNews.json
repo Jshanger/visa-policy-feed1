@@ -1,19 +1,19 @@
 {
   "policyNews": [
     {
-      "date": "2025-11-29",
+      "date": "2025-11-30",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-11-29.",
+      "description": "Official page updated on 2025-11-30.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2025-11-29",
+      "date": "2025-11-30",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-11-29.",
+      "description": "Official page updated on 2025-11-30.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
@@ -58,6 +58,17 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-26",
+      "category": "Student Visas",
+      "headline": "Canada “won’t come close” to reduced 2026 cap, sector warns",
+      "description": "<p>Following two years of missed study permit targets, stakeholders say Canada’s 7% cap reduction for 2026 is unlikely to make a material difference, as visa approval rates remain at record lows.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-wont-come-close-to-reduced-2026-cap-sector-warns",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
+      ]
+    },
+    {
       "date": "2025-11-19",
       "category": "Policy Update",
       "headline": "Canada and the US are losing international student enrolments to Europe and Asia",
@@ -65,6 +76,37 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/11/canada-and-the-us-are-losing-international-student-enrolments-to-europe-and-asia",
       "gov_sources": []
+    },
+    {
+      "date": "2025-11-17",
+      "category": "Post-Study Work",
+      "headline": "US tops 1.1 million international students as OPT fuels growth",
+      "description": "<p>International students in the US grew by 5% last year, primarily driven by the continued growth in Optional Practical Training (OPT) which surged by 21%.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-tops-1-1-million-international-students-as-opt-fuels-growth",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-17",
+      "category": "Student Visas",
+      "headline": "Australia: Home Affairs issues warning amid student visa integrity threats",
+      "description": "<p>Australia’s Department of Home Affairs (DHA) has issued a warning about emerging risks to the country’s student visa program, citing cases of applicants using fraudulent passports and growing integrity concerns linked to activity in South Asian …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
+      "gov_sources": [
+        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "UUK boss hits out at “wretched” international fee levy",
+      "description": "<p>The CEO of Universities UK (UUK), Vivienne Stern, has criticised the controversial levy on international student fees, suggesting that it will not succeed in solving the \"perma-battle\" over student visas. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uuk-boss-hits-out-at-wretched-international-fee-levy",
+      "gov_sources": [
+        "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf"
+      ]
     },
     {
       "date": "2025-11-11",
@@ -94,6 +136,50 @@
       "gov_sources": []
     },
     {
+      "date": "2025-11-10",
+      "category": "Policy Update",
+      "headline": "Trump administration has revoked 8,000 student visas",
+      "description": "<p>More than 8,000 US student visas have been revoked by the Trump administration since January 20, the government has confirmed.</p> <p>The post <a href=\"https://thepienews.com/trump-administration-revokes-8000-student-visas/\">Trump administration has …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-10",
+      "category": "Student Visas",
+      "headline": "Australia: new student visa processing directive to replace Ministerial Direction 111",
+      "description": "<p>Australia is set to introduce a new student visa processing directive, in line with the government’s ongoing commitment to managed growth.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-new-student-visa-processing-directive-to-replace-ministerial-direction-111",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
+        "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "category": "Policy Update",
+      "headline": "More international students find home on US community college campuses",
+      "description": "<p>Monroe Community College’s international enrolments have risen by more than a third this semester, despite visa restrictions and hostile Trump-era policies. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/more-international-students-find-home-on-community-college-campuses",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-11-06",
+      "category": "Student Visas",
+      "headline": "Canada exempts certain grad students from 2026 study caps",
+      "description": "<p>International graduate students applying to public Canadian institutions will once again be exempt from federal study permit caps as of January 2026, the government has announced.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-exempts-certain-grad-students-from-2026-study-caps",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/annual-report-parliament-immigration-2025.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html",
+        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
+      ]
+    },
+    {
       "date": "2025-11-06",
       "category": "Student Visas",
       "headline": "Canada announces new incentives for international recruitment of master’s and PhD students",
@@ -103,6 +189,17 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html"
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "category": "Student Visas",
+      "headline": "Canada to slash study permit cap by more than half",
+      "description": "<p>The Canadian government has set out plans to slash new international study permits by more than 50% in 2026-28, in liberal Prime Minister Mark Carney’s first federal budget.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-proposes-further-65-study-permit-cap",
+      "gov_sources": [
+        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
       ]
     },
     {
@@ -117,12 +214,30 @@
       ]
     },
     {
+      "date": "2025-11-04",
+      "category": "Student Visas",
+      "headline": "Impact of Canada’s study permit caps “worse than Covid”",
+      "description": "<p>Canada’s study permit caps have caused international enrolments to fall more sharply this year than at any time in the past decade, including during the pandemic, new data has revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/impact-of-canadas-study-permit-caps-worse-than-covid",
+      "gov_sources": []
+    },
+    {
       "date": "2025-10-30",
       "category": "Post-Study Work",
       "headline": "US: Study estimates that changes to international student policies could reduce GDP by up to US$481 billion per year",
       "description": "<p>The US administration continues to signal its willingness to alter long-established immigration policies affecting international students. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/10/us-study-estimates-that-changes-to-international-student-policies-could-reduce-gdp-by-up-to-us481-billion-per-year",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-30",
+      "category": "Post-Study Work",
+      "headline": "US eyes ending OPT tax break for international students",
+      "description": "<p>A senior US senator has proposed legislation to remove tax exemptions for international students on Optional Practical Training (OPT).</p> <p>The post <a href=\"https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students/\">US eyes ending …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students",
       "gov_sources": []
     },
     {
@@ -133,6 +248,17 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/10/the-uk-is-quickly-expanding-its-tne-footprint-in-india",
       "gov_sources": []
+    },
+    {
+      "date": "2025-10-24",
+      "category": "Student Visas",
+      "headline": "Canada’s study permits down 60% amid immigration overhaul",
+      "description": "<p>Sixty percent fewer international students arrived in Canada during the first half of 2025 as compared to 2024, with study permit issuance on track to fall drastically short of this year’s federal caps, new government data has shown.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canadas-study-permits-down-60-amid-immigration-overhaul",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html"
+      ]
     },
     {
       "date": "2025-10-24",
@@ -153,42 +279,24 @@
       "gov_sources": []
     },
     {
-      "date": "2025-10-16",
-      "category": "Post-Study Work",
-      "headline": "UK to implement reduced Graduate Route from January 2027",
-      "description": "<p>The UK Home Office has confirmed the implementation of one of the key items in its May 2025 immigration white paper. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/uk-to-implement-reduced-graduate-route-from-january-2027",
-      "gov_sources": [
-        "https://www.gov.uk/government/news/migrants-will-be-required-to-pass-a-level-standard-of-english",
-        "https://www.gov.uk/government/publications/statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025/explanatory-memorandum-to-the-statement-of-changes-to-the-immigration-rules-hc-1333-14-october-2025-accessible",
-        "https://www.gov.uk/high-potential-individual-visa",
-        "https://www.gov.uk/innovator-founder-visa"
-      ]
-    },
-    {
-      "date": "2025-10-02",
+      "date": "2025-10-22",
       "category": "Policy Update",
-      "headline": "Australia: With ELICOS under pressure, peak bodies push for reduction in “extortionate” visa fees",
-      "description": "<p>The latest data from the Department of Education reveals that enrolments in Australia&#8217;s ELICOS sector (English Language Intensive Courses for Overseas Students) have declined by -38% year-to-date July 2025. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/australia-with-elicos-under-pressure-peak-bodies-push-for-reduction-in-extortionate-visa-fees",
-      "gov_sources": [
-        "https://www.education.gov.au/tps/notices/ih-sydney-training-services-pty-ltd",
-        "https://www.education.gov.au/tps/closures/perth-international-college-english",
-        "https://www.education.gov.au/tps/closures/language-academy-pty-ltd",
-        "https://www.education.gov.au/tps/closures/lonsdale-institute-pty-ltd",
-        "https://www.education.gov.au/tps/closures/astley-english-college"
-      ]
+      "headline": "Student newsrooms join lawsuit against Trump’s visa revocations",
+      "description": "<p>Forty-four US student newspapers have supported Stanford Daily’s lawsuit against the Trump administration, alleging the arrests of international students suppressed protected speech. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/student-newsrooms-join-lawsuit-against-trumps-visa-revocations",
+      "gov_sources": []
     },
     {
-      "date": "2025-08-11",
+      "date": "2025-10-21",
       "category": "Student Visas",
-      "headline": "Study in the UK on a Student visa",
-      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/study-uk-student-visa",
-      "gov_sources": []
+      "headline": "F-1 to H-1B transitions to be exempt from $100K fee",
+      "description": "<p>The US’s controversial new $100,000 H1-B visa fee will not apply to international students and other visa holders changing status in the country, the government has clarified.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/f-1-to-h-1b-transitions-to-be-exempt-from-100k-fee",
+      "gov_sources": [
+        "https://www.uscis.gov/working-in-the-united-states/h-1b-specialty-occupations"
+      ]
     }
   ]
 }
