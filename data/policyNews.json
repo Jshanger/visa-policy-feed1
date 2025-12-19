@@ -1,6 +1,33 @@
 {
   "policyNews": [
     {
+      "date": "2025-12-19",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2025-12-19.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-19",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-12-19.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-18",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2025-12-18.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
       "date": "2025-12-18",
       "category": "Policy Update",
       "headline": "US extends travel ban, Nigeria now included on “restricted” list",
@@ -11,29 +38,11 @@
     },
     {
       "date": "2025-12-18",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-12-18.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-18",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2025-12-18.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-18",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-12-18.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -52,15 +61,6 @@
       "description": "<p>While approval rates for university-level bachelor’s programs rebounded to 2022 levels this year, the downward trend for college programs only worsened.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/canadian-unis-see-first-rise-in-undergrad-study-permit-approvals-in-five-years",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-17",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2025-12-17.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
