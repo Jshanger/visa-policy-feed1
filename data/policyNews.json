@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2025-12-22",
+      "date": "2025-12-23",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-12-22.",
+      "description": "Official page updated on 2025-12-23.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-23",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-12-23.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -25,15 +34,6 @@
       "description": "<p>From election outcomes and visa hikes to reform milestones and sector soul-searching, these are the stories that sum up the year for Australia's international education sector.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/the-year-in-review-10-stories-that-shaped-international-education-in-australia",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-22",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-12-22.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
