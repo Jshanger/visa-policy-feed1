@@ -1,19 +1,19 @@
 {
   "policyNews": [
     {
-      "date": "2025-12-27",
+      "date": "2025-12-28",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-12-27.",
+      "description": "Official page updated on 2025-12-28.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2025-12-27",
+      "date": "2025-12-28",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-12-27.",
+      "description": "Official page updated on 2025-12-28.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
@@ -73,39 +73,12 @@
       "gov_sources": []
     },
     {
-      "date": "2025-12-18",
-      "category": "Student Visas",
-      "headline": "Canadian unis see first rise in undergrad study permit approvals in five years",
-      "description": "<p>While approval rates for university-level bachelor’s programs rebounded to 2022 levels this year, the downward trend for college programs only worsened.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canadian-unis-see-first-rise-in-undergrad-study-permit-approvals-in-five-years",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-15",
-      "category": "Policy Update",
-      "headline": "Nine in 10 international students fear for US visa status",
-      "description": "<p>Just 4% of international students recently surveyed said they felt “very or extremely” safe in the US, as shifting visa rules and hostile immigration policies contribute to a climate of fear on American campuses.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/nine-in-10-international-students-fear-for-us-visa-status",
-      "gov_sources": []
-    },
-    {
       "date": "2025-12-11",
       "category": "Policy Update",
       "headline": "Canada: A case study of immigration policy impacts on postsecondary institutions and the wider economy",
       "description": "<p>In January 2026, Canadian higher education institutions will enter the third consecutive year of caps on new international student enrolments. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/12/canada-a-case-study-of-immigration-policy-impacts-on-postsecondary-institutions-and-the-wider-economy",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-04",
-      "category": "Policy Update",
-      "headline": "International students missing out under US Early Decision system",
-      "description": "<p>Concerns are growing in the US that the Early Decision system may unfairly disadvantage international students amid visa delays and other geopolitical complications.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/international-students-missing-out-under-us-early-decision-system",
       "gov_sources": []
     },
     {
@@ -121,17 +94,6 @@
       ]
     },
     {
-      "date": "2025-11-26",
-      "category": "Student Visas",
-      "headline": "Canada “won’t come close” to reduced 2026 cap, sector warns",
-      "description": "<p>Following two years of missed study permit targets, stakeholders say Canada’s 7% cap reduction for 2026 is unlikely to make a material difference, as visa approval rates remain at record lows.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-wont-come-close-to-reduced-2026-cap-sector-warns",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
-      ]
-    },
-    {
       "date": "2025-11-19",
       "category": "Policy Update",
       "headline": "Canada and the US are losing international student enrolments to Europe and Asia",
@@ -141,37 +103,6 @@
       "gov_sources": []
     },
     {
-      "date": "2025-11-17",
-      "category": "Post-Study Work",
-      "headline": "US tops 1.1 million international students as OPT fuels growth",
-      "description": "<p>International students in the US grew by 5% last year, primarily driven by the continued growth in Optional Practical Training (OPT) which surged by 21%.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-tops-1-1-million-international-students-as-opt-fuels-growth",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-17",
-      "category": "Student Visas",
-      "headline": "Australia: Home Affairs issues warning amid student visa integrity threats",
-      "description": "<p>Australia’s Department of Home Affairs (DHA) has issued a warning about emerging risks to the country’s student visa program, citing cases of applicants using fraudulent passports and growing integrity concerns linked to activity in South Asian …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
-      "gov_sources": [
-        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
-      ]
-    },
-    {
-      "date": "2025-11-11",
-      "category": "Policy Update",
-      "headline": "UUK boss hits out at “wretched” international fee levy",
-      "description": "<p>The CEO of Universities UK (UUK), Vivienne Stern, has criticised the controversial levy on international student fees, suggesting that it will not succeed in solving the \"perma-battle\" over student visas. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uuk-boss-hits-out-at-wretched-international-fee-levy",
-      "gov_sources": [
-        "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf"
-      ]
-    },
-    {
       "date": "2025-11-11",
       "category": "Policy Update",
       "headline": "Parent of a child student: caseworker guidance",
@@ -179,50 +110,6 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
       "gov_sources": []
-    },
-    {
-      "date": "2025-11-10",
-      "category": "Policy Update",
-      "headline": "Trump administration has revoked 8,000 student visas",
-      "description": "<p>More than 8,000 US student visas have been revoked by the Trump administration since January 20, the government has confirmed.</p> <p>The post <a href=\"https://thepienews.com/trump-administration-revokes-8000-student-visas/\">Trump administration has …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-10",
-      "category": "Student Visas",
-      "headline": "Australia: new student visa processing directive to replace Ministerial Direction 111",
-      "description": "<p>Australia is set to introduce a new student visa processing directive, in line with the government’s ongoing commitment to managed growth.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-new-student-visa-processing-directive-to-replace-ministerial-direction-111",
-      "gov_sources": [
-        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
-        "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
-        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
-      ]
-    },
-    {
-      "date": "2025-11-07",
-      "category": "Policy Update",
-      "headline": "More international students find home on US community college campuses",
-      "description": "<p>Monroe Community College’s international enrolments have risen by more than a third this semester, despite visa restrictions and hostile Trump-era policies. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/more-international-students-find-home-on-community-college-campuses",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-06",
-      "category": "Student Visas",
-      "headline": "Canada exempts certain grad students from 2026 study caps",
-      "description": "<p>International graduate students applying to public Canadian institutions will once again be exempt from federal study permit caps as of January 2026, the government has announced.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-exempts-certain-grad-students-from-2026-study-caps",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/annual-report-parliament-immigration-2025.html",
-        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/graduate-student.html",
-        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
-      ]
     },
     {
       "date": "2025-11-06",
@@ -238,17 +125,6 @@
     },
     {
       "date": "2025-11-05",
-      "category": "Student Visas",
-      "headline": "Canada to slash study permit cap by more than half",
-      "description": "<p>The Canadian government has set out plans to slash new international study permits by more than 50% in 2026-28, in liberal Prime Minister Mark Carney’s first federal budget.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-proposes-further-65-study-permit-cap",
-      "gov_sources": [
-        "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
-      ]
-    },
-    {
-      "date": "2025-11-05",
       "category": "Policy Update",
       "headline": "Canada cuts foreign enrolment cap by nearly 50% as current year trends below COVID levels",
       "description": "<p>The Government of Canada introduced a new budget on 4 November 2025. It includes an Immigration Levels Plan which sets out detailed targets for the numbers of new permanent residents and temporary residents that will be admitted for each year through 2028. …",
@@ -257,15 +133,6 @@
       "gov_sources": [
         "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
       ]
-    },
-    {
-      "date": "2025-11-04",
-      "category": "Student Visas",
-      "headline": "Impact of Canada’s study permit caps “worse than Covid”",
-      "description": "<p>Canada’s study permit caps have caused international enrolments to fall more sharply this year than at any time in the past decade, including during the pandemic, new data has revealed.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/impact-of-canadas-study-permit-caps-worse-than-covid",
-      "gov_sources": []
     },
     {
       "date": "2025-10-30",
@@ -277,21 +144,30 @@
       "gov_sources": []
     },
     {
-      "date": "2025-10-30",
-      "category": "Post-Study Work",
-      "headline": "US eyes ending OPT tax break for international students",
-      "description": "<p>A senior US senator has proposed legislation to remove tax exemptions for international students on Optional Practical Training (OPT).</p> <p>The post <a href=\"https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students/\">US eyes ending …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students",
-      "gov_sources": []
-    },
-    {
       "date": "2025-10-24",
       "category": "Policy Update",
       "headline": "The UK is quickly expanding its TNE footprint in India",
       "description": "<p>As universities in the Big Four (Australia, Canada, the UK, and the US) face more immigration-related challenges in recruiting international students, UK universities are moving quickly to build on their already impressive transnational footprint in Asia, …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/10/the-uk-is-quickly-expanding-its-tne-footprint-in-india",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-24",
+      "category": "Student Visas",
+      "headline": "Apply for a Parent of a Child Student visa: step by step",
+      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/apply-parent-child-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-11",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Student visa",
+      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-student-visa",
       "gov_sources": []
     }
   ]
