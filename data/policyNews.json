@@ -1,6 +1,15 @@
 {
   "policyNews": [
     {
+      "date": "2025-12-30",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2025-12-30.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2025-12-29",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -25,15 +34,6 @@
       "description": "Official page updated on 2025-12-29.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-29",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-12-29.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
