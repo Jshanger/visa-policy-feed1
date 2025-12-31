@@ -11,11 +11,38 @@
     },
     {
       "date": "2025-12-31",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2025-12-31.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-31",
+      "category": "Policy Update",
+      "headline": "The year in review: top international education stories from Africa",
+      "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-year-in-review-top-international-education-stories-from-africa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-31",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2025-12-31.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-31",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -25,24 +52,6 @@
       "description": "Official page updated on 2025-12-30.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-30",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2025-12-30.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-30",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -283,15 +292,6 @@
       "description": "<p>A senior US senator has proposed legislation to remove tax exemptions for international students on Optional Practical Training (OPT).</p> <p>The post <a href=\"https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students/\">US eyes ending …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-eyes-ending-opt-tax-break-for-international-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-24",
-      "category": "Policy Update",
-      "headline": "The UK is quickly expanding its TNE footprint in India",
-      "description": "<p>As universities in the Big Four (Australia, Canada, the UK, and the US) face more immigration-related challenges in recruiting international students, UK universities are moving quickly to build on their already impressive transnational footprint in Asia, …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/the-uk-is-quickly-expanding-its-tne-footprint-in-india",
       "gov_sources": []
     }
   ]
