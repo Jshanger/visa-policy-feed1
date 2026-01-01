@@ -1,21 +1,30 @@
 {
   "policyNews": [
     {
+      "date": "2026-01-01",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-01-01.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-01",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-01-01.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2025-12-31",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
       "description": "Official page updated on 2025-12-31.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-31",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2025-12-31.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
@@ -34,15 +43,6 @@
       "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/the-year-in-review-top-international-education-stories-from-africa",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-31",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2025-12-31.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
