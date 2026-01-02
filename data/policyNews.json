@@ -3,6 +3,15 @@
     {
       "date": "2026-01-02",
       "category": "Policy Update",
+      "headline": "Work in the UK",
+      "description": "Skilled Worker visa, Graduate visa, other work visas, right to work",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/browse/visas-immigration/work-visas",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-02",
+      "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-01-02.",
       "source": "www.dhs.gov",
@@ -16,6 +25,15 @@
       "description": "Official page updated on 2026-01-02.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-02",
+      "category": "Policy Update",
+      "headline": "2025 in review: 12 stories that shaped international education in the US",
+      "description": "<p>In a year of unprecedented attacks on US colleges and a tightening of visa policies under the Trump administration, The PIE looks back at the top 12 stories giving the sector much to read about in 2025.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/2025-in-review-12-stories-that-shaped-international-education-in-the-us",
       "gov_sources": []
     },
     {
@@ -40,7 +58,7 @@
       "date": "2025-12-31",
       "category": "Policy Update",
       "headline": "The year in review: international education stories from Africa",
-      "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
+      "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/the-year-in-review-top-international-education-stories-from-africa",
       "gov_sources": []
@@ -275,24 +293,6 @@
       "gov_sources": [
         "https://www.budget.canada.ca/2025/report-rapport/chap1-en.html"
       ]
-    },
-    {
-      "date": "2025-11-04",
-      "category": "Student Visas",
-      "headline": "Impact of Canada’s study permit caps “worse than Covid”",
-      "description": "<p>Canada’s study permit caps have caused international enrolments to fall more sharply this year than at any time in the past decade, including during the pandemic, new data has revealed.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/impact-of-canadas-study-permit-caps-worse-than-covid",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-10-30",
-      "category": "Post-Study Work",
-      "headline": "US: Study estimates that changes to international student policies could reduce GDP by up to US$481 billion per year",
-      "description": "<p>The US administration continues to signal its willingness to alter long-established immigration policies affecting international students. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/10/us-study-estimates-that-changes-to-international-student-policies-could-reduce-gdp-by-up-to-us481-billion-per-year",
-      "gov_sources": []
     }
   ]
 }
