@@ -2,6 +2,24 @@
   "policyNews": [
     {
       "date": "2026-01-09",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-01-09.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-09",
+      "category": "Post-Study Work",
+      "headline": "US international master’s enrolments to fall by 15%",
+      "description": "<p>Visa challenges and uncertainty around post-study employment in the US are driving a projected 15% decline in international master’s enrolments this year, as a new report warns of a long-term drag on innovation and competitiveness.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-international-masters-enrolments-to-fall-by-15",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-09",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-01-09.",
@@ -52,15 +70,6 @@
       "description": "<p>After a year of record lows in Canada, charting a path towards stability in 2026 will depend on visa processing reform and shifting political discourse, say experts, entering the year with a cautious sense of hope.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/what-will-2026-bring-for-canadian-international-education",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-07",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-01-07.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
@@ -273,15 +282,6 @@
         "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
       ]
-    },
-    {
-      "date": "2025-11-07",
-      "category": "Policy Update",
-      "headline": "More international students find home on US community college campuses",
-      "description": "<p>Monroe Community College’s international enrolments have risen by more than a third this semester, despite visa restrictions and hostile Trump-era policies. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/more-international-students-find-home-on-community-college-campuses",
-      "gov_sources": []
     }
   ]
 }
