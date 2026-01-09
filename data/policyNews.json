@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2026-01-08",
+      "date": "2026-01-09",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-01-08.",
+      "description": "Official page updated on 2026-01-09.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-09",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-01-09.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -25,15 +34,6 @@
       "description": "<p>Goodness knows, international higher education is no stranger to major change. Over the last two decades, rankings, social media, and professionalised agent networks have all fundamentally altered student mobility flows. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/01/the-chatgpt-generation-how-ai-is-quietly-rewriting-the-global-student-search-experience",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-08",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-01-08.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
