@@ -102,15 +102,6 @@
     {
       "date": "2026-01-02",
       "category": "Policy Update",
-      "headline": "Work in the UK",
-      "description": "Skilled Worker visa, Graduate visa, other work visas, right to work",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/browse/visas-immigration/work-visas",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-02",
-      "category": "Policy Update",
       "headline": "2025 in review: 12 stories that shaped international education in the US",
       "description": "<p>In a year of unprecedented attacks on US colleges and a tightening of visa policies under the Trump administration, The PIE looks back at the top 12 stories giving the sector much to read about in 2025.</p> <p>The post <a …",
       "source": "thepienews.com",
@@ -278,6 +269,19 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
       "gov_sources": []
+    },
+    {
+      "date": "2025-11-10",
+      "category": "Student Visas",
+      "headline": "Australia: new student visa processing directive to replace Ministerial Direction 111",
+      "description": "<p>Australia is set to introduce a new student visa processing directive, in line with the government’s ongoing commitment to managed growth.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-new-student-visa-processing-directive-to-replace-ministerial-direction-111",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
+        "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
+      ]
     }
   ]
 }
