@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-01-15",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-01-15.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-15",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-01-15.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-01-14",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,12 +29,14 @@
     },
     {
       "date": "2026-01-14",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-01-14.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
+      "category": "Processing & Grants",
+      "headline": "US suspends immigration processing for applicants from 39 travel ban countries – but F, J, and M visa processing will continue",
+      "description": "<p>Breaking news for 14 January: This article covers the US government travel bans and suspension and review of immigration programmes affecting nationals from 39 countries. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/01/us-suspends-immigration-processing-for-applicants-from-39-travel-ban-countries-but-f-j-and-m-visa-processing-will-continue",
+      "gov_sources": [
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
+      ]
     },
     {
       "date": "2026-01-14",
@@ -25,15 +45,6 @@
       "description": "Official page updated on 2026-01-14.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-14",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-01-14.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -269,19 +280,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/trump-administration-revokes-8000-student-visas",
       "gov_sources": []
-    },
-    {
-      "date": "2025-11-10",
-      "category": "Student Visas",
-      "headline": "Australia: new student visa processing directive to replace Ministerial Direction 111",
-      "description": "<p>Australia is set to introduce a new student visa processing directive, in line with the government’s ongoing commitment to managed growth.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-new-student-visa-processing-directive-to-replace-ministerial-direction-111",
-      "gov_sources": [
-        "https://immi.homeaffairs.gov.au/support-subsite/files/ministerial-direction-115.pdf",
-        "https://ministers.education.gov.au/hill/new-ministerial-direction-balance-international-student-distribution",
-        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-processing-times/visa-processing-priorities/student-visa"
-      ]
     }
   ]
 }
