@@ -2,6 +2,15 @@
   "policyNews": [
     {
       "date": "2026-01-23",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-01-23.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-23",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-01-23.",
@@ -37,12 +46,12 @@
       "gov_sources": []
     },
     {
-      "date": "2026-01-22",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-01-22.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "date": "2026-01-23",
+      "category": "Post-Study Work",
+      "headline": "Bowel cancer screening: consent and ceasing guidance",
+      "description": "Guidance on establishing consent for bowel cancer screening, and how to manage people who wish to temporarily opt out, or be ceased (removed), from screening.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/bowel-cancer-screening-consent-and-ceasing-guidance",
       "gov_sources": []
     },
     {
@@ -268,17 +277,6 @@
       "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
       "gov_sources": [
         "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
-      ]
-    },
-    {
-      "date": "2025-11-11",
-      "category": "Policy Update",
-      "headline": "UUK boss hits out at “wretched” international fee levy",
-      "description": "<p>The CEO of Universities UK (UUK), Vivienne Stern, has criticised the controversial levy on international student fees, suggesting that it will not succeed in solving the \"perma-battle\" over student visas. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uuk-boss-hits-out-at-wretched-international-fee-levy",
-      "gov_sources": [
-        "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf"
       ]
     }
   ]
