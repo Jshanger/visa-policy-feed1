@@ -19,6 +19,15 @@
       "gov_sources": []
     },
     {
+      "date": "2026-01-26",
+      "category": "Post-Study Work",
+      "headline": "Statement of evidence form pilot process",
+      "description": "Immigration staff guidance on the process of the statement of evidence form ‘opt out’ pilot.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/statement-of-evidence-form-pilot-process",
+      "gov_sources": []
+    },
+    {
       "date": "2026-01-23",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -267,17 +276,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-tops-1-1-million-international-students-as-opt-fuels-growth",
       "gov_sources": []
-    },
-    {
-      "date": "2025-11-17",
-      "category": "Student Visas",
-      "headline": "Australia: Home Affairs issues warning amid student visa integrity threats",
-      "description": "<p>Australia’s Department of Home Affairs (DHA) has issued a warning about emerging risks to the country’s student visa program, citing cases of applicants using fraudulent passports and growing integrity concerns linked to activity in South Asian …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
-      "gov_sources": [
-        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
-      ]
     }
   ]
 }
