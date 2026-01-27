@@ -2,6 +2,15 @@
   "policyNews": [
     {
       "date": "2026-01-27",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-01-27.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-27",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-01-27.",
@@ -34,15 +43,6 @@
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-26",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-01-26.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
@@ -165,15 +165,6 @@
       "gov_sources": []
     },
     {
-      "date": "2025-12-31",
-      "category": "Student Visas",
-      "headline": "Financial evidence for Student and Child Student visa applicants",
-      "description": "Find out how much money you need to get a Student or Child Student visa, and how to prove you have the money.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/guidance/financial-evidence-for-student-and-child-student-route-applicants",
-      "gov_sources": []
-    },
-    {
       "date": "2025-12-23",
       "category": "Policy Update",
       "headline": "DHS final rule to overhaul H-1B visa in favour of higher earners",
@@ -276,6 +267,17 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-tops-1-1-million-international-students-as-opt-fuels-growth",
       "gov_sources": []
+    },
+    {
+      "date": "2025-11-17",
+      "category": "Student Visas",
+      "headline": "Australia: Home Affairs issues warning amid student visa integrity threats",
+      "description": "<p>Australia’s Department of Home Affairs (DHA) has issued a warning about emerging risks to the country’s student visa program, citing cases of applicants using fraudulent passports and growing integrity concerns linked to activity in South Asian …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
+      "gov_sources": [
+        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
+      ]
     }
   ]
 }
