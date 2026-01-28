@@ -11,11 +11,29 @@
     },
     {
       "date": "2026-01-28",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-01-28.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-28",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-01-28.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-28",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -28,39 +46,12 @@
       "gov_sources": []
     },
     {
-      "date": "2026-01-27",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-01-27.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-27",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
       "date": "2026-01-26",
       "category": "Post-Study Work",
       "headline": "Statement of evidence form pilot process",
       "description": "Immigration staff guidance on the process of the statement of evidence form ‘opt out’ pilot.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/statement-of-evidence-form-pilot-process",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-23",
-      "category": "Post-Study Work",
-      "headline": "Bowel cancer screening: consent and ceasing guidance",
-      "description": "Guidance on establishing consent for bowel cancer screening, and how to manage people who wish to temporarily opt out, or be ceased (removed), from screening.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/bowel-cancer-screening-consent-and-ceasing-guidance",
       "gov_sources": []
     },
     {
@@ -277,6 +268,17 @@
       "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
       "gov_sources": [
         "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "UUK boss hits out at “wretched” international fee levy",
+      "description": "<p>The CEO of Universities UK (UUK), Vivienne Stern, has criticised the controversial levy on international student fees, suggesting that it will not succeed in solving the \"perma-battle\" over student visas. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uuk-boss-hits-out-at-wretched-international-fee-levy",
+      "gov_sources": [
+        "https://assets.publishing.service.gov.uk/media/6821aec3f16c0654b19060ac/restoring-control-over-the-immigration-system-white-paper.pdf"
       ]
     }
   ]
