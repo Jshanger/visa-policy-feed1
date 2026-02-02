@@ -1,19 +1,19 @@
 {
   "policyNews": [
     {
-      "date": "2026-02-01",
+      "date": "2026-02-02",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-02-01.",
+      "description": "Official page updated on 2026-02-02.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-02-01",
+      "date": "2026-02-02",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-02-01.",
+      "description": "Official page updated on 2026-02-02.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
@@ -73,26 +73,6 @@
       "gov_sources": []
     },
     {
-      "date": "2026-01-15",
-      "category": "Processing & Grants",
-      "headline": "How are Australian universities approaching international recruitment in 2026?",
-      "description": "<p>Studymove founder Keri Ramirez recently presented a webinar anticipating trends in the Australian international education sector in 2026 based on student applications and visa issuance volumes, the global competitive context, and the national policy …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/01/how-are-australian-universities-approaching-international-recruitment-in-2026",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-14",
-      "category": "Processing & Grants",
-      "headline": "US suspends immigration processing for nationals from 39 travel ban countries – but F, J, and M visa processing will continue",
-      "description": "<p>Breaking news for 14 January: This article covers the US government travel bans and suspension and review of immigration programmes affecting students (and other nationals) from 39 countries. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/01/us-suspends-immigration-processing-for-applicants-from-39-travel-ban-countries-but-f-j-and-m-visa-processing-will-continue",
-      "gov_sources": [
-        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
-      ]
-    },
-    {
       "date": "2026-01-13",
       "category": "Policy Update",
       "headline": "US revoked over 100,000 visas in 2025",
@@ -108,15 +88,6 @@
       "description": "<p>Visa challenges and uncertainty around post-study employment in the US are driving a projected 15% decline in international master’s enrolments this year, as a new report warns of a long-term drag on innovation and competitiveness.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-international-masters-enrolments-to-fall-by-15",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-08",
-      "category": "Policy Update",
-      "headline": "The ChatGPT Generation: How AI Is quietly rewriting the global student search experience",
-      "description": "<p>Goodness knows, international higher education is no stranger to major change. Over the last two decades, rankings, social media, and professionalised agent networks have all fundamentally altered student mobility flows. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/01/the-chatgpt-generation-how-ai-is-quietly-rewriting-the-global-student-search-experience",
       "gov_sources": []
     },
     {
@@ -184,15 +155,6 @@
     },
     {
       "date": "2025-12-18",
-      "category": "Policy Update",
-      "headline": "US extends travel ban, Nigeria now included on “restricted” list",
-      "description": "<p>The Trump administration has announced an expanded list of countries whose nationals – including students applying for F, M, and J visas – will be banned from entering the United States as visitors or immigrants as of 1 January 2026. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/12/us-extends-travel-ban-nigeria-now-included-on-restricted-list",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-12-18",
       "category": "Student Visas",
       "headline": "Canadian unis see first rise in undergrad study permit approvals in five years",
       "description": "<p>While approval rates for university-level bachelor’s programs rebounded to 2022 levels this year, the downward trend for college programs only worsened.</p> <p>The post <a …",
@@ -210,15 +172,6 @@
       "gov_sources": []
     },
     {
-      "date": "2025-12-11",
-      "category": "Policy Update",
-      "headline": "Canada: A case study of immigration policy impacts on postsecondary institutions and the wider economy",
-      "description": "<p>In January 2026, Canadian higher education institutions will enter the third consecutive year of caps on new international student enrolments. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/12/canada-a-case-study-of-immigration-policy-impacts-on-postsecondary-institutions-and-the-wider-economy",
-      "gov_sources": []
-    },
-    {
       "date": "2025-12-04",
       "category": "Policy Update",
       "headline": "International students missing out under US Early Decision system",
@@ -226,18 +179,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/international-students-missing-out-under-us-early-decision-system",
       "gov_sources": []
-    },
-    {
-      "date": "2025-11-27",
-      "category": "Policy Update",
-      "headline": "Canada announces international student cap numbers for 2026 and updated programme guidance",
-      "description": "<p>Immigration, Refugees and Citizenship Canada (IRCC) announced this week that it expects to issue up to 408,000 study permits in 2026. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/11/canada-announces-international-student-cap-numbers-for-2026-and-updated-programme-guidance",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html",
-        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2025-students-dli.html"
-      ]
     },
     {
       "date": "2025-11-26",
@@ -251,15 +192,6 @@
       ]
     },
     {
-      "date": "2025-11-19",
-      "category": "Policy Update",
-      "headline": "Canada and the US are losing international student enrolments to Europe and Asia",
-      "description": "<p>Canadian and American universities are struggling amidst government policies meant to curb immigration and/or international student numbers. Meanwhile, Asian and European institutions are gaining market share of international student enrolments. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/11/canada-and-the-us-are-losing-international-student-enrolments-to-europe-and-asia",
-      "gov_sources": []
-    },
-    {
       "date": "2025-11-17",
       "category": "Post-Study Work",
       "headline": "US tops 1.1 million international students as OPT fuels growth",
@@ -269,15 +201,31 @@
       "gov_sources": []
     },
     {
-      "date": "2025-11-17",
+      "date": "2025-11-11",
+      "category": "Policy Update",
+      "headline": "Parent of a child student: caseworker guidance",
+      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-10-24",
       "category": "Student Visas",
-      "headline": "Australia: Home Affairs issues warning amid student visa integrity threats",
-      "description": "<p>Australia’s Department of Home Affairs (DHA) has issued a warning about emerging risks to the country’s student visa program, citing cases of applicants using fraudulent passports and growing integrity concerns linked to activity in South Asian …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-home-affairs-issues-warning-amid-student-visa-integrity-threats",
-      "gov_sources": [
-        "https://prisms.education.gov.au/Information/News/News.aspx?NewsId=805"
-      ]
+      "headline": "Apply for a Parent of a Child Student visa: step by step",
+      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/apply-parent-child-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-08-11",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Student visa",
+      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-student-visa",
+      "gov_sources": []
     }
   ]
 }
