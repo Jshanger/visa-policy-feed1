@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-02-05",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-02-05.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-05",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-02-05.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-02-04",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -22,29 +40,11 @@
     },
     {
       "date": "2026-02-04",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-02-04.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-04",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2026-02-04.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-04",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-02-04.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -55,6 +55,18 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2026-02-04",
+      "category": "Policy Update",
+      "headline": "Canada’s foreign enrolment has fallen by nearly 300,000 students over the last two years",
+      "description": "<p>Speaking in the East Coast city of Halifax last month, Canadian Immigration Minister Lena Metlege Diab said that the number of international students in Canada dropped from over a million at the beginning of 2024 to roughly 700,000 as of November 2025. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/02/canadas-foreign-enrolment-has-fallen-by-nearly-300000-students-over-the-last-two-years",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels.html"
+      ]
     },
     {
       "date": "2026-02-03",
@@ -269,15 +281,6 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
       ]
-    },
-    {
-      "date": "2025-11-19",
-      "category": "Policy Update",
-      "headline": "Canada and the US are losing international student enrolments to Europe and Asia",
-      "description": "<p>Canadian and American universities are struggling amidst government policies meant to curb immigration and/or international student numbers. Meanwhile, Asian and European institutions are gaining market share of international student enrolments. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/11/canada-and-the-us-are-losing-international-student-enrolments-to-europe-and-asia",
-      "gov_sources": []
     }
   ]
 }
