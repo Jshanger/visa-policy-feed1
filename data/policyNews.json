@@ -20,6 +20,15 @@
     },
     {
       "date": "2026-02-06",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-02-06.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-06",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-02-06.",
@@ -28,21 +37,21 @@
       "gov_sources": []
     },
     {
-      "date": "2026-02-05",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-02-05.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-05",
+      "date": "2026-02-06",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-06",
+      "category": "Policy Update",
+      "headline": "Reform, overcorrection, and the cost of losing faith in Canada’s international education system",
+      "description": "<p>Canada's study-visa system has seen a complete overhaul in recent years. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/reform-overcorrection-and-the-cost-of-losing-faith-in-canadas-international-education-system",
       "gov_sources": []
     },
     {
@@ -269,17 +278,6 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2025-students-dli.html"
-      ]
-    },
-    {
-      "date": "2025-11-26",
-      "category": "Student Visas",
-      "headline": "Canada “won’t come close” to reduced 2026 cap, sector warns",
-      "description": "<p>Following two years of missed study permit targets, stakeholders say Canada’s 7% cap reduction for 2026 is unlikely to make a material difference, as visa approval rates remain at record lows.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-wont-come-close-to-reduced-2026-cap-sector-warns",
-      "gov_sources": [
-        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
       ]
     }
   ]
