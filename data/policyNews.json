@@ -96,15 +96,6 @@
       "gov_sources": []
     },
     {
-      "date": "2026-01-26",
-      "category": "Post-Study Work",
-      "headline": "Statement of evidence form pilot process",
-      "description": "Immigration staff guidance on the process of the statement of evidence form ‘opt out’ pilot.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/statement-of-evidence-form-pilot-process",
-      "gov_sources": []
-    },
-    {
       "date": "2026-01-21",
       "category": "Policy Update",
       "headline": "Trump 2.0: A year of disruption for US international education",
@@ -278,6 +269,17 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2025-students-dli.html"
+      ]
+    },
+    {
+      "date": "2025-11-26",
+      "category": "Student Visas",
+      "headline": "Canada “won’t come close” to reduced 2026 cap, sector warns",
+      "description": "<p>Following two years of missed study permit targets, stakeholders say Canada’s 7% cap reduction for 2026 is unlikely to make a material difference, as visa approval rates remain at record lows.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-wont-come-close-to-reduced-2026-cap-sector-warns",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
       ]
     }
   ]
