@@ -1,21 +1,30 @@
 {
   "policyNews": [
     {
+      "date": "2026-02-12",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-02-12.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-12",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-02-12.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-02-11",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
       "description": "Official page updated on 2026-02-11.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-11",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-02-11.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
@@ -271,15 +280,6 @@
       "description": "<p>Canadian and American universities are struggling amidst government policies meant to curb immigration and/or international student numbers. Meanwhile, Asian and European institutions are gaining market share of international student enrolments. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2025/11/canada-and-the-us-are-losing-international-student-enrolments-to-europe-and-asia",
-      "gov_sources": []
-    },
-    {
-      "date": "2025-11-17",
-      "category": "Post-Study Work",
-      "headline": "US tops 1.1 million international students as OPT fuels growth",
-      "description": "<p>International students in the US grew by 5% last year, primarily driven by the continued growth in Optional Practical Training (OPT) which surged by 21%.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-tops-1-1-million-international-students-as-opt-fuels-growth",
       "gov_sources": []
     }
   ]
