@@ -1,30 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2026-02-12",
+      "date": "2026-02-13",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-02-12.",
+      "description": "Official page updated on 2026-02-13.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-02-12",
+      "date": "2026-02-13",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-02-12.",
+      "description": "Official page updated on 2026-02-13.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-12",
-      "category": "Policy Update",
-      "headline": "Inside Spain’s growing appeal for international students",
-      "description": "<p>Along with Italy, France, and Germany, Spain is positioning itself as an increasingly attractive study abroad destination. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/02/inside-spains-growing-appeal-for-international-students",
       "gov_sources": []
     },
     {
@@ -278,6 +269,17 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/updates/2025-students-dli.html"
+      ]
+    },
+    {
+      "date": "2025-11-26",
+      "category": "Student Visas",
+      "headline": "Canada “won’t come close” to reduced 2026 cap, sector warns",
+      "description": "<p>Following two years of missed study permit targets, stakeholders say Canada’s 7% cap reduction for 2026 is unlikely to make a material difference, as visa approval rates remain at record lows.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-wont-come-close-to-reduced-2026-cap-sector-warns",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
       ]
     }
   ]
