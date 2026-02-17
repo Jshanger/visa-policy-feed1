@@ -11,20 +11,20 @@
     },
     {
       "date": "2026-02-17",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-02-17.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-17",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-02-17.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-16",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-02-16.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -188,15 +188,6 @@
       "gov_sources": []
     },
     {
-      "date": "2025-12-31",
-      "category": "Policy Update",
-      "headline": "The year in review: international education stories from Africa",
-      "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/the-year-in-review-top-international-education-stories-from-africa",
-      "gov_sources": []
-    },
-    {
       "date": "2025-12-23",
       "category": "Policy Update",
       "headline": "DHS final rule to overhaul H-1B visa in favour of higher earners",
@@ -281,6 +272,15 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/2026-provincial-territorial-allocations-under-international-student-cap.html"
       ]
+    },
+    {
+      "date": "2025-11-19",
+      "category": "Policy Update",
+      "headline": "Canada and the US are losing international student enrolments to Europe and Asia",
+      "description": "<p>Canadian and American universities are struggling amidst government policies meant to curb immigration and/or international student numbers. Meanwhile, Asian and European institutions are gaining market share of international student enrolments. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/11/canada-and-the-us-are-losing-international-student-enrolments-to-europe-and-asia",
+      "gov_sources": []
     }
   ]
 }
