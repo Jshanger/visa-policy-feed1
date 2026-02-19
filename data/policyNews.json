@@ -20,6 +20,15 @@
     },
     {
       "date": "2026-02-19",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-02-19.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-19",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-02-19.",
@@ -29,29 +38,20 @@
     },
     {
       "date": "2026-02-19",
-      "category": "Student Visas",
-      "headline": "Australia: Full-year data for 2025 reveals impact of AUD$2,000 study visa application fee on ELICOS sector",
-      "description": "<p>Australia’s Department of Home Affairs (DHA) has released full-year data on student visa applications and grants in 2025. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/02/australia-full-year-data-for-2025-reveals-impact-of-aud2000-study-visa-application-fee-on-elicos-sector",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-18",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-02-18.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-18",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-19",
+      "category": "Student Visas",
+      "headline": "Australia: Full-year data for 2025 reveals impact of AUD$2,000 study visa application fee on ELICOS sector",
+      "description": "<p>Australia’s Department of Home Affairs (DHA) has released full-year data on student visa applications and grants in 2025. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/02/australia-full-year-data-for-2025-reveals-impact-of-aud2000-study-visa-application-fee-on-elicos-sector",
       "gov_sources": []
     },
     {
