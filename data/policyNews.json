@@ -2,11 +2,29 @@
   "policyNews": [
     {
       "date": "2026-02-26",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-02-26.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-26",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-02-26.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-26",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-02-26.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -19,25 +37,7 @@
       "gov_sources": []
     },
     {
-      "date": "2026-02-25",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-02-25.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-25",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-02-25.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-02-25",
+      "date": "2026-02-26",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -121,15 +121,6 @@
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels.html"
       ]
-    },
-    {
-      "date": "2026-02-02",
-      "category": "Sponsorship",
-      "headline": "Jacq Longrigg",
-      "description": "…She is sponsor of the NDA group graduate programme and the sector-wide Nuclear Graduates programme, the apprenticeship levy and school engagement. …",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/people/jacq-longrigg",
-      "gov_sources": []
     },
     {
       "date": "2026-01-21",
@@ -275,6 +266,15 @@
       "description": "<p>Just 4% of international students recently surveyed said they felt “very or extremely” safe in the US, as shifting visa rules and hostile immigration policies contribute to a climate of fear on American campuses.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/nine-in-10-international-students-fear-for-us-visa-status",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-11",
+      "category": "Policy Update",
+      "headline": "Canada: A case study of immigration policy impacts on postsecondary institutions and the wider economy",
+      "description": "<p>In January 2026, Canadian higher education institutions will enter the third consecutive year of caps on new international student enrolments. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2025/12/canada-a-case-study-of-immigration-policy-impacts-on-postsecondary-institutions-and-the-wider-economy",
       "gov_sources": []
     }
   ]
