@@ -11,11 +11,29 @@
     },
     {
       "date": "2026-03-04",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-03-04.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-04",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-03-04.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-04",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -67,21 +85,21 @@
       "gov_sources": []
     },
     {
-      "date": "2026-02-27",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-02-27.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "date": "2026-02-23",
+      "category": "Policy Update",
+      "headline": "Priced out of policy: Why UK visa rules are damaging prospects",
+      "description": "<p>The UK needs skilled graduates now more than ever. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/priced-out-of-policy-why-uk-visa-rules-are-damaging-prospects",
       "gov_sources": []
     },
     {
-      "date": "2026-02-27",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "date": "2026-02-23",
+      "category": "Policy Update",
+      "headline": "Home-country study clause resurfaces as Australia tightens study visa scrutiny",
+      "description": "<p>More South Asian applicants are being refused Australian study visas because similar programs exist in their home country, but experts say this is an old reason and may be part of a wider effort to slow international student growth after recent …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/home-country-study-clause-resurfaces-as-australia-tightens-study-visa-scrutiny",
       "gov_sources": []
     },
     {
@@ -103,6 +121,35 @@
       "gov_sources": []
     },
     {
+      "date": "2026-02-12",
+      "category": "Policy Update",
+      "headline": "Compliance is not the enemy of growth – strategic illiteracy is",
+      "description": "<p>After 12 years as head of UKVI compliance at a UK university, Pete Yetton explores why institutions are still treating compliance as a defensive shield rather than a sustainable growth strategy.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/compliance-is-not-the-enemy-of-growth-strategic-illiteracy-is",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-06",
+      "category": "Policy Update",
+      "headline": "Overcorrection, and the cost of losing faith in Canada’s international education system",
+      "description": "<p>Canada's study-visa system has seen a complete overhaul in recent years. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/overcorrection-and-the-cost-of-losing-faith-in-canadas-international-education-system",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-04",
+      "category": "Policy Update",
+      "headline": "US states crack down on H-1B hiring at universities",
+      "description": "<p>After Texas banned the use of H-1B visas at public universities last week, Florida’s policymakers are considering the same legislation to bar skilled international workers from state institutions.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/states-crackdown-on-h-1b-hiring-at-universities",
+      "gov_sources": [
+        "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub"
+      ]
+    },
+    {
       "date": "2026-02-04",
       "category": "Policy Update",
       "headline": "Canada’s foreign enrolment has fallen by nearly 300,000 students over the last two years",
@@ -113,6 +160,15 @@
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/statistics-open-data/immigration-stats/students-workers.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/corporate-initiatives/levels.html"
       ]
+    },
+    {
+      "date": "2026-01-21",
+      "category": "Policy Update",
+      "headline": "Trump 2.0: A year of disruption for US international education",
+      "description": "<p>From visa revocations and student deportations to travel bans and funding freezes, Trump’s first year back in office has seen an onslaught of attacks on international students in the US. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-2-0-a-year-of-disruption-for-us-international-education",
+      "gov_sources": []
     },
     {
       "date": "2026-01-15",
@@ -135,6 +191,24 @@
       ]
     },
     {
+      "date": "2026-01-13",
+      "category": "Policy Update",
+      "headline": "US revoked over 100,000 visas in 2025",
+      "description": "<p>The Trump administration has now revoked over 100,000 visas, including 8,000 for international students, it has declared.</p> <p>The post <a href=\"https://thepienews.com/us-revoked-over-100000-visas-in-2025/\">US revoked over 100,000 visas in 2025</a> …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-revoked-over-100000-visas-in-2025",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-09",
+      "category": "Post-Study Work",
+      "headline": "US international master’s enrolments to fall by 15%",
+      "description": "<p>Visa challenges and uncertainty around post-study employment in the US are driving a projected 15% decline in international master’s enrolments this year, as a new report warns of a long-term drag on innovation and competitiveness.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-international-masters-enrolments-to-fall-by-15",
+      "gov_sources": []
+    },
+    {
       "date": "2026-01-08",
       "category": "Policy Update",
       "headline": "The ChatGPT Generation: How AI Is quietly rewriting the global student search experience",
@@ -144,30 +218,66 @@
       "gov_sources": []
     },
     {
-      "date": "2025-12-18",
-      "category": "Policy Update",
-      "headline": "US extends travel ban, Nigeria now included on “restricted” list",
-      "description": "<p>The Trump administration has announced an expanded list of countries whose nationals – including students applying for F, M, and J visas – will be banned from entering the United States as visitors or immigrants as of 1 January 2026. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2025/12/us-extends-travel-ban-nigeria-now-included-on-restricted-list",
+      "date": "2026-01-07",
+      "category": "Processing & Grants",
+      "headline": "What’s the outlook for Canadian international education in 2026?",
+      "description": "<p>After a year of record lows in Canada, charting a path towards stability in 2026 will depend on visa processing reform and shifting political discourse, say experts, entering the year with a cautious sense of hope.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/what-will-2026-bring-for-canadian-international-education",
       "gov_sources": []
     },
     {
-      "date": "2025-11-11",
+      "date": "2026-01-07",
       "category": "Policy Update",
-      "headline": "Parent of a child student: caseworker guidance",
-      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "headline": "Beyond the big four: the study destinations to watch in 2026",
+      "description": "<p>With shifting sentiments around immigration and policy changes prompting many international students to rethink studying in the US, UK, Australia and Canada, The PIE takes a deep dive into countries that made headlines over the past year.</p> <p>The post …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/beyond-the-big-four-the-study-destinations-to-watch-in-2026",
       "gov_sources": []
     },
     {
-      "date": "2025-10-24",
-      "category": "Student Visas",
-      "headline": "Apply for a Parent of a Child Student visa: step by step",
-      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/apply-parent-child-student-visa",
+      "date": "2026-01-05",
+      "category": "Post-Study Work",
+      "headline": "What will 2026 bring for US international education?",
+      "description": "<p>Continuing enrolment declines, restrictions on OPT and the elimination of duration of status: US educators share their predictions for 2026 amid an unusually difficult moment for the sector.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/what-will-2026-bring-for-us-international-education",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-02",
+      "category": "Policy Update",
+      "headline": "2025 in review: 12 stories that shaped international education in the US",
+      "description": "<p>In a year of unprecedented attacks on US colleges and a tightening of visa policies under the Trump administration, The PIE looks back at the top 12 stories giving the sector much to read about in 2025.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/2025-in-review-12-stories-that-shaped-international-education-in-the-us",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-31",
+      "category": "Policy Update",
+      "headline": "The year in review: international education stories from Africa",
+      "description": "<p>From immigration clampdowns to US visa turmoil, the international education sector in sub-Saharan Africa has been buffeted by several major headwinds over 2025.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-year-in-review-top-international-education-stories-from-africa",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-23",
+      "category": "Policy Update",
+      "headline": "DHS final rule to overhaul H-1B visa in favour of higher earners",
+      "description": "<p>Critics say replacing the H-1B lottery with a weighted selection process will harm the US tech industry and dampen America's appeal among international students. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-overhauls-h-1b-visa-system-to-favour-higher-earners",
+      "gov_sources": []
+    },
+    {
+      "date": "2025-12-22",
+      "category": "Policy Update",
+      "headline": "The year in review: 10 stories that shaped international education in Australia",
+      "description": "<p>From election outcomes and visa hikes to reform milestones and sector soul-searching, these are the stories that sum up the year for Australia's international education sector.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-year-in-review-10-stories-that-shaped-international-education-in-australia",
       "gov_sources": []
     }
   ]
