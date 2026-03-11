@@ -1,6 +1,35 @@
 {
   "policyNews": [
     {
+      "date": "2026-03-11",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-03-11.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-11",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-03-11.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-10",
+      "category": "Post-Study Work",
+      "headline": "US: Student visa issuances fell by -36% in summer 2025; OPT uncertainty among factors affecting international student demand",
+      "description": "<p>The US government has renewed its focus on the Optional Practical Training (OPT) programme that allows international students on F-1 visas to gain post-study work experience for one to three years following their studies. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/03/us-student-visa-issuances-fell-by-36-in-summer-2025-opt-uncertainty-among-factors-affecting-international-student-demand",
+      "gov_sources": [
+        "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-issuances.html"
+      ]
+    },
+    {
       "date": "2026-03-10",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,29 +40,11 @@
     },
     {
       "date": "2026-03-10",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-03-10.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-10",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2026-03-10.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-10",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-03-10.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -273,15 +284,6 @@
       "description": "<p>After a year of record lows in Canada, charting a path towards stability in 2026 will depend on visa processing reform and shifting political discourse, say experts, entering the year with a cautious sense of hope.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/what-will-2026-bring-for-canadian-international-education",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-01-07",
-      "category": "Policy Update",
-      "headline": "Beyond the big four: the study destinations to watch in 2026",
-      "description": "<p>With shifting sentiments around immigration and policy changes prompting many international students to rethink studying in the US, UK, Australia and Canada, The PIE takes a deep dive into countries that made headlines over the past year.</p> <p>The post …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/beyond-the-big-four-the-study-destinations-to-watch-in-2026",
       "gov_sources": []
     }
   ]
