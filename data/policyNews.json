@@ -1,43 +1,43 @@
 {
   "policyNews": [
     {
-      "date": "2026-03-20",
+      "date": "2026-03-21",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-03-20.",
+      "description": "Official page updated on 2026-03-21.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-03-20",
+      "date": "2026-03-21",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-03-20.",
+      "description": "Official page updated on 2026-03-21.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-03-19.",
+      "description": "Official page updated on 2026-03-20.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-03-19.",
+      "description": "Official page updated on 2026-03-20.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -86,6 +86,55 @@
       ]
     },
     {
+      "date": "2026-03-10",
+      "category": "Policy Update",
+      "headline": "Derby suspends Pakistan and Bangladesh recruitment as UK compliance pressures grow",
+      "description": "<p>The University of Derby has paused recruitment from Pakistan and Bangladesh due to high visa refusals from applicants in the two countries, as it seeks to remain in line with the UK government’s tightened compliance metrics.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/derby-suspends-pakistan-and-bangladesh-recruitment-as-uk-compliance-pressures-grow",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-09",
+      "category": "Sponsorship",
+      "headline": "From classroom to boardroom: has UKVI compliance come of age?",
+      "description": "<p>Sixteen years after the introduction of the university sponsor licence, Alex Lock and Mike Strong reflect on the evolution of compliance teams within UK universities and how isolating it can be for the professionals who are exposed to risk. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/from-classroom-to-boardroom-has-ukvi-compliance-come-of-age",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-06",
+      "category": "Policy Update",
+      "headline": "UK Home Secretary eyes new refugee route for students",
+      "description": "<p>The UK is looking to open a new legal route for student refugees to enter the country, its Home Secretary has announced – the same week as cracking down on student visas for nationals of four countries. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-home-secretary-eyes-new-refugee-route-for-students",
+      "gov_sources": [
+        "https://www.gov.uk/government/speeches/home-secretarys-speech-on-immigration-5-march-2026"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "category": "Policy Update",
+      "headline": "Data: Which UK unis have the most students from “emergency brake” study visa countries?",
+      "description": "<p>News this week that the UK is halting study visas from four countries has drawn attention across the sector. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/data-which-uk-unis-have-the-most-students-from-emergency-brake-study-visa-countries",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-04",
+      "category": "Post-Study Work",
+      "headline": "How viable is a US degree without OPT?",
+      "description": "<p>As threats to OPT loom large and more affordable competitor nations continue to rise, stakeholders ask whether the current US model is viable without the post-study work stream.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/how-viable-is-a-us-degree-without-opt",
+      "gov_sources": [
+        "https://www.canada.ca/en/innovation-science-economic-development/news/2025/12/government-of-canada-launches-new-initiative-to-recruit-world-leading-researchers.html"
+      ]
+    },
+    {
       "date": "2026-03-04",
       "category": "Post-Study Work",
       "headline": "Australia doubles post-study work visa application fee",
@@ -96,6 +145,51 @@
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485",
         "https://immi.homeaffairs.gov.au/news-media/archive/article?itemId=1196"
       ]
+    },
+    {
+      "date": "2026-03-03",
+      "category": "Post-Study Work",
+      "headline": "US launches re-evaluation of OPT",
+      "description": "<p>Optional Practical Training (OPT) has once again come under scrutiny from the US government, as DHS launches a re-evaluation of the program’s impact on US workers and national security interests. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-launches-re-evaluation-of-opt",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-03",
+      "category": "Post-Study Work",
+      "headline": "Australia’s post-study work visa fee doubles",
+      "description": "<p>Australia has doubled the application fee for its Temporary Graduate visa, increasing the cost from AUD $2,300 to AUD $4,600 in a move that has sparked concern across the international education sector.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australias-post-study-work-visa-fee-doubles",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-02",
+      "category": "Student Visas",
+      "headline": "Ontario pilots new language pathway program",
+      "description": "<p>Under the new pathway, students can transition from Canadian language education into a degree or diploma across public and private partner institutions while remaining on the same study permit.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/ontario-pilots-new-language-pathway-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-23",
+      "category": "Policy Update",
+      "headline": "Priced out of policy: Why UK visa rules are damaging prospects",
+      "description": "<p>The UK needs skilled graduates now more than ever. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/priced-out-of-policy-why-uk-visa-rules-are-damaging-prospects",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-23",
+      "category": "Policy Update",
+      "headline": "Home-country study clause resurfaces as Australia tightens study visa scrutiny",
+      "description": "<p>More South Asian applicants are being refused Australian study visas because similar programs exist in their home country, but experts say this is an old reason and may be part of a wider effort to slow international student growth after recent …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/home-country-study-clause-resurfaces-as-australia-tightens-study-visa-scrutiny",
+      "gov_sources": []
     },
     {
       "date": "2026-02-19",
@@ -116,6 +210,35 @@
       "gov_sources": []
     },
     {
+      "date": "2026-02-12",
+      "category": "Policy Update",
+      "headline": "Compliance is not the enemy of growth – strategic illiteracy is",
+      "description": "<p>After 12 years as head of UKVI compliance at a UK university, Pete Yetton explores why institutions are still treating compliance as a defensive shield rather than a sustainable growth strategy.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/compliance-is-not-the-enemy-of-growth-strategic-illiteracy-is",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-06",
+      "category": "Policy Update",
+      "headline": "Overcorrection, and the cost of losing faith in Canada’s international education system",
+      "description": "<p>Canada's study-visa system has seen a complete overhaul in recent years. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/overcorrection-and-the-cost-of-losing-faith-in-canadas-international-education-system",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-02-04",
+      "category": "Policy Update",
+      "headline": "US states crack down on H-1B hiring at universities",
+      "description": "<p>After Texas banned the use of H-1B visas at public universities last week, Florida’s policymakers are considering the same legislation to bar skilled international workers from state institutions.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/states-crackdown-on-h-1b-hiring-at-universities",
+      "gov_sources": [
+        "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub"
+      ]
+    },
+    {
       "date": "2026-02-04",
       "category": "Policy Update",
       "headline": "Canada’s foreign enrolment has fallen by nearly 300,000 students over the last two years",
@@ -128,21 +251,41 @@
       ]
     },
     {
-      "date": "2025-11-11",
+      "date": "2026-01-21",
       "category": "Policy Update",
-      "headline": "Parent of a child student: caseworker guidance",
-      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "headline": "Trump 2.0: A year of disruption for US international education",
+      "description": "<p>From visa revocations and student deportations to travel bans and funding freezes, Trump’s first year back in office has seen an onslaught of attacks on international students in the US. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-2-0-a-year-of-disruption-for-us-international-education",
       "gov_sources": []
     },
     {
-      "date": "2025-10-24",
-      "category": "Student Visas",
-      "headline": "Apply for a Parent of a Child Student visa: step by step",
-      "description": "Parent of a Child Student visa - prepare supporting documents, apply, book and attend an appointment, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/apply-parent-child-student-visa",
+      "date": "2026-01-15",
+      "category": "Processing & Grants",
+      "headline": "How are Australian universities approaching international recruitment in 2026?",
+      "description": "<p>Studymove founder Keri Ramirez recently presented a webinar anticipating trends in the Australian international education sector in 2026 based on student applications and visa issuance volumes, the global competitive context, and the national policy …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/01/how-are-australian-universities-approaching-international-recruitment-in-2026",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-01-14",
+      "category": "Processing & Grants",
+      "headline": "US suspends immigration processing for nationals from 39 travel ban countries – but F, J, and M visa processing will continue",
+      "description": "<p>Breaking news for 14 January: This article covers the US government travel bans and suspension and review of immigration programmes affecting students (and other nationals) from 39 countries. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/01/us-suspends-immigration-processing-for-applicants-from-39-travel-ban-countries-but-f-j-and-m-visa-processing-will-continue",
+      "gov_sources": [
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "category": "Policy Update",
+      "headline": "US revoked over 100,000 visas in 2025",
+      "description": "<p>The Trump administration has now revoked over 100,000 visas, including 8,000 for international students, it has declared.</p> <p>The post <a href=\"https://thepienews.com/us-revoked-over-100000-visas-in-2025/\">US revoked over 100,000 visas in 2025</a> …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-revoked-over-100000-visas-in-2025",
       "gov_sources": []
     }
   ]
