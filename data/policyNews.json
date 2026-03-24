@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-03-24",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-03-24.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-24",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-03-24.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-03-23",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,11 +29,11 @@
     },
     {
       "date": "2026-03-23",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-03-23.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "category": "Post-Study Work",
+      "headline": "US policymakers propose bill to protect OPT",
+      "description": "<p>US educators are rallying behind a new bipartisan bill to protect Optional Practical Training (OPT), under threat from the current administration.</p> <p>The post <a href=\"https://thepienews.com/us-policymakers-propose-bill-to-protect-opt/\">US policymakers …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-policymakers-propose-bill-to-protect-opt",
       "gov_sources": []
     },
     {
@@ -25,15 +43,6 @@
       "description": "Official page updated on 2026-03-23.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-23",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-03-23.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -278,15 +287,6 @@
       "gov_sources": [
         "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
       ]
-    },
-    {
-      "date": "2026-01-13",
-      "category": "Policy Update",
-      "headline": "US revoked over 100,000 visas in 2025",
-      "description": "<p>The Trump administration has now revoked over 100,000 visas, including 8,000 for international students, it has declared.</p> <p>The post <a href=\"https://thepienews.com/us-revoked-over-100000-visas-in-2025/\">US revoked over 100,000 visas in 2025</a> …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-revoked-over-100000-visas-in-2025",
-      "gov_sources": []
     }
   ]
 }
