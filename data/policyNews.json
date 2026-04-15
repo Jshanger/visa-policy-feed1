@@ -29,6 +29,18 @@
     },
     {
       "date": "2026-04-15",
+      "category": "Student Visas",
+      "headline": "UK Home Office publishes updated visa sponsor guidance for “agents and third parties”",
+      "description": "<p>The UK government has expanded its regulatory oversight for British institutions&#8217; engagement with education agents. The existing structure for student visas in the UK provides an important backdrop for these changes. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/04/uk-home-office-publishes-updated-visa-sponsor-guidance-for-agents-and-third-parties",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/student-sponsor-guidance",
+        "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
+      ]
+    },
+    {
+      "date": "2026-04-15",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-04-15.",
@@ -283,15 +295,6 @@
       "description": "<p>Optional Practical Training (OPT) has once again come under scrutiny from the US government, as DHS launches a re-evaluation of the program’s impact on US workers and national security interests. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-launches-re-evaluation-of-opt",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-03",
-      "category": "Post-Study Work",
-      "headline": "Australia’s post-study work visa fee doubles",
-      "description": "<p>Australia has doubled the application fee for its Temporary Graduate visa, increasing the cost from AUD $2,300 to AUD $4,600 in a move that has sparked concern across the international education sector.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australias-post-study-work-visa-fee-doubles",
       "gov_sources": []
     }
   ]
