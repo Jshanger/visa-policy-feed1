@@ -2,6 +2,15 @@
   "policyNews": [
     {
       "date": "2026-04-16",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-04-16.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-04-16.",
@@ -46,6 +55,15 @@
       "gov_sources": []
     },
     {
+      "date": "2026-04-16",
+      "category": "Policy Update",
+      "headline": "A common challenge: Strengthening student confidence in the ROI of study abroad",
+      "description": "<p>More restrictive immigration policies in the Big Four destinations – Australia, Canada, UK, and the United States – are concerning some international students about the return on investment (ROI) of study abroad. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/04/a-common-challenge-strengthening-student-confidence-in-the-roi-of-study-abroad",
+      "gov_sources": []
+    },
+    {
       "date": "2026-04-15",
       "category": "Student Visas",
       "headline": "Visa rejections climb in the US for international students from key markets including India",
@@ -65,15 +83,6 @@
         "https://www.gov.uk/government/publications/student-sponsor-guidance",
         "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
       ]
-    },
-    {
-      "date": "2026-04-14",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-04-14.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
     },
     {
       "date": "2026-04-10",
@@ -283,18 +292,6 @@
       "url": "https://thepienews.com/how-viable-is-a-us-degree-without-opt",
       "gov_sources": [
         "https://www.canada.ca/en/innovation-science-economic-development/news/2025/12/government-of-canada-launches-new-initiative-to-recruit-world-leading-researchers.html"
-      ]
-    },
-    {
-      "date": "2026-03-04",
-      "category": "Post-Study Work",
-      "headline": "Australia doubles post-study work visa application fee",
-      "description": "<p>The Temporary Graduate Visa (Subclass 485) visa allows eligible foreign graduates to work in Australia from 18 months to up to 3 years once they complete their studies, and it can be a pathway towards permanent residency. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/03/australia-doubles-post-study-work-visa-application-fee",
-      "gov_sources": [
-        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485",
-        "https://immi.homeaffairs.gov.au/news-media/archive/article?itemId=1196"
       ]
     }
   ]
