@@ -1,21 +1,30 @@
 {
   "policyNews": [
     {
-      "date": "2026-04-15",
-      "category": "Student Visas",
-      "headline": "Visa rejections climb in the US for international students from key markets including India",
-      "description": "<p>A new report from Shorelight called Beyond the Interview: A Decade of Student Visa Denials and What Comes Next, reveals (1) that record-high numbers of prospective international student are having their F-1 visa applications refused and (2) that refusals …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/visa-rejections-climb-in-the-us-for-international-students-from-key-markets-including-india",
+      "date": "2026-04-16",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-04-16.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-04-16.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
       "date": "2026-04-15",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-04-15.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "category": "Student Visas",
+      "headline": "Visa rejections climb in the US for international students from key markets including India",
+      "description": "<p>A new report from Shorelight called Beyond the Interview: A Decade of Student Visa Denials and What Comes Next, reveals that (1) record-high numbers of prospective international student are having their F-1 visa applications refused and (2) refusals are …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/04/visa-rejections-climb-in-the-us-for-international-students-from-key-markets-including-india",
       "gov_sources": []
     },
     {
@@ -38,15 +47,6 @@
         "https://www.gov.uk/government/publications/student-sponsor-guidance",
         "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
       ]
-    },
-    {
-      "date": "2026-04-15",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-04-15.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
     },
     {
       "date": "2026-04-15",
