@@ -11,11 +11,38 @@
     },
     {
       "date": "2026-04-16",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-04-16.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-04-16.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
+      "category": "Student Visas",
+      "headline": "Canada’s new student arrivals sink beneath Covid-era lows",
+      "description": "<p>Canada’s new study permit approval rating dropped to 36% last year, as the number of first-time students coming to the country plunged well below Covid-era levels, recent IRCC data has revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canadas-study-permit-decline-passes-covid-lows",
       "gov_sources": []
     },
     {
@@ -29,15 +56,6 @@
     },
     {
       "date": "2026-04-15",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-04-15.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-15",
       "category": "Student Visas",
       "headline": "UK Home Office publishes updated visa sponsor guidance for “agents and third parties”",
       "description": "<p>The UK government has expanded its regulatory oversight for British institutions&#8217; engagement with education agents. The existing structure for student visas in the UK provides an important backdrop for these changes. …",
@@ -47,15 +65,6 @@
         "https://www.gov.uk/government/publications/student-sponsor-guidance",
         "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
       ]
-    },
-    {
-      "date": "2026-04-15",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
     },
     {
       "date": "2026-04-14",
@@ -287,15 +296,6 @@
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485",
         "https://immi.homeaffairs.gov.au/news-media/archive/article?itemId=1196"
       ]
-    },
-    {
-      "date": "2026-03-03",
-      "category": "Post-Study Work",
-      "headline": "US launches re-evaluation of OPT",
-      "description": "<p>Optional Practical Training (OPT) has once again come under scrutiny from the US government, as DHS launches a re-evaluation of the program’s impact on US workers and national security interests. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-launches-re-evaluation-of-opt",
-      "gov_sources": []
     }
   ]
 }
