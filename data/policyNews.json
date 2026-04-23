@@ -2,6 +2,15 @@
   "policyNews": [
     {
       "date": "2026-04-23",
+      "category": "Policy Update",
+      "headline": "What’s in Canada’s CIMM report and will it influence IRCC policy?",
+      "description": "<p>Canada’s Standing Committee on Citizenship and Immigration (CIMM) has unveiled a sweeping set of recommendations on the International Student Program (ISP). …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/whats-in-canadas-cimm-report-and-will-it-influence-ircc-policy",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-23",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
       "description": "Official page updated on 2026-04-23.",
@@ -282,15 +291,6 @@
       "gov_sources": [
         "https://www.gov.uk/government/speeches/home-secretarys-speech-on-immigration-5-march-2026"
       ]
-    },
-    {
-      "date": "2026-03-06",
-      "category": "Policy Update",
-      "headline": "Data: Which UK unis have the most students from “emergency brake” study visa countries?",
-      "description": "<p>News this week that the UK is halting study visas from four countries has drawn attention across the sector. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/data-which-uk-unis-have-the-most-students-from-emergency-brake-study-visa-countries",
-      "gov_sources": []
     }
   ]
 }
