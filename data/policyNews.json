@@ -1,6 +1,42 @@
 {
   "policyNews": [
     {
+      "date": "2026-04-24",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-04-24.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-24",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-04-24.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-24",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-04-24.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-24",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
       "date": "2026-04-23",
       "category": "Policy Update",
       "headline": "What’s in Canada’s CIMM report and will it influence IRCC policy?",
@@ -21,44 +57,17 @@
     {
       "date": "2026-04-23",
       "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-04-23.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-23",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-04-23.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-23",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-04-23.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-23",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "headline": "UK: 7 in 10 universities report declining international postgraduate enrolments; visa rejections are part of the story",
+      "description": "<p>Of universities in the UK surveyed recently by the British Universities International Liaison Association (BUILA), 7 in 10 reported declines in international postgraduate students in January 2026 compared with January 2025. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/04/uk-7-in-10-universities-report-declining-international-postgraduate-enrolments-visa-rejections-are-part-of-the-story",
       "gov_sources": []
     },
     {
       "date": "2026-04-22",
       "category": "Student Visas",
       "headline": "Australia: Multiple data indicators signal further declines ahead for international student numbers",
-      "description": "<p>A new analysis of student visa trends suggests that the next couple of years – at the least – look grim for Australia’s English-language training schools (ELICOS) and vocational education providers (VET). …",
+      "description": "<p>A new analysis of student visa trends suggests that the next couple of years – at least – look grim for Australia’s English-language training schools (ELICOS) and vocational education providers (VET). …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/04/australia-multiple-data-indicators-signal-further-declines-ahead-for-international-student-numbers",
       "gov_sources": []
@@ -280,17 +289,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/from-classroom-to-boardroom-has-ukvi-compliance-come-of-age",
       "gov_sources": []
-    },
-    {
-      "date": "2026-03-06",
-      "category": "Policy Update",
-      "headline": "UK Home Secretary eyes new refugee route for students",
-      "description": "<p>The UK is looking to open a new legal route for student refugees to enter the country, its Home Secretary has announced – the same week as cracking down on student visas for nationals of four countries. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-home-secretary-eyes-new-refugee-route-for-students",
-      "gov_sources": [
-        "https://www.gov.uk/government/speeches/home-secretarys-speech-on-immigration-5-march-2026"
-      ]
     }
   ]
 }
