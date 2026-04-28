@@ -2,11 +2,29 @@
   "policyNews": [
     {
       "date": "2026-04-28",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-04-28.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-28",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-04-28.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-28",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-04-28.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -19,25 +37,19 @@
       "gov_sources": []
     },
     {
-      "date": "2026-04-27",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-04-27.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
+      "date": "2026-04-28",
+      "category": "Post-Study Work",
+      "headline": "Relief for some OPT applicants in “immigration limbo”",
+      "description": "<p>A federal judge has ordered the Trump administration to lift an indefinite freeze on work permit authorisations, including OPT, for a group of international students from travel ban countries.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/relief-for-some-opt-applicants-in-immigration-limbo",
+      "gov_sources": [
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0192-PendingApplicationsHighRiskCountries-20251202.pdf",
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
+      ]
     },
     {
-      "date": "2026-04-27",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-04-27.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-27",
+      "date": "2026-04-28",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -280,15 +292,6 @@
       "gov_sources": [
         "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-issuances.html"
       ]
-    },
-    {
-      "date": "2026-03-10",
-      "category": "Policy Update",
-      "headline": "Derby suspends Pakistan and Bangladesh recruitment as UK compliance pressures grow",
-      "description": "<p>The University of Derby has paused recruitment from Pakistan and Bangladesh due to high visa refusals from applicants in the two countries, as it seeks to remain in line with the UK government’s tightened compliance metrics.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/derby-suspends-pakistan-and-bangladesh-recruitment-as-uk-compliance-pressures-grow",
-      "gov_sources": []
     }
   ]
 }
