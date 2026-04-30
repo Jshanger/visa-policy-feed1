@@ -46,12 +46,51 @@
       "gov_sources": []
     },
     {
+      "date": "2026-04-29",
+      "category": "Policy Update",
+      "headline": "US politics drives international student self-censorship",
+      "description": "<p>Nearly nine in 10 international students have reported being less willing to speak up in academic spaces or on social media about immigration, global conflict or US regulations, as experts warn of increasingly polarised classrooms.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-politics-drives-international-student-self-censorship",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-29",
+      "category": "Policy Update",
+      "headline": "Through the amber spyglass: a refraction of the new RAG rating",
+      "description": "<p>Alex Lock and Mike Strong consider the unintended consequences of an amber rating from the UKVI's Basic Compliance Assessment (BCA) and how it should not be viewed as failure by universities. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/through-the-amber-spyglass-a-refraction-of-the-new-rag-rating",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-28",
+      "category": "Post-Study Work",
+      "headline": "Relief for some OPT applicants in “immigration limbo”",
+      "description": "<p>A federal judge has ordered the Trump administration to lift an indefinite freeze on work permit authorisations, including OPT, for a group of international students from travel ban countries.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/relief-for-some-opt-applicants-in-immigration-limbo",
+      "gov_sources": [
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0192-PendingApplicationsHighRiskCountries-20251202.pdf",
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
+      ]
+    },
+    {
       "date": "2026-04-27",
       "category": "Student Visas",
       "headline": "How to apply for a student visa: video",
       "description": "This video explains how to apply for a student visa.…",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/how-to-apply-for-a-student-visa-video",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-23",
+      "category": "Policy Update",
+      "headline": "What’s in Canada’s CIMM report and will it influence IRCC policy?",
+      "description": "<p>Canada’s Standing Committee on Citizenship and Immigration (CIMM) has unveiled a sweeping set of recommendations on the International Student Program (ISP). …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/whats-in-canadas-cimm-report-and-will-it-influence-ircc-policy",
       "gov_sources": []
     },
     {
@@ -70,6 +109,15 @@
       "description": "<p>A new analysis of student visa trends suggests that the next couple of years – at least – look grim for Australia’s English-language training schools (ELICOS) and vocational education providers (VET). …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/04/australia-multiple-data-indicators-signal-further-declines-ahead-for-international-student-numbers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-16",
+      "category": "Student Visas",
+      "headline": "Canada’s new student arrivals sink beneath Covid-era lows",
+      "description": "<p>Canada’s new study permit approval rating dropped to 36% last year, as the number of first-time students coming to the country plunged well below Covid-era levels, recent IRCC data has revealed.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canadas-study-permit-decline-passes-covid-lows",
       "gov_sources": []
     },
     {
@@ -101,6 +149,28 @@
         "https://www.gov.uk/government/publications/student-sponsor-guidance",
         "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
       ]
+    },
+    {
+      "date": "2026-04-10",
+      "category": "Policy Update",
+      "headline": "Canada simplifies co-op work permit rules",
+      "description": "<p>The Canadian government has announced international students undertaking work placements as part of their studies will no longer be required to secure separate work visas in addition to their study permits.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-simplifies-co-op-work-permit-rules",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/notices/simplifying-co-op-work-permit-requirement-post-secondary-international-students.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/intern.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/acts-regulations/forward-regulatory-plan/list/steamline-study-work-authorizations.html"
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "category": "Policy Update",
+      "headline": "“Risk has never been higher”: UK sector urged on compliance",
+      "description": "<p>Amid rising Home Office intervention and the highest visa refusal rates in a decade, experts have urged UK universities to embed compliance at the core of institutional governance. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/risk-has-never-been-higher-uk-sector-urged-on-compliance",
+      "gov_sources": []
     },
     {
       "date": "2026-04-09",
@@ -137,6 +207,44 @@
       ]
     },
     {
+      "date": "2026-04-01",
+      "category": "Student Visas",
+      "headline": "“They are taking away the few opportunities left”: Chevening applicants react to UK visa brake",
+      "description": "<p>The UK’s student visa ban saw Chevening applications suddenly terminated, impacting female Afghan students barred from education under the Taliban. Shahira Sadat shares the emotional toll and why her faith in the global community is shaken. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/they-are-taking-away-the-few-opportunities-left-chevening-applicants-react-to-uk-visa-brake",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-26",
+      "category": "Policy Update",
+      "headline": "Expect further visa “brakes”, UK sector warned",
+      "description": "<p>More countries are likely to be added to the UK government’s study visa ban, international education champion Sir Steve Smith has warned.</p> <p>The post <a href=\"https://thepienews.com/expect-further-visa-brakes-uk-sector-warned/\">Expect further visa …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/expect-further-visa-brakes-uk-sector-warned",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-26",
+      "category": "Student Visas",
+      "headline": "Auditor general blasts Canada’s International Student Program",
+      "description": "<p>Canada’s auditor general has given a failing grade to the Mark Carney government’s attempt to improve the International Student Program, citing plunging study permit approval rates and poor relations with the provinces.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/auditor-general-blasts-canadas-international-student-program",
+      "gov_sources": [
+        "https://www.canada.ca/en/auditor-general/our-work/audit-reports/auditor-general-report-2026-international-student-program-reforms.html"
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "category": "Post-Study Work",
+      "headline": "US policymakers propose bill to protect OPT",
+      "description": "<p>US educators are rallying behind a new bipartisan bill to protect Optional Practical Training (OPT), under threat from the current administration.</p> <p>The post <a href=\"https://thepienews.com/us-policymakers-propose-bill-to-protect-opt/\">US policymakers …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-policymakers-propose-bill-to-protect-opt",
+      "gov_sources": []
+    },
+    {
       "date": "2026-03-23",
       "category": "Student Visas",
       "headline": "Study in the UK on a Student visa",
@@ -144,6 +252,17 @@
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/study-uk-student-visa",
       "gov_sources": []
+    },
+    {
+      "date": "2026-03-19",
+      "category": "Sponsorship",
+      "headline": "Narrowing bands of compliance: How the UK’s new RAG system will impact international student recruitment",
+      "description": "<p>The UK Home Office has circulated draft guidance to expand on forthcoming changes to the Basic Compliance Assessment (BCA) framework for universities with a student sponsor licence. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/03/narrowing-bands-of-compliance-how-the-uks-new-rag-system-will-impact-international-student-recruitment",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/student-sponsor-guidance/student-sponsor-compliance-accessible"
+      ]
     },
     {
       "date": "2026-03-18",
@@ -155,12 +274,21 @@
       "gov_sources": []
     },
     {
-      "date": "2025-11-11",
+      "date": "2026-03-18",
+      "category": "Post-Study Work",
+      "headline": "New Zealand introduces new six-month graduate work visa",
+      "description": "<p>As part of its ambition to significantly expand the international education sector, the New Zealand government is introducing new pathways to post-study work.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/new-zealand-introduces-new-six-month-graduate-work-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-18",
       "category": "Policy Update",
-      "headline": "Parent of a child student: caseworker guidance",
-      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "headline": "Mexico: A personalised, supportive approach is the key to success in this growing study abroad market",
+      "description": "<p>Mexican students have traditionally gravitated to the US and Canada for study abroad, but President Trump’s anti-immigration agenda and Canada’s international student cap are opening up opportunities for institutions in other countries to recruit in this …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/03/mexico-a-personalised-supportive-approach-is-the-key-to-success-in-this-growing-study-abroad-market",
       "gov_sources": []
     }
   ]
