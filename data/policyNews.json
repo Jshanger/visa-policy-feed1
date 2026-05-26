@@ -1,21 +1,30 @@
 {
   "policyNews": [
     {
-      "date": "2026-05-25",
+      "date": "2026-05-26",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-05-25.",
+      "description": "Official page updated on 2026-05-26.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-05-25",
+      "date": "2026-05-26",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-05-25.",
+      "description": "Official page updated on 2026-05-26.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-25",
+      "category": "Post-Study Work",
+      "headline": "ICEF Podcast: Student flows are shifting. Are agencies following suit?",
+      "description": "<p>Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest developments in our sector, including increased government scrutiny of the Optional Practical Training (OPT) programme in the United States and early indicators of a further …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/05/icef-podcast-student-flows-are-shifting-are-agencies-following-suit",
       "gov_sources": []
     },
     {
@@ -275,18 +284,6 @@
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/acts-regulations/forward-regulatory-plan/list/steamline-study-work-authorizations.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/intern.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cimm-nov-18-2025/modernizing-canadas-immigration-system.html"
-      ]
-    },
-    {
-      "date": "2026-04-09",
-      "category": "Student Visas",
-      "headline": "Australia: Student visa refusal rates reach record high amid weakening demand from China",
-      "description": "<p>Australian universities have so far faced fewer challenges than English-language training (ELICOS) and vocational education providers in the wake of more restrictive policy settings for the international education sector. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/australia-student-visa-refusal-rates-reach-record-high-amid-weakening-demand-from-china",
-      "gov_sources": [
-        "https://www.education.gov.au/international-education-data-and-research/education-export-income-financial-year",
-        "https://www.education.gov.au/international-education-data-and-research/data-visualisation-education-pathways"
       ]
     }
   ]
