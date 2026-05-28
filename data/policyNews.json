@@ -84,6 +84,17 @@
       "gov_sources": []
     },
     {
+      "date": "2026-05-26",
+      "category": "Policy Update",
+      "headline": "International students must leave US to apply for green card, says USCIS",
+      "description": "<p>New US government policy guidance could significantly restrict international students and workers applying for permanent residency on American soil.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/international-students-must-leave-us-to-apply-for-green-card",
+      "gov_sources": [
+        "https://www.uscis.gov/newsroom/news-releases/us-citizenship-and-immigration-services-will-grant-adjustment-of-status-only-in-extraordinary"
+      ]
+    },
+    {
       "date": "2026-05-25",
       "category": "Post-Study Work",
       "headline": "ICEF Podcast: Student flows are shifting. Are agencies following suit?",
@@ -267,18 +278,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/04/visa-rejections-climb-in-the-us-for-international-students-from-key-markets-including-india",
       "gov_sources": []
-    },
-    {
-      "date": "2026-04-15",
-      "category": "Student Visas",
-      "headline": "UK Home Office publishes updated visa sponsor guidance for “agents and third parties”",
-      "description": "<p>The UK government has expanded its regulatory oversight for British institutions&#8217; engagement with education agents. The existing structure for student visas in the UK provides an important backdrop for these changes. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/uk-home-office-publishes-updated-visa-sponsor-guidance-for-agents-and-third-parties",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/student-sponsor-guidance",
-        "https://www.gov.uk/government/publications/certificates-of-sponsorship-cos-sms-user-manual"
-      ]
     }
   ]
 }
