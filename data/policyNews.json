@@ -11,11 +11,38 @@
     },
     {
       "date": "2026-06-01",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-06-01.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-01",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-06-01.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-01",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-01",
+      "category": "Policy Update",
+      "headline": "New UKVI compliance metrics for universities take effect today",
+      "description": "<p>Highly anticipated and controversial new compliance requirements for UK universities come into force today, with immigration specialists warning the measures could have \"potentially devastating consequences\" for institutions that fail to meet increasingly …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/new-ukvi-compliance-metrics-for-universities-take-effect-today",
       "gov_sources": []
     },
     {
@@ -25,24 +52,6 @@
       "description": "Official page updated on 2026-05-29.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-05-29",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-05-29.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-05-29",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -268,15 +277,6 @@
       "description": "<p>More restrictive immigration policies in the Big Four destinations – Australia, Canada, UK, and the United States – are concerning some international students about the return on investment (ROI) of study abroad. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/04/a-common-challenge-strengthening-student-confidence-in-the-roi-of-study-abroad",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-15",
-      "category": "Student Visas",
-      "headline": "Visa rejections climb in the US for international students from key markets including India",
-      "description": "<p>A new report from Shorelight called Beyond the Interview: A Decade of Student Visa Denials and What Comes Next, reveals that (1) record-high numbers of prospective international student are having their F-1 visa applications refused and (2) refusals are …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/visa-rejections-climb-in-the-us-for-international-students-from-key-markets-including-india",
       "gov_sources": []
     }
   ]
