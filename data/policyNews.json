@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-06-03",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-06-03.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-03",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-06-03.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-06-02",
       "category": "Policy Update",
       "headline": "What’s the real cost of non-refundable deposits?",
@@ -20,15 +38,6 @@
     },
     {
       "date": "2026-06-02",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-06-02.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-02",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2026-06-02.",
@@ -43,15 +52,6 @@
       "description": "<p>University leaders in the UK have warned that institutions are increasingly making high-stakes admissions and compliance decisions without enough shared data, as visa refusals, rising student costs and recruitment pressures reshape international …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-universities-flying-blind-as-visa-refusals-force-admissions-rethink",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-02",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-06-02.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
