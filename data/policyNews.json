@@ -2,6 +2,26 @@
   "policyNews": [
     {
       "date": "2026-06-03",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-06-03.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-03",
+      "category": "Processing & Grants",
+      "headline": "US World Cup visa processing sidelines international students",
+      "description": "<p>US educators are increasingly concerned about the state of international enrolments next fall, as students wait in long queues behind World Cup visa applicants and travel bans endure.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-world-cup-visa-processing-sidelines-international-students",
+      "gov_sources": [
+        "https://j1visa.state.gov/"
+      ]
+    },
+    {
+      "date": "2026-06-03",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-06-03.",
@@ -47,15 +67,6 @@
     },
     {
       "date": "2026-06-02",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-06-02.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-02",
       "category": "Policy Update",
       "headline": "UK universities flying blind as visa refusals force admissions rethink",
       "description": "<p>University leaders in the UK have warned that institutions are increasingly making high-stakes admissions and compliance decisions without enough shared data, as visa refusals, rising student costs and recruitment pressures reshape international …",
@@ -64,12 +75,43 @@
       "gov_sources": []
     },
     {
+      "date": "2026-06-01",
+      "category": "Policy Update",
+      "headline": "New UKVI compliance metrics for universities take effect today",
+      "description": "<p>Highly anticipated and controversial new compliance requirements for UK universities come into force today, with immigration specialists warning the measures could have \"potentially devastating consequences\" for institutions that fail to meet increasingly …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/new-ukvi-compliance-metrics-for-universities-take-effect-today",
+      "gov_sources": [
+        "https://assets.publishing.service.gov.uk/media/6a1866c6916cd732dcdaacb6/Student_sponsor_compliance.pdf"
+      ]
+    },
+    {
       "date": "2026-05-27",
       "category": "Processing & Grants",
       "headline": "UK: Sponsored study visa issuances down, rejection rates up, and more",
       "description": "<p>If you are an international student prospect, where you live in the world increasingly determines where you can study abroad – as does your intention to stay in, or leave, a host country after completing your studies. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/uk-sponsored-study-visa-issuances-down-rejection-rates-up-and-more",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-27",
+      "category": "Processing & Grants",
+      "headline": "BCA blind spot as admin review backlog reaches six months",
+      "description": "<p>An apparent blind spot in visa processing that could impact university RAG ratings has emerged as international students are encouraged to dispute visa decisions through the administrative review process, potentially exempting them from BCA calculations. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/bca-blind-spot-as-admin-review-backlog-reaches-six-months",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/student-sponsor-guidance/student-sponsor-compliance-accessible"
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "category": "Policy Update",
+      "headline": "The PIE investigates: the real cost of non-refundable deposits",
+      "description": "<p>After UK visa rejection rates soared over the winter, thousands of students from countries like Pakistan and Bangladesh are now being told their tuition fee deposits are non-refundable. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-pie-investigates-the-real-cost-of-non-refundable-deposits",
       "gov_sources": []
     },
     {
@@ -82,12 +124,41 @@
       "gov_sources": []
     },
     {
+      "date": "2026-05-26",
+      "category": "Policy Update",
+      "headline": "International students must leave US to apply for green card, says USCIS",
+      "description": "<p>New US government policy guidance could significantly restrict international students and workers applying for permanent residency on American soil.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/international-students-must-leave-us-to-apply-for-green-card",
+      "gov_sources": [
+        "https://www.uscis.gov/newsroom/news-releases/us-citizenship-and-immigration-services-will-grant-adjustment-of-status-only-in-extraordinary"
+      ]
+    },
+    {
       "date": "2026-05-25",
       "category": "Post-Study Work",
       "headline": "ICEF Podcast: Student flows are shifting. Are agencies following suit?",
       "description": "<p>Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest developments in our sector, including increased government scrutiny of the Optional Practical Training (OPT) programme in the United States and early indicators of a further …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/icef-podcast-student-flows-are-shifting-are-agencies-following-suit",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-22",
+      "category": "Policy Update",
+      "headline": "Student with gun demands deposit refund from agent",
+      "description": "<p>A major study abroad agent has told The PIE it was forced to close offices in Pakistan for more than 10 days after a man with a gun demanded a refund of his tuition fee deposit after being refused a visa to study in the UK. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/student-with-gun-demands-deposit-refund-from-agent",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-22",
+      "category": "Policy Update",
+      "headline": "Alphabetti spaghetti and Australia’s international education policy problem",
+      "description": "<p>Neil Fitzroy explores how a growing maze of acronyms, restrictions and visa uncertainty may be undermining Australia's appeal as a study destination.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/alphabetti-spaghetti-and-australias-international-education-policy-problem",
       "gov_sources": []
     },
     {
@@ -100,12 +171,32 @@
       "gov_sources": []
     },
     {
+      "date": "2026-05-18",
+      "category": "Policy Update",
+      "headline": "Australia freezes new overseas student provider registrations",
+      "description": "<p>Labor’s 12-month pause on new VET and ELICOS applications comes amid rising visa refusals, slowing commencements and mounting migration pressure.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-freezes-new-overseas-student-provider-registrations",
+      "gov_sources": [
+        "https://www.education.gov.au/download/20379/suspension-new-applications-asqa-under-esos-act/44813/document/pdf"
+      ]
+    },
+    {
       "date": "2026-05-13",
       "category": "Post-Study Work",
       "headline": "US immigration officials allege OPT is being widely abused and say “more actions are forthcoming”",
       "description": "<p>US Immigration and Customs Enforcement (ICE) has intensified its scrutiny of the Optional Practical Training (OPT) post-study work programme for international graduates of American universities. On 12 May, Todd M. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/us-immigration-officials-allege-opt-is-being-widely-abused-and-say-more-actions-are-forthcoming",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-13",
+      "category": "Post-Study Work",
+      "headline": "ICE director brands OPT a “magnet for fraud”",
+      "description": "<p>The head of America’s notorious Immigration and Customs Enforcement (ICE) has called the US post-study work program a “magnet for fraud”, vowing to “relentlessly investigate” students and employers.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/ice-director-brands-opt-a-magnet-for-fraud",
       "gov_sources": []
     },
     {
@@ -118,6 +209,15 @@
       "gov_sources": []
     },
     {
+      "date": "2026-05-12",
+      "category": "Policy Update",
+      "headline": "MPs warn UK university insolvency risk grows amid international student pressures",
+      "description": "<p>UK MPs have raised concerns over new visa compliance metrics, the international student levy and lack of government planning for a potential major university collapse.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/mps-warn-uk-university-insolvency-risk-grows-amid-international-student-pressures",
+      "gov_sources": []
+    },
+    {
       "date": "2026-05-06",
       "category": "Policy Update",
       "headline": "US to end “Duration of Status” for F, J, and I visas and limit the time international students can study in the US",
@@ -125,6 +225,36 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/us-moves-to-end-duration-of-status-for-f-j-and-i-visas-new-rule-could-limit-the-time-international-students-can-study-in-the-us",
       "gov_sources": []
+    },
+    {
+      "date": "2026-04-29",
+      "category": "Policy Update",
+      "headline": "US politics drives international student self-censorship",
+      "description": "<p>Nearly nine in 10 international students have reported being less willing to speak up in academic spaces or on social media about immigration, global conflict or US regulations, as experts warn of increasingly polarised classrooms.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-politics-drives-international-student-self-censorship",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-29",
+      "category": "Policy Update",
+      "headline": "Through the amber spyglass: a refraction of the new RAG rating",
+      "description": "<p>Alex Lock and Mike Strong consider the unintended consequences of an amber rating from the UKVI's Basic Compliance Assessment (BCA) and how it should not be viewed as failure by universities. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/through-the-amber-spyglass-a-refraction-of-the-new-rag-rating",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-28",
+      "category": "Post-Study Work",
+      "headline": "Relief for some OPT applicants in “immigration limbo”",
+      "description": "<p>A federal judge has ordered the Trump administration to lift an indefinite freeze on work permit authorisations, including OPT, for a group of international students from travel ban countries.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/relief-for-some-opt-applicants-in-immigration-limbo",
+      "gov_sources": [
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0192-PendingApplicationsHighRiskCountries-20251202.pdf",
+        "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0194-PendingApplicationsAdditionalHighRiskCountries-20260101.pdf"
+      ]
     },
     {
       "date": "2026-04-27",
@@ -138,46 +268,19 @@
     {
       "date": "2026-04-23",
       "category": "Policy Update",
+      "headline": "What’s in Canada’s CIMM report and will it influence IRCC policy?",
+      "description": "<p>Canada’s Standing Committee on Citizenship and Immigration (CIMM) has unveiled a sweeping set of recommendations on the International Student Program (ISP). …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/whats-in-canadas-cimm-report-and-will-it-influence-ircc-policy",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-23",
+      "category": "Policy Update",
       "headline": "UK: 7 in 10 universities report declining international postgraduate enrolments; visa rejections are part of the story",
       "description": "<p>Of universities in the UK surveyed recently by the British Universities International Liaison Association (BUILA), 7 in 10 reported declines in international postgraduate students in January 2026 compared with January 2025. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/04/uk-7-in-10-universities-report-declining-international-postgraduate-enrolments-visa-rejections-are-part-of-the-story",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-22",
-      "category": "Student Visas",
-      "headline": "Australia: Multiple data indicators signal further declines ahead for international student numbers",
-      "description": "<p>A new analysis of student visa trends suggests that the next couple of years – at least – look grim for Australia’s English-language training schools (ELICOS) and vocational education providers (VET). …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/australia-multiple-data-indicators-signal-further-declines-ahead-for-international-student-numbers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-16",
-      "category": "Policy Update",
-      "headline": "A common challenge: Strengthening student confidence in the ROI of study abroad",
-      "description": "<p>More restrictive immigration policies in the Big Four destinations – Australia, Canada, UK, and the United States – are concerning some international students about the return on investment (ROI) of study abroad. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/04/a-common-challenge-strengthening-student-confidence-in-the-roi-of-study-abroad",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-23",
-      "category": "Student Visas",
-      "headline": "Study in the UK on a Student visa",
-      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/study-uk-student-visa",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-03-18",
-      "category": "Student Visas",
-      "headline": "Study in the UK on a Child Student visa",
-      "description": "Child Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/study-uk-child-student-visa",
       "gov_sources": []
     }
   ]
