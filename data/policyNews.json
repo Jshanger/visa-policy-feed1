@@ -3,6 +3,15 @@
     {
       "date": "2026-06-05",
       "category": "Policy Update",
+      "headline": "US trails rivals on affordability, safety and visas in global student poll",
+      "description": "<p>The US continues to lose its appeal among prospective international students, ranking bottom of the ‘big four’ on affordability, entry, safety, and culture in a new student survey. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-trails-rivals-on-affordability-safety-and-visas-in-global-student-poll",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-05",
+      "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-06-05.",
       "source": "www.dhs.gov",
@@ -162,24 +171,6 @@
       "gov_sources": []
     },
     {
-      "date": "2026-05-22",
-      "category": "Policy Update",
-      "headline": "Student with gun demands deposit refund from agent",
-      "description": "<p>A major study abroad agent has told The PIE it was forced to close offices in Pakistan for more than 10 days after a man with a gun demanded a refund of his tuition fee deposit after being refused a visa to study in the UK. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/student-with-gun-demands-deposit-refund-from-agent",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-05-22",
-      "category": "Policy Update",
-      "headline": "Alphabetti spaghetti and Australia’s international education policy problem",
-      "description": "<p>Neil Fitzroy explores how a growing maze of acronyms, restrictions and visa uncertainty may be undermining Australia's appeal as a study destination.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/alphabetti-spaghetti-and-australias-international-education-policy-problem",
-      "gov_sources": []
-    },
-    {
       "date": "2026-05-20",
       "category": "Policy Update",
       "headline": "UK universities bracing for a further decline in international enrolments",
@@ -247,15 +238,6 @@
     {
       "date": "2026-04-29",
       "category": "Policy Update",
-      "headline": "US politics drives international student self-censorship",
-      "description": "<p>Nearly nine in 10 international students have reported being less willing to speak up in academic spaces or on social media about immigration, global conflict or US regulations, as experts warn of increasingly polarised classrooms.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-politics-drives-international-student-self-censorship",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-04-29",
-      "category": "Policy Update",
       "headline": "Through the amber spyglass: a refraction of the new RAG rating",
       "description": "<p>Alex Lock and Mike Strong consider the unintended consequences of an amber rating from the UKVI's Basic Compliance Assessment (BCA) and how it should not be viewed as failure by universities. …",
       "source": "thepienews.com",
@@ -281,6 +263,24 @@
       "description": "This video explains how to apply for a student visa.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/how-to-apply-for-a-student-visa-video",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-23",
+      "category": "Policy Update",
+      "headline": "What’s in Canada’s CIMM report and will it influence IRCC policy?",
+      "description": "<p>Canada’s Standing Committee on Citizenship and Immigration (CIMM) has unveiled a sweeping set of recommendations on the International Student Program (ISP). …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/whats-in-canadas-cimm-report-and-will-it-influence-ircc-policy",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-23",
+      "category": "Policy Update",
+      "headline": "UK: 7 in 10 universities report declining international postgraduate enrolments; visa rejections are part of the story",
+      "description": "<p>Of universities in the UK surveyed recently by the British Universities International Liaison Association (BUILA), 7 in 10 reported declines in international postgraduate students in January 2026 compared with January 2025. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/04/uk-7-in-10-universities-report-declining-international-postgraduate-enrolments-visa-rejections-are-part-of-the-story",
       "gov_sources": []
     }
   ]
