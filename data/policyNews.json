@@ -1,12 +1,30 @@
 {
   "policyNews": [
     {
-      "date": "2026-06-12",
+      "date": "2026-06-13",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-06-12.",
+      "description": "Official page updated on 2026-06-13.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-13",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-06-13.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-12",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-06-12.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
@@ -20,15 +38,6 @@
     },
     {
       "date": "2026-06-12",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-06-12.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-12",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -37,12 +46,12 @@
       "gov_sources": []
     },
     {
-      "date": "2026-06-11",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-06-11.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "date": "2026-06-12",
+      "category": "Post-Study Work",
+      "headline": "Judge overturns Trump policies targeting travel ban nationals",
+      "description": "<p>A judge has ruled the US government acted unlawfully in barring travel ban nationals from receiving decisions on applications for changes of visa status including OPT authorisation, green cards and work permits.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/judge-overturns-trump-policies-targeting-travel-ban-nationals",
       "gov_sources": []
     },
     {
@@ -75,10 +84,10 @@
     {
       "date": "2026-06-11",
       "category": "Sponsorship",
-      "headline": "Bloomsbury Institute sponsor license suspended",
-      "description": "<p>Bloomsbury Institute’s international student sponsor licence has been suspended by the Home Office.</p> <p>The post <a href=\"https://thepienews.com/bloomsbury-institute-sponsor-license-suspended/\">Bloomsbury Institute sponsor license suspended</a> appeared …",
+      "headline": "Bloomsbury Institute sponsor licence suspended",
+      "description": "<p>Bloomsbury Institute’s international student sponsor licence has been suspended by the Home Office.</p> <p>The post <a href=\"https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended/\">Bloomsbury Institute sponsor licence suspended</a> appeared …",
       "source": "thepienews.com",
-      "url": "https://thepienews.com/bloomsbury-institute-sponsor-license-suspended",
+      "url": "https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended",
       "gov_sources": [
         "https://www.gov.uk/government/publications/register-of-licensed-sponsors-students"
       ]
@@ -271,15 +280,6 @@
       "description": "<p>Through the first quarter of 2026, restrictive immigration settings in Australia, Canada, the UK, and the US continued to (1) reduce inflows of new foreign students to universities in those countries, and (2) increase student interest in Asian and European …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/universities-urged-to-focus-on-factors-they-can-control-as-policy-settings-continue-to-depress-international-student-enrolments-in-the-big-four",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-05-12",
-      "category": "Policy Update",
-      "headline": "MPs warn UK university insolvency risk grows amid international student pressures",
-      "description": "<p>UK MPs have raised concerns over new visa compliance metrics, the international student levy and lack of government planning for a potential major university collapse.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/mps-warn-uk-university-insolvency-risk-grows-amid-international-student-pressures",
       "gov_sources": []
     }
   ]
