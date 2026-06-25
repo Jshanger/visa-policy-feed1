@@ -142,15 +142,6 @@
     },
     {
       "date": "2026-06-04",
-      "category": "Policy Update",
-      "headline": "Universities face ban on international students over visa abuse",
-      "description": "Raised standards for recruiting foreign students come amid continued visa abuse. Student asylum claims already down 30% as government action delivers results.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/news/universities-face-ban-on-international-students-over-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-04",
       "category": "Sponsorship",
       "headline": "High dropout rates to trigger sponsor license action, UK unis warned",
       "description": "<p>The UK government has reiterated that universities risk having their sponsor license revoked if they do not keep within new compliance requirements.</p> <p>The post <a …",
@@ -282,6 +273,17 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/uk-universities-bracing-for-a-further-decline-in-international-enrolments",
       "gov_sources": []
+    },
+    {
+      "date": "2026-05-18",
+      "category": "Policy Update",
+      "headline": "Australia freezes new overseas student provider registrations",
+      "description": "<p>Labor’s 12-month pause on new VET and ELICOS applications comes amid rising visa refusals, slowing commencements and mounting migration pressure.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-freezes-new-overseas-student-provider-registrations",
+      "gov_sources": [
+        "https://www.education.gov.au/download/20379/suspension-new-applications-asqa-under-esos-act/44813/document/pdf"
+      ]
     }
   ]
 }
