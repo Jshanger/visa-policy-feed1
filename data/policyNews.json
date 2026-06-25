@@ -1,6 +1,36 @@
 {
   "policyNews": [
     {
+      "date": "2026-06-25",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-06-25.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-25",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-06-25.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-06-24",
+      "category": "Policy Update",
+      "headline": "What is happening to student mobility flows between the Global South and Global North?",
+      "description": "<p>In 2026, students in many of the fastest growing markets for schools and universities in the Big Four destinations of Australia, Canada, the UK, and US are increasingly likely to see their study visa applications rejected. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/06/what-is-happening-to-student-mobility-flows-between-the-global-south-and-global-north",
+      "gov_sources": [
+        "https://www.education.gov.au/international-education",
+        "https://open.canada.ca/data/en/dataset/90115b00-f9b8-49e8-afa3-b4cff8facaee"
+      ]
+    },
+    {
       "date": "2026-06-24",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,29 +41,11 @@
     },
     {
       "date": "2026-06-24",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-06-24.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-24",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2026-06-24.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-24",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-06-24.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -270,17 +282,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/05/uk-universities-bracing-for-a-further-decline-in-international-enrolments",
       "gov_sources": []
-    },
-    {
-      "date": "2026-05-18",
-      "category": "Policy Update",
-      "headline": "Australia freezes new overseas student provider registrations",
-      "description": "<p>Labor’s 12-month pause on new VET and ELICOS applications comes amid rising visa refusals, slowing commencements and mounting migration pressure.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-freezes-new-overseas-student-provider-registrations",
-      "gov_sources": [
-        "https://www.education.gov.au/download/20379/suspension-new-applications-asqa-under-esos-act/44813/document/pdf"
-      ]
     }
   ]
 }
