@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-07-10",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-07-10.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-07-10",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-07-10.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-07-09",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,29 +29,11 @@
     },
     {
       "date": "2026-07-09",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-07-09.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-09",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
       "description": "Official page updated on 2026-07-09.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-09",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-07-09.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -57,15 +57,6 @@
       ]
     },
     {
-      "date": "2026-07-02",
-      "category": "Student Visas",
-      "headline": "“Frustration, disappointment, even heartbreak”: Ian Aird on Australia’s latest visa fee hike",
-      "description": "<p>The ELICOS sector has reacted strongly to Australia’s latest student visa fee increases, with English Australia CEO Ian Aird describing “frustration” across providers.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/frustration-disappointment-even-heartbreak-ian-aird-on-australias-latest-visa-fee-hike",
-      "gov_sources": []
-    },
-    {
       "date": "2026-07-01",
       "category": "Student Visas",
       "headline": "Surprise hike in international student visa application fees “a direct hit to Australia’s competitiveness”",
@@ -78,38 +69,11 @@
     },
     {
       "date": "2026-06-30",
-      "category": "Sponsorship",
-      "headline": "UK universities to sponsor refugees under new asylum “safe routes” overhaul",
-      "description": "<p>UK universities will be able to directly sponsor refugees to study in Britain under new government plans to expand “safe and legal routes” for those seeking protection.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-universities-to-sponsor-refugees-under-new-asylum-safe-routes-overhaul",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-30",
-      "category": "Student Visas",
-      "headline": "Student visa fees rise again as Australia adds ELICOS pricing tier",
-      "description": "<p>Australia has hiked visa fees overnight, lifting the student visa to AUD $2,500 and introducing a separate $2,050 ELICOS rate.</p> <p>The post <a href=\"https://thepienews.com/student-visa-fees-rise-again-as-australia-adds-elicos-pricing-tier/\">Student visa …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/student-visa-fees-rise-again-as-australia-adds-elicos-pricing-tier",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-30",
       "category": "Policy Update",
       "headline": "Right to rent immigration checks: landlords' code of practice",
       "description": "Guidance for landlords, homeowners and letting agents affected by the introduction of right to rent immigration checks.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/right-to-rent-landlords-code-of-practice",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-26",
-      "category": "Policy Update",
-      "headline": "UK unis must treat compliance as “strategic institutional risk”",
-      "description": "<p>UK universities must be proactive in managing compliance risks if they want to avoid falling foul of the new BCA thresholds, an immigration expert has warned. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-unis-must-treat-compliance-as-strategic-institutional-risk",
       "gov_sources": []
     },
     {
@@ -134,86 +98,12 @@
       ]
     },
     {
-      "date": "2026-06-24",
-      "category": "Policy Update",
-      "headline": "International students intimidated by St George’s flag as hostile rhetoric surges",
-      "description": "<p>There has been a noticeable shift in the way international students view the English flag as they grapple with a wave of anti-immigration messaging in the UK, a conference has heard.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/international-students-intimidated-by-st-georges-flag-as-hostile-rhetoric-surges",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-16",
-      "category": "Student Visas",
-      "headline": "One Nation seeks crackdown on student visa “course-hopping”",
-      "description": "<p>Right-wing Australian senator Pauline Hanson has reignited debate over international students, calling for tougher visa rules that would force students to leave the country before reapplying to study.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/one-nation-seeks-crackdown-on-student-visa-course-hopping",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-12",
-      "category": "Post-Study Work",
-      "headline": "Judge overturns Trump policies targeting travel ban nationals",
-      "description": "<p>A judge has ruled the US government acted unlawfully in barring travel ban nationals from receiving decisions on applications for changes of visa status including OPT authorisation, green cards and work permits.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/judge-overturns-trump-policies-targeting-travel-ban-nationals",
-      "gov_sources": []
-    },
-    {
       "date": "2026-06-11",
       "category": "Processing & Grants",
       "headline": "US visa processing centres in Africa to be reduced by more than half; only the latest barrier for African students",
       "description": "<p>The Trump administration’s clampdown on immigration from Africa is intensifying, and the government has introduced new measures to make it more onerous and expensive for students from many African countries to study in the US. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/06/us-visa-processing-centres-in-africa-to-be-reduced-by-more-than-half-only-the-latest-barrier-for-african-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Policy Update",
-      "headline": "MPs slam HOELT as debate over international students continues",
-      "description": "<p>UK politicians have aired their concerns over plans to introduce a fully remote Home Office-backed English language test, suggesting the model exposes the country to a weaker immigration system. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/mps-slam-hoelt-as-debate-over-international-students-continues",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Policy Update",
-      "headline": "IDP Australia outsources onshore visa services to Bravo Migration",
-      "description": "<p>IDP Education and Bravo Migration have announced a new partnership to provide onshore visa support for international students across Australia. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/idp-australia-outsources-onshore-visa-services-to-bravo-migration",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Sponsorship",
-      "headline": "Bloomsbury Institute sponsor licence suspended",
-      "description": "<p>Bloomsbury Institute’s international student sponsor licence has been suspended by the Home Office.</p> <p>The post <a href=\"https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended/\">Bloomsbury Institute sponsor licence suspended</a> appeared …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/register-of-licensed-sponsors-students"
-      ]
-    },
-    {
-      "date": "2026-06-05",
-      "category": "Policy Update",
-      "headline": "US trails rivals on affordability, safety and visas in global student poll",
-      "description": "<p>The US continues to lose its appeal among prospective international students, ranking bottom of the ‘big four’ on affordability, entry, safety, and culture in a new student survey. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-trails-rivals-on-affordability-safety-and-visas-in-global-student-poll",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-04",
-      "category": "Sponsorship",
-      "headline": "High dropout rates to trigger sponsor license action, UK unis warned",
-      "description": "<p>The UK government has reiterated that universities risk having their sponsor license revoked if they do not keep within new compliance requirements.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/high-dropout-rates-to-trigger-sponsor-license-action-uk-unis-warned",
       "gov_sources": []
     },
     {
@@ -226,46 +116,6 @@
       "gov_sources": []
     },
     {
-      "date": "2026-06-03",
-      "category": "Processing & Grants",
-      "headline": "US World Cup visa processing sidelines international students",
-      "description": "<p>US educators are increasingly concerned about the state of international enrolments next fall, as students wait in long queues behind World Cup visa applicants and travel bans endure.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-world-cup-visa-processing-sidelines-international-students",
-      "gov_sources": [
-        "https://j1visa.state.gov/"
-      ]
-    },
-    {
-      "date": "2026-06-02",
-      "category": "Policy Update",
-      "headline": "What’s the real cost of non-refundable deposits?",
-      "description": "<p>After UK visa rejection rates soared over the winter, thousands of students from countries like Pakistan and Bangladesh are now being told their tuition fee deposits are non-refundable. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/whats-the-real-cost-of-non-refundable-deposits",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-02",
-      "category": "Policy Update",
-      "headline": "UK universities flying blind as visa refusals force admissions rethink",
-      "description": "<p>University leaders in the UK have warned that institutions are increasingly making high-stakes admissions and compliance decisions without enough shared data, as visa refusals, rising student costs and recruitment pressures reshape international …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-universities-flying-blind-as-visa-refusals-force-admissions-rethink",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-01",
-      "category": "Policy Update",
-      "headline": "New UKVI compliance metrics for universities take effect today",
-      "description": "<p>Highly anticipated and controversial new compliance requirements for UK universities come into force today, with immigration specialists warning the measures could have \"potentially devastating consequences\" for institutions that fail to meet increasingly …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/new-ukvi-compliance-metrics-for-universities-take-effect-today",
-      "gov_sources": [
-        "https://assets.publishing.service.gov.uk/media/6a1866c6916cd732dcdaacb6/Student_sponsor_compliance.pdf"
-      ]
-    },
-    {
       "date": "2026-05-27",
       "category": "Processing & Grants",
       "headline": "UK: Sponsored study visa issuances down, rejection rates up, and more",
@@ -275,15 +125,58 @@
       "gov_sources": []
     },
     {
-      "date": "2026-05-27",
-      "category": "Processing & Grants",
-      "headline": "BCA blind spot as admin review backlog reaches six months",
-      "description": "<p>An apparent blind spot in visa processing that could impact university RAG ratings has emerged as international students are encouraged to dispute visa decisions through the administrative review process, potentially exempting them from BCA calculations. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/bca-blind-spot-as-admin-review-backlog-reaches-six-months",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/student-sponsor-guidance/student-sponsor-compliance-accessible"
-      ]
+      "date": "2026-05-25",
+      "category": "Post-Study Work",
+      "headline": "ICEF Podcast: Student flows are shifting. Are agencies following suit?",
+      "description": "<p>Listen in as ICEF’s Craig Riggs and Martijn van de Veen recap some of the latest developments in our sector, including increased government scrutiny of the Optional Practical Training (OPT) programme in the United States and early indicators of a further …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/05/icef-podcast-student-flows-are-shifting-are-agencies-following-suit",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-20",
+      "category": "Policy Update",
+      "headline": "UK universities bracing for a further decline in international enrolments",
+      "description": "<p>Last year, the number of foreign students in UK higher education declined by -6%, according to data from the Higher Education Statistics Agency (HESA). …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/05/uk-universities-bracing-for-a-further-decline-in-international-enrolments",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-05-13",
+      "category": "Post-Study Work",
+      "headline": "US immigration officials allege OPT is being widely abused and say “more actions are forthcoming”",
+      "description": "<p>US Immigration and Customs Enforcement (ICE) has intensified its scrutiny of the Optional Practical Training (OPT) post-study work programme for international graduates of American universities. On 12 May, Todd M. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/05/us-immigration-officials-allege-opt-is-being-widely-abused-and-say-more-actions-are-forthcoming",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-27",
+      "category": "Student Visas",
+      "headline": "How to apply for a student visa: video",
+      "description": "This video explains how to apply for a student visa.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/how-to-apply-for-a-student-visa-video",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-23",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Student visa",
+      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-18",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Child Student visa",
+      "description": "Child Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-child-student-visa",
+      "gov_sources": []
     }
   ]
 }
