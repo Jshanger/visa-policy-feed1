@@ -46,6 +46,15 @@
       "gov_sources": []
     },
     {
+      "date": "2026-07-31",
+      "category": "Post-Study Work",
+      "headline": "Privacy notice for Cabinet Office digital advertising",
+      "description": "How the Cabinet Office collects and uses personal information when you opt-in to marketing cookies on government websites.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/privacy-notice-for-cabinet-office-digital-advertising",
+      "gov_sources": []
+    },
+    {
       "date": "2026-07-30",
       "category": "Policy Update",
       "headline": "Get a grip on Australian study visas: an open letter to Julian Hill",
@@ -278,17 +287,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/idp-australia-outsources-onshore-visa-services-to-bravo-migration",
       "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Sponsorship",
-      "headline": "Bloomsbury Institute sponsor licence suspended",
-      "description": "<p>Bloomsbury Institute’s international student sponsor licence has been suspended by the Home Office.</p> <p>The post <a href=\"https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended/\">Bloomsbury Institute sponsor licence suspended</a> appeared …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/bloomsbury-institute-sponsor-licence-suspended",
-      "gov_sources": [
-        "https://www.gov.uk/government/publications/register-of-licensed-sponsors-students"
-      ]
     }
   ]
 }
