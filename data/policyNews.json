@@ -1,21 +1,75 @@
 {
   "policyNews": [
     {
-      "date": "2026-08-02",
+      "date": "2026-08-03",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-08-02.",
+      "description": "Official page updated on 2026-08-03.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-08-02",
+      "date": "2026-08-03",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-08-03.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-03",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-08-02.",
+      "description": "Official page updated on 2026-08-03.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-03",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-03",
+      "category": "Policy Update",
+      "headline": "Immigration Rules Appendix Graduate",
+      "description": "This route is for a Student in the UK who wants to work, or look for work, following the successful completion of an eligible course of study at UK bachelor’s degree-level or above. …",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-graduate",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-03",
+      "category": "Policy Update",
+      "headline": "Immigration Rules Appendix Global Business Mobility routes",
+      "description": "The Global Business Mobility routes are for workers based outside the UK who are undertaking a temporary work assignment in the UK as a Senior or Specialist Worker, Graduate Trainee, UK Expansion Worker, Service Supplier or …",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-global-business-mobility-routes",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-02",
+      "category": "Policy Update",
+      "headline": "Parent of a child student: caseworker guidance",
+      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-02",
+      "category": "Post-Study Work",
+      "headline": "Graduate caseworker guidance",
+      "description": "Immigration staff guidance on considering applications under the Graduate route.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/graduate-caseworker-guidance",
       "gov_sources": []
     },
     {
@@ -25,24 +79,6 @@
       "description": "Official page updated on 2026-07-31.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-31",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-07-31.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-31",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -250,42 +286,6 @@
       "description": "<p>Right-wing Australian senator Pauline Hanson has reignited debate over international students, calling for tougher visa rules that would force students to leave the country before reapplying to study.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/one-nation-seeks-crackdown-on-student-visa-course-hopping",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-12",
-      "category": "Post-Study Work",
-      "headline": "Judge overturns Trump policies targeting travel ban nationals",
-      "description": "<p>A judge has ruled the US government acted unlawfully in barring travel ban nationals from receiving decisions on applications for changes of visa status including OPT authorisation, green cards and work permits.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/judge-overturns-trump-policies-targeting-travel-ban-nationals",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Processing & Grants",
-      "headline": "US visa processing centres in Africa to be reduced by more than half; only the latest barrier for African students",
-      "description": "<p>The Trump administration’s clampdown on immigration from Africa is intensifying, and the government has introduced new measures to make it more onerous and expensive for students from many African countries to study in the US. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/06/us-visa-processing-centres-in-africa-to-be-reduced-by-more-than-half-only-the-latest-barrier-for-african-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Policy Update",
-      "headline": "MPs slam HOELT as debate over international students continues",
-      "description": "<p>UK politicians have aired their concerns over plans to introduce a fully remote Home Office-backed English language test, suggesting the model exposes the country to a weaker immigration system. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/mps-slam-hoelt-as-debate-over-international-students-continues",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-11",
-      "category": "Policy Update",
-      "headline": "IDP Australia outsources onshore visa services to Bravo Migration",
-      "description": "<p>IDP Education and Bravo Migration have announced a new partnership to provide onshore visa support for international students across Australia. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/idp-australia-outsources-onshore-visa-services-to-bravo-migration",
       "gov_sources": []
     }
   ]
