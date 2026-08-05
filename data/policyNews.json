@@ -11,11 +11,38 @@
     },
     {
       "date": "2026-08-05",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-08-05.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-05",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-08-05.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-05",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-05",
+      "category": "Policy Update",
+      "headline": "Australian universities urged to rethink engagement with Pakistan",
+      "description": "<p>Speakers at The PIE Live Asia Pacific argued Pakistan is being viewed too narrowly through the lens of visa risk, warning that uncertainty is undermining Australia's competitiveness in one of its fastest-growing student markets.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australian-universities-urged-to-rethink-engagement-with-pakistan",
       "gov_sources": []
     },
     {
@@ -25,24 +52,6 @@
       "description": "Official page updated on 2026-08-04.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-04",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-08-04.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-04",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -278,15 +287,6 @@
         "https://www.education.gov.au/international-education",
         "https://open.canada.ca/data/en/dataset/90115b00-f9b8-49e8-afa3-b4cff8facaee"
       ]
-    },
-    {
-      "date": "2026-06-24",
-      "category": "Policy Update",
-      "headline": "International students intimidated by St George’s flag as hostile rhetoric surges",
-      "description": "<p>There has been a noticeable shift in the way international students view the English flag as they grapple with a wave of anti-immigration messaging in the UK, a conference has heard.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/international-students-intimidated-by-st-georges-flag-as-hostile-rhetoric-surges",
-      "gov_sources": []
     }
   ]
 }
