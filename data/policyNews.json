@@ -64,6 +64,18 @@
       "gov_sources": []
     },
     {
+      "date": "2026-08-05",
+      "category": "Policy Update",
+      "headline": "Australia poised to further restrict immigration in bid to drive down net migration figures",
+      "description": "<p>Australia&#8217;s national government is under pressure on immigration. In the most recent edition of the benchmark Lowy Institute Poll, released 22 June 2026, 55% of Australians say the total number of migrants coming to Australia each year is too high. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/08/australia-poised-to-further-restrict-immigration-in-bid-to-drive-down-net-migration-figures",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/what-we-do/whm-program/status-of-country-caps",
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/first-working-holiday-417"
+      ]
+    },
+    {
       "date": "2026-08-03",
       "category": "Policy Update",
       "headline": "Immigration Rules Appendix Graduate",
@@ -274,15 +286,6 @@
       "description": "<p>UK universities must be proactive in managing compliance risks if they want to avoid falling foul of the new BCA thresholds, an immigration expert has warned. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-unis-must-treat-compliance-as-strategic-institutional-risk",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-06-25",
-      "category": "Policy Update",
-      "headline": "UK: Visa application withdrawals surpass refusals in Q1 2026",
-      "description": "<p>UK higher education is bracing up to some challenging trends through the first half of the year. Visa applications volumes are down significantly, and approval rates are trending below the norm as well. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/06/uk-visa-application-withdrawals-surpass-refusals-in-q1-2026",
       "gov_sources": []
     }
   ]
