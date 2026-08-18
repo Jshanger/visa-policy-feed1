@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-08-18",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-08-18.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-18",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-08-18.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-08-17",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,11 +29,11 @@
     },
     {
       "date": "2026-08-17",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-08-17.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "category": "Processing & Grants",
+      "headline": "US Senators call for faster study visa processing",
+      "description": "<p>Thirty US Senators have called on Secretary of State Marco Rubio to expedite visa processing for international students and scholars in time for the start of the academic year.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-senators-call-for-faster-study-visa-processing",
       "gov_sources": []
     },
     {
@@ -25,15 +43,6 @@
       "description": "Official page updated on 2026-08-17.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-17",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-08-17.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -66,15 +75,6 @@
       ]
     },
     {
-      "date": "2026-08-11",
-      "category": "Student Visas",
-      "headline": "France increases proof of funds for study visas by 43%",
-      "description": "<p>Students applying for a French long-stay student visa will now have to show they have at least €877.50 per month – up from the previous monthly threshold of €615.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/france-increases-proof-of-funds-for-study-visa-by-43",
-      "gov_sources": []
-    },
-    {
       "date": "2026-08-10",
       "category": "Policy Update",
       "headline": "Landlords: immigration right to rent checks",
@@ -84,62 +84,12 @@
       "gov_sources": []
     },
     {
-      "date": "2026-08-07",
-      "category": "Sponsorship",
-      "headline": "London’s Bloomsbury Institute loses licence to sponsor international students",
-      "description": "<p>The Bloomsbury Institute has had its licence to sponsor international students revoked after failing to meet the Basic Compliance Assessment, the Home Office has confirmed in a statement.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/londons-bloomsbury-institute-loses-licence-to-sponsor-international-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-06",
-      "category": "Post-Study Work",
-      "headline": "US universities sell opportunity. A $100k OPT fee could change the product",
-      "description": "<p>News that the Trump administration is eyeing a $100,000 fee for OPT poses a serious risk to US international education, warns Richard T. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/100k-opt-fee-could-change-the-product",
-      "gov_sources": [
-        "https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students",
-        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation.html",
-        "https://www.gov.uk/graduate-visa",
-        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485"
-      ]
-    },
-    {
-      "date": "2026-08-06",
-      "category": "Processing & Grants",
-      "headline": "US leaders urge action as delays threaten fall enrolments",
-      "description": "<p>Higher education leaders in the US are urging policymakers to demand visa processing improvements, as delays threaten to wreak havoc on this fall’s international enrolments.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-leaders-urge-action-as-delays-threaten-fall-enrolments",
-      "gov_sources": []
-    },
-    {
       "date": "2026-08-06",
       "category": "Sponsorship",
       "headline": "Bloomsbury Institute's student sponsor licence revoked",
       "description": "The Bloomsbury Institute, a higher education provider in central London, has had its licence to sponsor international students revoked.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/news/bloomsbury-institutes-student-sponsor-licence-revoked",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-05",
-      "category": "Post-Study Work",
-      "headline": "Sweeping work permit refusals draw student protests in Canada",
-      "description": "<p>Stakeholders say providing immigration advice to prospective international students should be a mandatory requirement in Canada, following student protests and a hunger strike over a spate of PGWP refusals. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/sweeping-work-permit-refusals-draw-student-protests-in-canada",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-05",
-      "category": "Policy Update",
-      "headline": "Australian universities urged to rethink engagement with Pakistan",
-      "description": "<p>Speakers at The PIE Live Asia Pacific argued Pakistan is being viewed too narrowly through the lens of visa risk, warning that uncertainty is undermining Australia's competitiveness in one of its fastest-growing student markets.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australian-universities-urged-to-rethink-engagement-with-pakistan",
       "gov_sources": []
     },
     {
@@ -191,24 +141,6 @@
       "gov_sources": []
     },
     {
-      "date": "2026-07-31",
-      "category": "Post-Study Work",
-      "headline": "US: Trump administration considers $100,000 OPT fee",
-      "description": "<p>The Trump administration is reportedly weighing a plan to fix a $100,000 fee onto America’s post-graduation employment program for international students known as Optional Practical Training (OPT).</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/trump-eyes-100000-opt-fee",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-30",
-      "category": "Policy Update",
-      "headline": "Get a grip on Australian study visas: an open letter to Julian Hill",
-      "description": "<p>Ravi Lochan Singh offers Australia's assistant minister for international education some home truths after his frank address at The PIE Live Asia Pacific.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/get-a-grip-on-australian-study-visas-an-open-letter-to-julian-hill",
-      "gov_sources": []
-    },
-    {
       "date": "2026-07-30",
       "category": "Student Visas",
       "headline": "Canadian immigration officials increase their scrutiny of study permit applicants’ financial documentation",
@@ -218,33 +150,6 @@
       "gov_sources": [
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html"
       ]
-    },
-    {
-      "date": "2026-07-30",
-      "category": "Policy Update",
-      "headline": "Australian MP Julian Hill on public good vs private profit, visa refusals and value",
-      "description": "<p>At The PIE Live Asia Pacific,<br /> Julian Hill defended the Australian government’s focus on integrity and managed growth, argued Australia can extract more value from a similar number of international students, and offered a candid comparison between …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/julian-hill-on-public-good-vs-private-profit-visa-refusals-and-value",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-23",
-      "category": "Policy Update",
-      "headline": "UK unis join forces to offer study pathways for visa brake students",
-      "description": "<p>Nine UK universities are working alongside the NGO Mosaik Education to provide remote postgraduate study opportunities to international students from countries subject to a strict study visa pause.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-unis-join-forces-to-offer-study-pathways-for-visa-brake-students",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-23",
-      "category": "Student Visas",
-      "headline": "Nearly half of Canadian study visa refusals deemed “preventable”",
-      "description": "<p>A new dashboard analysing Canadian study permit refusals has found financial documentation to be by far the most prominent reason for students being denied.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/nearly-half-of-canadian-study-visa-refusals-deemed-preventable",
-      "gov_sources": []
     },
     {
       "date": "2026-07-22",
@@ -269,24 +174,95 @@
       "gov_sources": []
     },
     {
-      "date": "2026-07-20",
-      "category": "Post-Study Work",
-      "headline": "UK sector sets out wishlist as Andy Burnham takes No. 10",
-      "description": "<p>UK international education stakeholders have urged the UK's new Prime Minister to maintain the Graduate Route, scrap the controversial levy on private school fees, and strengthen ties with key sending markets.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-sector-sets-out-wishlist-as-andy-burnham-takes-no-10",
+      "date": "2026-07-15",
+      "category": "Policy Update",
+      "headline": "England: Government “remains of the view” that the International Student Levy should go ahead; implementation planned for August 2028",
+      "description": "<p>The UK first indicated it would explore &#8220;a levy on higher education provider income from international students&#8221; in its May 2025 immigration white paper. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/england-government-remains-of-the-view-that-the-international-student-levy-should-go-ahead-implementation-planned-for-august-2028",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper",
+        "https://www.gov.uk/government/consultations/international-student-levy-technical-detail"
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "category": "Policy Update",
+      "headline": "Australia: As visa applications from foreign students fall, the government has set the national target for new international students in 2027",
+      "description": "<p>The Australian government has announced overall settings for “managing the growth” of the country’s international education sector for the coming academic year. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/australia-as-visa-applications-from-foreign-students-fall-the-government-has-set-the-national-target-for-new-international-students-in-2027",
+      "gov_sources": [
+        "https://ministers.education.gov.au/clare/managing-sustainable-international-education-sector-0"
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "category": "Student Visas",
+      "headline": "Surprise hike in international student visa application fees “a direct hit to Australia’s competitiveness”",
+      "description": "<p>Australia’s international education sector is reeling at new study, work, and working-holiday visa application fees for international students announced by the Department of Home Affairs this week. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/surprise-hike-in-international-student-visa-application-fees-a-direct-hit-to-australias-competitiveness",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/visas/getting-a-visa/fees-and-charges/current-visa-pricing"
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "category": "Policy Update",
+      "headline": "UK: Visa application withdrawals surpass refusals in Q1 2026",
+      "description": "<p>UK higher education is bracing up to some challenging trends through the first half of the year. Visa applications volumes are down significantly, and approval rates are trending below the norm as well. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/06/uk-visa-application-withdrawals-surpass-refusals-in-q1-2026",
       "gov_sources": []
     },
     {
-      "date": "2026-07-17",
+      "date": "2026-06-24",
       "category": "Policy Update",
-      "headline": "Canada fraud case exposes “acute” sector integrity issues",
-      "description": "<p>Two people have been charged for an immigration scheme in Canada defrauding international students of CAD$126,000 – as the case raises longstanding concerns about unethical recruitment practices. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/canada-fraud-case-exposes-acute-sector-integrity-issues",
+      "headline": "What is happening to student mobility flows between the Global South and Global North?",
+      "description": "<p>In 2026, students in many of the fastest growing markets for schools and universities in the Big Four destinations of Australia, Canada, the UK, and US are increasingly likely to see their study visa applications rejected. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/06/what-is-happening-to-student-mobility-flows-between-the-global-south-and-global-north",
       "gov_sources": [
-        "https://www.canada.ca/en/border-services-agency/news/2026/07/cbsa-lays-12-criminal-charges-in-immigration-fraud-case.html"
+        "https://www.education.gov.au/international-education",
+        "https://open.canada.ca/data/en/dataset/90115b00-f9b8-49e8-afa3-b4cff8facaee"
       ]
+    },
+    {
+      "date": "2026-06-11",
+      "category": "Processing & Grants",
+      "headline": "US visa processing centres in Africa to be reduced by more than half; only the latest barrier for African students",
+      "description": "<p>The Trump administration’s clampdown on immigration from Africa is intensifying, and the government has introduced new measures to make it more onerous and expensive for students from many African countries to study in the US. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/06/us-visa-processing-centres-in-africa-to-be-reduced-by-more-than-half-only-the-latest-barrier-for-african-students",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-04-27",
+      "category": "Student Visas",
+      "headline": "How to apply for a student visa: video",
+      "description": "This video explains how to apply for a student visa.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/how-to-apply-for-a-student-visa-video",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-23",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Student visa",
+      "description": "Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-student-visa",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-03-18",
+      "category": "Student Visas",
+      "headline": "Study in the UK on a Child Student visa",
+      "description": "Child Student visa - check which courses you can study, prepare supporting documents, apply, what happens at the UK border",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/study-uk-child-student-visa",
+      "gov_sources": []
     }
   ]
 }
