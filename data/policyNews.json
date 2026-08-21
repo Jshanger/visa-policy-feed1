@@ -11,11 +11,29 @@
     },
     {
       "date": "2026-08-21",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-08-21.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-21",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-08-21.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-08-21",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -25,24 +43,6 @@
       "description": "Official page updated on 2026-08-20.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-20",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-08-20.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-20",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -182,15 +182,6 @@
       ]
     },
     {
-      "date": "2026-08-03",
-      "category": "Policy Update",
-      "headline": "Immigration Rules Appendix Global Business Mobility routes",
-      "description": "The Global Business Mobility routes are for workers based outside the UK who are undertaking a temporary work assignment in the UK as a Senior or Specialist Worker, Graduate Trainee, UK Expansion Worker, Service Supplier or …",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-global-business-mobility-routes",
-      "gov_sources": []
-    },
-    {
       "date": "2026-08-02",
       "category": "Policy Update",
       "headline": "Parent of a child student: caseworker guidance",
@@ -284,6 +275,15 @@
       "description": "<p>Most agents ELSAA speaks with are deeply committed to their students&#8217; success – that isn&#8217;t in question. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/07/why-sharper-english-language-guidance-is-becoming-an-agents-sharpest-tool-for-student-success",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-07-20",
+      "category": "Post-Study Work",
+      "headline": "UK sector sets out wishlist as Andy Burnham takes No. 10",
+      "description": "<p>UK international education stakeholders have urged the UK's new Prime Minister to maintain the Graduate Route, scrap the controversial levy on private school fees, and strengthen ties with key sending markets.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-sector-sets-out-wishlist-as-andy-burnham-takes-no-10",
       "gov_sources": []
     }
   ]
