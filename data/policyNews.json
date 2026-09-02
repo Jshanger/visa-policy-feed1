@@ -2,11 +2,29 @@
   "policyNews": [
     {
       "date": "2026-09-02",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
+      "description": "Official page updated on 2026-09-02.",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-09-02",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
       "description": "Official page updated on 2026-09-02.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-09-02",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-09-02.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -19,25 +37,16 @@
       "gov_sources": []
     },
     {
-      "date": "2026-09-01",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-09-01.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "date": "2026-09-02",
+      "category": "Student Visas",
+      "headline": "Rubio’s student visa revocations ruled “retaliatory”",
+      "description": "<p>Stanford University’s student newspaper has won a legal challenge over the US State Department, whose F-1 visa revocations and deportations of students expressing pro-Palestine views have been ruled illegal.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/rubios-student-visa-revocations-ruled-retaliatory",
       "gov_sources": []
     },
     {
-      "date": "2026-09-01",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-09-01.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-09-01",
+      "date": "2026-09-02",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -280,15 +289,6 @@
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html",
         "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/workers-study-without-study-permit.html"
       ]
-    },
-    {
-      "date": "2026-07-21",
-      "category": "Policy Update",
-      "headline": "Why sharper English-language guidance is becoming an agent’s sharpest tool for student success",
-      "description": "<p>Most agents ELSAA speaks with are deeply committed to their students&#8217; success – that isn&#8217;t in question. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/07/why-sharper-english-language-guidance-is-becoming-an-agents-sharpest-tool-for-student-success",
-      "gov_sources": []
     }
   ]
 }
