@@ -57,6 +57,15 @@
       "gov_sources": []
     },
     {
+      "date": "2026-09-03",
+      "category": "Post-Study Work",
+      "headline": "Australia: Decline in international higher education commencements projected for 2026",
+      "description": "<p>Australian universities should not expect an increase in foreign students on their campuses anytime soon, according to Keri Ramirez, managing director of sector data specialist Studymove. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/09/australia-decline-in-international-higher-education-commencements-projected-for-2026",
+      "gov_sources": []
+    },
+    {
       "date": "2026-09-02",
       "category": "Student Visas",
       "headline": "Rubio’s student visa revocations ruled “retaliatory”",
@@ -72,9 +81,7 @@
       "description": "<p>The student visa rejection rate in the 12 months to June 2026 has reached just under 5%, The PIE's analysis of new Home Office data has revealed.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/12-month-rolling-student-visa-rejection-rate-hits-4-9-in-the-uk",
-      "gov_sources": [
-        "https://www.gov.uk/government/statistical-data-sets/migration-transparency-data"
-      ]
+      "gov_sources": []
     },
     {
       "date": "2026-08-27",
@@ -94,15 +101,6 @@
       "description": "<p>A major Australian newspaper, The Australian, is reporting that the Albanese government is preparing a major immigration overhaul that would introduce tighter restrictions on international students and their family members.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/australia-weighs-major-new-restrictions-on-international-students-the-australian-reports",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-18",
-      "category": "Policy Update",
-      "headline": "Lawsuit challenges US rule ending duration of status",
-      "description": "<p>A coalition of cross-sector bodies have filed a lawsuit against the US government’s new visa restrictions, seeking “stability and protections” for international students and scholars.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/lawsuit-challenges-us-rule-ending-duration-of-status",
       "gov_sources": []
     },
     {
@@ -176,15 +174,6 @@
       ]
     },
     {
-      "date": "2026-08-06",
-      "category": "Processing & Grants",
-      "headline": "US leaders urge action as delays threaten fall enrolments",
-      "description": "<p>Higher education leaders in the US are urging policymakers to demand visa processing improvements, as delays threaten to wreak havoc on this fall’s international enrolments.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-leaders-urge-action-as-delays-threaten-fall-enrolments",
-      "gov_sources": []
-    },
-    {
       "date": "2026-08-05",
       "category": "Post-Study Work",
       "headline": "Sweeping work permit refusals draw student protests in Canada",
@@ -243,15 +232,6 @@
     },
     {
       "date": "2026-07-30",
-      "category": "Policy Update",
-      "headline": "Get a grip on Australian study visas: an open letter to Julian Hill",
-      "description": "<p>Ravi Lochan Singh offers Australia's assistant minister for international education some home truths after his frank address at The PIE Live Asia Pacific.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/get-a-grip-on-australian-study-visas-an-open-letter-to-julian-hill",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-07-30",
       "category": "Student Visas",
       "headline": "Canadian immigration officials increase their scrutiny of study permit applicants’ financial documentation",
       "description": "<p>New analyses of study permit applications and refusal data from Canada show a high correlation between an applicant’s ability to show adequate and stable finances and their chance of being approved to come to Canada to study at a Canadian higher education …",
@@ -271,22 +251,47 @@
       "gov_sources": []
     },
     {
-      "date": "2026-07-23",
+      "date": "2026-07-22",
       "category": "Policy Update",
-      "headline": "UK unis join forces to offer study pathways for visa brake students",
-      "description": "<p>Nine UK universities are working alongside the NGO Mosaik Education to provide remote postgraduate study opportunities to international students from countries subject to a strict study visa pause.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/uk-unis-join-forces-to-offer-study-pathways-for-visa-brake-students",
+      "headline": "Canadian immigration officials have made several updates to compliance guidance for study permits and post-graduate work permits",
+      "description": "<p>Over the past four to six weeks, Immigration, Refugees and Citizenship Canada (IRCC) has updated several of its internal policy, procedures, and guidance documents. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/canadian-immigration-officials-have-made-several-updates-to-compliance-guidance-for-study-permits-and-post-graduate-work-permits",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/study-permits/assessing-conditions.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html",
+        "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/workers-study-without-study-permit.html"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "category": "Policy Update",
+      "headline": "Why sharper English-language guidance is becoming an agent’s sharpest tool for student success",
+      "description": "<p>Most agents ELSAA speaks with are deeply committed to their students&#8217; success – that isn&#8217;t in question. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/why-sharper-english-language-guidance-is-becoming-an-agents-sharpest-tool-for-student-success",
       "gov_sources": []
     },
     {
-      "date": "2026-07-23",
-      "category": "Student Visas",
-      "headline": "Nearly half of Canadian study visa refusals deemed “preventable”",
-      "description": "<p>A new dashboard analysing Canadian study permit refusals has found financial documentation to be by far the most prominent reason for students being denied.</p> <p>The post <a …",
+      "date": "2026-07-20",
+      "category": "Post-Study Work",
+      "headline": "UK sector sets out wishlist as Andy Burnham takes No. 10",
+      "description": "<p>UK international education stakeholders have urged the UK's new Prime Minister to maintain the Graduate Route, scrap the controversial levy on private school fees, and strengthen ties with key sending markets.</p> <p>The post <a …",
       "source": "thepienews.com",
-      "url": "https://thepienews.com/nearly-half-of-canadian-study-visa-refusals-deemed-preventable",
+      "url": "https://thepienews.com/uk-sector-sets-out-wishlist-as-andy-burnham-takes-no-10",
       "gov_sources": []
+    },
+    {
+      "date": "2026-07-15",
+      "category": "Policy Update",
+      "headline": "England: Government “remains of the view” that the International Student Levy should go ahead; implementation planned for August 2028",
+      "description": "<p>The UK first indicated it would explore &#8220;a levy on higher education provider income from international students&#8221; in its May 2025 immigration white paper. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/07/england-government-remains-of-the-view-that-the-international-student-levy-should-go-ahead-implementation-planned-for-august-2028",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/restoring-control-over-the-immigration-system-white-paper",
+        "https://www.gov.uk/government/consultations/international-student-levy-technical-detail"
+      ]
     }
   ]
 }
