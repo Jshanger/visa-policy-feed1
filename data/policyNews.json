@@ -46,6 +46,26 @@
       "gov_sources": []
     },
     {
+      "date": "2026-09-30",
+      "category": "Sponsorship",
+      "headline": "Buckinghamshire New University: Student sponsor licence suspension",
+      "description": "…On 30 September 2026, the Home Office suspended Buckinghamshire New University&#x27;s Student sponsor licence.…",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/buckinghamshire-new-university-student-sponsor-licence-suspension",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-09-30",
+      "category": "Sponsorship",
+      "headline": "Breaking: UK Home Office suspends Buckinghamshire New University’s student sponsor licence",
+      "description": "<p>The Home Office has suspended Buckinghamshire New University’s student sponsor licence, effective 30 September.</p> <p>The post <a href=\"https://thepienews.com/uk-home-office-suspends-buckinghamshire-new-universitys-student-sponsor-licence/\">Breaking: UK …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-home-office-suspends-buckinghamshire-new-universitys-student-sponsor-licence",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/buckinghamshire-new-university-student-sponsor-licence-suspension/buckinghamshire-new-university-student-sponsor-licence-suspension"
+      ]
+    },
+    {
       "date": "2026-09-17",
       "category": "Student Visas",
       "headline": "UK: August’s sponsored study visa applications drop to lowest level since 2022",
@@ -270,24 +290,6 @@
         "https://www.gov.uk/graduate-visa",
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-graduate-485"
       ]
-    },
-    {
-      "date": "2026-08-06",
-      "category": "Processing & Grants",
-      "headline": "US leaders urge action as delays threaten fall enrolments",
-      "description": "<p>Higher education leaders in the US are urging policymakers to demand visa processing improvements, as delays threaten to wreak havoc on this fall’s international enrolments.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-leaders-urge-action-as-delays-threaten-fall-enrolments",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-05",
-      "category": "Post-Study Work",
-      "headline": "Sweeping work permit refusals draw student protests in Canada",
-      "description": "<p>Stakeholders say providing immigration advice to prospective international students should be a mandatory requirement in Canada, following student protests and a hunger strike over a spate of PGWP refusals. …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/sweeping-work-permit-refusals-draw-student-protests-in-canada",
-      "gov_sources": []
     }
   ]
 }
