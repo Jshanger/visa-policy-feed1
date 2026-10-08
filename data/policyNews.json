@@ -1,6 +1,24 @@
 {
   "policyNews": [
     {
+      "date": "2026-10-08",
+      "category": "Policy Update",
+      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "description": "Official page updated on 2026-10-08.",
+      "source": "www.dhs.gov",
+      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-08",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-10-08.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
       "date": "2026-10-07",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
@@ -11,39 +29,60 @@
     },
     {
       "date": "2026-10-07",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-10-07.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "category": "Post-Study Work",
+      "headline": "US: Climate of uncertainty continues for international students amid legal action on internships and a proposed $70,000 OPT fee",
+      "description": "<p>In two broadcast memos issued in August 2026, the Immigration and Customs Enforcement department (ICE) clearly signalled that it is now applying greater scrutiny to Curricular Practical Training (CPT) placements. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/10/us-climate-of-uncertainty-continues-for-international-students-amid-legal-action-on-internships-and-a-proposed-70000-opt-fee",
       "gov_sources": []
     },
     {
       "date": "2026-10-07",
-      "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-10-07.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-06",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-10-06.",
+      "description": "Official page updated on 2026-10-07.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
-      "date": "2026-10-06",
+      "date": "2026-10-07",
+      "category": "Post-Study Work",
+      "headline": "Trump administration proposes $70,000 OPT fee",
+      "description": "<p>The Trump administration has proposed charging US universities $70,000 for each international student they recommend for Optional Practical Training (OPT), with institutions facing further annual fees for extensions.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/trump-administration-proposes-70000-opt-fee",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-07",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2026-10-07",
+      "category": "Sponsorship",
+      "headline": "Jacq Longrigg",
+      "description": "…She ensures the NDA is aligned with national programmes such as the Leadership Development, Talent Acquisition and Development, sponsor of the NDA group graduate programme and the sector wide Nuclear Graduates, the apprenticeship levy and school engagement.…",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/people/jacq-longrigg",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-07",
+      "category": "Student Visas",
+      "headline": "Australia: New rules now in force for accompanying dependants and onshore student visa applications",
+      "description": "<p>The Australian government has announced that a series of additional restrictions on student visas (Subclass 500), first outlined on 17 September, has now come into effect as of 2 October 2026 and applies to any visa applications lodged from that date. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/10/australia-new-rules-now-in-force-for-accompanying-dependants-and-onshore-student-visa-applications",
+      "gov_sources": [
+        "https://ministers.education.gov.au/hill/student-visa-integrity-reforms-take-effect-today",
+        "https://www.education.gov.au/esos-framework/resources/extension-overseas-student-transfer-restriction-period-12-months-providers"
+      ]
     },
     {
       "date": "2026-10-06",
@@ -255,42 +294,6 @@
       "gov_sources": [
         "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-issuances.html"
       ]
-    },
-    {
-      "date": "2026-08-27",
-      "category": "Policy Update",
-      "headline": "Australia weighs major new restrictions on international students, The Australian reports",
-      "description": "<p>A major Australian newspaper, The Australian, is reporting that the Albanese government is preparing a major immigration overhaul that would introduce tighter restrictions on international students and their family members.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/australia-weighs-major-new-restrictions-on-international-students-the-australian-reports",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-18",
-      "category": "Policy Update",
-      "headline": "Lawsuit challenges US rule ending duration of status",
-      "description": "<p>A coalition of cross-sector bodies have filed a lawsuit against the US government’s new visa restrictions, seeking “stability and protections” for international students and scholars.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/lawsuit-challenges-us-rule-ending-duration-of-status",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-18",
-      "category": "Post-Study Work",
-      "headline": "CBSA checks end international student PGWP protest in Canada",
-      "description": "<p>Indian graduates say they were led to believe their non-credit courses qualified for post-study work permits, while 12 attendees at the 22-day Calgary protest have been flagged as “possibly inadmissible”.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/cbsa-checks-end-international-student-pgwp-protest-in-canada",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-17",
-      "category": "Processing & Grants",
-      "headline": "US Senators call for faster study visa processing",
-      "description": "<p>Thirty US Senators have called on Secretary of State Marco Rubio to expedite visa processing for international students and scholars in time for the start of the academic year.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-senators-call-for-faster-study-visa-processing",
-      "gov_sources": []
     }
   ]
 }
