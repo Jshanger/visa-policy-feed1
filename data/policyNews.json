@@ -1,21 +1,39 @@
 {
   "policyNews": [
     {
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-10-12.",
+      "description": "Official page updated on 2026-10-13.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-10-12",
+      "date": "2026-10-13",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-10-13.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-13",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-10-12.",
+      "description": "Official page updated on 2026-10-13.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-13",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -34,24 +52,6 @@
       "description": "<p>US universities face allegations of using J-1 visas to undercut American researchers’ wages, while a separate suspension at eight major employers threatens to delay permanent residency applications for foreign workers.</p> <p>The post <a …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/us-probes-nine-unis-over-j-1-visas-and-suspends-firms-green-card-pathway",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-09",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-10-09.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-09",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -150,7 +150,7 @@
       "date": "2026-09-30",
       "category": "Sponsorship",
       "headline": "Buckinghamshire New University: Student sponsor licence suspension",
-      "description": "…On 30 September 2026, the Home Office suspended Buckinghamshire New University&#x27;s Student sponsor licence.…",
+      "description": "On 30 September 2026, the Home Office suspended Buckinghamshire New University's Student sponsor licence.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/buckinghamshire-new-university-student-sponsor-licence-suspension",
       "gov_sources": []
