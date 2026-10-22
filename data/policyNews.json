@@ -11,11 +11,29 @@
     },
     {
       "date": "2026-10-22",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-10-22.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-22",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-10-22.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-22",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -25,24 +43,6 @@
       "description": "Official page updated on 2026-10-21.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-21",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-10-21.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-21",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -185,15 +185,6 @@
     {
       "date": "2026-09-30",
       "category": "Sponsorship",
-      "headline": "Buckinghamshire New University: Student sponsor licence suspension",
-      "description": "…On 30 September 2026, the Home Office suspended Buckinghamshire New University&#x27;s Student sponsor licence.…",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/buckinghamshire-new-university-student-sponsor-licence-suspension",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-09-30",
-      "category": "Sponsorship",
       "headline": "Breaking: UK Home Office suspends Buckinghamshire New University’s student sponsor licence",
       "description": "<p>The Home Office has suspended Buckinghamshire New University’s student sponsor licence, effective 30 September.</p> <p>The post <a href=\"https://thepienews.com/uk-home-office-suspends-buckinghamshire-new-universitys-student-sponsor-licence/\">Breaking: UK …",
       "source": "thepienews.com",
@@ -288,6 +279,17 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/idp-to-consolidate-15-india-student-placement-locations",
       "gov_sources": []
+    },
+    {
+      "date": "2026-09-03",
+      "category": "Policy Update",
+      "headline": "US government warns universities to limit their authorisation of Curricular Practical Training work placements",
+      "description": "<p>The Trump administration continues to signal its intent to restrict international students’ work opportunities in the United States. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/09/us-government-warns-universities-to-limit-their-authorisation-of-curricular-practical-training-work-placements",
+      "gov_sources": [
+        "https://studyinthestates.dhs.gov/sevis-help-hub/student-records/fm-student-employment/f-1-curricular-practical-training-cpt"
+      ]
     }
   ]
 }
