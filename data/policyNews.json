@@ -11,11 +11,38 @@
     },
     {
       "date": "2026-10-23",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-10-23.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-23",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-10-23.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-23",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-23",
+      "category": "Processing & Grants",
+      "headline": "Enroly: UK CAS issuance falls 24% as visa refusals jump 44%",
+      "description": "<p>International student recruitment at UK universities has taken another hit, with CAS issuance down almost a quarter year-on-year and visa refusals climbing sharply, new Enroly data suggests.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/enroly-uk-cas-issuance-falls-24-as-visa-refusals-jump-44",
       "gov_sources": []
     },
     {
@@ -25,24 +52,6 @@
       "description": "Official page updated on 2026-10-22.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-22",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-10-22.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-22",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -279,17 +288,6 @@
       "source": "thepienews.com",
       "url": "https://thepienews.com/idp-to-consolidate-15-india-student-placement-locations",
       "gov_sources": []
-    },
-    {
-      "date": "2026-09-03",
-      "category": "Policy Update",
-      "headline": "US government warns universities to limit their authorisation of Curricular Practical Training work placements",
-      "description": "<p>The Trump administration continues to signal its intent to restrict international students’ work opportunities in the United States. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/09/us-government-warns-universities-to-limit-their-authorisation-of-curricular-practical-training-work-placements",
-      "gov_sources": [
-        "https://studyinthestates.dhs.gov/sevis-help-hub/student-records/fm-student-employment/f-1-curricular-practical-training-cpt"
-      ]
     }
   ]
 }
