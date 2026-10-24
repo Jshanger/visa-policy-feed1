@@ -1,12 +1,21 @@
 {
   "policyNews": [
     {
-      "date": "2026-10-23",
+      "date": "2026-10-24",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-10-23.",
+      "description": "Official page updated on 2026-10-24.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-24",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-10-24.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
@@ -21,10 +30,10 @@
     {
       "date": "2026-10-23",
       "category": "Policy Update",
-      "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-10-23.",
-      "source": "www.taiwannews.com.tw",
-      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "headline": "Three signals shaping Australian international education ahead of AIEC 2026",
+      "description": "<p>From slowing student growth and tighter visa settings to the rise of transnational education, Australia's international education sector is entering a new phase. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/three-signals-shaping-australian-international-education-ahead-of-aiec-2026",
       "gov_sources": []
     },
     {
@@ -278,15 +287,6 @@
       "description": "<p>A US federal judge is weighing a landmark court challenge to the government’s proposed end to duration of status after a Boston hearing last week. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/judge-signals-possible-halt-to-us-student-visa-duration-rule",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-09-05",
-      "category": "Policy Update",
-      "headline": "IDP to consolidate 15 India student placement locations",
-      "description": "<p>Around 200 employees are understood to be affected as the international education company responds to falling student volumes and shifting visa policies across major study destinations.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/idp-to-consolidate-15-india-student-placement-locations",
       "gov_sources": []
     }
   ]
