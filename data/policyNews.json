@@ -11,6 +11,15 @@
     },
     {
       "date": "2026-10-30",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-10-30.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-30",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
       "description": "Official page updated on 2026-10-30.",
@@ -19,22 +28,24 @@
       "gov_sources": []
     },
     {
-      "date": "2026-10-29",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-10-29.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
+    },
+    {
+      "date": "2026-10-30",
+      "category": "Student Visas",
+      "headline": "Australia consults on student visa overhaul as refusals hit key markets",
+      "description": "<p>Proposals would revise the Genuine Student requirement and financial-capacity rules, including possible Australian bank accounts and tougher evidence for certain international student applicants.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-consults-on-student-visa-overhaul-as-refusals-hit-key-markets",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/Visa-subsite/files/direction-no-106.pdf"
+      ]
     },
     {
       "date": "2026-10-29",
@@ -277,17 +288,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/09/how-can-we-tell-the-story-of-international-education",
       "gov_sources": []
-    },
-    {
-      "date": "2026-09-17",
-      "category": "Policy Update",
-      "headline": "Australia moves to reduce net migration with new restrictions on student family members and “visa hopping”",
-      "description": "<p>In a speech at the National Press Club on 17 September, Australian Home Affairs and Immigration Minister Tony Burke announced a package of new reforms that will affect incoming and current international students. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/09/australia-moves-to-reduce-net-migration-with-new-restrictions-on-student-family-members-and-visa-hopping",
-      "gov_sources": [
-        "https://minister.homeaffairs.gov.au/TonyBurke/Pages/speech-national-press-club-17092026.aspx"
-      ]
     }
   ]
 }
