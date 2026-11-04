@@ -1,21 +1,39 @@
 {
   "policyNews": [
     {
-      "date": "2026-11-03",
+      "date": "2026-11-04",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-11-03.",
+      "description": "Official page updated on 2026-11-04.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-11-03",
+      "date": "2026-11-04",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-11-03.",
+      "description": "Official page updated on 2026-11-04.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-03",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-11-03.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-03",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -29,29 +47,11 @@
     },
     {
       "date": "2026-11-02",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-11-02.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-02",
       "category": "Policy Update",
       "headline": "UK to raise HPI visa cap as eligibility expands to top 150 universities",
       "description": "<p>The UK government has announced that there will be a “proportional increase” in the current yearly cap on High Potential Individual visa applications, as the government unveils new plans to “go further in attracting the world’s best graduates”.</p> <p>The …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-to-raise-hpi-visa-cap-as-eligibility-expands-to-top-150-universities",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-02",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
