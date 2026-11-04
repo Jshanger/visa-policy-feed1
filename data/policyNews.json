@@ -2,11 +2,11 @@
   "policyNews": [
     {
       "date": "2026-11-04",
-      "category": "Policy Update",
-      "headline": "US DHS: Proposed rule regarding foreign student visas — update",
+      "category": "Arrivals Data",
+      "headline": "US: I-94 Arrivals Program — data update",
       "description": "Official page updated on 2026-11-04.",
-      "source": "www.dhs.gov",
-      "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "source": "www.trade.gov",
+      "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
@@ -46,12 +46,12 @@
       "gov_sources": []
     },
     {
-      "date": "2026-11-02",
-      "category": "Arrivals Data",
-      "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-11-02.",
-      "source": "www.trade.gov",
-      "url": "https://www.trade.gov/i-94-arrivals-program",
+      "date": "2026-11-04",
+      "category": "Policy Update",
+      "headline": "High Potential Individual visa: global universities list",
+      "description": "…Find out if your university qualification means you&#x27;re eligible for a High Potential Individual visa.…",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/high-potential-individual-visa-global-universities-list",
       "gov_sources": []
     },
     {
@@ -61,15 +61,6 @@
       "description": "<p>The UK government has announced that there will be a “proportional increase” in the current yearly cap on High Potential Individual visa applications, as the government unveils new plans to “go further in attracting the world’s best graduates”.</p> <p>The …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/uk-to-raise-hpi-visa-cap-as-eligibility-expands-to-top-150-universities",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-01",
-      "category": "Policy Update",
-      "headline": "High Potential Individual visa: global universities list",
-      "description": "…Find out if your university qualification means you&#x27;re eligible for a High Potential Individual visa.…",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/high-potential-individual-visa-global-universities-list",
       "gov_sources": []
     },
     {
@@ -283,6 +274,17 @@
         "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
         "https://immi.homeaffairs.gov.au/Visa-subsite/files/direction-no-106.pdf",
         "https://immi.homeaffairs.gov.au/what-we-do/education-program/what-we-do/evidence-levels"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "category": "Sponsorship",
+      "headline": "Breaking: UK Home Office suspends Buckinghamshire New University’s student sponsor licence",
+      "description": "<p>The Home Office has suspended Buckinghamshire New University’s student sponsor licence, effective 30 September.</p> <p>The post <a href=\"https://thepienews.com/uk-home-office-suspends-buckinghamshire-new-universitys-student-sponsor-licence/\">Breaking: UK …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-home-office-suspends-buckinghamshire-new-universitys-student-sponsor-licence",
+      "gov_sources": [
+        "https://www.gov.uk/government/publications/buckinghamshire-new-university-student-sponsor-licence-suspension/buckinghamshire-new-university-student-sponsor-licence-suspension"
       ]
     }
   ]
