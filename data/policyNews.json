@@ -1,22 +1,60 @@
 {
   "policyNews": [
     {
-      "date": "2026-11-11",
+      "date": "2026-11-12",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-11-11.",
+      "description": "Official page updated on 2026-11-12.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-11-11",
+      "date": "2026-11-12",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-11-11.",
+      "description": "Official page updated on 2026-11-12.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
+    },
+    {
+      "date": "2026-11-11",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-11-11.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-11",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-11",
+      "category": "Policy Update",
+      "headline": "Exclusive: London Met returns to Bangladesh, warns of UKVI fallout",
+      "description": "<p>The university had paused recruitment from Bangladesh as the sector braced for tighter Basic Compliance Assessment (BCA) requirements, but deputy vice-chancellor Gary Davies has confirmed that improved data now supports a return.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/excusive-london-met-returns-to-bangladesh-warns-of-ukvi-fallout",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-11",
+      "category": "Processing & Grants",
+      "headline": "Canada announces targets for new international student arrivals through 2029",
+      "description": "<p>The Canadian government has announced temporary immigration targets for 2027, 2028, and 2029, which it believes will foster “sustainable immigration with the need for stability, predictability and economic growth.” As per the 2027–2029 Immigration Levels …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/11/canada-announces-targets-for-new-international-student-arrivals-through-2029",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/annual-report-parliament-immigration-2026.html"
+      ]
     },
     {
       "date": "2026-11-10",
@@ -25,24 +63,6 @@
       "description": "Official page updated on 2026-11-10.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-10",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-11-10.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-10",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -261,27 +281,6 @@
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/10/us-climate-of-uncertainty-continues-for-international-students-amid-legal-action-on-internships-and-a-proposed-70000-opt-fee",
       "gov_sources": []
-    },
-    {
-      "date": "2026-10-07",
-      "category": "Post-Study Work",
-      "headline": "Trump administration proposes $70,000 OPT fee",
-      "description": "<p>The Trump administration has proposed charging US universities $70,000 for each international student they recommend for Optional Practical Training (OPT), with institutions facing further annual fees for extensions.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/trump-administration-proposes-70000-opt-fee",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-07",
-      "category": "Student Visas",
-      "headline": "Australia: New rules now in force for accompanying dependants and onshore student visa applications",
-      "description": "<p>The Australian government has announced that a series of additional restrictions on student visas (Subclass 500), first outlined on 17 September, has now come into effect as of 2 October 2026 and applies to any visa applications lodged from that date. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/australia-new-rules-now-in-force-for-accompanying-dependants-and-onshore-student-visa-applications",
-      "gov_sources": [
-        "https://ministers.education.gov.au/hill/student-visa-integrity-reforms-take-effect-today",
-        "https://www.education.gov.au/esos-framework/resources/extension-overseas-student-transfer-restriction-period-12-months-providers"
-      ]
     }
   ]
 }
