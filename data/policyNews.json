@@ -1,21 +1,39 @@
 {
   "policyNews": [
     {
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-11-16.",
+      "description": "Official page updated on 2026-11-17.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-11-16.",
+      "description": "Official page updated on 2026-11-17.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-16",
+      "category": "Policy Update",
+      "headline": "Tighter compliance not tactic to manage international student numbers, says UK Home Office",
+      "description": "<p>There is no blanket policy to manage the number of international students coming to the UK through visa refusals or tighter compliance policies, the Home Office has insisted.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/tighter-compliance-not-tactic-to-manage-international-student-numbers-says-uk-home-office",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-16",
+      "category": "Post-Study Work",
+      "headline": "New international enrolments in US fell -18% in 2025/26; new data says trend is continuing",
+      "description": "<p>Over 1.1 million international students (1,146,160) were enrolled in higher education and Optional Practical Training (OPT) in the US in 2025/26, a -3% decrease from the previous academic year. …",
+      "source": "monitor.icef.com",
+      "url": "https://monitor.icef.com/2026/11/new-international-enrolments-in-us-fell-18-in-2025-26-new-data-says-trend-is-continuing",
       "gov_sources": []
     },
     {
@@ -264,24 +282,6 @@
       "description": "<p>Since 1 June 2026, UK universities have been mandated by the Home Office to abide by stricter standards for the recruitment and hosting of international students. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/10/uk-study-visa-application-withdrawals-surge-amidst-new-bca-compliance-requirements",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-09",
-      "category": "Student Visas",
-      "headline": "US probes nine unis over J-1 visas and suspends firms’ green card pathway",
-      "description": "<p>US universities face allegations of using J-1 visas to undercut American researchers’ wages, while a separate suspension at eight major employers threatens to delay permanent residency applications for foreign workers.</p> <p>The post <a …",
-      "source": "thepienews.com",
-      "url": "https://thepienews.com/us-probes-nine-unis-over-j-1-visas-and-suspends-firms-green-card-pathway",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-07",
-      "category": "Post-Study Work",
-      "headline": "US: Climate of uncertainty continues for international students amid legal action on internships and a proposed $70,000 OPT fee",
-      "description": "<p>In two broadcast memos issued in August 2026, the Immigration and Customs Enforcement department (ICE) clearly signalled that it is now applying greater scrutiny to Curricular Practical Training (CPT) placements. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/us-climate-of-uncertainty-continues-for-international-students-amid-legal-action-on-internships-and-a-proposed-70000-opt-fee",
       "gov_sources": []
     }
   ]
