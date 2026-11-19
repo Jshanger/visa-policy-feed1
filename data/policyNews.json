@@ -1,43 +1,43 @@
 {
   "policyNews": [
     {
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Arrivals Data",
       "headline": "US: I-94 Arrivals Program — data update",
-      "description": "Official page updated on 2026-11-18.",
+      "description": "Official page updated on 2026-11-19.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
       "gov_sources": []
     },
     {
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-11-18.",
+      "description": "Official page updated on 2026-11-19.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
       "gov_sources": []
     },
     {
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Sponsorship",
       "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-11-18.",
+      "description": "Official page updated on 2026-11-19.",
       "source": "www.gov.uk",
       "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Policy Update",
       "headline": "Taiwan News: policy/update relevant to international students",
-      "description": "Official page updated on 2026-11-18.",
+      "description": "Official page updated on 2026-11-19.",
       "source": "www.taiwannews.com.tw",
       "url": "https://www.taiwannews.com.tw/news/6190827",
       "gov_sources": []
     },
     {
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "category": "Sponsorship",
       "headline": "Register of licensed sponsors: workers",
       "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
@@ -56,11 +56,40 @@
     },
     {
       "date": "2026-11-16",
+      "category": "Policy Update",
+      "headline": "Tighter compliance not tactic to manage international student numbers, says UK Home Office",
+      "description": "<p>There is no blanket policy to manage the number of international students coming to the UK through visa refusals or tighter compliance policies, the Home Office has insisted.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/tighter-compliance-not-tactic-to-manage-international-student-numbers-says-uk-home-office",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-16",
       "category": "Post-Study Work",
       "headline": "New international enrolments in US fell -18% in 2025/26; new data says trend is continuing",
       "description": "<p>Over 1.1 million international students (1,146,160) were enrolled in higher education and Optional Practical Training (OPT) in the US in 2025/26, a -3% decrease from the previous academic year. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/11/new-international-enrolments-in-us-fell-18-in-2025-26-new-data-says-trend-is-continuing",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-12",
+      "category": "Student Visas",
+      "headline": "UK student visa applications down 31% as Russell Group warns of volatility",
+      "description": "<p>UK student visa applications fell by 31% in October compared with the same month last year, prompting fresh warnings over continued volatility in the international student market.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-student-visa-applications-down-31-as-russell-group-warns-of-volatility",
+      "gov_sources": [
+        "https://www.gov.uk/government/statistics/monthly-entry-clearance-visa-applications-october-2026/monthly-entry-clearance-visa-applications-october-2026"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "category": "Policy Update",
+      "headline": "Exclusive: London Met returns to Bangladesh, warns of UKVI fallout",
+      "description": "<p>The university had paused recruitment from Bangladesh as the sector braced for tighter Basic Compliance Assessment (BCA) requirements, but deputy vice-chancellor Gary Davies has confirmed that improved data now supports a return.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/excusive-london-met-returns-to-bangladesh-warns-of-ukvi-fallout",
       "gov_sources": []
     },
     {
@@ -75,6 +104,35 @@
       ]
     },
     {
+      "date": "2026-11-10",
+      "category": "Policy Update",
+      "headline": "AIEC 2026: Australia rethinks its international education promise",
+      "description": "<p>At its 40th conference in Sydney, the Australian sector confronted visa uncertainty, global competition and the need to make a more credible case to students and the public.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/aiec-2026-australia-rethinks-its-international-education-promise",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-06",
+      "category": "Processing & Grants",
+      "headline": "Canada extends 150,000 international student arrivals target to 2029",
+      "description": "<p>Canada will maintain its target of 150,000 new international student arrivals annually through 2029, extending the target set out in last year’s immigration plan.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/canada-extends-150000-international-student-arrivals-target-to-2029",
+      "gov_sources": [
+        "https://www.canada.ca/en/immigration-refugees-citizenship/news/2026/11/building-a-stronger-canada-through-a-well-managed-predictable-immigration-system.html"
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "category": "Policy Update",
+      "headline": "Philippines to fast-track student visas as TNE strategy takes off",
+      "description": "<p>The Philippines will create a \"green lane\" for students and academics seeking visas to enter the country, cutting red tape and fast-tracking applications as part of its new transnational education (TNE) strategy.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/philippines-to-fast-track-student-visas-as-tne-strategy-takes-off",
+      "gov_sources": []
+    },
+    {
       "date": "2026-11-05",
       "category": "Policy Update",
       "headline": "Amidst high visa refusal rates and falling commencements, Australian government opens consultation on reforms to Genuine Student test and financial requirements",
@@ -85,6 +143,35 @@
         "https://www.homeaffairs.gov.au/how-to-engage-us-subsite/files/strengthening-genuine-student-requirement-financial-capacity-framework-consultation-paper.pdf",
         "https://ministers.education.gov.au/hill/2026-annual-conference-future-thinking-international-education-association-australia",
         "https://www.homeaffairs.gov.au/help-and-support/how-to-engage-us/consultations/consultation-on-proposed-reforms-to-the-genuine-student-requirement-and-financial-capacity-framework"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Post-Study Work",
+      "headline": "The graduate visa U-turn: are we rewarding outcomes or reinforcing old hierarchies?",
+      "description": "<p>Could the UK’s Graduate Route U-turn reinforce university hierarchies? …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-graduate-visa-u-turn-are-we-rewarding-outcomes-or-reinforcing-old-hierarchies",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-02",
+      "category": "Policy Update",
+      "headline": "UK to raise HPI visa cap as eligibility expands to top 150 universities",
+      "description": "<p>The UK government has announced that there will be a “proportional increase” in the current yearly cap on High Potential Individual visa applications, as the government unveils new plans to “go further in attracting the world’s best graduates”.</p> <p>The …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/uk-to-raise-hpi-visa-cap-as-eligibility-expands-to-top-150-universities",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-30",
+      "category": "Student Visas",
+      "headline": "Australia consults on student visa overhaul as refusals hit key markets",
+      "description": "<p>Proposals would revise the Genuine Student requirement and financial-capacity rules, including possible Australian bank accounts and tougher evidence for certain international student applicants.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/australia-consults-on-student-visa-overhaul-as-refusals-hit-key-markets",
+      "gov_sources": [
+        "https://immi.homeaffairs.gov.au/Visa-subsite/files/direction-no-106.pdf"
       ]
     },
     {
@@ -108,10 +195,57 @@
     {
       "date": "2026-10-28",
       "category": "Policy Update",
+      "headline": "Breaking: UK to extend graduate visa to two years for graduates of “high-compliance universities”",
+      "description": "<p>The UK government will extend the graduate visa to two years for international graduates of “high-compliance universities” with strong labour market outcomes, according to its 2026 Budget.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/breaking-uk-to-extend-graduate-visa-to-two-years-for-graduates-of-high-compliance-universities",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-28",
+      "category": "Policy Update",
       "headline": "Analysis predicts only moderate university fee increases for international students in Australia for 2027",
       "description": "<p>Just as unstable policies can disrupt the plans of prospective international students, they can also challenge university teams trying to determine tuition fees for the coming year. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/10/analysis-predicts-only-moderate-university-fee-increases-for-international-students-in-australia-for-2027",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-26",
+      "category": "Policy Update",
+      "headline": "Too big to brake: why Bangladesh and Pakistan escaped the visa brake, and what comes next",
+      "description": "<p>A High Court judgment shows that several key sending countries had a near miss in being included in the UK Home Office's study visa breaks. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/too-big-to-brake-why-bangladesh-and-pakistan-escaped-the-visa-brake-and-what-comes-next",
+      "gov_sources": [
+        "https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables"
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "category": "Post-Study Work",
+      "headline": "Proposed new OPT fee would decimate the international talent pipeline",
+      "description": "<p>Zuzana Čeplá Wootson, deputy director of federal policy at the Presidents’ Alliance on Higher Education and Immigration, argues that proposed OPT fees would harm students, employers and US competitiveness.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/the-trump-administrations-proposed-new-opt-fee-would-decimate-the-international-talent-pipeline",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-23",
+      "category": "Policy Update",
+      "headline": "Three signals shaping Australian international education ahead of AIEC 2026",
+      "description": "<p>From slowing student growth and tighter visa settings to the rise of transnational education, Australia's international education sector is entering a new phase. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/three-signals-shaping-australian-international-education-ahead-of-aiec-2026",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-23",
+      "category": "Processing & Grants",
+      "headline": "Enroly: UK CAS issuance falls 24% as visa refusals jump 44%",
+      "description": "<p>International student recruitment at UK universities has taken another hit, with CAS issuance down almost a quarter year-on-year and visa refusals climbing sharply, new Enroly data suggests.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/enroly-uk-cas-issuance-falls-24-as-visa-refusals-jump-44",
       "gov_sources": []
     },
     {
@@ -124,60 +258,30 @@
       "gov_sources": []
     },
     {
+      "date": "2026-10-20",
+      "category": "Post-Study Work",
+      "headline": "US: OPT fee proposal exposes divide in Indian applicants",
+      "description": "<p>Proposed OPT fees threaten the appeal of US study for Indian students relying on loans, but advisers report mixed responses among applicants.</p> <p>The post <a href=\"https://thepienews.com/us-opt-fee-proposal-exposes-divide-in-indian-applicants/\">US: OPT …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/us-opt-fee-proposal-exposes-divide-in-indian-applicants",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-10-20",
+      "category": "Policy Update",
+      "headline": "70% of visa refusals for UK study visas come from seven countries",
+      "description": "<p>More than 70% of study visa refusals for UK universities are coming from just seven countries – India, Nigeria, Pakistan, Bangladesh, Nepal, Ghana and Sri Lanka. …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/70-of-visa-refusals-for-uk-study-visas-come-from-seven-countries",
+      "gov_sources": []
+    },
+    {
       "date": "2026-10-15",
       "category": "Student Visas",
       "headline": "What is happening with international student numbers in Canada so far this year?",
       "description": "<p>Canada&#8217;s international student cap sets a total target of 408,000 study permits issued in 2026. That breaks down into 253,000 study permit extensions and an expected 155,000 new arrivals, or commencements. …",
       "source": "monitor.icef.com",
       "url": "https://monitor.icef.com/2026/10/what-is-happening-with-international-student-numbers-in-canada-so-far-this-year",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-15",
-      "category": "Policy Update",
-      "headline": "UK: Study visa application withdrawals surge amidst new BCA compliance requirements",
-      "description": "<p>Since 1 June 2026, UK universities have been mandated by the Home Office to abide by stricter standards for the recruitment and hosting of international students. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/uk-study-visa-application-withdrawals-surge-amidst-new-bca-compliance-requirements",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-07",
-      "category": "Post-Study Work",
-      "headline": "US: Climate of uncertainty continues for international students amid legal action on internships and a proposed $70,000 OPT fee",
-      "description": "<p>In two broadcast memos issued in August 2026, the Immigration and Customs Enforcement department (ICE) clearly signalled that it is now applying greater scrutiny to Curricular Practical Training (CPT) placements. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/us-climate-of-uncertainty-continues-for-international-students-amid-legal-action-on-internships-and-a-proposed-70000-opt-fee",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-07",
-      "category": "Student Visas",
-      "headline": "Australia: New rules now in force for accompanying dependants and onshore student visa applications",
-      "description": "<p>The Australian government has announced that a series of additional restrictions on student visas (Subclass 500), first outlined on 17 September, has now come into effect as of 2 October 2026 and applies to any visa applications lodged from that date. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/australia-new-rules-now-in-force-for-accompanying-dependants-and-onshore-student-visa-applications",
-      "gov_sources": [
-        "https://ministers.education.gov.au/hill/student-visa-integrity-reforms-take-effect-today",
-        "https://www.education.gov.au/esos-framework/resources/extension-overseas-student-transfer-restriction-period-12-months-providers"
-      ]
-    },
-    {
-      "date": "2026-08-02",
-      "category": "Policy Update",
-      "headline": "Parent of a child student: caseworker guidance",
-      "description": "UK Visas and Immigration guidance on applications for parent of a child student visas.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/parent-of-a-child-student-caseworker-guidance",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-08-02",
-      "category": "Post-Study Work",
-      "headline": "Graduate caseworker guidance",
-      "description": "Immigration staff guidance on considering applications under the Graduate route.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/graduate-caseworker-guidance",
       "gov_sources": []
     }
   ]
