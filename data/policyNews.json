@@ -1,12 +1,48 @@
 {
   "policyNews": [
     {
-      "date": "2026-11-25",
+      "date": "2026-11-26",
       "category": "Policy Update",
       "headline": "US DHS: Proposed rule regarding foreign student visas — update",
-      "description": "Official page updated on 2026-11-25.",
+      "description": "Official page updated on 2026-11-26.",
       "source": "www.dhs.gov",
       "url": "https://www.dhs.gov/news/2025/08/27/trump-administration-proposes-new-rule-end-foreign-student-visa-abuse",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-26",
+      "category": "Policy Update",
+      "headline": "Taiwan News: policy/update relevant to international students",
+      "description": "Official page updated on 2026-11-26.",
+      "source": "www.taiwannews.com.tw",
+      "url": "https://www.taiwannews.com.tw/news/6190827",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-25",
+      "category": "Sponsorship",
+      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
+      "description": "Official page updated on 2026-11-25.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-25",
+      "category": "Sponsorship",
+      "headline": "Register of licensed sponsors: workers",
+      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
+      "source": "www.gov.uk",
+      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+      "gov_sources": []
+    },
+    {
+      "date": "2026-11-25",
+      "category": "Policy Update",
+      "headline": "Push immigration minister to back international students, Canadian MP urges",
+      "description": "<p>Canada's parliamentary secretary to the minister of foreign affairs urged the sector to keep pressing the federal government for stronger support for international students, research collaboration and the arts and humanities.</p> <p>The post <a …",
+      "source": "thepienews.com",
+      "url": "https://thepienews.com/push-immigration-minister-to-back-international-students-canadian-mp-urges",
       "gov_sources": []
     },
     {
@@ -16,24 +52,6 @@
       "description": "Official page updated on 2026-11-24.",
       "source": "www.trade.gov",
       "url": "https://www.trade.gov/i-94-arrivals-program",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-24",
-      "category": "Sponsorship",
-      "headline": "UK: Register of Licensed Sponsors (Workers) — page update",
-      "description": "Official page updated on 2026-11-24.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-11-24",
-      "category": "Sponsorship",
-      "headline": "Register of licensed sponsors: workers",
-      "description": "List of organisations licensed to sponsor workers on the Worker and Temporary Worker immigration routes.",
-      "source": "www.gov.uk",
-      "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
       "gov_sources": []
     },
     {
@@ -264,24 +282,6 @@
       "description": "<p>More than 70% of study visa refusals for UK universities are coming from just seven countries – India, Nigeria, Pakistan, Bangladesh, Nepal, Ghana and Sri Lanka. …",
       "source": "thepienews.com",
       "url": "https://thepienews.com/70-of-visa-refusals-for-uk-study-visas-come-from-seven-countries",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-15",
-      "category": "Student Visas",
-      "headline": "What is happening with international student numbers in Canada so far this year?",
-      "description": "<p>Canada&#8217;s international student cap sets a total target of 408,000 study permits issued in 2026. That breaks down into 253,000 study permit extensions and an expected 155,000 new arrivals, or commencements. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/what-is-happening-with-international-student-numbers-in-canada-so-far-this-year",
-      "gov_sources": []
-    },
-    {
-      "date": "2026-10-15",
-      "category": "Policy Update",
-      "headline": "UK: Study visa application withdrawals surge amidst new BCA compliance requirements",
-      "description": "<p>Since 1 June 2026, UK universities have been mandated by the Home Office to abide by stricter standards for the recruitment and hosting of international students. …",
-      "source": "monitor.icef.com",
-      "url": "https://monitor.icef.com/2026/10/uk-study-visa-application-withdrawals-surge-amidst-new-bca-compliance-requirements",
       "gov_sources": []
     }
   ]
